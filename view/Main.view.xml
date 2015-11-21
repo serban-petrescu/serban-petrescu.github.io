@@ -1,0 +1,99 @@
+<core:View controllerName="portfolio.view.Main" xmlns:core="sap.ui.core" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" xmlns:suite="sap.suite.ui.commons" xmlns="sap.m" xmlns:layo="sap.ui.commons.layout">
+	<Page showSubHeader="true" title="{i18n>mainTitle}" titleLevel="Auto">
+		<content>
+			<ObjectHeader
+				icon="{/images/profile}"
+				iconDensityAware="false"
+				iconAlt="{/name}"
+				title="{/name}"
+				number="{/age}"
+				numberUnit="{i18n>ageYears}" 
+				attributes="{/roles}">
+				<attributes>
+					<ObjectAttribute text="{text}" />
+				</attributes>
+			</ObjectHeader>
+			<IconTabBar expandable="false">
+				<items>
+					<IconTabFilter icon="sap-icon://message-information"  text="{i18n>aboutTitle}">
+						<Text text="{i18n>aboutText}" />
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://work-history" iconColor="Neutral" showAll="false" text="{i18n>experienceTitle}">
+						<content>
+							<suite:Timeline content="{/experience}" sort="false" growing="false">
+								<suite:content>
+									<suite:TimelineItem dateTime="{period}" filterValue="{filter}" icon="{icon}" 
+										userName="{title}" userNameClickable="false">
+										<suite:embeddedControl>
+											<Text text="{body}"/>
+										</suite:embeddedControl>
+									</suite:TimelineItem>
+								</suite:content>
+							</suite:Timeline>
+						</content>
+					</IconTabFilter>
+					<IconTabFilter count="" icon="sap-icon://list" iconColor="Neutral" text="{i18n>skillsTitle}">
+						<content>
+							<List items="{
+									path: '/skills',
+									sorter: [{
+										path: 'group',
+										descending: false,
+										group: true
+									}, {
+										path: 'lt'
+									}],
+									groupHeaderFactory: '.getGroupHeader'
+								}">
+								<items>
+										<StandardListItem title="{title}" description="{level}"  />
+								</items>
+							</List>
+						</content>
+					</IconTabFilter>
+					<IconTabFilter count="" icon="sap-icon://contacts" iconColor="Neutral" text="{i18n>contactTitle}">
+						<form:SimpleForm columnsM="2" editable="false"  layout="ResponsiveGridLayout"
+							xmlns:form="sap.ui.layout.form">
+							<form:content>
+								<Label text="{i18n>location}"/>
+								<Text text="{/location}"/>
+								<Label text="{i18n>phone}"/>
+								<Link text="{/phone}" press="callPhone" />
+								<Label text="{i18n>emailOutlook}"/>
+								<Link text="{/emails/outlook}" press="sendEmail" />
+								<Label text="{i18n>emailYahoo}"/>
+								<Link text="{/emails/yahoo}" press="sendEmail" />
+								<Label text="{i18n>scn}"/>
+								<Link text="scn.sap.com" href="{/href/scn}"/>
+								<Label text="{i18n>linkedin}"/>
+								<Link text="www.linkedin.com" href="{/href/linkedin}"/>
+								<Label text="{i18n>bitbucket}"/>
+								<Link text="www.bitbucket.org" href="{/href/bitbucket}"/>
+							</form:content>
+						</form:SimpleForm>
+					</IconTabFilter>
+					<IconTabFilter count="" icon="sap-icon://task" iconColor="Neutral" text="{i18n>projectsTitle}">
+						<content>
+							<List items="{/projects}">
+								<items>
+									<CustomListItem type="{itemType}" press="openGallery">
+										<ObjectHeader  title="{name}" number="{language}" >
+											<firstStatus>
+												<ObjectStatus text="{complexity}" state="{status}" />
+											</firstStatus>
+											<attributes>
+												<ObjectAttribute  text="{i18n>period}: {period}" />
+											</attributes>
+										</ObjectHeader>
+										<Text text="{description}" class="sapMOH" />
+									</CustomListItem>
+								</items>
+							</List>
+						</content>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</content>
+	</Page>
+</core:View>
