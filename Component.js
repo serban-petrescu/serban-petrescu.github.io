@@ -31,9 +31,9 @@ sap.ui.core.UIComponent.extend("portfolio.Component", {
 				view: "Main",
 				viewLevel: 1
 			}, {
-				pattern: "projects/{id}",
-				name: "projects",
-				view: "Projects",
+				pattern: ":all*:",
+				name: "catchall",
+				view: "Main",
 				viewLevel: 1
 			}]
 		}
