@@ -18,6 +18,23 @@
       }
     },
     {
+      "filePath": "/serban-petrescu.github.io/Component.js",
+      "previewMode": 1,
+      "dataMode": 1,
+      "workspace": "withoutWorkspace",
+      "ui5ActiveVersion": null,
+      "ui5VerSource": null,
+      "isDefaultVersion": 0,
+      "urlParameters": [],
+      "hashParameter": "",
+      "backendSystem": [],
+      "_metadata": {
+        "runnerId": "fiorirunner",
+        "id": 4596411,
+        "displayName": "New SAP Fiori Component on Sandbox 2"
+      }
+    },
+    {
       "filePath": "/serban-petrescu/index.html",
       "previewMode": 1,
       "dataMode": 1,

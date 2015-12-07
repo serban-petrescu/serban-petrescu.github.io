@@ -73,6 +73,7 @@ sap.ui.core.UIComponent.extend("portfolio.Component", {
 			phone: "+40744865132",
 			location: "Cluj-Napoca, Romania",
 			age: age,
+			cv: "SerbanPetrescu_CV_English.pdf",
 			images: {
 				profile: "images/profile.png"
 			},

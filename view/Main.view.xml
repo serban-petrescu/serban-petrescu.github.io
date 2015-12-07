@@ -18,6 +18,8 @@
 				<items>
 					<IconTabFilter icon="sap-icon://message-information"  text="{i18n>aboutTitle}">
 						<Text text="{i18n>aboutText}" />
+						<Link text="{i18n>cvText}" href="{/cv}" />
+						<Text text="\n\n"/> 
 					</IconTabFilter>
 					<IconTabFilter icon="sap-icon://work-history" iconColor="Neutral" showAll="false" text="{i18n>experienceTitle}">
 						<content>
