@@ -1,101 +1,147 @@
-<core:View controllerName="portfolio.view.Main" xmlns:core="sap.ui.core" xmlns:html="http://www.w3.org/1999/xhtml"
-	xmlns:mvc="sap.ui.core.mvc" xmlns:suite="sap.suite.ui.commons" xmlns="sap.m" xmlns:layo="sap.ui.commons.layout">
-	<Page showSubHeader="true" title="{i18n>mainTitle}" titleLevel="Auto">
-		<content>
-			<ObjectHeader
-				icon="{/images/profile}"
-				iconDensityAware="false"
-				iconAlt="{/name}"
-				title="{/name}"
-				number="{/age}"
-				numberUnit="{i18n>ageYears}" 
-				attributes="{/roles}">
-				<attributes>
-					<ObjectAttribute text="{text}" />
-				</attributes>
-			</ObjectHeader>
-			<IconTabBar expandable="false">
-				<items>
-					<IconTabFilter icon="sap-icon://message-information"  text="{i18n>aboutTitle}">
-						<Text text="{i18n>aboutText}" />
-						<Link text="{i18n>cvText}" href="{/cv}" />
-						<Text text="\n\n"/> 
-					</IconTabFilter>
-					<IconTabFilter icon="sap-icon://work-history" iconColor="Neutral" showAll="false" text="{i18n>experienceTitle}">
-						<content>
-							<suite:Timeline content="{/experience}" sort="false" growing="false">
-								<suite:content>
-									<suite:TimelineItem dateTime="{period}" filterValue="{filter}" icon="{icon}" 
-										userName="{title}" userNameClickable="false">
-										<suite:embeddedControl>
-											<Text text="{body}"/>
-										</suite:embeddedControl>
-									</suite:TimelineItem>
-								</suite:content>
-							</suite:Timeline>
-						</content>
-					</IconTabFilter>
-					<IconTabFilter count="" icon="sap-icon://list" iconColor="Neutral" text="{i18n>skillsTitle}">
-						<content>
-							<List items="{
-									path: '/skills',
-									sorter: [{
-										path: 'group',
-										descending: false,
-										group: true
-									}, {
-										path: 'lt'
-									}],
-									groupHeaderFactory: '.getGroupHeader'
-								}">
-								<items>
-										<StandardListItem title="{title}" description="{level}"  />
-								</items>
-							</List>
-						</content>
-					</IconTabFilter>
-					<IconTabFilter count="" icon="sap-icon://contacts" iconColor="Neutral" text="{i18n>contactTitle}">
-						<form:SimpleForm columnsM="2" editable="false"  layout="ResponsiveGridLayout"
-							xmlns:form="sap.ui.layout.form">
-							<form:content>
-								<Label text="{i18n>location}"/>
-								<Text text="{/location}"/>
-								<Label text="{i18n>phone}"/>
-								<Link text="{/phone}" press="callPhone" />
-								<Label text="{i18n>emailOutlook}"/>
-								<Link text="{/emails/outlook}" press="sendEmail" />
-								<Label text="{i18n>emailYahoo}"/>
-								<Link text="{/emails/yahoo}" press="sendEmail" />
-								<Label text="{i18n>scn}"/>
-								<Link text="scn.sap.com" href="{/href/scn}"/>
-								<Label text="{i18n>linkedin}"/>
-								<Link text="www.linkedin.com" href="{/href/linkedin}"/>
-								<Label text="{i18n>bitbucket}"/>
-								<Link text="www.bitbucket.org" href="{/href/bitbucket}"/>
-							</form:content>
-						</form:SimpleForm>
-					</IconTabFilter>
-					<IconTabFilter count="" icon="sap-icon://task" iconColor="Neutral" text="{i18n>projectsTitle}">
-						<content>
-							<List items="{/projects}">
-								<items>
-									<CustomListItem type="{itemType}" press="openGallery">
-										<ObjectHeader  title="{name}" number="{language}" >
-											<firstStatus>
-												<ObjectStatus text="{complexity}" state="{status}" />
-											</firstStatus>
-											<attributes>
-												<ObjectAttribute  text="{i18n>period}: {period}" />
-											</attributes>
-										</ObjectHeader>
-										<Text text="{description}" class="sapMOH" />
-									</CustomListItem>
-								</items>
-							</List>
-						</content>
-					</IconTabFilter>
-				</items>
-			</IconTabBar>
-		</content>
-	</Page>
+<core:View controllerName="portfolio.controller.Main" 
+	xmlns:core="sap.ui.core" 
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc"  
+	xmlns:suite="sap.suite.ui.commons" 
+	xmlns="sap.uxap" 
+	xmlns:layout="sap.ui.commons.layout"
+	xmlns:m="sap.m" 
+	height="100%">
+	<m:Page id="pagMain"
+		showHeader="false">
+		
+		<ObjectPageLayout
+			id="oplMain" 
+			enableLazyLoading="false" 
+			subSectionLayout="TitleOnLeft"
+			showTitleInHeaderContent="true" 
+			showHeaderContent="true" >
+			
+			<headerTitle>
+				<ObjectPageHeader 
+					id="ophTitle"
+					objectTitle="{/name}"
+					objectSubtitle="{/roles/0/text}"
+					objectImageShape="Circle"
+					objectImageAlt="{/name}"
+					objectImageURI="{/images/profile}"
+					isObjectIconAlwaysVisible="false"
+					isObjectTitleAlwaysVisible="false"
+					isObjectSubtitleAlwaysVisible="false"
+					isActionAreaAlwaysVisible="true"
+					showPlaceholder="true">
+					
+					<ObjectPageHeaderActionButton 
+						icon="sap-icon://download" 
+						text="{i18n>downloadCv}" 
+						tooltip="{i18n>downloadCv}" 
+						type="Transparent"
+						visible="{= ${/downloads/0} !== undefined }"
+						press="onDownloadPress"/>
+						
+					<ObjectPageHeaderActionButton 
+						icon="sap-icon://print" 
+						text="{i18n>printCv}" 
+						tooltip="{i18n>printCv}" 
+						type="Transparent"
+						press="onPrintPress"/>
+						
+				</ObjectPageHeader>
+			</headerTitle>
+			
+			<headerContent>
+				<layout:VerticalLayout>
+					<m:Link text="{/phone}" press="callPhone"/>
+					<m:Link text="{/emails/outlook}" press="sendEmail"/>
+					<layout:HorizontalLayout content="{/icons}">
+						<m:Image src="{src}" press="onIconPress" width="16px" height="16px" />
+					</layout:HorizontalLayout>
+				</layout:VerticalLayout>
+	 
+				<layout:VerticalLayout>
+					<m:Label text="{/location}"/>
+					<m:Label text="{/age}"/>
+				</layout:VerticalLayout>
+			</headerContent>
+			
+			<ObjectPageSection title="{i18n>aboutTitle}">
+				<ObjectPageSubSection >
+					<m:Text text="{i18n>aboutText}" />
+				</ObjectPageSubSection>
+			</ObjectPageSection>
+			
+			<ObjectPageSection title="{i18n>experienceTitle}" >
+				<ObjectPageSubSection title="{i18n>filterAcademic}" class="removeMarginUl">
+					<core:Fragment id="frgAcademicExperience"
+						fragmentName="portfolio.view.ExperienceTimeline" 
+						type="XML" 
+						binding="{/experience/academic}"/>
+				</ObjectPageSubSection>
+				
+				<ObjectPageSubSection title="{i18n>filterWork}" class="removeMarginUl">
+					<core:Fragment id="frgWorkExperience"
+						fragmentName="portfolio.view.ExperienceTimeline" 
+						type="XML" 
+						binding="{/experience/work}"/>
+				</ObjectPageSubSection>
+			</ObjectPageSection>
+			
+			<ObjectPageSection title="{i18n>skillsTitle}" subSections="{path: '/skills', sorter: {path: 'order'}}" >
+				<ObjectPageSubSection title="{name}" >
+					<m:List items="{ path: 'items', sorter: [{path: 'lt' }, {path: 'title'}], templateShareable:true}">
+						<m:DisplayListItem label="{title}" value="{level}"  />
+					</m:List>
+				</ObjectPageSubSection>
+			</ObjectPageSection>
+			
+			<ObjectPageSection title="{i18n>contactTitle}" >
+				<ObjectPageSubSection >
+					<form:SimpleForm 
+						labelSpanL="4"	labelSpanM="4"
+						emptySpanL="1" 	emptySpanM="1"
+						columnsL="1"	columnsM="1"
+						editable="false"  
+						layout="ResponsiveGridLayout"
+						xmlns:form="sap.ui.layout.form">
+						<form:content>
+							<m:Label text="{i18n>location}"/>
+							<m:Text text="{/location}"/>
+							<m:Label text="{i18n>phone}"/>
+							<m:Link text="{/phone}" press="callPhone" />
+							<m:Label text="{i18n>emailOutlook}"/>
+							<m:Link text="{/emails/outlook}" press="sendEmail" />
+							<m:Label text="{i18n>emailYahoo}"/>
+							<m:Link text="{/emails/yahoo}" press="sendEmail" />
+							<m:Label text="{i18n>scn}"/>
+							<m:Link text="{/accounts/scn}" href="{/href/scn}"/>
+							<m:Label text="{i18n>linkedin}"/>
+							<m:Link text="{/accounts/linkedin}" href="{/href/linkedin}"/>
+							<m:Label text="{i18n>bitbucket}"/>
+							<m:Link text="{/accounts/bitbucket}" href="{/href/bitbucket}"/>
+							<m:Label text="{i18n>github}"/>
+							<m:Link text="{/accounts/github}" href="{/href/github}"/>
+						</form:content>
+					</form:SimpleForm>
+				</ObjectPageSubSection>
+			</ObjectPageSection>
+			
+			<ObjectPageSection title="{i18n>projectsTitle}" >
+				<ObjectPageSubSection title="{i18n>prjWork}">
+					<core:Fragment fragmentName="portfolio.view.ProjectList" type="XML" binding="{/projects/work}"/>
+				</ObjectPageSubSection>
+				<ObjectPageSubSection title="{i18n>prjPersonal}">
+					<core:Fragment fragmentName="portfolio.view.ProjectList" type="XML" binding="{/projects/personal}"/>
+				</ObjectPageSubSection>
+				<ObjectPageSubSection title="{i18n>prjAcademic}">
+					<core:Fragment fragmentName="portfolio.view.ProjectList" type="XML" binding="{/projects/academic}"/>
+				</ObjectPageSubSection>
+			</ObjectPageSection>
+			
+		</ObjectPageLayout>
+		
+		<m:dependents>
+    	    <core:Fragment fragmentName="portfolio.view.Gallery" type="XML" />
+    	    <core:Fragment fragmentName="portfolio.view.Downloads" type="XML" />
+		</m:dependents>
+	</m:Page>
 </core:View>

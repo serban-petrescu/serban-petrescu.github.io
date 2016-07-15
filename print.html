@@ -5,7 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta charset="UTF-8">
 
-		<title>Serban's Portfolio</title>
+		<title>Serban Petrescu - Curriculum Vitae</title>
 		<link rel="shortcut icon" href="favicon.ico">
 
 		<script id="sap-ui-bootstrap"
@@ -21,12 +21,8 @@
 
 		<script>
 			sap.ui.getCore().attachInit(function() {
-				new sap.m.Shell({
-					app: new sap.ui.core.ComponentContainer({
-						height : "100%",
-						name : "portfolio"
-					})
-				}).placeAt("content");
+				sap.ui.xmlview("portfolio.view.Print").placeAt("content");
+				document.documentElement.style.fontSize = "12px";
 			});
 		</script>
 		
@@ -39,8 +35,6 @@
 			ga('create', 'UA-80834624-1', 'auto');
 			ga('send', 'pageview');
 		</script>
-		
-		<meta name="google-site-verification" content="fQ35AC-TfmlRNL9pWujKhPtnU9etefuVaw75YoO01pM" />
 	</head>
 
 	<body class="sapUiBody" id="content">

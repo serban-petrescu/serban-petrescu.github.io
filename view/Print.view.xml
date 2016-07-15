@@ -1,0 +1,157 @@
+<mvc:View controllerName="portfolio.controller.Print"
+	xmlns:core="sap.ui.core" 
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns="sap.m" 
+	xmlns:layout="sap.ui.layout"
+	xmlns:form="sap.ui.layout.form"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	class="sapUiSizeCompact prepareForPrint">
+	
+	<Panel class="sapUiSmallMarginBottom">
+		<headerToolbar>
+			<Toolbar>
+				<Title text="{/name}" titleStyle="H1" level="H1"/>
+			</Toolbar>
+		</headerToolbar>
+		<HBox justifyContent="SpaceBetween" alignItems="Center">
+			<form:SimpleForm editable="false" class="avoidBreak"
+				layout="ResponsiveGridLayout"
+				labelSpanL="3" labelSpanM="3"
+				emptySpanL="1" emptySpanM="1"
+				columnsL="1"  columnsM="1">
+				<form:layoutData>
+					<FlexItemData growFactor="1" />
+				</form:layoutData>
+				<form:content>
+					<Label text="{i18n>detOccupation}" />
+					<Text text="{/occupation}" />
+					<Label text="{i18n>detDateOfBirth}" />
+					<Text text="{/birthday}" />
+					<Label text="{i18n>detLocation}" />
+					<Text text="{/location}" />
+					<Label text="{i18n>detEmail}" />
+					<Text text="{/emails/outlook}" />
+					<Label text="{i18n>detPhone}" />
+					<Text text="{/phone}" />
+				</form:content>
+			</form:SimpleForm>
+			<Image decorative="false" 
+				densityAware="false" 
+				width="10rem" 
+				src="{/images/profile}" 
+				class="sapUiTinyMarginEnd">
+				<layoutData>
+					<FlexItemData growFactor="0" />
+				</layoutData>
+			</Image>
+		</HBox>
+	</Panel>
+	
+	<Panel headerText="{i18n>education}" class="sizePaddingPanel avoidBreak sapUiSmallMarginBottom">
+		<core:Fragment id="frgAcademicExperience"
+			fragmentName="portfolio.view.ExperienceTimeline" 
+			type="XML" 
+			binding="{/experience/academic}"/>
+	</Panel>
+	
+	<Panel headerText="{i18n>workExperience}" class="sizePaddingPanel avoidBreak sapUiSmallMarginBottom">
+		<core:Fragment id="frgAcademicExperience"
+			fragmentName="portfolio.view.ExperienceTimeline" 
+			type="XML" 
+			binding="{/experience/work}"/>
+	</Panel>
+	
+	<Panel headerText="{i18n>skillsTitle}" class="avoidBreak breakPage sapUiSmallMarginBottom">
+		<layout:Grid defaultSpan="XL6 L6 M6 S6" hSpacing="2" vSpacing="2" content="{path: '/skills', sorter: {path: 'order'}}" >
+			<List headerText="{name}" 
+				class="avoidBreak"
+				items="{ path: 'items', sorter: [{path: 'lt' }, {path: 'title'}]}">
+				<DisplayListItem label="{title}" value="{level}"  />
+			</List>
+		</layout:Grid>
+	</Panel>
+	
+	<Panel headerText="{i18n>projectsTitle}" class="breakPage sapUiSmallMarginBottom">
+		
+		<layout:VerticalLayout content="{path: '/projects/work', filters: [{path: 'showInCv', operator: 'EQ', value1: true}]}" 
+			class="prepareForPrint">
+			<form:SimpleForm editable="false" class="avoidBreak"
+				layout="ResponsiveGridLayout"
+				labelSpanL="2" labelSpanM="2"
+				emptySpanL="1" emptySpanM="1"
+				columnsL="1"  columnsM="1">
+				<form:title> <core:Title text="{name}" level="H5"  /> </form:title>
+				<form:content>
+					<Label text="{i18n>prjType}" />
+					<Text text="{i18n>prjTypeWork}" />
+					<Label text="{i18n>prjPeriod}" />
+					<Text text="{period}" />
+					<Label text="{i18n>prjDescription}" />
+					<Text text="{description}" />
+					<Label text="{i18n>prjKeyConcepts}" />
+					<Text text="{path: 'technologies', formatter: '.formatConcepts'}" />
+				</form:content>
+			</form:SimpleForm>
+		</layout:VerticalLayout>
+		
+		<layout:VerticalLayout content="{path: '/projects/academic', filters: [{path: 'showInCv', operator: 'EQ', value1: true}]}" 
+			class="prepareForPrint">
+			<form:SimpleForm editable="false" class="avoidBreak"
+				layout="ResponsiveGridLayout"
+				labelSpanL="2" labelSpanM="2"
+				emptySpanL="1" emptySpanM="1"
+				columnsL="1"  columnsM="1">
+				<form:title> <core:Title text="{name}" level="H5"  /> </form:title>
+				<form:content>
+					<Label text="{i18n>prjType}" />
+					<Text text="{i18n>prjTypeAcademic}" />
+					<Label text="{i18n>prjPeriod}" />
+					<Text text="{period}" />
+					<Label text="{i18n>prjDescription}" />
+					<Text text="{description}" />
+					<Label text="{i18n>prjKeyConcepts}" />
+					<Text text="{path: 'technologies', formatter: '.formatConcepts'}" />
+				</form:content>
+			</form:SimpleForm>
+		</layout:VerticalLayout>
+		
+		<layout:VerticalLayout content="{path: '/projects/personal', filters: [{path: 'showInCv', operator: 'EQ', value1: true}]}" 
+			class="prepareForPrint">
+			<form:SimpleForm editable="false" class="avoidBreak"
+				layout="ResponsiveGridLayout"
+				labelSpanL="2" labelSpanM="2"
+				emptySpanL="1" emptySpanM="1"
+				columnsL="1"  columnsM="1">
+				<form:title> <core:Title text="{name}" level="H5"  /> </form:title>
+				<form:content>
+					<Label text="{i18n>prjType}" />
+					<Text text="{i18n>prjTypePersonal}" />
+					<Label text="{i18n>prjPeriod}" />
+					<Text text="{period}" />
+					<Label text="{i18n>prjDescription}" />
+					<Text text="{description}" />
+					<Label text="{i18n>prjKeyConcepts}" />
+					<Text text="{path: 'technologies', formatter: '.formatConcepts'}" />
+				</form:content>
+			</form:SimpleForm>
+		</layout:VerticalLayout>
+	
+	<dependents>
+		<Dialog id="dlgPrint"
+			contentHeight="15rem" 
+			contentWidth="15rem" 
+			class="hideFromPrint"
+			afterOpen="onAfterDialogOpen"
+			title="{i18n>dlgPrintTitle}">
+			<Panel>
+				<Text text="{i18n>txtPrintAboutText}" />
+			</Panel>
+			<buttons>
+				<Button icon="sap-icon://print" text="{i18n>btnPrintAgainText}" press="onRePrint"/>
+				<Button icon="sap-icon://decline" text="{i18n>btnClosePrintText}" press="onClose"/>
+			</buttons>
+		</Dialog>
+	</dependents>	
+	
+	</Panel>
+</mvc:View>

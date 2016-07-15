@@ -1,0 +1,35 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<VBox items="{}">
+		<Panel>
+			<headerToolbar>
+				<Toolbar>
+					<Title text="{name}" />
+					<ToolbarSpacer />
+					<Button 
+						icon="sap-icon://chain-link"
+						press="openLink"
+						visible="{:= ${link} !== undefined }"/>
+					<Button
+						icon="sap-icon://picture"
+						press="openGallery"
+						visible="{:= ${images} !== undefined }"/>
+				</Toolbar>
+			</headerToolbar>
+			<HBox justifyContent="SpaceBetween" class="sapUiSmallMarginBottom">
+				<ObjectAttribute text="{period}" class="boldText"/>
+				<ObjectStatus text="{complexity}" state="{status}" class="lighterText" />	
+			</HBox>
+			<Text text="{description}" class="sapUiSmallMarginBottom sapUiTinyMarginBegin"/>
+			<ScrollContainer 
+				horizontal="true" 
+				vertical="false" 
+				width="100%" 
+				class="sapUiSmallMarginBottom scrollPadding"
+				content="{ path: 'technologies', templateShareable: true}">
+				<Token text="{name}" key="{name}" editable="false" class="sapUiTinyMarginEnd" />
+			</ScrollContainer>
+		</Panel>
+	</VBox>
+</core:FragmentDefinition>

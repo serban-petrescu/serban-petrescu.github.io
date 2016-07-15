@@ -1,5 +1,4 @@
-<mvc:View
-	controllerName="portfolio.view.App"
+<mvc:View controllerName="portfolio.controller.App"
 	xmlns:mvc="sap.ui.core.mvc"
 	displayBlock="true"
 	xmlns="sap.m">
