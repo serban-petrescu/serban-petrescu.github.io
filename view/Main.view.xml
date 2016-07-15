@@ -43,6 +43,7 @@
 						icon="sap-icon://print" 
 						text="{i18n>printCv}" 
 						tooltip="{i18n>printCv}" 
+						visible="{= !${device>/system/phone} }"
 						type="Transparent"
 						press="onPrintPress"/>
 						
