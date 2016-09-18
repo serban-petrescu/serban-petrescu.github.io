@@ -48,7 +48,7 @@ sap.ui.define([
 				iAge = fnCalculateAge(oBirthday),
 				oModel = new JSONModel(),
 				oInternalFormat = DateFormat.getDateInstance({pattern: "yyyyMMdd"}),
-				oExternalFormat = DateFormat.getDateInstance({style: "short"}),
+				oExternalFormat = DateFormat.getDateInstance({style: "medium"}),
 				sBase = jQuery.sap.getModulePath("portfolio"),
 				fnReplacei18n = function(oObject) {
 					var sKey,

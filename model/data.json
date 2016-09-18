@@ -645,6 +645,7 @@
 				"description": "i18n>prjBachelor4"
 			}],
 			"period": "2015 - 2016",
+			"link": "https://github.com/serban-petrescu/diploma-public",
 			"showInCv": true
 		}, {
 			"name": "i18n>prjSdDocumentGenerator",

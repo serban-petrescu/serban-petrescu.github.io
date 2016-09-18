@@ -1,34 +1,10 @@
 {
     "resources": [
         {
-            "name": "view/Main.view.xml"
+            "name": "favicon.ico"
         },
         {
-            "name": "view/App.view.xml"
-        },
-        {
-            "name": "view/Gallery.fragment.xml"
-        },
-        {
-            "name": "view/Downloads.fragment.xml"
-        },
-        {
-            "name": "view/ExperienceTimeline.fragment.xml"
-        },
-        {
-            "name": "view/ProjectList.fragment.xml"
-        },
-        {
-            "name": "view/Print.view.xml"
-        },
-        {
-            "name": "controller/Main.controller.js"
-        },
-        {
-            "name": "controller/App.controller.js"
-        },
-        {
-            "name": "controller/Print.controller.js"
+            "name": "downloads/SerbanPetrescu_CurriculumVitae.pdf"
         },
         {
             "name": "i18n/i18n.properties",
@@ -39,100 +15,124 @@
             "raw": "i18n/i18n.properties"
         },
         {
-            "name": "model/models.js"
-        },
-        {
             "name": "model/data.json"
         },
         {
-            "name": "Component.js"
+            "name": "model/models.js"
         },
         {
-            "name": "css/style.css"
+            "name": "controller/Main.controller.js"
+        },
+        {
+            "name": "controller/Print.controller.js"
+        },
+        {
+            "name": "controller/App.controller.js"
+        },
+        {
+            "name": "icons/linkedin.ico"
+        },
+        {
+            "name": "icons/bitbucket.ico"
+        },
+        {
+            "name": "icons/github.ico"
+        },
+        {
+            "name": "icons/scn.ico"
         },
         {
             "name": "manifest.json"
         },
         {
+            "name": "view/App.view.xml"
+        },
+        {
+            "name": "view/Gallery.fragment.xml"
+        },
+        {
+            "name": "view/ExperienceTimeline.fragment.xml"
+        },
+        {
+            "name": "view/ProjectList.fragment.xml"
+        },
+        {
+            "name": "view/Main.view.xml"
+        },
+        {
+            "name": "view/Print.view.xml"
+        },
+        {
+            "name": "view/Downloads.fragment.xml"
+        },
+        {
+            "name": "print.html"
+        },
+        {
             "name": "index.html"
         },
         {
-            "name": "images/Chitanta1.PNG"
+            "name": "css/style.css"
         },
         {
-            "name": "images/Chitanta2.PNG"
+            "name": "localprint.html"
         },
         {
-            "name": "images/Evidenta1.PNG"
+            "name": "Component.js"
         },
         {
-            "name": "images/Evidenta2.PNG"
+            "name": "preview_hidden.html"
         },
         {
-            "name": "images/Evidenta3.PNG"
-        },
-        {
-            "name": "images/Evidenta4.PNG"
-        },
-        {
-            "name": "images/Evidenta5.PNG"
-        },
-        {
-            "name": "images/Factura1.PNG"
+            "name": "localindex.html"
         },
         {
             "name": "images/Factura2.PNG"
         },
         {
-            "name": "images/Factura3.PNG"
+            "name": "images/Chitanta1.PNG"
         },
         {
-            "name": "images/Factura4.PNG"
+            "name": "images/hospital3.PNG"
         },
         {
-            "name": "images/Form1.PNG"
-        },
-        {
-            "name": "images/Form2.PNG"
-        },
-        {
-            "name": "images/Form3.PNG"
-        },
-        {
-            "name": "images/GDE1.PNG"
-        },
-        {
-            "name": "images/GDE2.PNG"
-        },
-        {
-            "name": "images/GDE3.PNG"
-        },
-        {
-            "name": "images/Manager1.PNG"
-        },
-        {
-            "name": "images/Manager2.PNG"
-        },
-        {
-            "name": "images/Manager3.PNG"
+            "name": "images/ticket2.PNG"
         },
         {
             "name": "images/Manager4.PNG"
         },
         {
-            "name": "images/profile-image-display.png"
+            "name": "images/hospital2.PNG"
         },
         {
-            "name": "images/profile-image-square.png"
-        },
-        {
-            "name": "images/profile.png"
-        },
-        {
-            "name": "images/webpaint1.PNG"
+            "name": "images/bank4.png"
         },
         {
             "name": "images/asm1.png"
+        },
+        {
+            "name": "images/ticket1.PNG"
+        },
+        {
+            "name": "images/Form1.PNG"
+        },
+        {
+            "name": "images/profile-image-display.png"
+        },
+        {
+            "name": "images/taxo1.PNG"
+        },
+        {
+            "name": "images/ticket3.PNG"
+        },
+        {
+            "name": "images/Manager2.PNG"
+        },
+        {
+            "name": "images/Factura4.PNG"
+        },
+        {
+            "name": "images/Evidenta1.PNG"
         },
         {
             "name": "images/asm2.png"
@@ -144,97 +144,97 @@
             "name": "images/backelor2.png"
         },
         {
-            "name": "images/backelor3.png"
-        },
-        {
-            "name": "images/backelor4.png"
-        },
-        {
-            "name": "images/bank1.PNG"
-        },
-        {
-            "name": "images/bank2.PNG"
-        },
-        {
-            "name": "images/bank3.PNG"
-        },
-        {
-            "name": "images/book1.PNG"
+            "name": "images/hospital1.PNG"
         },
         {
             "name": "images/documentGen0.PNG"
         },
         {
-            "name": "images/documentGen1.PNG"
-        },
-        {
-            "name": "images/hospital1.PNG"
-        },
-        {
-            "name": "images/hospital2.PNG"
-        },
-        {
-            "name": "images/hospital3.PNG"
+            "name": "images/bank1.PNG"
         },
         {
             "name": "images/internshipBill1.PNG"
         },
         {
-            "name": "images/internshipBill2.PNG"
+            "name": "images/Factura1.PNG"
         },
         {
             "name": "images/internshipBill3.PNG"
         },
         {
-            "name": "images/taxo1.PNG"
+            "name": "images/bank2.PNG"
+        },
+        {
+            "name": "images/GDE2.PNG"
+        },
+        {
+            "name": "images/Manager1.PNG"
+        },
+        {
+            "name": "images/bank3.PNG"
+        },
+        {
+            "name": "images/profile-image-square.png"
+        },
+        {
+            "name": "images/Evidenta4.PNG"
+        },
+        {
+            "name": "images/GDE3.PNG"
+        },
+        {
+            "name": "images/documentGen1.PNG"
+        },
+        {
+            "name": "images/Evidenta3.PNG"
+        },
+        {
+            "name": "images/internshipBill2.PNG"
+        },
+        {
+            "name": "images/Chitanta2.PNG"
+        },
+        {
+            "name": "images/Factura3.PNG"
+        },
+        {
+            "name": "images/backelor4.png"
+        },
+        {
+            "name": "images/Form2.PNG"
+        },
+        {
+            "name": "images/Manager3.PNG"
+        },
+        {
+            "name": "images/Evidenta5.PNG"
+        },
+        {
+            "name": "images/Evidenta2.PNG"
         },
         {
             "name": "images/taxo2.PNG"
         },
         {
-            "name": "images/bank4.png"
+            "name": "images/GDE1.PNG"
+        },
+        {
+            "name": "images/webpaint1.PNG"
+        },
+        {
+            "name": "images/Form3.PNG"
+        },
+        {
+            "name": "images/book1.PNG"
+        },
+        {
+            "name": "images/backelor3.png"
         },
         {
             "name": "images/bank5.png"
         },
         {
-            "name": "images/ticket1.PNG"
-        },
-        {
-            "name": "images/ticket2.PNG"
-        },
-        {
-            "name": "images/ticket3.PNG"
-        },
-        {
-            "name": "icons/bitbucket.ico"
-        },
-        {
-            "name": "icons/github.ico"
-        },
-        {
-            "name": "icons/linkedin.ico"
-        },
-        {
-            "name": "icons/scn.ico"
-        },
-        {
-            "name": "localindex.html"
-        },
-        {
-            "name": "preview_hidden.html"
-        },
-        {
-            "name": "localprint.html"
-        },
-        {
-            "name": "print.html"
-        },
-        {
-            "name": "downloads/SerbanPetrescu_CurriculumVitae.pdf"
-        },
-        {
-            "name": "favicon.ico"
+            "name": "images/profile.png"
         },
         {
             "name": "Component-preload.js",

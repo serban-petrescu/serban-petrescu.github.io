@@ -4,7 +4,7 @@
     xmlns ="sap.m">
 	
 
-	<List items="{}" class="sapUiTinyMarginBottom">
+	<List items="{}" class="sapUiTinyMarginBottom" backgroundDesign="Transparent">
 		<CustomListItem type="Inactive">
 			<layout:VerticalLayout >
 				<HBox alignItems="Center" alignContent="Center" class="sapUiTinyMarginBottom sapUiTinyMarginTop">
