@@ -12,7 +12,7 @@
 	"occupation": "i18n>roleOccupation",
 	"downloads": [{
 		"title":	"i18n>downloadEnglish",
-		"url":		"path>/downloads/SerbanPetrescu_CurriculumVitae.pdf"
+		"url":		"path>/downloads/Serban_Petrescu.pdf"
 	}],
 	"experience": {
 		"work": [{
@@ -498,6 +498,29 @@
 			"showInCv": false
 		}],
 		"work": [{
+			"name": "i18n>prjWorkNguw",
+			"complexity": "i18n>complexityHigh",
+			"status": "Error",
+			"description": "i18n>prjWorkNguwDesc",
+			"technologies": [{
+				"name": "i18n>prjTechJava"
+			}, {
+				"name": "i18n>prjTechR"
+			}, {
+				"name": "i18n>prjTechMySQL"
+			}, {
+				"name": "i18n>prjTechOlingo"
+			}, {
+				"name": "i18n>prjTechJaxRs"
+			}, {
+				"name": "i18n>prjTechJS"
+			}, {
+				"name": "i18n>prjTechUI5"
+			}],
+			"period": "i18n>current",
+			"link": "https://www.minnosphere.com/predictive-uw",
+			"showInCv": true
+		}, {
 			"name": "i18n>prjWorkGenRe",
 			"complexity": "i18n>complexityMedium",
 			"status": "Warning",

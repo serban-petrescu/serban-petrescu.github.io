@@ -4,7 +4,7 @@
             "name": "favicon.ico"
         },
         {
-            "name": "downloads/SerbanPetrescu_CurriculumVitae.pdf"
+            "name": "downloads/Serban_Petrescu.pdf"
         },
         {
             "name": "i18n/i18n.properties",
@@ -64,6 +64,9 @@
         },
         {
             "name": "view/Downloads.fragment.xml"
+        },
+        {
+            "name": "extended_runnable_file.html"
         },
         {
             "name": "print.html"
