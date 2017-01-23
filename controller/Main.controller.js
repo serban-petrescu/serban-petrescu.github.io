@@ -10,6 +10,10 @@ sap.ui.define([
 			this.getView().addStyleClass(this.getOwnerComponent().getContentDensityClass());
 			this.byId("dlgGallery").addStyleClass(this.getOwnerComponent().getContentDensityClass());
 			this.byId("acsDownloads").addStyleClass(this.getOwnerComponent().getContentDensityClass());
+			
+			jQuery.sap.delayedCall(1500, null, function() {
+				jQuery("#overlay").fadeOut(1000);
+			});
 		},
 		
 		/**
