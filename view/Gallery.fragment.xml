@@ -4,13 +4,13 @@
     xmlns="sap.m">
 	<Dialog id="dlgGallery"
 		stretch="true"
+		verticalScrolling="false"
 		title="{parts: [{path: 'i18n>galleryTitle'}, {path: 'name'}], formatter: '.formatGalleryTitle'}">
-		
+
 		<Carousel id="crsGallery"
 			class="sapUiContentPadding"
 			pages="{images}">
-			
-			<layout:FixFlex>
+			<layout:FixFlex >
 				<layout:fixContent>
 					<MessageStrip
 						text="{description}"
@@ -25,13 +25,12 @@
 						alt="{description}" 
 						decorative="false" 
 						width="100%"
-						height="100%"
+						height="98%"
 						backgroundSize="contain"
 						backgroundPosition="center"
 						densityAware="false"/>
 				</layout:flexContent>
 			</layout:FixFlex>
-			
 		</Carousel>
 		
 		<beginButton>
