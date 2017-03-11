@@ -255,7 +255,8 @@
 		"scn": "Serban.Petrescu",
 		"linkedin": "Serban-Petrescu",
 		"github": "Serban-Petrescu",
-		"bitbucket": "SerbanPetrescu"
+		"bitbucket": "SerbanPetrescu",
+		"stackoverflow": "Serban-Petrescu"
 	},
 	"icons": [{
 		"src": "path>/icons/scn.ico",
@@ -269,12 +270,16 @@
 	}, {
 		"src": "path>/icons/github.ico",
 		"href": "https://github.com/serban-petrescu/"
+	}, {
+		"src": "path>/icons/stackoverflow.ico",
+		"href": "http://stackoverflow.com/users/7612556/serban-petrescu?tab=profile"
 	}],
 	"href": {
 		"linkedin": "https://ro.linkedin.com/in/serban-petrescu-12b7a3a7",
 		"scn": "http://scn.sap.com/people/serban.petrescu",
 		"bitbucket": "https://bitbucket.org/serbanpetrescu/",
-		"github": "https://github.com/serban-petrescu/"
+		"github": "https://github.com/serban-petrescu/",
+		"stackoverflow": "http://stackoverflow.com/users/7612556/serban-petrescu?tab=profile"
 	},
 	"projects": {
 		"personal": [{

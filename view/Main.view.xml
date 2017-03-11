@@ -110,16 +110,24 @@
 							<m:Link text="{/phone}" press="callPhone" />
 							<m:Label text="{i18n>emailOutlook}"/>
 							<m:Link text="{/emails/outlook}" press="sendEmail" />
-							<m:Label text="{i18n>emailYahoo}"/>
-							<m:Link text="{/emails/yahoo}" press="sendEmail" />
+						</form:content>
+					</form:SimpleForm>
+					<form:SimpleForm 
+						labelSpanL="4"	labelSpanM="4"
+						emptySpanL="1" 	emptySpanM="1"
+						columnsL="1"	columnsM="1"
+						editable="false"  
+						layout="ResponsiveGridLayout"
+						xmlns:form="sap.ui.layout.form">
+						<form:content>
 							<m:Label text="{i18n>scn}"/>
 							<m:Link text="{/accounts/scn}" href="{/href/scn}"/>
 							<m:Label text="{i18n>linkedin}"/>
 							<m:Link text="{/accounts/linkedin}" href="{/href/linkedin}"/>
-							<m:Label text="{i18n>bitbucket}"/>
-							<m:Link text="{/accounts/bitbucket}" href="{/href/bitbucket}"/>
 							<m:Label text="{i18n>github}"/>
 							<m:Link text="{/accounts/github}" href="{/href/github}"/>
+							<m:Label text="{i18n>stackoverflow}"/>
+							<m:Link text="{/accounts/stackoverflow}" href="{/href/stackoverflow}"/>
 						</form:content>
 					</form:SimpleForm>
 				</ObjectPageSubSection>

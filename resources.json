@@ -11,10 +11,6 @@
             "raw": "i18n/i18n.properties"
         },
         {
-            "name": "i18n/i18n_en.properties",
-            "raw": "i18n/i18n.properties"
-        },
-        {
             "name": "model/data.json"
         },
         {
@@ -28,6 +24,9 @@
         },
         {
             "name": "controller/App.controller.js"
+        },
+        {
+            "name": "icons/stackoverflow.ico"
         },
         {
             "name": "icons/linkedin.ico"
@@ -72,13 +71,13 @@
             "name": "print.html"
         },
         {
+            "name": "README.md"
+        },
+        {
             "name": "index.html"
         },
         {
             "name": "css/style.css"
-        },
-        {
-            "name": "localprint.html"
         },
         {
             "name": "Component.js"
@@ -87,7 +86,7 @@
             "name": "preview_hidden.html"
         },
         {
-            "name": "localindex.html"
+            "name": "LICENSE"
         },
         {
             "name": "images/Factura2.PNG"
@@ -150,10 +149,10 @@
             "name": "images/hospital1.PNG"
         },
         {
-            "name": "images/documentGen0.PNG"
+            "name": "images/bank1.PNG"
         },
         {
-            "name": "images/bank1.PNG"
+            "name": "images/documentGen0.PNG"
         },
         {
             "name": "images/internshipBill1.PNG"
@@ -165,19 +164,19 @@
             "name": "images/internshipBill3.PNG"
         },
         {
-            "name": "images/bank2.PNG"
+            "name": "images/Manager1.PNG"
         },
         {
             "name": "images/GDE2.PNG"
         },
         {
-            "name": "images/Manager1.PNG"
-        },
-        {
-            "name": "images/bank3.PNG"
+            "name": "images/bank2.PNG"
         },
         {
             "name": "images/profile-image-square.png"
+        },
+        {
+            "name": "images/bank3.PNG"
         },
         {
             "name": "images/Evidenta4.PNG"
@@ -186,19 +185,19 @@
             "name": "images/GDE3.PNG"
         },
         {
-            "name": "images/documentGen1.PNG"
+            "name": "images/Evidenta3.PNG"
         },
         {
-            "name": "images/Evidenta3.PNG"
+            "name": "images/documentGen1.PNG"
         },
         {
             "name": "images/internshipBill2.PNG"
         },
         {
-            "name": "images/Chitanta2.PNG"
+            "name": "images/Factura3.PNG"
         },
         {
-            "name": "images/Factura3.PNG"
+            "name": "images/Chitanta2.PNG"
         },
         {
             "name": "images/backelor4.png"
