@@ -18,7 +18,16 @@
 		"work": [{
 			"period": {
 				"_text": "i18n>dateInterval",
-				"_params": ["date>20160201", "i18n>datePresent"]
+				"_params": ["date>20170301", "i18n>datePresent"]
+			},
+			"title": "i18n>msgWork3Title",
+			"body": "i18n>msgWork3Body",
+			"filter": "i18n>filterWork",
+			"icon": "sap-icon://business-card"
+		}, {
+			"period": {
+				"_text": "i18n>dateInterval",
+				"_params": ["date>20160201", "date>20170301"]
 			},
 			"title": "i18n>msgWork2Title",
 			"body": "i18n>msgWork2Body",
@@ -283,6 +292,45 @@
 	},
 	"projects": {
 		"personal": [{
+			"name": "i18n>prjSbwo",
+			"complexity": "i18n>complexityHigh",
+			"status": "Error",
+			"description": "i18n>prjSbwoDesc",
+			"technologies": [{
+				"name": "i18n>prjTechJava"
+			}, {
+				"name": "i18n>prjTechJPA"
+			}, {
+				"name": "i18n>prjTechOlingo"
+			}, {
+				"name": "i18n>prjTechJetty"
+			}, {
+				"name": "i18n>prjTechPicoContainer"
+			}, {
+				"name": "i18n>prjTechH2"
+			}, {
+				"name": "i18n>prjTechUI5"
+			}, {
+				"name": "i18n>prjTechJS"
+			}],
+			"showInCv": true,
+			"period": "i18n>current",
+			"link":   "https://github.com/serban-petrescu/sbwo"
+		}, {
+			"name": "i18n>prjUi5Auth",
+			"complexity": "i18n>complexityMedium",
+			"status": "Warning",
+			"description": "i18n>prjUi5AuthDesc",
+			"technologies": [{
+			}, {
+				"name": "i18n>prjTechUI5"
+			}, {
+				"name": "i18n>prjTechJS"
+			}],
+			"showInCv": true,
+			"period": "i18n>current",
+			"link":   "https://github.com/serban-petrescu/ui5-auth"
+		}, {
 			"name": "i18n>prjEpmWebsockets",
 			"complexity": "i18n>complexityMedium",
 			"status": "Warning",
@@ -302,7 +350,7 @@
 			}, {
 				"name": "i18n>prjTechWebSocket"
 			}],
-			"showInCv": true,
+			"showInCv": false,
 			"period": "2015",
 			"link":   "http://scn.sap.com/community/abap/connectivity/blog/2015/07/02/hcp-abap-and-websocket-part-1"
 		},{
