@@ -1,0 +1,13 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<ActionSheet id="acsDownloads"
+		title="{i18n>acsDownloadsTitle}"
+		showCancelButton="true"
+		placement="Bottom"
+		buttons="{/downloads}">
+		<buttons>
+			<Button text="{title}" tooltip="{title}" press="onDownloadActionPress"/>
+		</buttons>
+	</ActionSheet>
+</core:FragmentDefinition>

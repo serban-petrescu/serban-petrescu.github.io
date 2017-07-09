@@ -1,0 +1,34 @@
+{
+  "name": "serban-petrescu.github.io",
+  "version": "1.0.0",
+  "description": "Serban's portfolio website",
+  "main": "src/index.html",
+  "scripts": {
+    "start": "serve .",
+    "build": "grunt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/serban-petrescu/serban-petrescu.github.io.git"
+  },
+  "keywords": [
+    "ui5",
+    "portfolio"
+  ],
+  "private": true,
+  "author": "Serban Petrescu",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/serban-petrescu/serban-petrescu.github.io/issues"
+  },
+  "homepage": "http://serban-petrescu.github.io/",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-uglify": "^3.0.1",
+    "grunt-openui5": "^0.12.0",
+    "serve": "^6.0.2"
+  }
+}

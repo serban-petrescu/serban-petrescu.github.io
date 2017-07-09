@@ -18,14 +18,6 @@
     "sap.ui": {
         "_version": "1.1.0",
         "technology": "UI5",
-        "icons": {
-            "icon": "",
-            "favIcon": "",
-            "phone": "",
-            "phone@2": "",
-            "tablet": "",
-            "tablet@2": ""
-        },
         "deviceTypes": {
             "desktop": true,
             "tablet": true,
@@ -40,7 +32,7 @@
     "sap.ui5": {
         "_version": "1.1.0",
         "rootView": {
-            "viewName": "portfolio.view.App",
+            "viewName": "portfolio.view.Main",
             "type": "XML"
         },
         "dependencies": {
@@ -68,24 +60,6 @@
             "css": [
                 {
                     "uri": "css/style.css"
-                }
-            ]
-        },
-        "routing": {
-            "config": {
-                "viewType": "XML",
-                "viewPath": "portfolio.view",
-                "clearTarget": false,
-                "transition": "slide",
-                "targetAggregation": "pages",
-                "targetControl": "idAppControl"
-            },
-            "routes": [
-                {
-                    "pattern": ":all*:",
-                    "name": "catchall",
-                    "view": "Main",
-                    "viewLevel": 1
                 }
             ]
         }

@@ -1,3 +1,6 @@
 /.user.project.json
 /.project.json
 /neo-app.json
+
+/node_modules
+/dist
