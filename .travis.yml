@@ -2,6 +2,9 @@ language: node_js
 node_js: '7'
 before_script: npm install
 script: npm run build
+branches:
+  only:
+    - source
 cache:
   directories:
   - node_modules
