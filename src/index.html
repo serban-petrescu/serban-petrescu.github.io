@@ -89,11 +89,11 @@
                 name: "portfolio",
                 manifestFirst: true,
                 async: true
-            }).then(function(oComponent){
+            }).then(function (oComponent) {
                 sap.ui.require([
                     "sap/m/Shell",
                     "sap/ui/core/ComponentContainer"
-                ], function(Shell, ComponentContainer) {
+                ], function (Shell, ComponentContainer) {
                     new Shell({
                         app: new ComponentContainer({
                             height: "100%",

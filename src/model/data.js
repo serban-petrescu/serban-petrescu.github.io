@@ -97,8 +97,8 @@ sap.ui.define([], function () {
                 "order": 0,
                 "items": [{
                     "title": "i18n>skillC",
-                    "lt": 1,
-                    "level": "i18n>levelAdvanced"
+                    "lt": 2,
+                    "level": "i18n>levelMedium"
                 }, {
                     "title": "i18n>skillJava",
                     "lt": 1,
@@ -125,7 +125,7 @@ sap.ui.define([], function () {
                     "level": "i18n>levelMedium"
                 }, {
                     "title": "i18n>skillSQL",
-                    "lt": 2,
+                    "lt": 1,
                     "level": "i18n>levelMedium"
                 }, {
                     "title": "i18n>skillSQLScript",
@@ -136,21 +136,13 @@ sap.ui.define([], function () {
                     "lt": 3,
                     "level": "i18n>levelBasic"
                 }, {
-                    "title": "i18n>skillVHDL",
-                    "lt": 3,
-                    "level": "i18n>levelBasic"
-                }, {
                     "title": "i18n>skillCsharp",
                     "lt": 3,
                     "level": "i18n>levelBasic"
                 }, {
-                    "title": "i18n>skillLisp",
-                    "lt": 3,
-                    "level": "i18n>levelBasic"
-                }, {
-                    "title": "i18n>skillProlog",
-                    "lt": 3,
-                    "level": "i18n>levelBasic"
+                    "title": "i18n>skillTypescript",
+                    "lt": 2,
+                    "level": "i18n>levelMedium"
                 }]
             },
             "technologies": {
@@ -189,15 +181,11 @@ sap.ui.define([], function () {
                     "lt": 2,
                     "level": "i18n>levelMedium"
                 }, {
-                    "title": "i18n>skillXS",
-                    "lt": 2,
-                    "level": "i18n>levelMedium"
+                    "title": "i18n>skillXSC",
+                    "lt": 1,
+                    "level": "i18n>levelAdvanced"
                 }, {
                     "title": "i18n>skillSpring",
-                    "lt": 3,
-                    "level": "i18n>levelBasic"
-                }, {
-                    "title": "i18n>skillCMIS",
                     "lt": 3,
                     "level": "i18n>levelBasic"
                 }, {
@@ -209,7 +197,19 @@ sap.ui.define([], function () {
                     "lt": 3,
                     "level": "i18n>levelBasic"
                 }, {
-                    "title": "i18n>skillWindowsPhone",
+                    "title": "i18n>skillNodeJS",
+                    "lt": 2,
+                    "level": "i18n>levelMedium"
+                }, {
+                    "title": "i18n>skillBabelJS",
+                    "lt": 2,
+                    "level": "i18n>levelMedium"
+                }, {
+                    "title": "i18n>skillGrunt",
+                    "lt": 2,
+                    "level": "i18n>levelMedium"
+                }, {
+                    "title": "i18n>skillReact",
                     "lt": 3,
                     "level": "i18n>levelBasic"
                 }]
@@ -236,20 +236,20 @@ sap.ui.define([], function () {
                 "order": 2,
                 "items": [{
                     "title": "i18n>skillMysql",
-                    "lt": 2,
-                    "level": "i18n>levelMedium"
+                    "lt": 1,
+                    "level": "i18n>levelAdvanced"
                 }, {
                     "title": "i18n>skillHANADB",
                     "lt": 1,
                     "level": "i18n>levelAdvanced"
                 }, {
                     "title": "i18n>skillAdrb",
-                    "lt": 2,
-                    "level": "i18n>levelMedium"
-                }, {
-                    "title": "i18n>skillMSQL",
                     "lt": 3,
                     "level": "i18n>levelBasic"
+                }, {
+                    "title": "i18n>skillH2DB",
+                    "lt": 2,
+                    "level": "i18n>levelMedium"
                 }, {
                     "title": "i18n>skillPostgre",
                     "lt": 3,
@@ -322,14 +322,29 @@ sap.ui.define([], function () {
                 "complexity": "i18n>complexityMedium",
                 "status": "Warning",
                 "description": "i18n>prjUi5AuthDesc",
-                "technologies": [{}, {
+                "technologies": [{
                     "name": "i18n>prjTechUI5"
                 }, {
                     "name": "i18n>prjTechJS"
                 }],
                 "showInCv": true,
-                "period": "i18n>current",
+                "period": "2017",
                 "link": "https://github.com/serban-petrescu/ui5-auth"
+            }, {
+                "name": "i18n>prjUi5Viz",
+                "complexity": "i18n>complexityLow",
+                "status": "Success",
+                "description": "i18n>prjUi5VizDesc",
+                "technologies": [{
+                    "name": "i18n>prjTechUI5"
+                }, {
+                    "name": "i18n>prjTechJS"
+                }, {
+                    "name": "i18n>prjTechD3"
+                }],
+                "showInCv": false,
+                "period": "2017",
+                "link": "https://github.com/serban-petrescu/ui5-viz"
             }, {
                 "name": "i18n>prjEpmWebsockets",
                 "complexity": "i18n>complexityMedium",
@@ -390,7 +405,7 @@ sap.ui.define([], function () {
                 }, {
                     "name": "i18n>prjTechFabric"
                 }],
-                "showInCv": true,
+                "showInCv": false,
                 "period": "2015",
                 "images": [{
                     "path": "path>/images/GDE1.PNG",
@@ -551,6 +566,46 @@ sap.ui.define([], function () {
                 "showInCv": false
             }],
             "work": [{
+                "name": "i18n>prjWorkMsgCM",
+                "complexity": "i18n>complexityLow",
+                "status": "Success",
+                "description": "i18n>prjWorkMsgCMDesc",
+                "technologies": [{
+                    "name": "i18n>prjTechJava"
+                }, {
+                    "name": "i18n>prjTechSpring"
+                }, {
+                    "name": "i18n>prjTechMySQL"
+                }, {
+                    "name": "i18n>prjTechReact"
+                }, {
+                    "name": "i18n>prjTechRedux"
+                }],
+                "period": "i18n>current",
+                "link": "https://github.com/serban-petrescu/candidate-management",
+                "showInCv": true
+            }, {
+                "name": "i18n>prjWorkDiias",
+                "complexity": "i18n>complexityMedium",
+                "status": "Warning",
+                "description": "i18n>prjWorkDiiasDesc",
+                "technologies": [{
+                    "name": "i18n>prjTechNode"
+                }, {
+                    "name": "i18n>prjTechExpress"
+                }, {
+                    "name": "i18n>prjTechMongoDB"
+                }, {
+                    "name": "i18n>prjTechMongoose"
+                }, {
+                    "name": "i18n>prjTechAngular"
+                }, {
+                    "name": "i18n>prjTechTypeScript"
+                }],
+                "period": "i18n>current",
+                "link": "https://www.minnosphere.com/nguw",
+                "showInCv": true
+            }, {
                 "name": "i18n>prjWorkNguw",
                 "complexity": "i18n>complexityHigh",
                 "status": "Error",
@@ -570,8 +625,8 @@ sap.ui.define([], function () {
                 }, {
                     "name": "i18n>prjTechUI5"
                 }],
-                "period": "i18n>current",
-                "link": "https://www.minnosphere.com/predictive-uw",
+                "period": "2016 - 2017",
+                "link": "https://www.minnosphere.com/nguw",
                 "showInCv": true
             }, {
                 "name": "i18n>prjWorkGenRe",
