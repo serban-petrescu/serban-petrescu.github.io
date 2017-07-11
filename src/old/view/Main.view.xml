@@ -1,4 +1,4 @@
-<core:View controllerName="portfolio.controller.Main"
+<core:View controllerName="portfolio.old.controller.Main"
 	xmlns:core="sap.ui.core"
 	xmlns:html="http://www.w3.org/1999/xhtml"
 	xmlns:mvc="sap.ui.core.mvc"
@@ -55,7 +55,7 @@
                         <m:Link text="{/phone}" press="callPhone"/>
                         <m:Link text="{/emails/outlook}" press="sendEmail"/>
                         <layout:HorizontalLayout content="{/icons}">
-                            <m:Image src="{src}" press="onIconPress" densityAware="false" width="16px" height="16px" />
+                            <m:Image src="{src}" press="onIconPress" width="16px" height="16px" densityAware="false" />
                         </layout:HorizontalLayout>
                     </layout:VerticalLayout>
 
@@ -74,14 +74,14 @@
                 <ObjectPageSection title="{i18n>experienceTitle}" >
                     <ObjectPageSubSection title="{i18n>filterAcademic}" class="removeMarginUl">
                         <core:Fragment id="frgAcademicExperience"
-                            fragmentName="portfolio.view.ExperienceTimeline"
+                            fragmentName="portfolio.old.view.ExperienceTimeline"
                             type="XML"
                             binding="{/experience/academic}"/>
                     </ObjectPageSubSection>
 
                     <ObjectPageSubSection title="{i18n>filterWork}" class="removeMarginUl">
                         <core:Fragment id="frgWorkExperience"
-                            fragmentName="portfolio.view.ExperienceTimeline"
+                            fragmentName="portfolio.old.view.ExperienceTimeline"
                             type="XML"
                             binding="{/experience/work}"/>
                     </ObjectPageSubSection>
@@ -136,21 +136,21 @@
 
                 <ObjectPageSection title="{i18n>projectsTitle}" >
                     <ObjectPageSubSection title="{i18n>prjWork}">
-                        <core:Fragment fragmentName="portfolio.view.ProjectList" type="XML" binding="{/projects/work}"/>
+                        <core:Fragment fragmentName="portfolio.old.view.ProjectList" type="XML" binding="{/projects/work}"/>
                     </ObjectPageSubSection>
                     <ObjectPageSubSection title="{i18n>prjPersonal}">
-                        <core:Fragment fragmentName="portfolio.view.ProjectList" type="XML" binding="{/projects/personal}"/>
+                        <core:Fragment fragmentName="portfolio.old.view.ProjectList" type="XML" binding="{/projects/personal}"/>
                     </ObjectPageSubSection>
                     <ObjectPageSubSection title="{i18n>prjAcademic}">
-                        <core:Fragment fragmentName="portfolio.view.ProjectList" type="XML" binding="{/projects/academic}"/>
+                        <core:Fragment fragmentName="portfolio.old.view.ProjectList" type="XML" binding="{/projects/academic}"/>
                     </ObjectPageSubSection>
                 </ObjectPageSection>
 
             </ObjectPageLayout>
 
             <m:dependents>
-                <core:Fragment fragmentName="portfolio.view.Gallery" type="XML" />
-                <core:Fragment fragmentName="portfolio.view.Downloads" type="XML" />
+                <core:Fragment fragmentName="portfolio.old.view.Gallery" type="XML" />
+                <core:Fragment fragmentName="portfolio.old.view.Downloads" type="XML" />
             </m:dependents>
         </m:Page>
     </m:App>

@@ -6,11 +6,11 @@
     <meta charset="UTF-8">
 
     <title>Serban Petrescu - Curriculum Vitae</title>
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="../assets/icons/favicon.ico">
 
-    <script id="sap-ui-bootstrap" src="https://openui5.hana.ondemand.com/1.42.9/resources/sap-ui-core.js" data-sap-ui-libs="sap.m, sap.uxap"
-        data-sap-ui-theme="sap_belize" data-sap-ui-compatVersion="edge" data-sap-ui-language="en" data-sap-ui-resourceroots='{"portfolio": ""}'>
-
+    <script id="sap-ui-bootstrap" src="https://openui5.hana.ondemand.com/1.42.9/resources/sap-ui-core.js" data-sap-ui-theme="sap_belize"
+        data-sap-ui-compatVersion="edge" data-sap-ui-language="en" data-sap-ui-resourceroots='{"portfolio": "../"}' data-sap-ui-preload="async"
+        data-sap-ui-libs="sap.m, sap.ui.layout, sap.ui.core">
 
     </script>
 
@@ -18,8 +18,21 @@
 
     <script>
         sap.ui.getCore().attachInit(function () {
-            sap.ui.xmlview("portfolio.view.Print").placeAt("content");
-            document.documentElement.style.fontSize = "12px";
+            sap.ui.component({
+                name: "portfolio.print",
+                manifestFirst: true,
+                async: true
+            }).then(function (oComponent) {
+                sap.ui.require([
+                    "sap/ui/core/ComponentContainer"
+                ], function (ComponentContainer) {
+                    new ComponentContainer({
+                        height: "100%",
+                        component: oComponent
+                    }).placeAt("content");
+                    document.documentElement.style.fontSize = "12px";
+                });
+            });
         });
 
     </script>

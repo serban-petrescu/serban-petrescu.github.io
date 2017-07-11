@@ -4,7 +4,7 @@ sap.ui.define([
 ], function (Controller, jQuery) {
     "use strict";
 
-    return Controller.extend("portfolio.controller.Main", {
+    return Controller.extend("portfolio.old.controller.Main", {
 
         /** Lifecycle initialization hook. */
         onInit: function () {
@@ -118,7 +118,7 @@ sap.ui.define([
 
         /** Event handler for the press event of the print button. Opens the print page. */
         onPrintPress: function () {
-            window.open("print.html", "_blank");
+            window.open(jQuery.sap.getModulePath("portfolio.print") + "/index.html", "_blank");
         }
 
     });

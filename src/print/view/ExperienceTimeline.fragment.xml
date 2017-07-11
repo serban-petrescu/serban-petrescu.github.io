@@ -1,0 +1,22 @@
+<core:FragmentDefinition
+    xmlns:core="sap.ui.core"
+	xmlns:layout="sap.ui.layout"
+    xmlns="sap.m">
+
+
+	<List items="{}" class="sapUiTinyMarginBottom" backgroundDesign="Transparent">
+		<CustomListItem type="Inactive">
+			<layout:VerticalLayout >
+				<HBox alignItems="Center" alignContent="Center" class="sapUiTinyMarginBottom sapUiTinyMarginTop">
+					<core:Icon alt="{title}" src="{icon}" size="1.25rem" class="sapUiSmallMarginEnd sapUiSmallMarginBegin sapThemeLightText"/>
+					<layout:VerticalLayout>
+						<Title text="{title}" titleStyle="H5" level="H5"/>
+						<Text text="{period}" class="sapThemeLightText"/>
+					</layout:VerticalLayout>
+				</HBox>
+				<Text text="{body}" class="sapUiTinyMarginBottom"/>
+			</layout:VerticalLayout>
+		</CustomListItem>
+	</List>
+
+</core:FragmentDefinition>

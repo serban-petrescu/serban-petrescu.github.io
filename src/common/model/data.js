@@ -1,5 +1,10 @@
-sap.ui.define([], function () {
-    return {
+sap.ui.define([
+    "sap/ui/core/format/DateFormat",
+    "jquery.sap.global"
+], function (DateFormat, jQuery) {
+    "use strict";
+
+    const oRaw = {
         "name": "Șerban Petrescu",
         "phone": "+40 744 865 132",
         "location": "Cluj-Napoca, Romania",
@@ -924,4 +929,73 @@ sap.ui.define([], function () {
             }]
         }
     };
+
+    /**
+     * Calculate the age of a person based on the birthday.
+     * @param	{Date}	oBirthday	The person's birthday.
+     * @returns {int}	The age (in years).
+     */
+    const fnCalculateAge = (oBirthday) => {
+        const iDiff = Date.now() - oBirthday.getTime();
+        const oAgeDate = new Date(iDiff);
+        return Math.abs(oAgeDate.getUTCFullYear() - 1970);
+    };
+
+    /**
+     * Obtains the processed model data.
+     * @param   {ResourceBundle}    i18n    Translatable text bundle.
+     * @returns {object} The processed model data.
+     */
+    return function (i18n) {
+        let oBirthday = new Date(1993, 8, 7),
+            iAge = fnCalculateAge(oBirthday),
+            oInternalFormat = DateFormat.getDateInstance({
+                pattern: "yyyyMMdd"
+            }),
+            oExternalFormat = DateFormat.getDateInstance({
+                style: "medium"
+            }),
+            sBase = jQuery.sap.getModulePath("portfolio.assets"),
+            fnReplacei18n = (oObject) => {
+                let sKey,
+                    oResult;
+                if (typeof oObject === "string") {
+                    if (oObject.indexOf("i18n>") === 0) {
+                        return i18n.getText(oObject.substring(5));
+                    }
+                    if (oObject.indexOf("path>") === 0) {
+                        return sBase + oObject.substring(5);
+                    }
+                    if (oObject.indexOf("date>") === 0) {
+                        return oExternalFormat.format(oInternalFormat.parse(oObject.substring(5)));
+                    }
+                    return oObject;
+                }
+                if (oObject instanceof Array) {
+                    oResult = [];
+                    for (sKey = 0; sKey < oObject.length; ++sKey) {
+                        oResult.push(fnReplacei18n(oObject[sKey]));
+                    }
+                    return oResult;
+                }
+                if (typeof oObject === "object") {
+                    if (oObject.hasOwnProperty("_text")) {
+                        return jQuery.sap.formatMessage(fnReplacei18n(oObject._text),
+                            fnReplacei18n(oObject._params));
+                    } else {
+                        oResult = {};
+                        for (sKey in oObject) {
+                            oResult[sKey] = fnReplacei18n(oObject[sKey]);
+                        }
+                        return oResult;
+                    }
+                }
+                return oObject;
+            };
+
+        let oDat = fnReplacei18n(oRaw);
+        oDat.age = i18n.getText("ageYears", [iAge]);
+        return oDat;
+    }
+
 });

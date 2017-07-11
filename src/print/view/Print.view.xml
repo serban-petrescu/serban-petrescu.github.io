@@ -1,12 +1,12 @@
-<mvc:View controllerName="portfolio.controller.Print"
-	xmlns:core="sap.ui.core" 
-	xmlns:mvc="sap.ui.core.mvc" 
-	xmlns="sap.m" 
+<mvc:View controllerName="portfolio.print.controller.Print"
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
 	xmlns:layout="sap.ui.layout"
 	xmlns:form="sap.ui.layout.form"
 	xmlns:html="http://www.w3.org/1999/xhtml"
 	class="sapUiSizeCompact prepareForPrint">
-	
+
 	<Panel class="sapUiSmallMarginBottom">
 		<headerToolbar>
 			<Toolbar>
@@ -35,10 +35,10 @@
 					<Text text="{/phone}" />
 				</form:content>
 			</form:SimpleForm>
-			<Image decorative="false" 
-				densityAware="false" 
-				width="10rem" 
-				src="{/images/profile}" 
+			<Image decorative="false"
+				densityAware="false"
+				width="10rem"
+				src="{/images/profile}"
 				class="sapUiTinyMarginEnd">
 				<layoutData>
 					<FlexItemData growFactor="0" />
@@ -46,34 +46,34 @@
 			</Image>
 		</HBox>
 	</Panel>
-	
+
 	<Panel headerText="{i18n>education}" class="sizePaddingPanel avoidBreak sapUiSmallMarginBottom">
 		<core:Fragment id="frgAcademicExperience"
-			fragmentName="portfolio.view.ExperienceTimeline" 
-			type="XML" 
+			fragmentName="portfolio.print.view.ExperienceTimeline"
+			type="XML"
 			binding="{/experience/academic}"/>
 	</Panel>
-	
+
 	<Panel headerText="{i18n>workExperience}" class="sizePaddingPanel avoidBreak sapUiSmallMarginBottom">
 		<core:Fragment id="frgAcademicExperience"
-			fragmentName="portfolio.view.ExperienceTimeline" 
-			type="XML" 
+			fragmentName="portfolio.print.view.ExperienceTimeline"
+			type="XML"
 			binding="{/experience/work}"/>
 	</Panel>
-	
+
 	<Panel headerText="{i18n>skillsTitle}" class="avoidBreak breakPage sapUiSmallMarginBottom">
 		<layout:Grid defaultSpan="XL6 L6 M6 S6" hSpacing="2" vSpacing="2" content="{path: '/skills', sorter: {path: 'order'}}" >
-			<List headerText="{name}" 
+			<List headerText="{name}"
 				class="avoidBreak"
 				items="{ path: 'items', sorter: [{path: 'lt' }, {path: 'title'}]}">
 				<DisplayListItem label="{title}" value="{level}"  />
 			</List>
 		</layout:Grid>
 	</Panel>
-	
+
 	<Panel headerText="{i18n>projectsTitle}" class="breakPage sapUiSmallMarginBottom">
-		
-		<layout:VerticalLayout content="{path: '/projects/work', filters: [{path: 'showInCv', operator: 'EQ', value1: true}]}" 
+
+		<layout:VerticalLayout content="{path: '/projects/work', filters: [{path: 'showInCv', operator: 'EQ', value1: true}]}"
 			class="prepareForPrint">
 			<form:SimpleForm editable="false" class="avoidBreak"
 				layout="ResponsiveGridLayout"
@@ -93,8 +93,8 @@
 				</form:content>
 			</form:SimpleForm>
 		</layout:VerticalLayout>
-		
-		<layout:VerticalLayout content="{path: '/projects/academic', filters: [{path: 'showInCv', operator: 'EQ', value1: true}]}" 
+
+		<layout:VerticalLayout content="{path: '/projects/academic', filters: [{path: 'showInCv', operator: 'EQ', value1: true}]}"
 			class="prepareForPrint">
 			<form:SimpleForm editable="false" class="avoidBreak"
 				layout="ResponsiveGridLayout"
@@ -114,8 +114,8 @@
 				</form:content>
 			</form:SimpleForm>
 		</layout:VerticalLayout>
-		
-		<layout:VerticalLayout content="{path: '/projects/personal', filters: [{path: 'showInCv', operator: 'EQ', value1: true}]}" 
+
+		<layout:VerticalLayout content="{path: '/projects/personal', filters: [{path: 'showInCv', operator: 'EQ', value1: true}]}"
 			class="prepareForPrint">
 			<form:SimpleForm editable="false" class="avoidBreak"
 				layout="ResponsiveGridLayout"
@@ -135,11 +135,11 @@
 				</form:content>
 			</form:SimpleForm>
 		</layout:VerticalLayout>
-	
+
 	<dependents>
 		<Dialog id="dlgPrint"
-			contentHeight="15rem" 
-			contentWidth="15rem" 
+			contentHeight="15rem"
+			contentWidth="15rem"
 			class="hideFromPrint"
 			afterOpen="onAfterDialogOpen"
 			title="{i18n>dlgPrintTitle}">
@@ -151,7 +151,7 @@
 				<Button icon="sap-icon://decline" text="{i18n>btnClosePrintText}" press="onClose"/>
 			</buttons>
 		</Dialog>
-	</dependents>	
-	
+	</dependents>
+
 	</Panel>
 </mvc:View>

@@ -26,45 +26,6 @@
     padding: 0 1rem 0 1rem;
 }
 
-@page {
-    size: auto;
-    margin: 20mm 20mm 20mm 20mm;
-}
-
-@media screen {
-    .hideFromPrint {
-        display: block;
-    }
-    #sap-ui-blocklayer-popup {
-        opacity: 1;
-        background-color: white;
-    }
-}
-
-@media print {
-    .hideFromPrint,
-    .hideFromPrint * {
-        display: none;
-    }
-    .breakPage {
-        page-break-before: always;
-    }
-    #sap-ui-blocklayer-popup {
-        display: none;
-    }
-    .avoidBreak {
-        display: block;
-        page-break-inside: avoid;
-    }
-    .sapUiVlt.prepareForPrint {
-        display: block;
-    }
-    .prepareForPrint {
-        display: block;
-        float: none;
-    }
-}
-
 #overlay {
     top: 0;
     left: 0;

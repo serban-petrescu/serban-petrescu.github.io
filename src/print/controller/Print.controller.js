@@ -1,23 +1,11 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/ui/core/Fragment",
-    "portfolio/model/models",
     "jquery.sap.global"
-], function (Controller, Fragment, models, jQuery) {
+], function (Controller, Fragment, jQuery) {
     "use strict";
 
-    return Controller.extend("portfolio.controller.Print", {
-
-        /** Lifecycle initialization hook. */
-        onInit: function () {
-            var oView = this.getView(),
-                i18n = models.createResourceModel();
-
-            oView.setModel(i18n, "i18n");
-            oView.setModel(models.createMainModel(i18n.getResourceBundle()));
-
-        },
-
+    return Controller.extend("portfolio.print.controller.Print", {
         /** Lifecycle post-rendering hook. */
         onAfterRendering: function () {
             this.byId("dlgPrint").open();

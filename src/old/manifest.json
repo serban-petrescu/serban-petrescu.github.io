@@ -2,18 +2,13 @@
     "_version": "1.1.0",
     "sap.app": {
         "_version": "1.1.0",
-        "id": "portfolio",
+        "id": "portfolio.old",
         "type": "application",
-        "i18n": "i18n/i18n.properties",
         "applicationVersion": {
             "version": "1.0.0"
         },
-        "title": "{{appTitle}}",
-        "description": "{{appDescription}}",
-        "sourceTemplate": {
-            "id": "ui5template.basicSAPUI5ApplicationProject",
-            "version": "1.32.0"
-        }
+        "title": "Portfolio",
+        "description": "Portfolio"
     },
     "sap.ui": {
         "_version": "1.1.0",
@@ -32,7 +27,7 @@
     "sap.ui5": {
         "_version": "1.1.0",
         "rootView": {
-            "viewName": "portfolio.view.Main",
+            "viewName": "portfolio.old.view.Main",
             "type": "XML"
         },
         "dependencies": {
@@ -52,20 +47,9 @@
             "i18n": {
                 "type": "sap.ui.model.resource.ResourceModel",
                 "settings": {
-                    "bundleName": "portfolio.i18n.i18n"
+                    "bundleName": "portfolio.old.i18n.i18n"
                 }
             }
-        },
-        "resources": {
-            "css": [
-                {
-                    "uri": "css/style.css"
-                }
-            ]
         }
-    },
-    "sap.platform.hcp": {
-        "uri": "",
-        "_version": "1.1.0"
     }
 }

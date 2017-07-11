@@ -1,0 +1,42 @@
+.sizePaddingPanel>.sapMPanelContent {
+    padding: 0 1rem 0 1rem;
+}
+
+@page {
+    size: auto;
+    margin: 20mm 20mm 20mm 20mm;
+}
+
+@media screen {
+    .hideFromPrint {
+        display: block !important;
+    }
+    #sap-ui-blocklayer-popup {
+        opacity: 1 !important;
+        background-color: white !important;
+    }
+}
+
+@media print {
+    .hideFromPrint,
+    .hideFromPrint * {
+        display: none !important;
+    }
+    .breakPage {
+        page-break-before: always !important;
+    }
+    #sap-ui-blocklayer-popup {
+        display: none !important;
+    }
+    .avoidBreak {
+        display: block !important;
+        page-break-inside: avoid !important;
+    }
+    .sapUiVlt.prepareForPrint {
+        display: block !important;
+    }
+    .prepareForPrint {
+        display: block !important;
+        float: none !important;
+    }
+}
