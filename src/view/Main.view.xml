@@ -55,7 +55,7 @@
                         <m:Link text="{/phone}" press="callPhone"/>
                         <m:Link text="{/emails/outlook}" press="sendEmail"/>
                         <layout:HorizontalLayout content="{/icons}">
-                            <m:Image src="{src}" press="onIconPress" width="16px" height="16px" />
+                            <m:Image src="{src}" press="onIconPress" densityAware="false" width="16px" height="16px" />
                         </layout:HorizontalLayout>
                     </layout:VerticalLayout>
 
