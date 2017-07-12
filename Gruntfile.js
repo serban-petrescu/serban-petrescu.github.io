@@ -100,6 +100,7 @@ module.exports = function (grunt) {
                 files: ["src/**/*"],
                 tasks: ["default"],
                 options: {
+                    livereload: true,
                     spawn: false
                 }
             }
@@ -107,7 +108,9 @@ module.exports = function (grunt) {
         connect: {
             dist: {
                 options: {
+                    livereload: true,
                     base: "dist",
+                    hostname: "localhost",
                     port: 5000
                 }
             }
