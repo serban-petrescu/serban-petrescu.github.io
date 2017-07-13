@@ -73,6 +73,9 @@ module.exports = function (grunt) {
                 }, {
                     src: "stage/common/model/data.js",
                     dest: "dist/old/model/data-dbg.js",
+                }, {
+                    src: "stage/common/model/data.js",
+                    dest: "dist/pure/model/data-dbg.js",
                 }]
             },
             common: {
@@ -83,6 +86,9 @@ module.exports = function (grunt) {
                     src: "dist/common/model/data.js",
                     dest: "dist/old/model/data.js"
                 }, {
+                    src: "dist/common/model/data.js",
+                    dest: "dist/pure/model/data.js"
+                }, {
                     expand: true,
                     cwd: "dist/common/i18n",
                     src: "*.properties",
@@ -92,6 +98,11 @@ module.exports = function (grunt) {
                     cwd: "dist/common/i18n",
                     src: "*.properties",
                     dest: "dist/old/i18n"
+                }, {
+                    expand: true,
+                    cwd: "dist/common/i18n",
+                    src: "*.properties",
+                    dest: "dist/pure/i18n"
                 }]
             }
         },

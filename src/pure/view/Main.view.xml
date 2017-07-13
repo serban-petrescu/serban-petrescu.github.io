@@ -1,0 +1,22 @@
+<core:View controllerName="portfolio.pure.controller.Main"
+	xmlns:core="sap.ui.core"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc"
+    xmlns="portfolio.pure.control"
+	height="100%">
+
+    <Header title="{i18n>appDescription}">
+        <MenuItem text="{i18n>downloadShort}" press="onDownloadActionPress" />
+        <MenuItem text="{i18n>printShort}" visible="{device>/system/desktop}" press="onPrintPress"/>
+    </Header>
+
+    <Splash title="{/name}" subtitle="{/occupation}, {/roles/0/text}" linkText="{i18n>contactMeText}"  />
+
+    <Footer text="{i18n>footerText}">
+        <FooterLink text="OpenUI5" />
+        <FooterLink text="PureCSS" />
+        <FooterLink text="Grunt" />
+        <FooterLink text="BabelJS" />
+    </Footer>
+
+</core:View>
