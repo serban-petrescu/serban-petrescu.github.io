@@ -8,6 +8,23 @@ sap.ui.define([
         "name": "Șerban Petrescu",
         "phone": "+40 744 865 132",
         "location": "Cluj-Napoca, Romania",
+        "site": {
+            "repository": "https://github.com/serban-petrescu/serban-petrescu.github.io",
+            "print": jQuery.sap.getModulePath("portfolio.print") + "/index.html",
+            "libraries": [{
+                "name": "OpenUI5",
+                "url": "https://github.com/SAP/openui5"
+            }, {
+                "name": "Bulma",
+                "url": "https://github.com/jgthms/bulma"
+            }, {
+                "name": "GruntJS",
+                "url": "https://github.com/gruntjs/"
+            }, {
+                "name": "Babel",
+                "url": "https://github.com/babel/babel"
+            }]
+        },
         "images": {
             "profile": "path>/images/profile-image-square.png"
         },
@@ -29,7 +46,8 @@ sap.ui.define([
                 "title": "i18n>msgWork3Title",
                 "body": "i18n>msgWork3Body",
                 "filter": "i18n>filterWork",
-                "icon": "sap-icon://business-card"
+                "icon": "sap-icon://business-card",
+                "fa-icon": "address-card-o"
             }, {
                 "period": {
                     "_text": "i18n>dateInterval",
@@ -38,7 +56,8 @@ sap.ui.define([
                 "title": "i18n>msgWork2Title",
                 "body": "i18n>msgWork2Body",
                 "filter": "i18n>filterWork",
-                "icon": "sap-icon://business-card"
+                "icon": "sap-icon://business-card",
+                "fa-icon": "address-card-o"
             }, {
                 "period": {
                     "_text": "i18n>dateInterval",
@@ -47,7 +66,8 @@ sap.ui.define([
                 "title": "i18n>msgWorkTitle",
                 "body": "i18n>msgWorkBody",
                 "filter": "i18n>filterWork",
-                "icon": "sap-icon://business-card"
+                "icon": "sap-icon://business-card",
+                "fa-icon": "address-card-o"
             }, {
                 "period": {
                     "_text": "i18n>dateInterval",
@@ -56,7 +76,8 @@ sap.ui.define([
                 "title": "i18n>msgInternshipTitle",
                 "body": "i18n>msgInternshipBody",
                 "filter": "i18n>filterWork",
-                "icon": "sap-icon://business-card"
+                "icon": "sap-icon://business-card",
+                "fa-icon": "address-card-o"
             }],
             "academic": [{
                 "period": {
@@ -66,7 +87,8 @@ sap.ui.define([
                 "title": "i18n>msgCourseTitle",
                 "body": "i18n>msgCourseBody",
                 "filter": "i18n>filterAcademic",
-                "icon": "sap-icon://education"
+                "icon": "sap-icon://education",
+                "fa-icon": "university"
             }, {
                 "period": {
                     "_text": "i18n>dateInterval",
@@ -75,7 +97,8 @@ sap.ui.define([
                 "title": "i18n>collegeTitle",
                 "body": "i18n>collegeBody",
                 "filter": "i18n>filterAcademic",
-                "icon": "sap-icon://study-leave"
+                "icon": "sap-icon://study-leave",
+                "fa-icon": "graduation-cap"
             }, {
                 "period": {
                     "_text": "i18n>dateInterval",
@@ -84,7 +107,8 @@ sap.ui.define([
                 "title": "i18n>leonardoTitle",
                 "body": "i18n>leonardoBody",
                 "filter": "i18n>filterAcademic",
-                "icon": "sap-icon://education"
+                "icon": "sap-icon://education",
+                "fa-icon": "university"
             }, {
                 "period": {
                     "_text": "i18n>dateInterval",
@@ -93,7 +117,8 @@ sap.ui.define([
                 "title": "i18n>highSchoolTitle",
                 "body": "i18n>highSchoolBody",
                 "filter": "i18n>filterAcademic",
-                "icon": "sap-icon://education"
+                "icon": "sap-icon://education",
+                "fa-icon": "university"
             }]
         },
         "skills": {
@@ -321,7 +346,8 @@ sap.ui.define([
                 }],
                 "showInCv": true,
                 "period": "i18n>current",
-                "link": "https://github.com/serban-petrescu/sbwo"
+                "link": "https://github.com/serban-petrescu/sbwo",
+                "linkTitle": "i18n>prjLinkGitHub"
             }, {
                 "name": "i18n>prjUi5Auth",
                 "complexity": "i18n>complexityMedium",
@@ -334,7 +360,8 @@ sap.ui.define([
                 }],
                 "showInCv": true,
                 "period": "2017",
-                "link": "https://github.com/serban-petrescu/ui5-auth"
+                "link": "https://github.com/serban-petrescu/ui5-auth",
+                "linkTitle": "i18n>prjLinkGitHub"
             }, {
                 "name": "i18n>prjUi5Viz",
                 "complexity": "i18n>complexityLow",
@@ -349,7 +376,8 @@ sap.ui.define([
                 }],
                 "showInCv": false,
                 "period": "2017",
-                "link": "https://github.com/serban-petrescu/ui5-viz"
+                "link": "https://github.com/serban-petrescu/ui5-viz",
+                "linkTitle": "i18n>prjLinkGitHub"
             }, {
                 "name": "i18n>prjEpmWebsockets",
                 "complexity": "i18n>complexityMedium",
@@ -372,7 +400,8 @@ sap.ui.define([
                 }],
                 "showInCv": false,
                 "period": "2015",
-                "link": "http://scn.sap.com/community/abap/connectivity/blog/2015/07/02/hcp-abap-and-websocket-part-1"
+                "link": "http://scn.sap.com/community/abap/connectivity/blog/2015/07/02/hcp-abap-and-websocket-part-1",
+                "linkTitle": "i18n>prjLinkSCN"
             }, {
                 "name": "i18n>prjWebPaint",
                 "complexity": "i18n>complexityLow",
@@ -393,7 +422,8 @@ sap.ui.define([
                     "description": "i18n>prjWebPaintS1"
                 }],
                 "showInCv": false,
-                "link": "https://webpaint-p1940442392trial.dispatcher.hanatrial.ondemand.com/?hc_reset"
+                "link": "https://webpaint-p1940442392trial.dispatcher.hanatrial.ondemand.com/?hc_reset",
+                "linkTitle": "i18n>prjLinkApp"
             }, {
                 "name": "i18n>prjGDE",
                 "complexity": "i18n>complexityMedium",
@@ -588,6 +618,7 @@ sap.ui.define([
                 }],
                 "period": "i18n>current",
                 "link": "https://github.com/serban-petrescu/candidate-management",
+                "linkTitle": "i18n>prjLinkGitHub",
                 "showInCv": true
             }, {
                 "name": "i18n>prjWorkDiias",
@@ -609,6 +640,7 @@ sap.ui.define([
                 }],
                 "period": "i18n>current",
                 "link": "https://www.minnosphere.com/nguw",
+                "linkTitle": "i18n>prjLinkSite",
                 "showInCv": true
             }, {
                 "name": "i18n>prjWorkNguw",
@@ -632,6 +664,7 @@ sap.ui.define([
                 }],
                 "period": "2016 - 2017",
                 "link": "https://www.minnosphere.com/nguw",
+                "linkTitle": "i18n>prjLinkSite",
                 "showInCv": true
             }, {
                 "name": "i18n>prjWorkGenRe",
@@ -686,6 +719,7 @@ sap.ui.define([
                 }],
                 "period": "2014 - 2016",
                 "link": "http://www.msg-global.com/lifereinsurance.0.html",
+                "linkTitle": "i18n>prjLinkSite",
                 "showInCv": true
             }, {
                 "name": "i18n>prjWorkHCP",
@@ -717,6 +751,7 @@ sap.ui.define([
                 }],
                 "period": "2015",
                 "link": "http://www.msg-global.com/sap_policy_management.0.html",
+                "linkTitle": "i18n>prjLinkSite",
                 "showInCv": false
             }, {
                 "name": "i18n>prjWorkInternship",
@@ -782,6 +817,7 @@ sap.ui.define([
                 }],
                 "period": "2015 - 2016",
                 "link": "https://github.com/serban-petrescu/diploma-public",
+                "linkTitle": "i18n>prjLinkGitHub",
                 "showInCv": true
             }, {
                 "name": "i18n>prjSdDocumentGenerator",
@@ -890,6 +926,7 @@ sap.ui.define([
                 }],
                 "period": "2015",
                 "link": "https://uidproject-p1940442392trial.dispatcher.hanatrial.ondemand.com/webapp/index.html?hc_reset",
+                "linkTitle": "i18n>prjLinkApp",
                 "showInCv": false
             }, {
                 "name": "i18n>prjSdBookstore",
@@ -935,10 +972,27 @@ sap.ui.define([
      * @param	{Date}	oBirthday	The person's birthday.
      * @returns {int}	The age (in years).
      */
-    const fnCalculateAge = (oBirthday) => {
+    const fnCalculateAge = oBirthday => {
         const iDiff = Date.now() - oBirthday.getTime();
         const oAgeDate = new Date(iDiff);
         return Math.abs(oAgeDate.getUTCFullYear() - 1970);
+    };
+
+    const nTagFactor = 4;
+
+    const fnCalculateSize = (aProjects) => {
+        const fnSumTagLength = (s, tag) => s + tag.name.length;
+        const fnComputeRaw = oProject => oProject.description.length +
+            oProject.technologies.reduce(fnSumTagLength, 0) * nTagFactor +
+            oProject.complexity.length * nTagFactor;
+        aProjects.forEach(oProject => oProject.size = fnComputeRaw(oProject));
+        const nMax = Math.max(...aProjects.map(p => p.size));
+        aProjects.forEach(oProject => oProject.size = Math.max(3, Math.ceil(oProject.size * 8 / nMax)));
+    };
+
+    const fnCalculateSizeForAll = (mProjects) => {
+        const aDeep = jQuery.map(mProjects, t => t);
+        fnCalculateSize(aDeep.reduce((a, b) => a.concat(b), []));
     };
 
     /**
@@ -995,6 +1049,7 @@ sap.ui.define([
 
         let oDat = fnReplacei18n(oRaw);
         oDat.age = i18n.getText("ageYears", [iAge]);
+        fnCalculateSizeForAll(oDat.projects);
         return oDat;
     }
 

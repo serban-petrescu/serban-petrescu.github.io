@@ -1,11 +1,11 @@
 sap.ui.define([
     "sap/ui/core/UIComponent",
     "sap/ui/Device",
-    "portfolio/pure/model/models"
+    "portfolio/bulma/model/models"
 ], function (UIComponent, Device, models) {
     "use strict";
 
-    return UIComponent.extend("portfolio.pure.Component", {
+    return UIComponent.extend("portfolio.bulma.Component", {
 
         metadata: {
             manifest: "json"

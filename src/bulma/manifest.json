@@ -2,7 +2,7 @@
     "_version": "1.1.0",
     "sap.app": {
         "_version": "1.1.0",
-        "id": "portfolio.pure",
+        "id": "portfolio.bulma",
         "type": "application",
         "applicationVersion": {
             "version": "1.0.0"
@@ -18,32 +18,23 @@
             "tablet": true,
             "phone": true
         },
-        "supportedThemes": [
-            "sap_hcb",
-            "sap_bluecrystal",
-            "sap_belize"
-        ]
+        "supportedThemes": []
     },
     "sap.ui5": {
         "_version": "1.1.0",
         "rootView": {
-            "viewName": "portfolio.pure.view.Main",
-            "type": "XML"
+            "viewName": "portfolio.bulma.view.Main",
+            "type": "XML",
+            "id": "main"
         },
         "dependencies": {
-            "minUI5Version": "1.40.0",
-            "libs": {
-                "sap.ui.core": {}
-            }
-        },
-        "contentDensities": {
-            "compact": true
+            "minUI5Version": "1.40.0"
         },
         "models": {
             "i18n": {
                 "type": "sap.ui.model.resource.ResourceModel",
                 "settings": {
-                    "bundleName": "portfolio.pure.i18n.i18n"
+                    "bundleName": "portfolio.bulma.i18n.i18n"
                 }
             }
         }

@@ -10,8 +10,12 @@
     <title>Serban's Portfolio</title>
     <link rel="shortcut icon" href="assets/icons/favicon.ico">
 
-    <link rel="stylesheet" type="text/css" href="old/css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="bulma/css/style.css">
+    <script id="sap-ui-bootstrap" src="https://openui5.hana.ondemand.com/1.42.9/resources/sap-ui-core.js" data-sap-ui-compatVersion="edge"
+        data-sap-ui-language="en" data-sap-ui-resourceroots='{"portfolio": "../"}' data-sap-ui-preload="async" data-sap-ui-libs="sap.ui.core">
+
+
+    </script>
 
     <script type="application/ld+json">
         {
@@ -52,53 +56,25 @@
     <meta name="google-site-verification" content="fQ35AC-TfmlRNL9pWujKhPtnU9etefuVaw75YoO01pM" />
 </head>
 
-<body class="sapUiBody" style="overflow:hidden">
-    <div id="overlay">
-        <div id="overlay-spinner">
-            <div class="sk-fading-circle">
-                <div class="sk-circle1 sk-circle"></div>
-                <div class="sk-circle2 sk-circle"></div>
-                <div class="sk-circle3 sk-circle"></div>
-                <div class="sk-circle4 sk-circle"></div>
-                <div class="sk-circle5 sk-circle"></div>
-                <div class="sk-circle6 sk-circle"></div>
-                <div class="sk-circle7 sk-circle"></div>
-                <div class="sk-circle8 sk-circle"></div>
-                <div class="sk-circle9 sk-circle"></div>
-                <div class="sk-circle10 sk-circle"></div>
-                <div class="sk-circle11 sk-circle"></div>
-                <div class="sk-circle12 sk-circle"></div>
-            </div>
-        </div>
-    </div>
-
+<body>
     <div id="content">
 
     </div>
 
-    <script id="sap-ui-bootstrap" src="https://openui5.hana.ondemand.com/1.42.9/resources/sap-ui-core.js" data-sap-ui-theme="sap_belize"
-        data-sap-ui-compatVersion="edge" data-sap-ui-language="en" data-sap-ui-resourceroots='{"portfolio": "../"}' data-sap-ui-preload="async"
-        data-sap-ui-libs="sap.m, sap.uxap, sap.ui.layout, sap.ui.core">
-
-
-    </script>
-
     <script>
         sap.ui.getCore().attachInit(function () {
             sap.ui.component({
-                name: "portfolio.old",
+                id: "bulma",
+                name: "portfolio.bulma",
                 manifestFirst: true,
                 async: true
             }).then(function (oComponent) {
                 sap.ui.require([
-                    "sap/m/Shell",
                     "sap/ui/core/ComponentContainer"
-                ], function (Shell, ComponentContainer) {
-                    new Shell({
-                        app: new ComponentContainer({
-                            height: "100%",
-                            component: oComponent
-                        })
+                ], function (ComponentContainer) {
+                    new ComponentContainer({
+                        height: "100%",
+                        component: oComponent
                     }).placeAt("content");
                 });
             });

@@ -1,0 +1,175 @@
+<core:View controllerName="portfolio.bulma.controller.Main"
+	xmlns:core="sap.ui.core"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc"
+    xmlns="portfolio.bulma.control"
+	height="100%">
+
+    <NavBar brandText="{i18n>appTitle}">
+        <startItems>
+            <NavBarMenuItem text="{i18n>aboutTitle}" href="#about" />
+            <NavBarMenuItem text="{i18n>experienceTitle}" href="#experience">
+                <NavBarMenuItem text="{i18n>filterAcademic}" href="#academicExperience" />
+                <NavBarMenuItem text="{i18n>filterWork}" href="#workExperience" />
+            </NavBarMenuItem>
+            <NavBarMenuItem text="{i18n>skillsTitle}" href="#skills">
+                <NavBarMenuItem text="{i18n>groupProgramming}" href="#skillsProgramming" />
+                <NavBarMenuItem text="{i18n>groupTechnologies}" href="#skillsTechnologies" />
+                <NavBarMenuItem text="{i18n>groupDB}" href="#skillsDB" />
+                <NavBarMenuItem text="{i18n>groupLanguages}" href="#skillsLanguages" />
+            </NavBarMenuItem>
+            <NavBarMenuItem text="{i18n>contactTitle}" href="#contact" />
+            <NavBarMenuItem text="{i18n>projectsTitle}" href="#projects" >
+                <NavBarMenuItem text="{i18n>prjWork}" href="#projectsWork" />
+                <NavBarMenuItem text="{i18n>prjPersonal}" href="#projectsPersonal" />
+                <NavBarMenuItem text="{i18n>prjAcademic}" href="#projectsAcademic" />
+            </NavBarMenuItem>
+        </startItems>
+        <endItems>
+            <NavBarButton tooltip="{i18n>downloadShort}" href="{/downloads/0/url}"
+                icon="download" primary="true" />
+            <NavBarButton tooltip="{i18n>printShort}" href="{/site/print}"
+                icon="print" visible="{device>/system/desktop}" primary="true" />
+        </endItems>
+    </NavBar>
+
+    <Hero title="{/name}" subtitle="{/occupation}, {/roles/0/text}"   />
+
+    <Section>
+        <Title name="about" text="{i18n>aboutTitle}"/>
+        <MediaObject text="{i18n>aboutText}" src="{/images/profile}" icons="{/icons}">
+            <MediaObjectIcon src="{src}" href="{href}" />
+        </MediaObject>
+    </Section>
+
+    <Section>
+        <Title name="experience" text="{i18n>experienceTitle}"/>
+        <ResponsiveDualContainer>
+            <first>
+                <Title name="academicExperience" text="{i18n>filterAcademic}" level="5"/>
+                <ExperienceContainer boxes="{/experience/academic}">
+                    <ExperienceBox title="{title}" period="{period}" description="{body}" icon="{fa-icon}" />
+                </ExperienceContainer>
+            </first>
+            <second>
+                <Title name="workExperience" text="{i18n>filterWork}" level="5"/>
+                <ExperienceContainer boxes="{/experience/work}">
+                    <ExperienceBox title="{title}" period="{period}" description="{body}" icon="{fa-icon}" />
+                </ExperienceContainer>
+            </second>
+        </ResponsiveDualContainer>
+    </Section>
+
+    <Section>
+        <Title name="skills" text="{i18n>skillsTitle}"/>
+        <ResponsiveDualContainer>
+            <first>
+                <Title name="skillsProgramming" text="{i18n>groupProgramming}" level="5"/>
+                <SkillTable skillHeader="{i18n>skillHeader}" levelHeader="{i18n>skillLevel}"
+                    skills="{path: '/skills/programming/items', sorter: [{path: 'lt' }, {path: 'title'}]}" >
+                    <core:Item key="{title}" text="{level}" />
+                </SkillTable>
+            </first>
+            <second>
+                <Title name="skillsTechnologies" text="{i18n>groupTechnologies}" level="5"/>
+                <SkillTable skillHeader="{i18n>skillHeader}" levelHeader="{i18n>skillLevel}"
+                    skills="{path: '/skills/technologies/items', sorter: [{path: 'lt' }, {path: 'title'}]}" >
+                    <core:Item key="{title}" text="{level}" />
+                </SkillTable>
+            </second>
+        </ResponsiveDualContainer>
+        <ResponsiveDualContainer>
+            <first>
+                <Title name="skillsDB" text="{i18n>groupDB}" level="5"/>
+                <SkillTable skillHeader="{i18n>skillHeader}" levelHeader="{i18n>skillLevel}"
+                    skills="{path: '/skills/databases/items', sorter: [{path: 'lt' }, {path: 'title'}]}" >
+                    <core:Item key="{title}" text="{level}" />
+                </SkillTable>
+            </first>
+            <second>
+                <Title name="skillsLanguages" text="{i18n>groupLanguages}" level="5"/>
+                <SkillTable skillHeader="{i18n>skillHeader}" levelHeader="{i18n>skillLevel}"
+                    skills="{path: '/skills/languages/items', sorter: [{path: 'lt' }, {path: 'title'}]}" >
+                    <core:Item key="{title}" text="{level}" />
+                </SkillTable>
+            </second>
+        </ResponsiveDualContainer>
+    </Section>
+
+    <Section>
+        <Title name="contact" text="{i18n>contactTitle}"/>
+        <ContactPanel address="{/location}" addressLabel="{i18n>location}" phone="{/phone}" phoneLabel="{i18n>phone}"
+            email="{/emails/outlook}" emailLabel="{i18n>emailOutlook}" accountsLabel="{i18n>accountsLabel}">
+            <Link text="{i18n>scn}" href="{/href/scn}"/>
+            <Link text="{i18n>linkedin}" href="{/href/linkedin}"/>
+            <Link text="{i18n>github}" href="{/href/github}"/>
+            <Link text="{i18n>stackoverflow}" href="{/href/stackoverflow}"/>
+        </ContactPanel>
+    </Section>
+
+    <Section>
+        <Title name="projects" text="{i18n>projectsTitle}"/>
+        <Title name="projectsWork" text="{i18n>prjWork}" level="5"/>
+        <TileContainer content="{/projects/work}">
+            <ProjectCard title="{name}" description="{description}" period="{period}" difficultyText="{complexity}"
+                difficultyState="{status}" topics="{path: 'technologies', templateShareable: true}">
+                <topics>
+                    <core:Item text="{name}" />
+                </topics>
+                <links>
+                    <ProjectCardLink href="{link}" text="{linkTitle}" visible="{:= ${link} !== undefined }" />
+                    <ProjectCardLink text="{i18n>openGalleryText}" visible="{:= ${images} !== undefined }" press="onOpenGallery" />
+                </links>
+                <layoutData>
+                    <TileLayoutData size="{size}" />
+                </layoutData>
+            </ProjectCard>
+        </TileContainer>
+        <Title name="projectsPersonal" text="{i18n>prjPersonal}" level="5"/>
+        <TileContainer content="{/projects/personal}">
+            <ProjectCard title="{name}" description="{description}" period="{period}" difficultyText="{complexity}"
+                difficultyState="{status}" topics="{path: 'technologies', templateShareable: true}">
+                <topics>
+                    <core:Item text="{name}" />
+                </topics>
+                <links>
+                    <ProjectCardLink href="{link}" text="{linkTitle}" visible="{:= ${link} !== undefined }" />
+                    <ProjectCardLink text="{i18n>openGalleryText}" visible="{:= ${images} !== undefined }" press="onOpenGallery" />
+                </links>
+                <layoutData>
+                    <TileLayoutData size="{size}" />
+                </layoutData>
+            </ProjectCard>
+        </TileContainer>
+        <Title name="projectsAcademic" text="{i18n>prjAcademic}" level="5"/>
+        <TileContainer content="{/projects/academic}">
+            <ProjectCard title="{name}" description="{description}" period="{period}" difficultyText="{complexity}"
+                difficultyState="{status}" topics="{path: 'technologies', templateShareable: true}">
+                <topics>
+                    <core:Item text="{name}" />
+                </topics>
+                <links>
+                    <ProjectCardLink href="{link}" text="{linkTitle}" visible="{:= ${link} !== undefined }" />
+                    <ProjectCardLink text="{i18n>openGalleryText}" visible="{:= ${images} !== undefined }" press="onOpenGallery" />
+                </links>
+                <layoutData>
+                    <TileLayoutData size="{size}" />
+                </layoutData>
+            </ProjectCard>
+        </TileContainer>
+    </Section>
+
+    <Footer text="{i18n>footerText}" href="{/site/repository}" links="{/site/libraries}">
+        <Link text="{name}" href="{url}" />
+    </Footer>
+
+    <FeedbackToast id="toast" intro="{i18n>feedbackIntro}" text="{i18n>feedbackText}" press="onPressFeedback" />
+
+    <ModalFeedbackForm id="dlgFeedback" title="{i18n>feedbackFormTitle}" submitText="{i18n>feedbackFormSubmit}"
+        ratingLabel="{i18n>feedbackFormRating}" areaLabel="{i18n>feedbackFormArea}" submit="onFeedbackSubmit" />
+
+    <ModalGallery id="dlgGallery" previousButtonText="{i18n>previous}"
+        nextButtonText="{i18n>next}" items="{images}" title="{name}">
+        <GalleryItem src="{path}" text="{description}"/>
+    </ModalGallery>
+</core:View>

@@ -1,0 +1,108 @@
+@import "../../../node_modules/bulma/sass/utilities/initial-variables"
+
+$primary: #427cac
+
+@import "../../../node_modules/bulma/bulma"
+@import "../../../node_modules/font-awesome/css/font-awesome"
+
+
+.pagination.is-fullwidth
+    width: 100%
+
+.textarea.feedback-area
+    resize: none
+    min-height: initial
+    height: 5em
+
+.experience-icon
+    margin: 0.5em
+
+.toast
+    position: fixed
+    text-align: center
+    bottom: 1em
+    width: 100%
+
+.toast > .notification
+    max-width: 60%
+    margin: auto
+
+.modal-card-body.gallery-item
+    padding: 0
+    background-size: contain
+    background-position: center center
+    background-repeat: no-repeat
+    position: relative
+
+.gallery-item-close.delete
+    position: absolute
+    top: 0.5em
+    right: 0.5em
+
+.notification.gallery-item-description
+    width: 100%
+    padding: 0.5em
+    flex-grow: 0
+    flex-shrink: 0
+    margin: 0
+    border-radius: 0
+    display: flex
+    align-items: center
+
+.notification > a.gallery-item-left, .notification > a.gallery-item-right
+    flex-grow: 0
+    text-decoration: none
+
+.gallery-item-text
+    flex-grow: 1
+    padding: 0 0.5em 0 0.5em
+
+.modal-background
+    z-index: 100
+
+.modal-card
+    z-index: 105
+
+.round
+    border-radius: 50%
+
+.navbar.fixed
+    position: fixed
+    width: 100%
+    z-index: 5
+    max-height: 100%
+
+.contact-container
+    display: table
+
+.contact-row
+    display: table-row
+
+.contact-cell
+    display: table-cell
+    padding-top: 0.25rem
+    padding-bottom: 0.25rem
+
+.contact-cell-dummy
+    display: table-cell
+    width: 1em
+
+.tile.padding
+    padding: 0.5em
+
+.very-small-margin
+    margin: 0.25rem
+
++touch
+    .navbar.fixed
+        overflow-y: auto
+
++mobile
+    .gallery-card
+        width: 100vw
+        height: 100vh
+
++from($tablet)
+    .gallery-card
+        width: 90vw
+        height: 90vh
