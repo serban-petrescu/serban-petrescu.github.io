@@ -2,6 +2,7 @@
 /.project.json
 /neo-app.json
 
+/.vscode
 /node_modules
 /dist
 /stage
