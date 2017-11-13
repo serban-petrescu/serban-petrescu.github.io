@@ -82,6 +82,16 @@ sap.ui.define([
             "academic": [{
                 "period": {
                     "_text": "i18n>dateInterval",
+                    "_params": ["date>20171001", "i18n>datePresent"]
+                },
+                "title": "i18n>masterTitle",
+                "body": "i18n>masterBody",
+                "filter": "i18n>filterAcademic",
+                "icon": "sap-icon://education",
+                "fa-icon": "graduation-cap"
+            }, {
+                "period": {
+                    "_text": "i18n>dateInterval",
                     "_params": ["date>20131001", "date>20140115"]
                 },
                 "title": "i18n>msgCourseTitle",
@@ -127,8 +137,8 @@ sap.ui.define([
                 "order": 0,
                 "items": [{
                     "title": "i18n>skillC",
-                    "lt": 2,
-                    "level": "i18n>levelMedium"
+                    "lt": 3,
+                    "level": "i18n>levelBasic"
                 }, {
                     "title": "i18n>skillJava",
                     "lt": 1,
@@ -147,8 +157,8 @@ sap.ui.define([
                     "level": "i18n>levelMedium"
                 }, {
                     "title": "i18n>skillPHP",
-                    "lt": 2,
-                    "level": "i18n>levelMedium"
+                    "lt": 3,
+                    "level": "i18n>levelBasic"
                 }, {
                     "title": "i18n>skillHTML",
                     "lt": 2,
@@ -216,8 +226,8 @@ sap.ui.define([
                     "level": "i18n>levelAdvanced"
                 }, {
                     "title": "i18n>skillSpring",
-                    "lt": 3,
-                    "level": "i18n>levelBasic"
+                    "lt": 1,
+                    "level": "i18n>levelAdvanced"
                 }, {
                     "title": "i18n>skillAngular",
                     "lt": 3,
@@ -240,8 +250,8 @@ sap.ui.define([
                     "level": "i18n>levelMedium"
                 }, {
                     "title": "i18n>skillReact",
-                    "lt": 3,
-                    "level": "i18n>levelBasic"
+                    "lt": 2,
+                    "level": "i18n>levelMedium"
                 }]
             },
             "languages": {
@@ -278,12 +288,12 @@ sap.ui.define([
                     "level": "i18n>levelBasic"
                 }, {
                     "title": "i18n>skillH2DB",
-                    "lt": 2,
-                    "level": "i18n>levelMedium"
+                    "lt": 1,
+                    "level": "i18n>levelAdvanced"
                 }, {
                     "title": "i18n>skillPostgre",
-                    "lt": 3,
-                    "level": "i18n>levelBasic"
+                    "lt": 2,
+                    "level": "i18n>levelMedium"
                 }]
             }
         },
@@ -313,6 +323,9 @@ sap.ui.define([
         }, {
             "src": "path>/icons/stackoverflow.ico",
             "href": "http://stackoverflow.com/users/7612556/serban-petrescu?tab=profile"
+        }, {
+            "src": "path>/icons/twitter.ico",
+            "href": "https://twitter.com/petrescu_serban"
         }],
         "href": {
             "linkedin": "https://ro.linkedin.com/in/serban-petrescu-12b7a3a7",
@@ -349,6 +362,24 @@ sap.ui.define([
                 "link": "https://github.com/serban-petrescu/sbwo",
                 "linkTitle": "i18n>prjLinkGitHub"
             }, {
+                "name": "i18n>prjUi5Jsx",
+                "complexity": "i18n>complexityMedium",
+                "status": "Warning",
+                "description": "i18n>prjUi5JsxDesc",
+                "technologies": [{
+                    "name": "i18n>prjTechUI5"
+                }, {
+                    "name": "i18n>prjTechJS"
+                }, {
+                    "name": "i18n>prjTechJSX"
+                }, {
+                    "name": "i18n>prjTechBabel"
+                }],
+                "showInCv": true,
+                "period": "2017",
+                "link": "https://github.com/serban-petrescu/ui5-jsx-rm",
+                "linkTitle": "i18n>prjLinkGitHub"
+            }, {
                 "name": "i18n>prjUi5Auth",
                 "complexity": "i18n>complexityMedium",
                 "status": "Warning",
@@ -358,7 +389,7 @@ sap.ui.define([
                 }, {
                     "name": "i18n>prjTechJS"
                 }],
-                "showInCv": true,
+                "showInCv": false,
                 "period": "2017",
                 "link": "https://github.com/serban-petrescu/ui5-auth",
                 "linkTitle": "i18n>prjLinkGitHub"
@@ -483,7 +514,7 @@ sap.ui.define([
                     "path": "path>/images/Evidenta5.PNG",
                     "description": "i18n>prjEvidS5"
                 }],
-                "showInCv": true
+                "showInCv": false
             }, {
                 "name": "i18n>prjFact",
                 "complexity": "i18n>complexityMedium",
@@ -601,6 +632,24 @@ sap.ui.define([
                 "showInCv": false
             }],
             "work": [{
+                "name": "i18n>prjWorkGsa",
+                "complexity": "i18n>complexityHigh",
+                "status": "Error",
+                "description": "i18n>prjWorkGsaDesc",
+                "technologies": [{
+                    "name": "i18n>prjTechJava"
+                }, {
+                    "name": "i18n>prjTechSpring"
+                }, {
+                    "name": "i18n>prjTechHANA"
+                }, {
+                    "name": "i18n>prjTechJPA"
+                }, {
+                    "name": "i18n>prjTechSCP"
+                }],
+                "period": "i18n>current",
+                "showInCv": true
+            }, {
                 "name": "i18n>prjWorkMsgCM",
                 "complexity": "i18n>complexityLow",
                 "status": "Success",
@@ -619,7 +668,7 @@ sap.ui.define([
                 "period": "i18n>current",
                 "link": "https://github.com/serban-petrescu/candidate-management",
                 "linkTitle": "i18n>prjLinkGitHub",
-                "showInCv": true
+                "showInCv": false
             }, {
                 "name": "i18n>prjWorkDiias",
                 "complexity": "i18n>complexityMedium",
@@ -638,10 +687,10 @@ sap.ui.define([
                 }, {
                     "name": "i18n>prjTechTypeScript"
                 }],
-                "period": "i18n>current",
+                "period": "2017",
                 "link": "https://www.minnosphere.com/nguw",
                 "linkTitle": "i18n>prjLinkSite",
-                "showInCv": true
+                "showInCv": false
             }, {
                 "name": "i18n>prjWorkNguw",
                 "complexity": "i18n>complexityHigh",
@@ -718,7 +767,7 @@ sap.ui.define([
                     "name": "i18n>prjTechABAP"
                 }],
                 "period": "2014 - 2016",
-                "link": "http://www.msg-global.com/lifereinsurance.0.html",
+                "link": "https://www.msg-global.com/reinsurance",
                 "linkTitle": "i18n>prjLinkSite",
                 "showInCv": true
             }, {
@@ -750,7 +799,7 @@ sap.ui.define([
                     "name": "i18n>prjTechABAP"
                 }],
                 "period": "2015",
-                "link": "http://www.msg-global.com/sap_policy_management.0.html",
+                "link": "https://www.msg-global.com/insurance",
                 "linkTitle": "i18n>prjLinkSite",
                 "showInCv": false
             }, {
