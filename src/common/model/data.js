@@ -41,7 +41,37 @@ sap.ui.define([
             "work": [{
                 "period": {
                     "_text": "i18n>dateInterval",
-                    "_params": ["date>20170301", "i18n>datePresent"]
+                    "_params": ["date>20190301", "i18n>datePresent"]
+                },
+                "title": "i18n>msgWork4Title",
+                "body": "i18n>msgWork4Body",
+                "filter": "i18n>filterWork",
+                "icon": "sap-icon://business-card",
+                "fa-icon": "address-card-o"
+            }, {
+                "period": {
+                    "_text": "i18n>dateInterval",
+                    "_params": ["date>20181001", "i18n>datePresent"]
+                },
+                "title": "i18n>kickItTitle",
+                "body": "i18n>kickItBody",
+                "filter": "i18n>filterWork",
+                "icon": "sap-icon://customer-briefing",
+                "fa-icon": "briefcase"
+            }, {
+                "period": {
+                    "_text": "i18n>dateInterval",
+                    "_params": ["date>20190201", "i18n>datePresent"]
+                },
+                "title": "i18n>utcnTaTitle",
+                "body": "i18n>utcnTaBody",
+                "filter": "i18n>filterWork",
+                "icon": "sap-icon://education",
+                "fa-icon": "graduation-cap"
+            }, {
+                "period": {
+                    "_text": "i18n>dateInterval",
+                    "_params": ["date>20170301", "date>20190301"]
                 },
                 "title": "i18n>msgWork3Title",
                 "body": "i18n>msgWork3Body",
@@ -314,9 +344,6 @@ sap.ui.define([
         }, {
             "src": "path>/icons/linkedin.ico",
             "href": "https://ro.linkedin.com/in/serban-petrescu-12b7a3a7"
-        }, {
-            "src": "path>/icons/bitbucket.ico",
-            "href": "https://bitbucket.org/serbanpetrescu/"
         }, {
             "src": "path>/icons/github.ico",
             "href": "https://github.com/serban-petrescu/"

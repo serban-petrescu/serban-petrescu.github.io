@@ -13,7 +13,7 @@ sap.ui.define([
         /** Lifecycle initialization hook. */
         onInit: function () {
             const oWindow = jQuery(window);
-            let bShown = this.hasGivenFeedback();
+            let bShown = this.hasGivenFeedback() || true; // disabled feedback
             oWindow.on("scroll", () => {
                 if (oWindow.scrollTop() > jQuery(document).height() / 2 && !bShown) {
                     bShown = true;

@@ -33,7 +33,7 @@
         </endItems>
     </NavBar>
 
-    <Hero title="{/name}" subtitle="{/occupation}, {/roles/0/text}"   />
+    <Hero title="{/name}" subtitle="{/occupation}"   />
 
     <Section>
         <Title name="about" text="{i18n>aboutTitle}"/>
