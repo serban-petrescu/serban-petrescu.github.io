@@ -3,8 +3,7 @@
 	xmlns:layout="sap.ui.layout"
     xmlns="sap.m">
 
-
-	<List items="{}" class="sapUiTinyMarginBottom" backgroundDesign="Transparent">
+	<List items="{path: '', filters: [{path: 'showInCv', operator: 'EQ', value1: true}]}" class="sapUiTinyMarginBottom" backgroundDesign="Transparent">
 		<CustomListItem type="Inactive">
 			<layout:VerticalLayout >
 				<HBox alignItems="Center" alignContent="Center" class="sapUiTinyMarginBottom sapUiTinyMarginTop">

@@ -33,6 +33,8 @@
 					<Text text="{/emails/outlook}" />
 					<Label text="{i18n>detPhone}" />
 					<Text text="{/phone}" />
+					<Label text="{i18n>detPortfolio}" />
+					<Link text="{/website}" href="{/website}" />
 				</form:content>
 			</form:SimpleForm>
 			<Image decorative="false"
@@ -59,16 +61,6 @@
 			fragmentName="portfolio.print.view.ExperienceTimeline"
 			type="XML"
 			binding="{/experience/work}"/>
-	</Panel>
-
-	<Panel headerText="{i18n>skillsTitle}" class="avoidBreak breakPage sapUiSmallMarginBottom">
-		<layout:Grid defaultSpan="XL6 L6 M6 S6" hSpacing="2" vSpacing="2" content="{path: '/skills', sorter: {path: 'order'}}" >
-			<List headerText="{name}"
-				class="avoidBreak"
-				items="{ path: 'items', sorter: [{path: 'lt' }, {path: 'title'}]}">
-				<DisplayListItem label="{title}" value="{level}"  />
-			</List>
-		</layout:Grid>
 	</Panel>
 
 	<Panel headerText="{i18n>projectsTitle}" class="breakPage sapUiSmallMarginBottom">

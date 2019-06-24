@@ -8,6 +8,7 @@ sap.ui.define([
         "name": "Șerban Petrescu",
         "phone": "+40 744 865 132",
         "location": "Cluj-Napoca, Romania",
+        "website": "https://serban-petrescu.github.io/",
         "site": {
             "repository": "https://github.com/serban-petrescu/serban-petrescu.github.io",
             "print": jQuery.sap.getModulePath("portfolio.print") + "/index.html",
@@ -47,7 +48,8 @@ sap.ui.define([
                 "body": "i18n>msgWork4Body",
                 "filter": "i18n>filterWork",
                 "icon": "sap-icon://business-card",
-                "fa-icon": "address-card-o"
+                "fa-icon": "address-card-o",
+                "showInCv": true
             }, {
                 "period": {
                     "_text": "i18n>dateInterval",
@@ -57,7 +59,8 @@ sap.ui.define([
                 "body": "i18n>kickItBody",
                 "filter": "i18n>filterWork",
                 "icon": "sap-icon://customer-briefing",
-                "fa-icon": "briefcase"
+                "fa-icon": "briefcase",
+                "showInCv": true
             }, {
                 "period": {
                     "_text": "i18n>dateInterval",
@@ -67,7 +70,8 @@ sap.ui.define([
                 "body": "i18n>utcnTaBody",
                 "filter": "i18n>filterWork",
                 "icon": "sap-icon://education",
-                "fa-icon": "graduation-cap"
+                "fa-icon": "graduation-cap",
+                "showInCv": true
             }, {
                 "period": {
                     "_text": "i18n>dateInterval",
@@ -77,7 +81,8 @@ sap.ui.define([
                 "body": "i18n>msgWork3Body",
                 "filter": "i18n>filterWork",
                 "icon": "sap-icon://business-card",
-                "fa-icon": "address-card-o"
+                "fa-icon": "address-card-o",
+                "showInCv": true
             }, {
                 "period": {
                     "_text": "i18n>dateInterval",
@@ -87,7 +92,8 @@ sap.ui.define([
                 "body": "i18n>msgWork2Body",
                 "filter": "i18n>filterWork",
                 "icon": "sap-icon://business-card",
-                "fa-icon": "address-card-o"
+                "fa-icon": "address-card-o",
+                "showInCv": true
             }, {
                 "period": {
                     "_text": "i18n>dateInterval",
@@ -97,7 +103,8 @@ sap.ui.define([
                 "body": "i18n>msgWorkBody",
                 "filter": "i18n>filterWork",
                 "icon": "sap-icon://business-card",
-                "fa-icon": "address-card-o"
+                "fa-icon": "address-card-o",
+                "showInCv": true
             }, {
                 "period": {
                     "_text": "i18n>dateInterval",
@@ -107,7 +114,8 @@ sap.ui.define([
                 "body": "i18n>msgInternshipBody",
                 "filter": "i18n>filterWork",
                 "icon": "sap-icon://business-card",
-                "fa-icon": "address-card-o"
+                "fa-icon": "address-card-o",
+                "showInCv": false
             }],
             "academic": [{
                 "period": {
@@ -118,7 +126,8 @@ sap.ui.define([
                 "body": "i18n>masterBody",
                 "filter": "i18n>filterAcademic",
                 "icon": "sap-icon://education",
-                "fa-icon": "graduation-cap"
+                "fa-icon": "graduation-cap",
+                "showInCv": true
             }, {
                 "period": {
                     "_text": "i18n>dateInterval",
@@ -128,7 +137,8 @@ sap.ui.define([
                 "body": "i18n>msgCourseBody",
                 "filter": "i18n>filterAcademic",
                 "icon": "sap-icon://education",
-                "fa-icon": "university"
+                "fa-icon": "university",
+                "showInCv": false
             }, {
                 "period": {
                     "_text": "i18n>dateInterval",
@@ -138,7 +148,8 @@ sap.ui.define([
                 "body": "i18n>collegeBody",
                 "filter": "i18n>filterAcademic",
                 "icon": "sap-icon://study-leave",
-                "fa-icon": "graduation-cap"
+                "fa-icon": "graduation-cap",
+                "showInCv": true
             }, {
                 "period": {
                     "_text": "i18n>dateInterval",
@@ -148,7 +159,8 @@ sap.ui.define([
                 "body": "i18n>leonardoBody",
                 "filter": "i18n>filterAcademic",
                 "icon": "sap-icon://education",
-                "fa-icon": "university"
+                "fa-icon": "university",
+                "showInCv": false
             }, {
                 "period": {
                     "_text": "i18n>dateInterval",
@@ -158,7 +170,8 @@ sap.ui.define([
                 "body": "i18n>highSchoolBody",
                 "filter": "i18n>filterAcademic",
                 "icon": "sap-icon://education",
-                "fa-icon": "university"
+                "fa-icon": "university",
+                "showInCv": false
             }]
         },
         "skills": {
@@ -363,6 +376,34 @@ sap.ui.define([
         },
         "projects": {
             "personal": [{
+                "name": "i18n>prjKickIt",
+                "complexity": "i18n>complexityHigh",
+                "status": "Error",
+                "description": "i18n>prjKickItDesc",
+                "technologies": [{
+                    "name": "i18n>prjTechJava"
+                }, {
+                    "name": "i18n>prjTechSpring"
+                }, {
+                    "name": "i18n>prjTechPostgres"
+                }, {
+                    "name": "i18n>prjTechReact"
+                }],
+                "images": [{
+                    "path": "path>/images/KICK1.PNG",
+                    "description": "i18n>prjKICK1"
+                }, {
+                    "path": "path>/images/KICK2.PNG",
+                    "description": "i18n>prjKICK2"
+                }, {
+                    "path": "path>/images/KICK3.PNG",
+                    "description": "i18n>prjKICK3"
+                }],
+                "showInCv": true,
+                "period": "i18n>current",
+                "link": "https://kickit.ro",
+                "linkTitle": "i18n>prjLinkSite"
+            }, {
                 "name": "i18n>prjSbwo",
                 "complexity": "i18n>complexityHigh",
                 "status": "Error",
@@ -385,7 +426,7 @@ sap.ui.define([
                     "name": "i18n>prjTechJS"
                 }],
                 "showInCv": true,
-                "period": "i18n>current",
+                "period": "2016 - 2018",
                 "link": "https://github.com/serban-petrescu/sbwo",
                 "linkTitle": "i18n>prjLinkGitHub"
             }, {
@@ -659,6 +700,24 @@ sap.ui.define([
                 "showInCv": false
             }],
             "work": [{
+                "name": "i18n>prjWorkDipko",
+                "complexity": "i18n>complexityHigh",
+                "status": "Error",
+                "description": "i18n>prjWorkDipkoDesc",
+                "technologies": [{
+                    "name": "i18n>prjTechNode"
+                }, {
+                    "name": "i18n>prjTechAngular"
+                }, {
+                    "name": "i18n>prjTechPostgres"
+                }, {
+                    "name": "i18n>prjTechAWS"
+                }, {
+                    "name": "i18n>prjTechDocker"
+                }],
+                "period": "current",
+                "showInCv": true
+            }, {
                 "name": "i18n>prjWorkGsa",
                 "complexity": "i18n>complexityHigh",
                 "status": "Error",
@@ -674,7 +733,7 @@ sap.ui.define([
                 }, {
                     "name": "i18n>prjTechSCP"
                 }],
-                "period": "i18n>current",
+                "period": "2017 - 2018",
                 "showInCv": true
             }, {
                 "name": "i18n>prjWorkMsgCM",
@@ -757,7 +816,7 @@ sap.ui.define([
                     "name": "i18n>prjTechUI5"
                 }],
                 "period": "2016",
-                "showInCv": true
+                "showInCv": false
             }, {
                 "name": "i18n>prjWorkTaxoengine",
                 "complexity": "i18n>complexityHigh",
