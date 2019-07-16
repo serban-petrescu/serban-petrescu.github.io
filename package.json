@@ -1,42 +1,37 @@
 {
-  "name": "serban-petrescu.github.io",
-  "version": "1.0.0",
-  "description": "Serban's portfolio website",
-  "main": "src/index.html",
-  "scripts": {
-    "start": "grunt start",
-    "build": "grunt"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/serban-petrescu/serban-petrescu.github.io.git"
-  },
-  "keywords": [
-    "ui5",
-    "portfolio"
-  ],
+  "name": "app",
+  "version": "0.1.0",
   "private": true,
-  "author": "Serban Petrescu",
-  "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/serban-petrescu/serban-petrescu.github.io/issues"
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-html-parser": "^2.0.2",
+    "react-scripts": "3.0.1",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^0.87.2"
   },
-  "homepage": "http://serban-petrescu.github.io/",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
   "devDependencies": {
-    "babel-preset-env": "^1.7.0",
-    "bulma": "^0.4.3",
-    "font-awesome": "^4.7.0",
-    "grunt": "^1.0.4",
-    "grunt-babel": "^6.0.0",
-    "grunt-cli": "^1.2.0",
-    "grunt-contrib-clean": "^1.1.0",
-    "grunt-contrib-connect": "^2.0.0",
-    "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-cssmin": "^2.2.0",
-    "grunt-contrib-uglify": "^3.0.1",
-    "grunt-contrib-watch": "^1.1.0",
-    "grunt-openui5": "^0.15.0",
-    "grunt-sass": "^2.0.0",
-    "spet-ui5-jsx-rm": "0.0.1"
+    "node-sass": "^4.12.0"
   }
 }

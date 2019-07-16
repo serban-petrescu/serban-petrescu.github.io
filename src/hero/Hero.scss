@@ -1,0 +1,35 @@
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 0 !important;
+    overflow: hidden;
+
+    img {
+        margin: auto;
+    }
+
+    i.connect-icon {
+        margin: 0 !important;
+    }
+
+    h1 {
+        margin: 0.5em 0 0 0 !important;
+    }
+
+    h3 {
+        margin: 0.25em 0 0.5em 0 !important;
+    }
+
+    .scroll-more {
+        align-self: center;
+        position: absolute;
+        bottom: 0;
+    }
+
+    .action-button {
+        width: 12em;
+        margin-top: 10px;
+    }
+}

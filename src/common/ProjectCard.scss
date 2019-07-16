@@ -1,0 +1,26 @@
+.project-highlight {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 1em 0 1em 0;
+
+
+    .card-header {
+        position: relative;
+
+        .type-ribbon {
+            position: absolute;
+            bottom: 0;
+            margin-bottom: -10px;
+            margin-left: 13px;
+        }
+    }
+
+    .card-header, .card-footer {
+        flex-grow: 0 !important;
+    }
+
+    .card-meta-right {
+        float: right;
+    }
+}

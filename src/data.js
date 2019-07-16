@@ -1,0 +1,1634 @@
+
+const experience = {
+    "work": [{
+        "period": {
+            "from": new Date(2019, 2, 1),
+            "to": null
+        },
+        "title": "Lead IT Consultant @ msg-systems",
+        "body": "I have a broad range of responsibilities: software architecture, technical leadership, mentoring, hosting internal trainings, performing yearly evaluations, etc.",
+        "logo": "/logos/msg.png"
+    }, {
+        "period": {
+            "from": new Date(2018, 0, 1),
+            "to": null
+        },
+        "title": "Co-Founder @ KickIT",
+        "body": "Founded a start-up together with a close friend. I mostly deal with the architecture, development and operations of our application.",
+        "logo": "/logos/kickit.png"
+    }, {
+        "period": {
+            "from": new Date(2018, 1, 1),
+            "to": null
+        },
+        "title": "Teaching Assistant @ T.U. Cluj-Napoca",
+        "body": "Six hours per week holding a Software Design laboratory together with my 3rd year Computer Science students.",
+        "logo": "/logos/utcn.png"
+    }, {
+        "period": {
+            "from": new Date(2017, 2, 1),
+            "to": new Date(2018, 2, 1)
+        },
+        "title": "Senior IT Consultant @ msg-systems",
+        "body": "Full time involvement. I started getting more involved in mentoring, technical leadership and architecture.",
+        "logo": "/logos/msg.png"
+    }, {
+        "period": {
+            "from": new Date(2016, 1, 1),
+            "to": new Date(2017, 2, 1)
+        },
+        "title": "IT Consultant @ msg-systems",
+        "body": "Mostly full time involvement, with small exceptions. Was focused solely on analysis and implementation topics.",
+        "logo": "/logos/msg.png"
+    }, {
+        "period": {
+            "from": new Date(2014, 7, 4),
+            "to": new Date(2016, 1, 1)
+        },
+        "title": "Associate IT Consultant @ msg-systems",
+        "body": "Part time during the academic year and full time during the summers. Tackled low-to-medium complexity development tasks.",
+        "logo": "/logos/msg.png"
+    }, {
+        "period": {
+            "from": new Date(2014, 2, 1),
+            "to": new Date(2016, 5, 1)
+        },
+        "title": "Intern @ msg-systems",
+        "body": "During the internship, I was introduced to and worked with various SAP technologies.",
+        "logo": "/logos/msg.png"
+    }],
+    "academic": [{
+        "period": {
+            "from": new Date(2017, 9, 1),
+            "to": new Date(2019, 8, 1),
+        },
+        "title": "Babeș-Bolyai University",
+        "body": "Master's degree in Software Engineering at the faculty of Mathematics and Informatics.",
+        "logo": "/logos/ubb.png"
+    }, {
+        "period": {
+            "from": new Date(2013, 9, 1),
+            "to": new Date(2014, 0, 15)
+        },
+        "title": "SAP Development Course",
+        "body": "A series of lectures and laboratories hosted by msg which served as an introduction to the SAP world.",
+        "logo": "/logos/msg.png"
+    }, {
+        "period": {
+            "from": new Date(2012, 9, 1),
+            "to": new Date(2016, 6, 1)
+        },
+        "title": "Technical University of Cluj-Napoca",
+        "body": "Bachelor degree in Computer Science at the faculty of Computer Science and Information Technology.",
+        "logo": "/logos/utcn.png"
+    }, {
+        "period": {
+            "from": new Date(2011, 8, 1),
+            "to": new Date(2011, 9, 15)
+        },
+        "title": "Leonardo da'Vinci Project",
+        "body": "A month-and-a-half-long exchange project set in Leipzig, Germany. Studied basic web technologies like HTML, PHP and JS at a local company.",
+        "icon": "university"
+    }, {
+        "period": {
+            "from": new Date(2008, 8, 15),
+            "to": new Date(2012, 5, 15)
+        },
+        "title": "Gheorghe Lazar National College Sibiu",
+        "body": "High school degree in Mathematics - Informatics. My first contact with programming. During this period, I've learnt C / C++, C# and PHP.",
+        "logo": "/logos/cngl.png"
+    }]
+};
+
+const accounts = {
+    "linkedin": "https://ro.linkedin.com/in/serban-petrescu-12b7a3a7",
+    "github": "https://github.com/serban-petrescu/",
+    "stackoverflow": "http://stackoverflow.com/users/7612556/serban-petrescu?tab=profile",
+    "twitter": "https://twitter.com/petrescu_serban",
+    "youtube": "https://www.youtube.com/channel/UCjpkihJT18wg41Qw3jdu_HA"
+};
+
+const projects = {
+    "portfolio": {
+        "name": "My Portfolio",
+        "type": "work",
+        "description": `
+            This very website, which is meant to showcase my experience and projects.
+            <br />
+            <br />
+            Initially built with vanilla <strong>UI5</strong>, then re-build with custom
+            controls using <strong>JSX</strong>, finally re-built again using <strong>React</strong>. 
+        `,
+        "technologies": [
+            {
+                "name": "SAP UI5"
+            },
+            {
+                "name": "Bulma"
+            },
+            {
+                "name": "JSX"
+            },
+            {
+                "name": "React"
+            },
+            {
+                "name": "Semantic UI"
+            }
+        ],
+        "images": [
+            {
+                "path": "/images/portfolio0.PNG",
+                "description": "The first UI5 version of the site."
+            },
+            {
+                "path": "/images/portfolio1.PNG",
+                "description": "The later re-write using JSX and Bulma."
+            },
+            {
+                "path": "/images/portfolio2.PNG",
+                "description": "The current version of the website."
+            }
+        ],
+        "period": "2016 - 2019"
+    },
+    "msgtex": {
+        "name": "Travel Expenses",
+        "type": "work",
+        "description": `
+            A project for our internal finance department to help them manage travel expense reports, 
+            calculate allowances and track business trips for our colleagues.
+            <br />
+            <br />
+            I acted as technical mentor and product owner for the fairly large team of developers
+            assigned to this project.
+        `,
+        "technologies": [
+            {
+                "name": "Java"
+            },
+            {
+                "name": "Mongo"
+            },
+            {
+                "name": "PostgreSQL"
+            },
+            {
+                "name": "Spring"
+            },
+            {
+                "name": "SAP UI5"
+            },
+            {
+                "name": "Docker"
+            }
+        ],
+        "images": [
+            {
+                "path": "/images/tex0.png",
+                "description": "The application provides several functionalities and also a configuration UI."
+            },
+            {
+                "path": "/images/tex1.png",
+                "description": "Most of the functionalities revolve around the employees, whose data may be imported from the HCM system."
+            },
+            {
+                "path": "/images/tex3.png",
+                "description": "Trip details may be added and viewed."
+            },
+            {
+                "path": "/images/tex2.png",
+                "description": "At the end of a trip, expenses may be reported and a settlement document is generated."
+            }
+        ],
+        "period": "2018"
+    },
+    "awstrouble": {
+        "name": "Troubleshooting Service",
+        "type": "work",
+        "description": `
+            A small integration project on <strong>AWS</strong> for parsing XML exports from a legacy system.
+            It consisted of a <strong>micro-service</strong> and a <strong>Lambda</strong> triggered by the 
+            <strong>S3</strong> events.
+            <br />
+            <br />
+            I played the role of solution architect, designing and aligning the interfaces of the components,
+            whilst the implementation itself was tackled by another developer.
+        `,
+        "technologies": [
+            {
+                "name": "Java"
+            },
+            {
+                "name": "AWS"
+            },
+            {
+                "name": "Lambda"
+            },
+            {
+                "name": "S3"
+            },
+            {
+                "name": "Docker"
+            }
+        ],
+        "images": [
+            {
+                "path": "/images/trouble0.png",
+                "description": "The architecture of the setup including the lambda and the micro-service."
+            }
+        ],
+        "period": "2018 - 2019"
+    },
+    "awsgdpr": {
+        "name": "GDPR Integration",
+        "type": "work",
+        "description": `
+            A small integration project on <strong>AWS</strong> for handling newsletter subscription
+            and un-subscription actions to conform to GDPR.
+            <br />
+            <br />
+            I designed and fully implemented this solution directly on the customer's AWS account.
+        `,
+        "technologies": [
+            {
+                "name": "Java"
+            },
+            {
+                "name": "AWS"
+            },
+            {
+                "name": "Lambda"
+            }
+        ],
+        "images": [
+            {
+                "path": "/images/gdprInt0.png",
+                "description": "The architecture of the setup including the lambdas and queues for handling failures."
+            }
+        ],
+        "period": "2018"
+    },
+    "soaqanda": {
+        "name": "Simple Q&A",
+        "type": "academic",
+        "description": `
+            A <strong>micro-service</strong> architecture web application built for the <em>Service oriented 
+            architecture</em> master course. 
+            <br />
+            <br />
+            It consisted of several <strong>NodeJS</strong> micro-services,
+            a <strong>Zuul</strong> API Gateway, a simplified <strong>OAuth 2.0</strong> authorization
+            server and a <strong>React</strong> user interface.
+        `,
+        "technologies": [
+            {
+                "name": "NodeJS"
+            },
+            {
+                "name": "Express"
+            },
+            {
+                "name": "React"
+            },
+            {
+                "name": "Spring"
+            },
+            {
+                "name": "OAuth"
+            },
+            {
+                "name": "Docker"
+            }
+        ],
+        "images": [
+            {
+                "path": "/images/qAndA0.PNG",
+                "description": "The list of questions."
+            },
+            {
+                "path": "/images/qAndA1.PNG",
+                "description": "A form for asking a new question."
+            },
+            {
+                "path": "/images/qAndA2.PNG",
+                "description": "The detail view for a question, showing the votes and the answers."
+            },
+            {
+                "path": "/images/qAndA3.PNG",
+                "description": "The user is able to get notifications via email or via Web Push."
+            }
+        ],
+        "period": "2019",
+        "github": "https://github.com/serban-petrescu/ubb-soa-qanda"
+    },
+    "dissgame": {
+        "name": "Kindergarten Game",
+        "type": "academic",
+        "description": `
+            A simple story-like game for kindergarten children based on the "La Polul Nord" story by Marin Sorescu.
+            <br />
+            <br />
+            I built it for the <em>Design of interactive software systems</em> master course, the challenge being 
+            that the UI must be suitable for usage by four-year-olds.
+        `,
+        "technologies": [
+            {
+                "name": "NodeJS"
+            },
+            {
+                "name": "MelonJS"
+            },
+            {
+                "name": "Electron"
+            },
+            {
+                "name": "Grunt"
+            }
+        ],
+        "images": [
+            {
+                "path": "/images/diss1.PNG",
+                "description": "A level of the game where you must collect clothing items."
+            }
+        ],
+        "period": "2018",
+        "github": "https://github.com/serban-petrescu/diss-kindergarden-game",
+        "link": "https://serban-petrescu.github.io/diss-kindergarden-game/"
+    },
+    "sapim": {
+        "name": "SAPIM",
+        "type": "personal",
+        "description": `
+            <strong>SAP API Manager</strong> command line interface which can be used to deploy, create
+            and remove API Proxies.
+            <br />
+            <br />
+            I built this CLI in my spare time to help the development process in <strong>SCP</strong> projects.
+        `,
+        "technologies": [
+            {
+                "name": "NodeJS"
+            },
+            {
+                "name": "SAP API Manager"
+            }
+        ],
+        "period": "2018",
+        "github": "https://github.com/serban-petrescu/sapim",
+        "blog": "https://blogs.sap.com/2018/02/03/sap-api-management-cli/"
+    },
+    "kickit": {
+        "name": "KickIT",
+        "type": "personal",
+        "description": `
+            Co-founder for a Romanian startup, <a href="https://kickit.ro">KickIT</a>, targeting the amateur soccer scene.
+            <br />
+            <br /> 
+            I was responsible for architecture, design, implementation and operations for the <strong>cloud-native</strong>
+            solution, consisting of a <em>Spring Boot</em> backend, several <em>Lambdas</em> and a <em>React PWA</em> 
+            deployed on AWS.
+        `,
+        "technologies": [
+            {
+                "name": "Java"
+            },
+            {
+                "name": "Spring"
+            },
+            {
+                "name": "PostgreSQL"
+            },
+            {
+                "name": "React"
+            },
+            {
+                "name": "AWS"
+            },
+            {
+                "name": "Lambda"
+            },
+            {
+                "name": "Docker"
+            },
+            {
+                "name": "Bulma"
+            }
+        ],
+        "images": [
+            {
+                "path": "/images/KICK1.PNG",
+                "description": "The home page of the application, showing the feed, PWA install prompt and upcoming events."
+            },
+            {
+                "path": "/images/KICK2.PNG",
+                "description": "The screen for organizing a new match, showing the proposed time, the weather and how many people are coming."
+            },
+            {
+                "path": "/images/KICK3.PNG",
+                "description": "The application can be used to organize soccer competitions (championships, tournaments, etc.)."
+            }
+        ],
+        "period": "current",
+        "link": "https://kickit.ro",
+        "facebook": "https://www.facebook.com/kickit.ro"
+    },
+    "sbwo": {
+        "name": "SBWO",
+        "type": "personal",
+        "description": `
+            A <em>Java</em> standalone application, with an embedded web server (servlet container) and embedded database. 
+            The application aims to help small business to store, manage and use their business data. 
+            <br />
+            <br />
+            I have built this project as an exercise in implementing various mechanisms from scratch 
+            (user authentication, session management, scheduling, etc.) to enhance my skills.
+        `,
+        "technologies": [
+            {
+                "name": "Java"
+            },
+            {
+                "name": "EclipseLink"
+            },
+            {
+                "name": "Olingo"
+            },
+            {
+                "name": "Jetty"
+            },
+            {
+                "name": "PicoContainer"
+            },
+            {
+                "name": "H2"
+            },
+            {
+                "name": "SAP UI5"
+            },
+            {
+                "name": "JavaScript"
+            }
+        ],
+        "period": "2016 - 2017",
+        "github": "https://github.com/serban-petrescu/sbwo"
+    },
+    "ui5jsx": {
+        "name": "UI5 JSX",
+        "type": "personal",
+        "description": `
+            Babel plugin for transpiling inline <strong>JSX</strong> into <strong>UI5</strong> render functions. 
+            It enables very easy custom control creation by simplifying the render process.
+        `,
+        "technologies": [
+            {
+                "name": "SAP UI5"
+            },
+            {
+                "name": "JavaScript"
+            },
+            {
+                "name": "JSX"
+            },
+            {
+                "name": "BabelJS"
+            }
+        ],
+        "period": "2017",
+        "github": "https://github.com/serban-petrescu/ui5-jsx-rm",
+        "blog": "https://blogs.sap.com/2017/07/15/bringing-jsx-to-ui5-controls/"
+    },
+    "ui5auth": {
+        "name": "UI5 Auth",
+        "type": "personal",
+        "description": `
+            Lightweight open-source <strong>UI5</strong> library which enables developers to build 
+            user interfaces which adapt at runtime to user roles. The main goal of this library is 
+            to decouple the responsibilities of regular UI5 applications: role-based adaptation 
+            should be done declaratively and centrally for each app.
+        `,
+        "technologies": [
+            {
+                "name": "SAP UI5"
+            },
+            {
+                "name": "JavaScript"
+            }
+        ],
+        "period": "2017",
+        "github": "https://github.com/serban-petrescu/ui5-auth",
+        "blog": "https://blogs.sap.com/2017/03/27/ui5-authorization-adaptation-library/"
+    },
+    "ui5viz": {
+        "name": "UI5 Viz",
+        "type": "personal",
+        "description": `
+            A simple open-source <strong>UI5</strong> library for displaying graph data. 
+            I built it using a <em>D3 force graph</em> layout.
+        `,
+        "technologies": [
+            {
+                "name": "SAP UI5"
+            },
+            {
+                "name": "JavaScript"
+            },
+            {
+                "name": "D3.js"
+            }
+        ],
+        "images": [
+            {
+                "path": "/images/ui5viz0.png",
+                "description": "A graph derived from the metadata of an OData service."
+            },
+            {
+                "path": "/images/ui5viz1.png",
+                "description": "A graph showing the data of the same OData service."
+            }
+        ],
+        "period": "2017",
+        "github": "https://github.com/serban-petrescu/ui5-viz",
+        "blog": "https://blogs.sap.com/2017/06/29/graph-data-visualisation-in-ui5/"
+    },
+    "epmws": {
+        "name": "EPM WebSocket",
+        "type": "personal",
+        "description": `
+            A small personal project which realized real-time communication between an <strong>ABAP</strong> 
+            based user interface (classic Dynpro), a <strong>UI5</strong> interface hosted on the ABAP system 
+            and another UI5 interface hosted on SCP.
+        `,
+        "technologies": [
+            {
+                "name": "ABAP"
+            },
+            {
+                "name": "SAP Gateway"
+            },
+            {
+                "name": "Java"
+            },
+            {
+                "name": "EclipseLink"
+            },
+            {
+                "name": "Olingo"
+            },
+            {
+                "name": "SAP UI5"
+            },
+            {
+                "name": "WebSocket"
+            }
+        ],
+        "images": [
+            {
+                "path": "/images/epmws0.jpg",
+                "description": "A side-by-side comparison of the Dynpro and UI5 user interfaces."
+            }
+        ],
+        "period": "2015",
+        "github": "https://github.com/serban-petrescu/epm-websockets",
+        "blog": "http://scn.sap.com/community/abap/connectivity/blog/2015/07/02/hcp-abap-and-websocket-part-1"
+    },
+    "webpaint": {
+        "name": "Web Paint",
+        "type": "academic",
+        "description": `
+            A <strong>UI5</strong> app which uses <strong>FabricJS</strong> to allow the user to draw by  
+            drag-and-dropping shapes and import external pictures. The user can also resize, move and change
+            the colors of the shapes, use undo-redo functionality, save or load drawing files and also to export to PNG.
+        `,
+        "technologies": [
+            {
+                "name": "HTML5"
+            },
+            {
+                "name": "SAP UI5"
+            },
+            {
+                "name": "JavaScript"
+            },
+            {
+                "name": "FabricJS"
+            }
+        ],
+        "period": "2015",
+        "images": [
+            {
+                "path": "/images/webpaint1.PNG",
+                "description": "The main drawing area of the application, with the shape palette on the top and the objects' properties on the left."
+            }
+        ],
+        "link": "https://webpaint-p1940442392trial.dispatcher.hanatrial.ondemand.com/?hc_reset"
+    },
+    "gde": {
+        "name": "Graphical IDE",
+        "type": "personal",
+        "description": `
+            An application which can be used to write imperative <strong>Java</strong> code by dragging and dropping 
+            functional blocks. The generated code can also be displayed inside the application, compiled and run. 
+            The front-end is done in <strong>UI5</strong> and the back-end is built in Java.
+        `,
+        "technologies": [
+            {
+                "name": "Java"
+            },
+            {
+                "name": "HTML5"
+            },
+            {
+                "name": "SAP UI5"
+            },
+            {
+                "name": "JavaScript"
+            },
+            {
+                "name": "FabricJS"
+            }
+        ],
+        "period": "2015",
+        "images": [
+            {
+                "path": "/images/GDE1.PNG",
+                "description": "The drag-and-drop area of the application. The functional blocks can be dragged from the menu strip on the right and properties of each block can be set using the Properties toolbox. Blocks can be moved and their contents explored."
+            },
+            {
+                "path": "/images/GDE2.PNG",
+                "description": "The generated code area (corresponding to the previous schematic)."
+            },
+            {
+                "path": "/images/GDE3.PNG",
+                "description": "The console area after compiling and running the Java schematic (can be done using either buttons or console commands)."
+            }
+        ]
+    },
+    "jreg": {
+        "name": "Job Registry",
+        "type": "personal",
+        "description": `
+            This project was built in my spare time for a land surveyor. Using it, one can keep 
+            track of all jobs and related court terms. It offers a calendar for seeing court 
+            dates and automatically reads data from the <em>Ministry of Justice Web API</em> 
+            and the <em>National Agency for Cadaster</em> website to update the data.
+        `,
+        "technologies": [
+            {
+                "name": "MySQL"
+            },
+            {
+                "name": "PHP"
+            },
+            {
+                "name": "HTML"
+            },
+            {
+                "name": "JavaScript"
+            }
+        ],
+        "period": "2014",
+        "images": [
+            {
+                "path": "/images/Evidenta1.PNG",
+                "description": "The job registry. Each line represents a job. The user can search through the jobs, add a new one, sort them, edit, delete or expand a job to see further attributes."
+            },
+            {
+                "path": "/images/Evidenta2.PNG",
+                "description": "An expanded job, showing the data retrieved from the Agency's website (the last row)."
+            },
+            {
+                "path": "/images/Evidenta3.PNG",
+                "description": "A fast entry screen, which can be used to enter the inquiry number for a job (after it was given to the Agency)."
+            },
+            {
+                "path": "/images/Evidenta4.PNG",
+                "description": "A fast entry screen, which can be used to change the status of a job."
+            },
+            {
+                "path": "/images/Evidenta5.PNG",
+                "description": "The court terms calendar."
+            }
+        ]
+    },
+    "docgen": {
+        "name": "Invoice Generator (Remake)",
+        "type": "academic",
+        "description": `
+            A <strong>micro-service</strong> architecture web application built for the <em>Service oriented 
+            architecture</em> master course. 
+            <br />
+            <br />
+            It is a re-implementation of the older invoice generator it using <strong>Spring</strong>, 
+            <strong>Mithril</strong>, <strong>NodeJS</strong> and <strong>Docker</strong>.
+        `,
+        "technologies": [
+            {
+                "name": "Spring"
+            },
+            {
+                "name": "Hibernate"
+            },
+            {
+                "name": "MithrilJS"
+            },
+            {
+                "name": "NodeJS"
+            },
+            {
+                "name": "Docker"
+            },
+            {
+                "name": "Semantic UI"
+            }
+        ],
+        "period": "2019",
+        "images": [
+            {
+                "path": "/images/docGen1.PNG",
+                "description": "The list of companies managed by the application."
+            },
+            {
+                "path": "/images/docGen2.PNG",
+                "description": "A list of invoices for a selected company."
+            },
+            {
+                "path": "/images/docGen3.PNG",
+                "description": "The form for creating a new invoice."
+            }
+        ],
+        "github": "https://github.com/serban-petrescu/ubb-soa-docgen"
+    },
+    "invoice": {
+        "name": "Invoice Generator",
+        "type": "personal",
+        "description": `
+            This is an application built on top of <strong>OpenOffice</strong> which can be used to manage invoices 
+            for a small company. It allows the user to define multiple profiles, it keeps track of customer data 
+            and generates OpenOffice invoices using a user-defined template. Receipts may also be generated from
+            an existing invoice.
+        `,
+        "technologies": [
+            {
+                "name": "Basic"
+            },
+            {
+                "name": "OpenOffice API"
+            }
+        ],
+        "period": "2013 - 2014",
+        "images": [
+            {
+                "path": "/images/Factura1.PNG",
+                "description": "The profile creation / modification screen."
+            },
+            {
+                "path": "/images/Factura2.PNG",
+                "description": "The main screen. Allows the user to enter various data related to the invoice, to save, restore, print or even create a receipt for the invoice (opens a separate application). A summary of all invoices can also be generated."
+            },
+            {
+                "path": "/images/Factura3.PNG",
+                "description": "A demo invoice generated by the program."
+            },
+            {
+                "path": "/images/Factura4.PNG",
+                "description": "A demo invoice summary also generated by the program."
+            },
+            {
+                "path": "/images/Chitanta1.PNG",
+                "description": "The receipt data entry screen (fields are auto-filled if the receipt is derived from an invoice)."
+            },
+            {
+                "path": "/images/Chitanta2.PNG",
+                "description": "A demo receipt generated by the program."
+            }
+        ]
+    },
+    "gdg": {
+        "name": "Document Generator",
+        "type": "personal",
+        "description": `
+            A application for land surveyors built on top of <strong>OpenOffice</strong>, which takes input 
+            values from the user and optionally an XML data file and generates documents using user specified 
+            templates. The values given by the user or read from the XML are either filled directly in the 
+            templates or are used to build tables and hide / show sections.
+        `,
+        "technologies": [
+            {
+                "name": "Basic"
+            },
+            {
+                "name": "OpenOffice API"
+            },
+            {
+                "name": "C / C++"
+            }
+        ],
+        "period": "2012 - 2014",
+        "images": [
+            {
+                "path": "/images/Form1.PNG",
+                "description": "The static input fields of the generator."
+            },
+            {
+                "path": "/images/Form2.PNG",
+                "description": "The file selection, template selection and the input field for the optional XML file."
+            },
+            {
+                "path": "/images/Form3.PNG",
+                "description": "The output of the generator."
+            }
+        ]
+    },
+    "serverman": {
+        "name": "Server Manager",
+        "type": "personal",
+        "description": `
+            A program specifically designed to manage dedicated servers for 
+            <a href="https://www.taleworlds.com/en/Games/Warband">Mount and Blade: Warband</a>. 
+            It allowed the simultaneous management of several servers, checking the logs, creating reports, 
+            scheduling start, stop or restart actions.
+        `,
+        "technologies": [
+            {
+                "name": "C#"
+            },
+            {
+                "name": "Windows Forms"
+            }
+        ],
+        "period": "2011",
+        "images": [
+            {
+                "path": "/images/Manager1.PNG",
+                "description": "The first screen of the program. Allows the user to add or remove servers, to view the current status or to edit configurations."
+            },
+            {
+                "path": "/images/Manager2.PNG",
+                "description": "The redirected console of the selected server (both input and output)."
+            },
+            {
+                "path": "/images/Manager3.PNG",
+                "description": "The event scheduler for the selected server."
+            },
+            {
+                "path": "/images/Manager4.PNG",
+                "description": "The event log for a server."
+            }
+        ]
+    },
+    "cloudnativefeedback": {
+        "name": "Conference Feedback",
+        "type": "personal",
+        "description": `
+            A small application for submitting feedback after or during the <em>IT Conference on SAP 
+            Technologies Cluj</em>.
+            <br />
+            <br />
+            Later on, I have also hosted a small training about <strong>cloud native</strong> development
+            using this application as an example.
+        `,
+        "period": "2018",
+        "technologies": [
+            {
+                "name": "HANA"
+            },
+            {
+                "name": "Spring"
+            },
+            {
+                "name": "UI5"
+            }
+        ],
+        "images": [
+            {
+                "path": "/images/nativefeedback0.png",
+                "description": "During the conference, the feedback was automatically analyzed and displayed on a TV."
+            }
+        ],
+        "youtube": "https://www.youtube.com/playlist?list=PLFVVA9FdSLI3jpwuu0BbbmuYMA5ogORzF",
+        "blog": "https://blogs.sap.com/2018/10/17/it-conference-on-sap-technologies-cluj-recap/"
+    },
+    "utcnsd2019": {
+        "name": "Software Design Lab",
+        "type": "academic",
+        "description": `
+            I've hosted the <em>Software Design</em> laboratory for a group of students at T.U. Cluj Napoca.
+            <br />
+            <br />
+            I prepared my own learning resources and recorded our sessions in which we explored various
+            architectural styles, design patterns and technologies (mostly <strong>Spring</strong> and 
+            <strong>React</strong>).
+        `,
+        "technologies": [
+            {
+                "name": "Java"
+            },
+            {
+                "name": "JavaScript"
+            },
+            {
+                "name": "Spring"
+            },
+            {
+                "name": "Hibernate"
+            },
+            {
+                "name": "React"
+            },
+            {
+                "name": "WebSocket"
+            }
+        ],
+        "period": "2019",
+        "github": "https://github.com/serban-petrescu/utcn-sd-resources/",
+        "youtube": "https://www.youtube.com/playlist?list=PLFVVA9FdSLI3GzulGsej25e-JzOZK8DGo"
+    },
+    "swadia": {
+        "name": "Swadian Roleplay Mod",
+        "type": "personal",
+        "description": `
+            A <a href="https://www.taleworlds.com/en/Games/Warband">Mount and Blade: Warband</a> mod which 
+            aimed to completely change the 
+            game concept without forcing players to download anything. For this project, I was the 
+            sole developer. It consisted of modified <strong>Python</strong> scripts which were run 
+            by the server, <strong>PHP</strong> sites, <strong>C / C++</strong> 
+            log parsers.
+        `,
+        "technologies": [
+            {
+                "name": "MySQL"
+            },
+            {
+                "name": "Python"
+            },
+            {
+                "name": "Assembly"
+            },
+            {
+                "name": "C / C++"
+            },
+            {
+                "name": "PHP"
+            },
+            {
+                "name": "HTML"
+            },
+            {
+                "name": "JavaScript"
+            }
+        ],
+        "period": "2010 - 2011"
+    },
+    "dipko": {
+        "name": "DIPKO",
+        "type": "work",
+        "description": `
+            Architect and lead developer for building a cloud-based, multi-tenant <em>SaaS platform</em> 
+            for managing municipal services. 
+            <br />
+            <br />
+            We started implementing it as a modular monolith, with 
+            the target of splitting it up into <strong>micro-services</strong> later on if needed.
+        `,
+        "technologies": [
+            {
+                "name": "NodeJS"
+            },
+            {
+                "name": "Express"
+            },
+            {
+                "name": "GraphQL"
+            },
+            {
+                "name": "Angular"
+            },
+            {
+                "name": "PostgreSQL"
+            },
+            {
+                "name": "AWS"
+            },
+            {
+                "name": "Docker"
+            },
+            {
+                "name": "OAuth"
+            }
+        ],
+        "period": "current",
+        "link": "https://www.minnosphere.com/"
+    },
+    "gsa": {
+        "name": "GSA: Common Services",
+        "type": "work",
+        "description": `
+            Architect and lead developer for building a suite of reusable <strong>micro-services</strong> supporting 
+            business applications for a market-leading manufacturing company. 
+            <br />
+            <br />
+            I've had a major role in guiding our customer through various architectural decisions, 
+            whilst also implementing the most technically challenging components.
+        `,
+        "technologies": [
+            {
+                "name": "Spring"
+            },
+            {
+                "name": "HANA"
+            },
+            {
+                "name": "Hibernate"
+            },
+            {
+                "name": "Cloud Foundry"
+            },
+            {
+                "name": "SAP API Manager"
+            },
+            {
+                "name": "Bamboo"
+            },
+            {
+                "name": "OAuth"
+            }
+        ],
+        "period": "2017 - 2019"
+    },
+    "msg.cm": {
+        "name": "Candidate Management",
+        "type": "work",
+        "description": `
+            An internal project for managing our entry-level job candidates. The project Was built using 
+            <strong>Spring Boot</strong> and a <strong>PostgreSQL</strong> database, with <strong>React</strong> 
+            on the front-end. 
+            <br />
+            <br />
+            My role was that of a technical mentor, organizer and product owner.
+        `,
+        "technologies": [
+            {
+                "name": "Java"
+            },
+            {
+                "name": "Spring"
+            },
+            {
+                "name": "PostgreSQL"
+            },
+            {
+                "name": "React"
+            },
+            {
+                "name": "Redux"
+            },
+            {
+                "name": "Docker"
+            }
+        ],
+        "period": "2016 - 2018",
+        "github": "https://github.com/serban-petrescu/candidate-management"
+    },
+    "msg.insas": {
+        "name": "Insurance as a service",
+        "type": "work",
+        "description": `
+            A continuation of the "Next Generation Underwriting" project, but focused more towards 
+            <strong>cloud enablement</strong>. The project consists of several smaller prototypes or 
+            showcases that aim to be deployed on a cloud platform (e.g. AWS). 
+            <br />
+            <br />
+            I had mostly development-related tasks related to building our <strong>MEAN</strong>-stack-based solution.
+        `,
+        "technologies": [
+            {
+                "name": "NodeJS"
+            },
+            {
+                "name": "Express"
+            },
+            {
+                "name": "MongoDB"
+            },
+            {
+                "name": "Mongoose"
+            },
+            {
+                "name": "Angular"
+            },
+            {
+                "name": "TypeScript"
+            }
+        ],
+        "period": "2017",
+        "link": "https://www.minnosphere.com"
+    },
+    "nguw": {
+        "name": "Next Generation Underwriting",
+        "type": "work",
+        "description": `
+            Project focused on aiding underwriters in their work through <em>predictive analytics</em> 
+            and pre-built business rules. 
+            <br />
+            <br />
+            My role in this project was similar to a full stack developer, whilst also being responsible 
+            for most of the design and architecture decisions (being basically an informal technical lead).
+        `,
+        "technologies": [
+            {
+                "name": "Java"
+            },
+            {
+                "name": "R"
+            },
+            {
+                "name": "MySQL"
+            },
+            {
+                "name": "Olingo"
+            },
+            {
+                "name": "JAX-RS"
+            },
+            {
+                "name": "JavaScript"
+            },
+            {
+                "name": "SAP UI5"
+            },
+            {
+                "name": "D3.js"
+            }
+        ],
+        "images": [
+            {
+                "path": "/images/nguw0.png",
+                "description": "The user could define questions to build an underwriting questionnaire."
+            },
+            {
+                "path": "/images/nguw2.png",
+                "description": "The answers from the questions would be used to compute further attributes using formulas."
+            },
+            {
+                "path": "/images/nguw1.png",
+                "description": "All these results would be fed into a ML algorithm during the underwriting process."
+            }
+        ],
+        "period": "2016 - 2017",
+        "link": "https://www.minnosphere.com"
+    },
+    "gtfe": {
+        "name": "GTFE Analysis Reports",
+        "type": "work",
+        "description": `
+            A customer add-on to FS-RI (Financial Services - Reinsurance) for the General Reinsurance Company. 
+            The add-on consisted of three <strong>UI5</strong> applications which pulled various performance 
+            indicators calculated by <strong>ABAP CDS</strong> views and exposed through <strong>SAP Gateway</strong>
+            services.
+        `,
+        "technologies": [
+            {
+                "name": "ABAP"
+            },
+            {
+                "name": "ABAP CDS"
+            },
+            {
+                "name": "SAP Gateway"
+            },
+            {
+                "name": "SAP UI5"
+            }
+        ],
+        "period": "2016"
+    },
+    "msg.taxo": {
+        "name": "Taxonomic Engine",
+        "type": "work",
+        "description": `
+            A <strong>SCP</strong>, <strong>HANA</strong>, <strong>UI5</strong> project for the human resources industry. 
+            The main goal of the project was to automatically parse and classify candidates based on their CVs.
+            <br />
+            <br />
+            We had a small development team in which I was responsible for most technical decisions, under the guidance
+            of another software architect. 
+        `,
+        "technologies": [
+            {
+                "name": "HANA"
+            },
+            {
+                "name": "SQLScript"
+            },
+            {
+                "name": "SAP UI5"
+            },
+            {
+                "name": "Fiori"
+            },
+            {
+                "name": "D3.js"
+            }
+        ],
+        "period": "2015 - 2016",
+        "images": [
+            {
+                "path": "/images/taxo1.PNG",
+                "description": "The result obtained after parsing and analyzing the contents of my own CV."
+            },
+            {
+                "path": "/images/taxo2.PNG",
+                "description": "The same results, but compared against the typical profile of a Java Developer (as deduced by the engine)."
+            }
+        ]
+    },
+    "msg.lrm": {
+        "name": "msg.LRM",
+        "type": "work",
+        "description": `
+            Various customer development projects centered on the Life Reinsurance Module. 
+            <br />
+            <br />
+            Initially, to get acquainted to the module and the underlying framework, I was part of the product development 
+            team. Afterwards, I worked on various customization projects for different international customers.
+        `,
+        "technologies": [
+            {
+                "name": "ABAP"
+            }
+        ],
+        "period": "2014 - 2016",
+        "link": "https://www.msg-global.com/reinsurance"
+    },
+    "fs-pm": {
+        "name": "SAP FS-PM",
+        "type": "work",
+        "description": `
+            A small customer addition to the Financial Services - Policy Management SAP module.
+        `,
+        "technologies": [
+            {
+                "name": "ABAP"
+            }
+        ],
+        "period": "2015",
+        "link": "https://www.msg-global.com/insurance"
+    },
+    "internship": {
+        "name": "Internship Apps",
+        "type": "work",
+        "description": `
+            Several primary insurance small <strong>UI5</strong> applications. All of them had 
+            <strong>SAP Gateway</strong> backend services, which exposed RFCs from standard modules. 
+            Most of the applications targeted the transport insurance segment and two of them targeted 
+            small goods primary insurance.
+        `,
+        "images": [
+            {
+                "path": "/images/internshipBill1.PNG",
+                "description": "Using the bill creation application, the user can add several items to a new bill."
+            },
+            {
+                "path": "/images/internshipBill2.PNG",
+                "description": "Then the user must either search for the customer (business partner) or create a new one."
+            },
+            {
+                "path": "/images/internshipBill3.PNG",
+                "description": "At the end, the user must agree to the terms and conditions. A PDF receipt is created afterwards."
+            }
+        ],
+        "technologies": [
+            {
+                "name": "ABAP"
+            },
+            {
+                "name": "SAP Gateway"
+            },
+            {
+                "name": "SAP UI5"
+            },
+            {
+                "name": "Fiori"
+            }
+        ],
+        "period": "2014"
+    },
+    "smta": {
+        "name": "SMTA",
+        "type": "academic",
+        "description": `
+            A shipment tracking application targeted at the transport insurance industry branch, consisting of two 
+            tracking device prototypes (<em>Android, Arduino</em>) which communicate with <strong>cloud services</strong>,
+            which store the data, send out notifications and process the collected figures to expose analytical scenarios.
+
+            <br />
+            <br />
+
+            As this was my bachelor degree project, I've built it completely from scratch by myself.
+        `,
+        "technologies": [
+            {
+                "name": "Java"
+            },
+            {
+                "name": "HANA"
+            },
+            {
+                "name": "SQLScript"
+            },
+            {
+                "name": "Android"
+            },
+            {
+                "name": "Arduino"
+            },
+            {
+                "name": "C#"
+            },
+            {
+                "name": "SAP UI5"
+            }
+        ],
+        "images": [
+            {
+                "path": "/images/bachelor1.png",
+                "description": "The sensor maintenance application."
+            },
+            {
+                "path": "/images/backelor2.png",
+                "description": "The real-time tracking application with a transport being currently selected."
+            },
+            {
+                "path": "/images/backelor3.png",
+                "description": "The transport evolution comparison application (the user has selected to align the starts of the data series)."
+            },
+            {
+                "path": "/images/backelor4.png",
+                "description": "The overall statistics application output."
+            }
+        ],
+        "period": "2015 - 2016",
+        "github": "https://github.com/serban-petrescu/diploma-public",
+        "blog": "https://blogs.sap.com/2017/06/20/the-story-of-a-scp-based-tracking-solution/"
+    },
+    "docgenre": {
+        "name": "Document Generator (Remake)",
+        "type": "academic",
+        "description": `
+            A remake of an older project, with <strong>MongoDB</strong> for storing the document 
+            templates, <strong>Apache Derby + JDBC</strong> for storing the various user, template and field 
+            configurations and an <strong>UI5</strong> interface. The <strong>OpenOffice</strong> API was called 
+            directly from Java to generate the documents.
+        `,
+        "technologies": [
+            {
+                "name": "Java"
+            },
+            {
+                "name": "JDBC"
+            },
+            {
+                "name": "MongoDB"
+            },
+            {
+                "name": "OpenOffice API"
+            },
+            {
+                "name": "SAP UI5"
+            }
+        ],
+        "images": [
+            {
+                "path": "/images/documentGen0.PNG",
+                "description": "The field configuration view (allows the users to define custom field validations)."
+            },
+            {
+                "path": "/images/documentGen1.PNG",
+                "description": "The document generation view. The users must fill in all defined fields with valid values."
+            }
+        ],
+        "period": "2015"
+    },
+    "hospital": {
+        "name": "Hospital",
+        "type": "academic",
+        "description": `
+            Hospital appointment management <strong>cloud application</strong> realized with <strong>JPA</strong> 
+            and <strong>UI5</strong>. Real-time notifications were supported by using <strong>WebSocket</strong> 
+            communication between the clients and the cloud.
+        `,
+        "technologies": [
+            {
+                "name": "Java"
+            },
+            {
+                "name": "EclipseLink"
+            },
+            {
+                "name": "WebSocket"
+            },
+            {
+                "name": "SAP UI5"
+            }
+        ],
+        "images": [
+            {
+                "path": "/images/hospital1.PNG",
+                "description": "The appointment list as seen by a doctor."
+            },
+            {
+                "path": "/images/hospital2.PNG",
+                "description": "The patients list as seen by a nurse or secretary. The opened dialog can be used to make a new appointment."
+            },
+            {
+                "path": "/images/hospital3.PNG",
+                "description": "A real-time notification received by the doctor when one of his patients has arrived at the hospital."
+            }
+        ],
+        "period": "2015"
+    },
+    "bank": {
+        "name": "Bank",
+        "type": "academic",
+        "description": `
+            A small bank application on the cloud. Persistency was done with plain <strong>JDBC</strong> and the 
+            user interface with <strong>UI5</strong>. This application was later remade by using 
+            <strong>Hibernate</strong>, <strong>Spring</strong> and <strong>AngularJS</strong>.
+        `,
+        "technologies": [
+            {
+                "name": "Java"
+            },
+            {
+                "name": "JDBC"
+            },
+            {
+                "name": "SAP UI5"
+            },
+            {
+                "name": "Hibernate"
+            },
+            {
+                "name": "Spring"
+            },
+            {
+                "name": "AngularJS"
+            }
+        ],
+        "images": [
+            {
+                "path": "/images/bank1.PNG",
+                "description": "The home page of admin users."
+            },
+            {
+                "path": "/images/bank2.PNG",
+                "description": "The customer details page with the account list at the bottom."
+            },
+            {
+                "path": "/images/bank3.PNG",
+                "description": "The activity log of a user."
+            },
+            {
+                "path": "/images/bank4.png",
+                "description": "The account list (remake)."
+            },
+            {
+                "path": "/images/bank5.png",
+                "description": "The detail page for an account (remake)."
+            }
+        ],
+        "period": "2014 - 2015"
+    },
+    "ticketsmock": {
+        "name": "Ticket System",
+        "type": "academic",
+        "description": `
+            A UI-only application for an online, web-based ticketing system. It has three types of users: 
+            customers which may open support tickets, employees which must solve the tickets and managers 
+            which can oversee the performance of the employees and must solve any customer complaints.
+        `,
+        "technologies": [
+            {
+                "name": "SAP UI5"
+            }
+        ],
+        "images": [
+            {
+                "path": "/images/ticket1.PNG",
+                "description": "The view which displays a customer's previously opened tickets."
+            },
+            {
+                "path": "/images/ticket2.PNG",
+                "description": "The view which shows an employee's unsolved tickets."
+            },
+            {
+                "path": "/images/ticket3.PNG",
+                "description": "The employee performance statistics application for managers."
+            }
+        ],
+        "period": "2015",
+        "link": "https://uidproject-p1940442392trial.dispatcher.hanatrial.ondemand.com/webapp/index.html?hc_reset"
+    },
+    "bookstore": {
+        "name": "Bookstore",
+        "type": "academic",
+        "description": `
+            A small bookstore on the cloud. Is very similar to the bank applications, but the persistency was 
+            done in XML files (stored in a Cloud Document Store) and the user also has the possibility of 
+            generating reports in various formats (TXT, XML, CSV).
+        `,
+        "technologies": [
+            {
+                "name": "Java"
+            },
+            {
+                "name": "CMIS"
+            },
+            {
+                "name": "SAP UI5"
+            }
+        ],
+        "images": [
+            {
+                "path": "/images/book1.PNG",
+                "description": "The home page of an admin user (notice the tiles for generating reports)."
+            }
+        ],
+        "period": "2014"
+    },
+    "asmgraph": {
+        "name": "Assembly Graph Plotter",
+        "type": "academic",
+        "description": `
+            A mathematical functions graph plotting application entirely written in <strong>assembly</strong>. 
+            The user is able to enter the mathematical formula in the console and then the program plots the 
+            function's graph.
+        `,
+        "technologies": [
+            {
+                "name": "Assembly"
+            }
+        ],
+        "images": [
+            {
+                "path": "/images/asm1.png",
+                "description": "The formula entry console prompt sequence."
+            },
+            {
+                "path": "/images/asm2.png",
+                "description": "The resulting graph plot."
+            }
+        ],
+        "period": "2013"
+    }
+};
+
+const site = {
+    "repository": "https://github.com/serban-petrescu/serban-petrescu.github.io",
+    "print": "/print.html",
+    "libraries": [{
+        "name": "React",
+        "url": "https://github.com/facebook/react"
+    }, {
+        "name": "Semantic UI",
+        "url": "https://github.com/Semantic-Org/Semantic-UI-React"
+    }]
+};
+
+const highlights = {
+    "education": {
+        "title": "Software Engineering MSc.",
+        "description": "Master's degree obtained at the faculty of Mathematics and Informatics, Babeș-Bolyai University."
+    },
+    "work": {
+        "title": "Lead IT Consultant",
+        "description": "Working in the insurance department of msg-systems Romania, dealing with architecture, leadership, mentoring.",
+    },
+    "projects": [projects.kickit, projects.gsa, projects.smta]
+};
+
+const data = {
+    "name": "Șerban Petrescu",
+    "phone": "+40 744 865 132",
+    "emails": "Serban.Petrescu@outlook.com",
+    "location": "Cluj-Napoca, Romania",
+    "website": "https://serban-petrescu.github.io/",
+    "avatar": "/images/profile-image-square.png",
+    "cover": "/images/cover.jpg",
+    "role": "Lead IT Consultant @ msg, Co-Founder @ KickIT",
+    "birthday": new Date(1993, 6, 9),
+    "cv": "/downloads/CV_Serban_Petrescu.pdf",
+    site,
+    experience,
+    accounts,
+    projects,
+    highlights,
+    "summary": `
+        <p>Hi! I'm Serban, an IT enthusiast which works full time at msg-systems Romania, has a tech start-up built completely from scratch and teaches Software Design at TU-CN.<p>
+        <p>I typically fulfill the roles of <strong>solution architect</strong> and <strong>lead developer</strong> with a strong focus on growing my team through technical challenges, training sessions, presentations and mentoring.</p> 
+        <p>During the past years I have frequently switched between technologies, becoming proficient in NodeJS, Spring and the SAP ecosystem. My current target area of expertise is around <em>Amazon Web Services</em>, <em>Spring Boot</em> and <em>React</em>.</p>
+    `
+}
+
+export default data;

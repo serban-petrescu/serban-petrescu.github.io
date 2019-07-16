@@ -1,0 +1,13 @@
+@import '~semantic-ui-css/semantic.min.css';
+
+@media all and (max-width: 736px) {
+    .section-divider {
+        margin-top: 4rem;
+    }
+}
+
+@media all and (min-width: 737px) {
+    .section-divider {
+        margin-top: 8rem;
+    }
+}
