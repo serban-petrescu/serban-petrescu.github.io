@@ -185,19 +185,19 @@ const projects = {
         ],
         "images": [
             {
-                "path": "/images/tex0.png",
+                "path": "/images/tex0.PNG",
                 "description": "The application provides several functionalities and also a configuration UI."
             },
             {
-                "path": "/images/tex1.png",
+                "path": "/images/tex1.PNG",
                 "description": "Most of the functionalities revolve around the employees, whose data may be imported from the HCM system."
             },
             {
-                "path": "/images/tex3.png",
+                "path": "/images/tex3.PNG",
                 "description": "Trip details may be added and viewed."
             },
             {
-                "path": "/images/tex2.png",
+                "path": "/images/tex2.PNG",
                 "description": "At the end of a trip, expenses may be reported and a settlement document is generated."
             }
         ],
