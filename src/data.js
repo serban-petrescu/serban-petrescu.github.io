@@ -1,5 +1,21 @@
 
 const experience = {
+    "certifications": [{
+        "period": {
+            "at": new Date(2020, 1, 15)
+        },
+        "title": "AWS Certified Solutions Architect - Associate",
+        "body": "Amazon Web Services",
+        "logo": "/logos/aws.png"
+    },
+    {
+        "period": {
+            "at": new Date(2011, 5, 1)
+        },
+        "title": "ESOL - Certificate in Advanced English",
+        "body": "University of Cambridge",
+        "logo": "/logos/cambridge.png"
+    }],
     "work": [{
         "period": {
             "from": new Date(2019, 2, 1),
@@ -88,7 +104,7 @@ const experience = {
         },
         "title": "Leonardo da'Vinci Project",
         "body": "A month-and-a-half-long exchange project set in Leipzig, Germany. Studied basic web technologies like HTML, PHP and JS at a local company.",
-        "icon": "university"
+        "logo": "/logos/leonardo.png"
     }, {
         "period": {
             "from": new Date(2008, 8, 15),
@@ -988,8 +1004,8 @@ const projects = {
             for managing municipal services. 
             <br />
             <br />
-            We started implementing it as a modular monolith, with 
-            the target of splitting it up into <strong>micro-services</strong> later on if needed.
+            We implemented a modular monolithic NodeJS core, communicating with several <strong>serverless micro-services</strong> 
+            and a monolithic Angular frontend application.
         `,
         "technologies": [
             {
@@ -1018,7 +1034,8 @@ const projects = {
             }
         ],
         "period": "current",
-        "link": "https://www.minnosphere.com/"
+        "link": "https://www.dipko.de/",
+        "youtube": "https://www.youtube.com/watch?v=hglkZizds-w"
     },
     "gsa": {
         "name": "GSA: Common Services",
@@ -1605,7 +1622,7 @@ const highlights = {
         "title": "Lead IT Consultant",
         "description": "Working in the insurance department of msg-systems Romania, dealing with architecture, leadership, mentoring.",
     },
-    "projects": [projects.kickit, projects.gsa, projects.smta]
+    "projects": [projects.dipko, projects.kickit, projects.gsa]
 };
 
 const data = {

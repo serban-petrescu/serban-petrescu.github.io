@@ -24,10 +24,12 @@ export default class App extends Component {
         <Hero name={state.name} title={state.role} avatar={state.avatar} linkedin={state.accounts.linkedin} cv={state.cv} />
         <Introduction cover={state.cover} summary={state.summary} social={data.accounts} />
         <Highlights {...state.highlights} onClickGallery={onClickGallery} />
-        <div id='academic' />
-        <ExperienceList title='Education' items={state.experience.academic} />
         <div id='work' />
         <ExperienceList title='Work History' items={state.experience.work} />
+        <div id='certifications' />
+        <ExperienceList title='Certifications' items={state.experience.certifications} />
+        <div id='academic' />
+        <ExperienceList title='Education' items={state.experience.academic} />
         <div id='projects' />
         <ProjectList projects={data.projects} onClickGallery={onClickGallery} />
         <GalleryModal ref={ref => modal = ref} />
