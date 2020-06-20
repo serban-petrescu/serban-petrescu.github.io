@@ -1730,7 +1730,7 @@ const data = {
     "website": "https://serban-petrescu.github.io/",
     "avatar": "/images/profile-image-square.png",
     "cover": "/images/cover.jpg",
-    "role": "Lead IT Consultant @ msg, Co-Founder @ KickIT",
+    "role": "Technical Product Manager @ Crossover for Work",
     "birthday": new Date(1993, 6, 9),
     "cv": "/downloads/CV_Serban_Petrescu.pdf",
     site,
