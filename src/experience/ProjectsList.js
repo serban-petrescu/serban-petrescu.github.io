@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Segment, Divider, Container, Dropdown } from 'semantic-ui-react';
+import React, {Component} from 'react';
+import {Segment, Divider, Container, Dropdown} from 'semantic-ui-react';
 
 import ProjectsGrid from '../common/ProjectsGrid';
 
@@ -50,11 +50,11 @@ const optionComparator = (a, b) => a.text.localeCompare(b.text);
 const extractOptions = projects => unique(arrayToMap(projects)
     .map(project => project.technologies || [])
     .reduce((prev, curr) => prev.concat(curr), [])
-    .map(({ name }) => name))
+    .map(({name}) => name))
     .map(buildOption)
     .sort(optionComparator);
 
-const projectMatches = ({ name, description, technologies }, criteria) => {
+const projectMatches = ({name, description, technologies}, criteria) => {
     for (let i = 0; i < criteria.length; ++i) {
         const value = criteria[i];
         if (name.indexOf(value) !== -1 || description.indexOf(value) !== -1) {
@@ -102,21 +102,24 @@ export default class ProjectList extends Component {
     }
 
     render() {
-        const { onClickGallery, projects } = this.props;
-        const { options } = this.state;
+        const {onClickGallery, projects} = this.props;
+        const {options, criteria} = this.state;
         const filtered = this.process(projects);
         return (
             <Container>
-                <div className='section-divider'></div>
-                <Segment vertical className='project-list' >
+                <div className='section-divider'/>
+                <Segment vertical className='project-list'>
                     <Divider as='h2' className='header' horizontal>My Work</Divider>
                     <Dropdown placeholder='Search by keywords' className='project-search'
-                        options={options} fluid search multiple selection allowAdditions clearable
-                        onAddItem={(_, { value }) => this.addOption(value)} closeOnChange closeOnEscape
-                        onChange={(_, { value }) => this.changeCriteria(value)} />
+                              options={options} fluid search multiple selection allowAdditions clearable
+                              closeOnChange closeOnEscape value={criteria}
+                              onAddItem={(_, {value}) => this.addOption(value)}
+                              onChange={(_, {value}) => this.changeCriteria(value)}/>
                     {
                         filtered.length ?
-                            <ProjectsGrid projects={filtered} onClickGallery={onClickGallery} /> :
+                            <ProjectsGrid projects={filtered}
+                                          onClickGallery={onClickGallery}
+                                          onClickLabel={name => this.addOption(name)}/> :
                             <div className='no-projects'><em>No projects match the given criteria...</em></div>
                     }
 

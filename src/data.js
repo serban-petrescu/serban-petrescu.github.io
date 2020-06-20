@@ -1,4 +1,3 @@
-
 const experience = {
     "certifications": [{
         "period": {
@@ -8,30 +7,22 @@ const experience = {
         "body": "Amazon Web Services",
         "logo": "/logos/aws.png"
     },
-    {
-        "period": {
-            "at": new Date(2011, 5, 1)
-        },
-        "title": "ESOL - Certificate in Advanced English",
-        "body": "University of Cambridge",
-        "logo": "/logos/cambridge.png"
-    }],
+        {
+            "period": {
+                "at": new Date(2011, 5, 1)
+            },
+            "title": "ESOL - Certificate in Advanced English",
+            "body": "University of Cambridge",
+            "logo": "/logos/cambridge.png"
+        }],
     "work": [{
         "period": {
-            "from": new Date(2019, 2, 1),
+            "from": new Date(2020, 5, 15),
             "to": null
         },
-        "title": "Lead IT Consultant @ msg-systems",
-        "body": "I have a broad range of responsibilities: software architecture, technical leadership, mentoring, hosting internal trainings, performing yearly evaluations, etc.",
-        "logo": "/logos/msg.png"
-    }, {
-        "period": {
-            "from": new Date(2018, 0, 1),
-            "to": null
-        },
-        "title": "Co-Founder @ KickIT",
-        "body": "Founded a start-up together with a close friend. I mostly deal with the architecture, development and operations of our application.",
-        "logo": "/logos/kickit.png"
+        "title": "Technical Product Manager @ Crossover",
+        "body": "Mainly responsible for making high-level architecture decisions for a broad palette of products.",
+        "logo": "/logos/crossover.png"
     }, {
         "period": {
             "from": new Date(2018, 1, 1),
@@ -40,6 +31,22 @@ const experience = {
         "title": "Teaching Assistant @ T.U. Cluj-Napoca",
         "body": "Six hours per week holding a Software Design laboratory together with my 3rd year Computer Science students.",
         "logo": "/logos/utcn.png"
+    }, {
+        "period": {
+            "from": new Date(2019, 2, 1),
+            "to": new Date(2020, 5, 15)
+        },
+        "title": "Lead IT Consultant @ msg-systems",
+        "body": "I had a broad range of responsibilities: software architecture, technical leadership, mentoring, hosting internal trainings, performing yearly evaluations, etc.",
+        "logo": "/logos/msg.png"
+    }, {
+        "period": {
+            "from": new Date(2018, 0, 1),
+            "to": new Date(2019, 9, 1)
+        },
+        "title": "Co-Founder @ KickIT",
+        "body": "Founded a start-up together with a close friend. I mostly dealt with the architecture, development and operations of our application.",
+        "logo": "/logos/kickit.png"
     }, {
         "period": {
             "from": new Date(2017, 2, 1),
@@ -76,7 +83,7 @@ const experience = {
     "academic": [{
         "period": {
             "from": new Date(2017, 9, 1),
-            "to": new Date(2019, 8, 1),
+            "to": null,
         },
         "title": "Babeș-Bolyai University",
         "body": "Master's degree in Software Engineering at the faculty of Mathematics and Informatics.",
@@ -125,9 +132,81 @@ const accounts = {
 };
 
 const projects = {
+    "practicaldevguide": {
+        "name": "Practical Dev Guide",
+        "type": "personal",
+        "description": `
+            A YouTube series dedicated to teaching basic web application programming for students.
+            <br />
+            <br />
+            I am showcasing step-by-step how to build a typical <strong>Spring Boot</strong> application, backed by
+            an embedded <strong>H2</strong> database and fronted by a <strong>React</strong> user interface.
+        `,
+        "technologies": [
+            {
+                "name": "Spring"
+            },
+            {
+                "name": "H2"
+            },
+            {
+                "name": "React"
+            }
+        ],
+        "youtube": "https://www.youtube.com/playlist?list=PLFVVA9FdSLI2XOmDEgu3noePIWlZRi0xI",
+        "github": "https://github.com/serban-petrescu/practical-dev-guide",
+        "period": "current"
+    },
+    "msgcheckin": {
+        "name": "msg.CheckIn",
+        "type": "work",
+        "description": `
+            A <strong>Spring Boot</strong> application with a <strong>Semantic UI React</strong> frontend for managing
+            which colleagues are coming at the office in which days and in which room / place. 
+            <br /> <br />
+            This application was 
+            needed due to the Corona-virus measures and its first version was implemented almost exclusively by me.  
+        `,
+        "technologies": [
+            {
+                "name": "Spring"
+            },
+            {
+                "name": "PostgreSQL"
+            },
+            {
+                "name": "React"
+            },
+            {
+                "name": "Semantic UI"
+            },
+            {
+                "name": "JSX"
+            }
+        ],
+        "images": [
+            {
+                "path": "/images/checkin1.PNG",
+                "description": "The login, which was backed by the corporate LDAP."
+            },
+            {
+                "path": "/images/checkin2.PNG",
+                "description": "The dashboard, which shows my team and my check-ins."
+            },
+            {
+                "path": "/images/checkin3.PNG",
+                "description": "The map of a floor in one of our buildings."
+            },
+            {
+                "path": "/images/checkin4.PNG",
+                "description": "The checkin view of a room with the photos of the colleagues working there."
+            }
+        ],
+        "period": "current"
+    },
     "portfolio": {
         "name": "My Portfolio",
-        "type": "work",
+        "type": "personal",
         "description": `
             This very website, which is meant to showcase my experience and projects.
             <br />
@@ -445,7 +524,7 @@ const projects = {
                 "description": "The application can be used to organize soccer competitions (championships, tournaments, etc.)."
             }
         ],
-        "period": "current",
+        "period": "2018 - 2019",
         "link": "https://kickit.ro",
         "facebook": "https://www.facebook.com/kickit.ro"
     },
@@ -1000,12 +1079,12 @@ const projects = {
         "name": "DIPKO",
         "type": "work",
         "description": `
-            Architect and lead developer for building a cloud-based, multi-tenant <em>SaaS platform</em> 
+            Architect and lead developer for building a cloud-based, multi-tenant <strong>SaaS platform</strong> 
             for managing municipal services. 
             <br />
             <br />
-            We implemented a modular monolithic NodeJS core, communicating with several <strong>serverless micro-services</strong> 
-            and a monolithic Angular frontend application.
+            We implemented a modular <strong>NodeJS</strong> core, communicating with several 
+            <strong>serverless micro-services</strong> and a monolithic <strong>Angular</strong> frontend application.
         `,
         "technologies": [
             {
@@ -1033,8 +1112,26 @@ const projects = {
                 "name": "OAuth"
             }
         ],
-        "period": "current",
-        "link": "https://www.dipko.de/",
+        "images": [
+            {
+                "path": "/images/dipko1.png",
+                "description": "The fully-customizable landing page of a tenant."
+            },
+            {
+                "path": "/images/dipko2.png",
+                "description": "The list of bath houses enrolled in the tenant's account."
+            },
+            {
+                "path": "/images/dipko3.png",
+                "description": "The administration view allowing tenant admins to customize each module of the site."
+            },
+            {
+                "path": "/images/dipko4.png",
+                "description": "The checkout page which was integrated with several German payment providers."
+            }
+        ],
+        "period": "2019 - 2020",
+        "link": "https://production.dipko.cloud/",
         "youtube": "https://www.youtube.com/watch?v=hglkZizds-w"
     },
     "gsa": {
@@ -1616,11 +1713,11 @@ const site = {
 const highlights = {
     "education": {
         "title": "Software Engineering MSc.",
-        "description": "Master's degree obtained at the faculty of Mathematics and Informatics, Babeș-Bolyai University."
+        "description": "Studying for my Master's degree at the faculty of Mathematics and Informatics, Babeș-Bolyai University."
     },
     "work": {
-        "title": "Lead IT Consultant",
-        "description": "Working in the insurance department of msg-systems Romania, dealing with architecture, leadership, mentoring.",
+        "title": "Technical Project Manager",
+        "description": "Working in the central product management team at Crossover, dealing with high-level solution architecture decisions.",
     },
     "projects": [projects.dipko, projects.kickit, projects.gsa]
 };

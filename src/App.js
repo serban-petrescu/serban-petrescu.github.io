@@ -33,7 +33,7 @@ export default class App extends Component {
         <div id='projects' />
         <ProjectList projects={data.projects} onClickGallery={onClickGallery} />
         <GalleryModal ref={ref => modal = ref} />
-        <div className='section-divider'></div>
+        <div className='section-divider'/>
         <Footer {...state.site} />
       </div>
     );

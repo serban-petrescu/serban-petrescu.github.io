@@ -17,7 +17,7 @@ const typeText = type => ({
 })[type] || 'Unknown';
 
 const ProjectCard = ({ name, description, period, technologies, link, blog, github, youtube, facebook, images, 
-    type, onClickGallery }) => (
+    type, onClickGallery, onClickLabel }) => (
     <div className='project-highlight'>
         <Card raised color='grey'>
             <Card.Content className='card-header'>
@@ -56,7 +56,7 @@ const ProjectCard = ({ name, description, period, technologies, link, blog, gith
                 <Label.Group size='tiny' color='black'>
                     {
                         (technologies || []).map(({ name }, index) => (
-                            <Label key={index}>{name}</Label>
+                            <Label key={index} as='a' onClick={() => onClickLabel(name)}>{name}</Label>
                         ))
                     }
                 </Label.Group>
