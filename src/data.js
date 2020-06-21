@@ -1739,9 +1739,9 @@ const data = {
     projects,
     highlights,
     "summary": `
-        <p>Hi! I'm Serban, an IT enthusiast which works full time at msg-systems Romania, has a tech start-up built completely from scratch and teaches Software Design at TU-CN.<p>
-        <p>I typically fulfill the roles of <strong>solution architect</strong> and <strong>lead developer</strong> with a strong focus on growing my team through technical challenges, training sessions, presentations and mentoring.</p> 
-        <p>During the past years I have frequently switched between technologies, becoming proficient in NodeJS, Spring and the SAP ecosystem. My current target area of expertise is around <em>Amazon Web Services</em>, <em>Spring Boot</em> and <em>React</em>.</p>
+        <p>Hi! I'm Serban, an IT enthusiast which works full time as a Technical Product Manager, teaches Software Design at TU-CN and founded a tech start-up.</p>
+        <p>In the past, I typically fulfilled the roles of <strong>solution architect</strong> and <strong>lead developer</strong> with a strong focus on growing my team through technical challenges, training sessions, presentations and mentoring.</p> 
+        <p>I have frequently switched between technologies, becoming proficient in NodeJS, Spring and the SAP ecosystem. My current target area of expertise is around <em>Amazon Web Services</em>, <em>Spring Boot</em> and <em>React</em>.</p>
     `
 }
 
