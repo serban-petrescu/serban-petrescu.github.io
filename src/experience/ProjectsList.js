@@ -109,7 +109,7 @@ export default class ProjectList extends Component {
             <Container>
                 <div className='section-divider'/>
                 <Segment vertical className='project-list'>
-                    <Divider as='h2' className='header' horizontal>My Work</Divider>
+                    <Divider as='h2' className='header' horizontal>My Projects</Divider>
                     <Dropdown placeholder='Search by keywords' className='project-search'
                               options={options} fluid search multiple selection allowAdditions clearable
                               closeOnChange closeOnEscape value={criteria}

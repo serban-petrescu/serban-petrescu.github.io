@@ -29,7 +29,6 @@ const Introduction = ({ cover, summary, social }) => (
                     <Grid.Column floated='right' width={6}>
                         <div className="is-flex">
                             <Image bordered rounded size='large' src={cover} />
-                            <Image src="./images/aws-certification.png" alt="AWS Certified Solutions Architect - Associate" />
                         </div>
                     </Grid.Column>
                 </Grid.Row>

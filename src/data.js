@@ -1,43 +1,45 @@
 const experience = {
     "certifications": [{
         "period": {
-            "at": new Date(2020, 1, 15)
+            "at": new Date(2021, 0, 9)
+        },
+        "title": "AWS Certified Solutions Architect - Professional",
+        "body": "Amazon Web Services",
+        "logo": "/logos/aws.png",
+        "link": "https://www.youracclaim.com/badges/caccd8ba-7310-4dcb-bb3b-0ec7b3a778ab/public_url"
+    },
+    {
+        "period": {
+            "at": new Date(2020, 1, 19)
         },
         "title": "AWS Certified Solutions Architect - Associate",
         "body": "Amazon Web Services",
-        "logo": "/logos/aws.png"
+        "logo": "/logos/aws.png",
+        "link": "https://www.youracclaim.com/badges/374ef4e9-8ec1-4ace-a988-f7d382c20cb5/public_url"
     },
-        {
-            "period": {
-                "at": new Date(2011, 5, 1)
-            },
-            "title": "ESOL - Certificate in Advanced English",
-            "body": "University of Cambridge",
-            "logo": "/logos/cambridge.png"
-        }],
+    {
+        "period": {
+            "at": new Date(2011, 5, 1)
+        },
+        "title": "ESOL - Certificate in Advanced English",
+        "body": "University of Cambridge",
+        "logo": "/logos/cambridge.png"
+    }],
     "work": [{
         "period": {
             "from": new Date(2020, 5, 15),
             "to": null
         },
         "title": "Technical Product Manager @ Crossover",
-        "body": "Mainly responsible for making high-level architecture decisions for a broad palette of products.",
+        "body": "Part of a team responsible for making high-level architecture decisions for a more than two hundred products. These products span a wide range of industries and niches. Most of them are SaaS offerings running on AWS.",
         "logo": "/logos/crossover.png"
     }, {
         "period": {
-            "from": new Date(2018, 1, 1),
+            "from": new Date(2019, 2, 1),
             "to": null
         },
-        "title": "Teaching Assistant @ T.U. Cluj-Napoca",
-        "body": "Six hours per week holding a Software Design laboratory together with my 3rd year Computer Science students.",
-        "logo": "/logos/utcn.png"
-    }, {
-        "period": {
-            "from": new Date(2019, 2, 1),
-            "to": new Date(2020, 5, 15)
-        },
         "title": "Lead IT Consultant @ msg-systems",
-        "body": "I had a broad range of responsibilities: software architecture, technical leadership, mentoring, hosting internal trainings, performing yearly evaluations, etc.",
+        "body": "Currently involved as a part time consultant for topics related to: recruitment, architecture, internal trainings and cloud adoption. Previously, I had a broad range of responsibilities: software architecture, technical leadership, mentoring, hosting internal trainings, performing yearly evaluations, etc.",
         "logo": "/logos/msg.png"
     }, {
         "period": {
@@ -47,6 +49,14 @@ const experience = {
         "title": "Co-Founder @ KickIT",
         "body": "Founded a start-up together with a close friend. I mostly dealt with the architecture, development and operations of our application.",
         "logo": "/logos/kickit.png"
+    }, {
+        "period": {
+            "from": new Date(2018, 1, 1),
+            "to": new Date(2018, 6, 1)
+        },
+        "title": "Teaching Assistant @ T.U. Cluj-Napoca",
+        "body": "Six hours per week holding a Software Design laboratory together with my 3rd year Computer Science students.",
+        "logo": "/logos/utcn.png"
     }, {
         "period": {
             "from": new Date(2017, 2, 1),
@@ -164,8 +174,7 @@ const projects = {
             A <strong>Spring Boot</strong> application with a <strong>Semantic UI React</strong> frontend for managing
             which colleagues are coming at the office in which days and in which room / place. 
             <br /> <br />
-            This application was 
-            needed due to the Corona-virus measures and its first version was implemented almost exclusively by me.  
+            Currently, this product is being sold using a <strong>SaaS</strong> model, with the option of on-premise deployment on request.
         `,
         "technologies": [
             {
@@ -182,6 +191,9 @@ const projects = {
             },
             {
                 "name": "JSX"
+            },
+            {
+                "name": "AWS"
             }
         ],
         "images": [
@@ -202,6 +214,7 @@ const projects = {
                 "description": "The checkin view of a room with the photos of the colleagues working there."
             }
         ],
+        "link": "https://www.msg.group/en/check-in",
         "period": "current"
     },
     "portfolio": {
@@ -1719,7 +1732,7 @@ const highlights = {
         "title": "Technical Project Manager",
         "description": "Working in the central product management team at Crossover, dealing with high-level solution architecture decisions.",
     },
-    "projects": [projects.dipko, projects.kickit, projects.gsa]
+    "projects": [projects.msgcheckin, projects.dipko, projects.kickit]
 };
 
 const data = {

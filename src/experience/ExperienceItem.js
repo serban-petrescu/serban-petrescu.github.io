@@ -5,7 +5,7 @@ import { formatPeriod, renderHtml } from '../utils';
 
 import './ExperienceItem.scss';
 
-const ExperienceItem = ({ title, body, icon, logo, period }) => (
+const ExperienceItem = ({ title, body, icon, logo, period, link }) => (
     <Item>
         {
             logo ?
@@ -14,7 +14,9 @@ const ExperienceItem = ({ title, body, icon, logo, period }) => (
         }
 
         <Item.Content className='experience-item-content'>
-            <Item.Header>{title}</Item.Header>
+            {
+                link ? <Item.Header as="a" href={link} target="__blank">{title}</Item.Header> : <Item.Header>{title}</Item.Header>
+            }
             <Item.Meta>
                 <span>{formatPeriod(period)}</span>
             </Item.Meta>
