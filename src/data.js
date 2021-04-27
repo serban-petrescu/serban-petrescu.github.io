@@ -30,9 +30,9 @@ const experience = {
             "from": new Date(2020, 5, 15),
             "to": null
         },
-        "title": "Technical Product Manager @ Crossover",
+        "title": "Cloud Solution Architect @ DevFactory",
         "body": "Part of a team responsible for making high-level architecture decisions for a more than two hundred products. These products span a wide range of industries and niches. Most of them are SaaS offerings running on AWS.",
-        "logo": "/logos/crossover.png"
+        "logo": "/logos/devfactory.png"
     }, {
         "period": {
             "from": new Date(2019, 2, 1),
@@ -43,7 +43,7 @@ const experience = {
         "logo": "/logos/msg.png"
     }, {
         "period": {
-            "from": new Date(2018, 0, 1),
+            "from": new Date(2014, 2, 1),
             "to": new Date(2019, 9, 1)
         },
         "title": "Co-Founder @ KickIT",
@@ -57,38 +57,6 @@ const experience = {
         "title": "Teaching Assistant @ T.U. Cluj-Napoca",
         "body": "Six hours per week holding a Software Design laboratory together with my 3rd year Computer Science students.",
         "logo": "/logos/utcn.png"
-    }, {
-        "period": {
-            "from": new Date(2017, 2, 1),
-            "to": new Date(2018, 2, 1)
-        },
-        "title": "Senior IT Consultant @ msg-systems",
-        "body": "Full time involvement. I started getting more involved in mentoring, technical leadership and architecture.",
-        "logo": "/logos/msg.png"
-    }, {
-        "period": {
-            "from": new Date(2016, 1, 1),
-            "to": new Date(2017, 2, 1)
-        },
-        "title": "IT Consultant @ msg-systems",
-        "body": "Mostly full time involvement, with small exceptions. Was focused solely on analysis and implementation topics.",
-        "logo": "/logos/msg.png"
-    }, {
-        "period": {
-            "from": new Date(2014, 7, 4),
-            "to": new Date(2016, 1, 1)
-        },
-        "title": "Associate IT Consultant @ msg-systems",
-        "body": "Part time during the academic year and full time during the summers. Tackled low-to-medium complexity development tasks.",
-        "logo": "/logos/msg.png"
-    }, {
-        "period": {
-            "from": new Date(2014, 2, 1),
-            "to": new Date(2016, 5, 1)
-        },
-        "title": "Intern @ msg-systems",
-        "body": "During the internship, I was introduced to and worked with various SAP technologies.",
-        "logo": "/logos/msg.png"
     }],
     "academic": [{
         "period": {
@@ -165,7 +133,7 @@ const projects = {
         ],
         "youtube": "https://www.youtube.com/playlist?list=PLFVVA9FdSLI2XOmDEgu3noePIWlZRi0xI",
         "github": "https://github.com/serban-petrescu/practical-dev-guide",
-        "period": "current"
+        "period": "2020"
     },
     "msgcheckin": {
         "name": "msg.CheckIn",
@@ -1729,8 +1697,8 @@ const highlights = {
         "description": "Studying for my Master's degree at the faculty of Mathematics and Informatics, Babeș-Bolyai University."
     },
     "work": {
-        "title": "Technical Project Manager",
-        "description": "Working in the central product management team at Crossover, dealing with high-level solution architecture decisions.",
+        "title": "Cloud Solution Architect",
+        "description": "Working in the central product management team at DevFactory, dealing with high-level solution architecture decisions.",
     },
     "projects": [projects.msgcheckin, projects.dipko, projects.kickit]
 };
@@ -1743,7 +1711,7 @@ const data = {
     "website": "https://serban-petrescu.github.io/",
     "avatar": "/images/profile-image-square.png",
     "cover": "/images/cover.jpg",
-    "role": "Technical Product Manager @ Crossover for Work",
+    "role": "Cloud Solution Architect @ DevFactory",
     "birthday": new Date(1993, 6, 9),
     "cv": "/downloads/CV_Serban_Petrescu.pdf",
     site,
@@ -1752,7 +1720,7 @@ const data = {
     projects,
     highlights,
     "summary": `
-        <p>Hi! I'm Serban, an IT enthusiast which works full time as a Technical Product Manager, teaches Software Design at TU-CN and founded a tech start-up.</p>
+        <p>Hi! I'm Serban, an IT enthusiast which works full time as a Cloud Solution Architect, teaches Software Design at TU-CN and founded a tech start-up.</p>
         <p>In the past, I typically fulfilled the roles of <strong>solution architect</strong> and <strong>lead developer</strong> with a strong focus on growing my team through technical challenges, training sessions, presentations and mentoring.</p> 
         <p>I have frequently switched between technologies, becoming proficient in NodeJS, Spring and the SAP ecosystem. My current target area of expertise is around <em>Amazon Web Services</em>, <em>Spring Boot</em> and <em>React</em>.</p>
     `
