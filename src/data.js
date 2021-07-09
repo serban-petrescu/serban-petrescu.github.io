@@ -30,8 +30,8 @@ const experience = {
             "from": new Date(2020, 5, 15),
             "to": null
         },
-        "title": "Cloud Solution Architect @ DevFactory",
-        "body": "Part of a team responsible for making high-level architecture decisions for a more than two hundred products. These products span a wide range of industries and niches. Most of them are SaaS offerings running on AWS.",
+        "title": "Cloud Solutions Architect @ DevFactory",
+        "body": "Part of a team responsible for making high-level architecture decisions for more than two hundred products. These products span a wide range of industries and niches. Most of them are SaaS offerings running on AWS.",
         "logo": "/logos/devfactory.png"
     }, {
         "period": {
@@ -106,7 +106,8 @@ const accounts = {
     "github": "https://github.com/serban-petrescu/",
     "stackoverflow": "http://stackoverflow.com/users/7612556/serban-petrescu?tab=profile",
     "twitter": "https://twitter.com/petrescu_serban",
-    "youtube": "https://www.youtube.com/channel/UCjpkihJT18wg41Qw3jdu_HA"
+    "youtube": "https://www.youtube.com/channel/UCjpkihJT18wg41Qw3jdu_HA",
+    "medium": "https://serban-petrescu.medium.com/"
 };
 
 const projects = {
@@ -1697,7 +1698,7 @@ const highlights = {
         "description": "Studying for my Master's degree at the faculty of Mathematics and Informatics, Babeș-Bolyai University."
     },
     "work": {
-        "title": "Cloud Solution Architect",
+        "title": "Cloud Solutions Architect",
         "description": "Working in the central product management team at DevFactory, dealing with high-level solution architecture decisions.",
     },
     "projects": [projects.msgcheckin, projects.dipko, projects.kickit]
@@ -1711,7 +1712,7 @@ const data = {
     "website": "https://serban-petrescu.github.io/",
     "avatar": "/images/profile-image-square.png",
     "cover": "/images/cover.jpg",
-    "role": "Cloud Solution Architect @ DevFactory",
+    "role": "Cloud Solutions Architect @ DevFactory",
     "birthday": new Date(1993, 6, 9),
     "cv": "/downloads/CV_Serban_Petrescu.pdf",
     site,

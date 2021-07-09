@@ -14,16 +14,18 @@ const Introduction = ({ cover, summary, social }) => (
                         <Header as='h2'>About Myself</Header>
                         {renderHtml(summary)}
                         <div className="social">
-                            <Button circular color='black' icon='github' size='large' 
+                            <Button circular color='black' icon='github' size='large'
                                 as='a' href={social.github} target='_blank' />
-                            <Button circular color='linkedin' icon='linkedin' size='large' 
+                            <Button circular color='linkedin' icon='linkedin' size='large'
                                 as='a' href={social.linkedin} target='_blank' />
                             <Button circular color='youtube' icon='youtube' size='large'
-                                as='a' href={social.youtube}  target='_blank' />
-                            <Button circular color='twitter' icon='twitter' size='large' 
+                                as='a' href={social.youtube} target='_blank' />
+                            <Button circular color='twitter' icon='twitter' size='large'
                                 as='a' href={social.twitter} target='_blank' />
-                            <Button circular color='orange' icon='stack overflow' size='large' 
+                            <Button circular color='orange' icon='stack overflow' size='large'
                                 as='a' href={social.stackoverflow} target='_blank' />
+                            <Button circular color='green' icon='medium m' size='large'
+                                as='a' href={social.medium} target='_blank' />
                         </div>
                     </Grid.Column>
                     <Grid.Column floated='right' width={6}>
