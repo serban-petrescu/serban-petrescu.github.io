@@ -111,6 +111,114 @@ const accounts = {
 };
 
 const projects = {
+    "eswp1": {
+        "name": "Architecture Spec Work",
+        "type": "work",
+        "description": `
+            My main responsibility is to write detailed technical architecture specifications for a portfolio 200+ products. 
+            I write about three specs per week, each requiring up to a few hundred man-days to implement.
+            <br />
+            <br />
+            Most specs extensively use <strong>AWS</strong> (AppSync, Lambda, DynamoDB, Cognito, etc.) but sometimes we 
+            also tackle changes to legacy, monolithic, on-premise products.
+        `,
+        "technologies": [
+            {
+                "name": "AWS"
+            },
+            {
+                "name": "DynamoDB"
+            },
+            {
+                "name": "AppSync"
+            },
+            {
+                "name": "API Gateway"
+            },
+            {
+                "name": "Cognito"
+            },
+            {
+                "name": "SQS"
+            },
+            {
+                "name": "Lambda"
+            },
+            {
+                "name": "Step Functions"
+            }
+        ],
+        "period": "current"
+    },
+    "eswfi": {
+        "name": "Financial Insights",
+        "type": "work",
+        "description": `
+            We've set up and consumed the <strong>AWS Cost and Usage</strong> reports to break down and scrutinize the cost structure
+            for an AWS organization generating over 20M USD in yearly costs.
+            <br />
+            <br />
+            The insights that we found were then implemented as automation and pushed into <strong>QuickSight</strong> and 
+            <strong>Google Sheets</strong> to be consumed by top executives.
+        `,
+        "technologies": [
+            {
+                "name": "AWS"
+            },
+            {
+                "name": "Python"
+            },
+            {
+                "name": "Lambda"
+            },
+            {
+                "name": "Step Functions"
+            },
+            {
+                "name": "Athena"
+            },
+            {
+                "name": "QuickSight"
+            },
+            {
+                "name": "Google APIs"
+            }
+        ],
+        "period": "2020"
+    },
+    "eswco": {
+        "name": "Cost Optimization",
+        "type": "work",
+        "description": `
+            I've performed extensive analysis on more than 500 AWS accounts to find 
+            <strong>cost reduction</strong> opportunities.
+            <br />
+            <br />
+            This involved writing a suite of <strong>Lambdas</strong> that periodically queried the target accounts for 
+            metrics and even executed some strategies (resource deletion, installing agents, etc.). 
+        `,
+        "technologies": [
+            {
+                "name": "AWS"
+            },
+            {
+                "name": "Python"
+            },
+            {
+                "name": "Lambda"
+            },
+            {
+                "name": "Step Functions"
+            },
+            {
+                "name": "CloudWatch"
+            },
+            {
+                "name": "Systems Manager"
+            }
+        ],
+        "period": "2020 - 2021"
+    },
     "practicaldevguide": {
         "name": "Practical Dev Guide",
         "type": "personal",
@@ -144,6 +252,7 @@ const projects = {
             which colleagues are coming at the office in which days and in which room / place. 
             <br /> <br />
             Currently, this product is being sold using a <strong>SaaS</strong> model, with the option of on-premise deployment on request.
+            The SaaS version is deployed on <strong>AWS</strong> (CloudFront, Load Balancer, ECS, RDS).
         `,
         "technologies": [
             {
@@ -183,7 +292,7 @@ const projects = {
                 "description": "The checkin view of a room with the photos of the colleagues working there."
             }
         ],
-        "link": "https://www.msg.group/en/check-in",
+        "link": "https://www.msgcheckin.com",
         "period": "current"
     },
     "portfolio": {
@@ -193,7 +302,7 @@ const projects = {
             This very website, which is meant to showcase my experience and projects.
             <br />
             <br />
-            Initially built with vanilla <strong>UI5</strong>, then re-build with custom
+            Initially built with vanilla <strong>UI5</strong>, then re-built with custom
             controls using <strong>JSX</strong>, finally re-built again using <strong>React</strong>. 
         `,
         "technologies": [
@@ -679,7 +788,7 @@ const projects = {
         `,
         "technologies": [
             {
-                "name": "HTML5"
+                "name": "HTML"
             },
             {
                 "name": "SAP UI5"
@@ -713,7 +822,7 @@ const projects = {
                 "name": "Java"
             },
             {
-                "name": "HTML5"
+                "name": "HTML"
             },
             {
                 "name": "SAP UI5"
@@ -1061,8 +1170,9 @@ const projects = {
         "name": "DIPKO",
         "type": "work",
         "description": `
-            Architect and lead developer for building a cloud-based, multi-tenant <strong>SaaS platform</strong> 
-            for managing municipal services. 
+            I was initially the architect and lead developer for building a cloud-based, multi-tenant 
+            <strong>SaaS platform</strong> for managing municipal services. Currently, I serve as an 
+            occasional consultant for the team.
             <br />
             <br />
             We implemented a modular <strong>NodeJS</strong> core, communicating with several 
@@ -1088,10 +1198,10 @@ const projects = {
                 "name": "AWS"
             },
             {
-                "name": "Docker"
+                "name": "Terraform"
             },
             {
-                "name": "OAuth"
+                "name": "Cognito"
             }
         ],
         "images": [
@@ -1112,8 +1222,8 @@ const projects = {
                 "description": "The checkout page which was integrated with several German payment providers."
             }
         ],
-        "period": "2019 - 2020",
-        "link": "https://production.dipko.cloud/",
+        "period": "current",
+        "link": "https://www.dipko.de/",
         "youtube": "https://www.youtube.com/watch?v=hglkZizds-w"
     },
     "gsa": {
