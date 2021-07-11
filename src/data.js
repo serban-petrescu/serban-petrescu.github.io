@@ -148,6 +148,7 @@ const projects = {
                 "name": "Step Functions"
             }
         ],
+        "tags": ["architect"],
         "period": "current"
     },
     "eswfi": {
@@ -184,6 +185,7 @@ const projects = {
                 "name": "Google APIs"
             }
         ],
+        "tags": ["architect"],
         "period": "2020"
     },
     "eswco": {
@@ -217,6 +219,7 @@ const projects = {
                 "name": "Systems Manager"
             }
         ],
+        "tags": ["architect"],
         "period": "2020 - 2021"
     },
     "practicaldevguide": {
@@ -240,12 +243,13 @@ const projects = {
                 "name": "React"
             }
         ],
+        "tags": ["teaching"],
         "youtube": "https://www.youtube.com/playlist?list=PLFVVA9FdSLI2XOmDEgu3noePIWlZRi0xI",
         "github": "https://github.com/serban-petrescu/practical-dev-guide",
         "period": "2020"
     },
     "msgcheckin": {
-        "name": "msg.CheckIn",
+        "name": "msg.Check-In",
         "type": "work",
         "description": `
             A <strong>Spring Boot</strong> application with a <strong>Semantic UI React</strong> frontend for managing
@@ -292,6 +296,7 @@ const projects = {
                 "description": "The checkin view of a room with the photos of the colleagues working there."
             }
         ],
+        "tags": ["architect"],
         "link": "https://www.msgcheckin.com",
         "period": "current"
     },
@@ -338,6 +343,71 @@ const projects = {
         ],
         "period": "2016 - 2019"
     },
+    "msgtrainings": {
+        "name": "msg Contiguous Learning",
+        "type": "work",
+        "description": `
+            A series of technical <strong>trainings</strong> primarily for entry level developers and colleagues 
+            that wanted to shift technologies. The target technologies were: <strong>Spring Boot</strong>, 
+            <strong>NodeJS</strong>, <strong>React</strong>, and <strong>Angular</strong>.
+            <br />
+            <br />
+            I was responsible for preparing the training materials, presenting them, doing live demos, regularly 
+            checking in with the trainees and finally reviewing their work.
+        `,
+        "technologies": [
+            {
+                "name": "Java"
+            },
+            {
+                "name": "Spring"
+            },
+            {
+                "name": "NodeJS"
+            },
+            {
+                "name": "React"
+            },
+            {
+                "name": "Angular"
+            }
+        ],
+        "tags": ["teaching"],
+        "period": "2017 - 2020",
+        "github": "https://github.com/ro-msg-spring-training/resources/blob/1d329f42439773bccbb0f44e83591e78f25aa9c4/README.md"
+    },
+    "msgcareer": {
+        "name": "msg Career Start",
+        "type": "work",
+        "description": `
+            msg.CareerStart is the de-facto flagship internship programme of the company's local branch. 
+            It was primarily based on an idea of mine.
+            <br />
+            <br />
+            I was the main organizer, a technical mentor and an interviewer for the first edition. 
+            We mentored eight students that built a three tier application using <strong>ABAP</strong>, 
+            <strong>Spring Boot</strong>, and <strong>Angular</strong>. Afterward, most of these students were 
+            offered permanent positions at the company.  
+        `,
+        "technologies": [
+            {
+                "name": "Java"
+            },
+            {
+                "name": "Spring"
+            },
+            {
+                "name": "Angular"
+            },
+            {
+                "name": "ABAP"
+            }
+        ],
+        "tags": ["teaching"],
+        "period": "2019 - 2020",
+        "facebook": "https://www.facebook.com/msg.systems.romania/photos/a.405982052747843/2353226104690085/",
+        "link": "https://www.msg-systems.ro/oportunitati-studenti"
+    },
     "msgtex": {
         "name": "Travel Expenses",
         "type": "work",
@@ -354,7 +424,7 @@ const projects = {
                 "name": "Java"
             },
             {
-                "name": "Mongo"
+                "name": "MongoDB"
             },
             {
                 "name": "PostgreSQL"
@@ -387,6 +457,7 @@ const projects = {
                 "description": "At the end of a trip, expenses may be reported and a settlement document is generated."
             }
         ],
+        "tags": ["teaching"],
         "period": "2018"
     },
     "awstrouble": {
@@ -399,12 +470,9 @@ const projects = {
             <br />
             <br />
             I played the role of solution architect, designing and aligning the interfaces of the components,
-            whilst the implementation itself was tackled by another developer.
+            whilst the implementation itself was tackled by other developers.
         `,
         "technologies": [
-            {
-                "name": "Java"
-            },
             {
                 "name": "AWS"
             },
@@ -413,6 +481,9 @@ const projects = {
             },
             {
                 "name": "S3"
+            },
+            {
+                "name": "DynamoDB"
             },
             {
                 "name": "Docker"
@@ -424,6 +495,7 @@ const projects = {
                 "description": "The architecture of the setup including the lambda and the micro-service."
             }
         ],
+        "tags": ["architect", "lead"],
         "period": "2018 - 2019"
     },
     "awsgdpr": {
@@ -445,6 +517,9 @@ const projects = {
             },
             {
                 "name": "Lambda"
+            },
+            {
+                "name": "Kinesis"
             }
         ],
         "images": [
@@ -453,6 +528,7 @@ const projects = {
                 "description": "The architecture of the setup including the lambdas and queues for handling failures."
             }
         ],
+        "tags": ["architect", "lead"],
         "period": "2018"
     },
     "soaqanda": {
@@ -568,11 +644,11 @@ const projects = {
         "name": "KickIT",
         "type": "personal",
         "description": `
-            Co-founder for a Romanian startup, <a href="https://kickit.ro">KickIT</a>, targeting the amateur soccer scene.
+            Co-founder for a Romanian startup, <em>KickIT</em>, targeting the amateur soccer scene.
             <br />
             <br /> 
             I was responsible for architecture, design, implementation and operations for the <strong>cloud-native</strong>
-            solution, consisting of a <em>Spring Boot</em> backend, several <em>Lambdas</em> and a <em>React PWA</em> 
+            solution, consisting of a <strong>Spring Boot</strong> backend, <strong>Lambdas</strong> and a <strong>React PWA</strong> 
             deployed on AWS.
         `,
         "technologies": [
@@ -615,15 +691,15 @@ const projects = {
                 "description": "The application can be used to organize soccer competitions (championships, tournaments, etc.)."
             }
         ],
+        "tags": ["architect"],
         "period": "2018 - 2019",
-        "link": "https://kickit.ro",
         "facebook": "https://www.facebook.com/kickit.ro"
     },
     "sbwo": {
         "name": "SBWO",
         "type": "personal",
         "description": `
-            A <em>Java</em> standalone application, with an embedded web server (servlet container) and embedded database. 
+            A <strong>Java</strong> standalone application, with an embedded web server and embedded database. 
             The application aims to help small business to store, manage and use their business data. 
             <br />
             <br />
@@ -689,9 +765,11 @@ const projects = {
         "type": "personal",
         "description": `
             Lightweight open-source <strong>UI5</strong> library which enables developers to build 
-            user interfaces which adapt at runtime to user roles. The main goal of this library is 
-            to decouple the responsibilities of regular UI5 applications: role-based adaptation 
-            should be done declaratively and centrally for each app.
+            user interfaces which adapt at runtime to user roles. 
+            <br />
+            <br />
+            The main goal of this library was to decouple the responsibilities of regular UI5 applications: 
+            role-based adaptation should be done declaratively and centrally for each app.
         `,
         "technologies": [
             {
@@ -743,7 +821,7 @@ const projects = {
         "description": `
             A small personal project which realized real-time communication between an <strong>ABAP</strong> 
             based user interface (classic Dynpro), a <strong>UI5</strong> interface hosted on the ABAP system 
-            and another UI5 interface hosted on SCP.
+            and another UI5 interface hosted on <strong>SAP Cloud Platform</strong>.
         `,
         "technologies": [
             {
@@ -806,8 +884,7 @@ const projects = {
                 "path": "/images/webpaint1.PNG",
                 "description": "The main drawing area of the application, with the shape palette on the top and the objects' properties on the left."
             }
-        ],
-        "link": "https://webpaint-p1940442392trial.dispatcher.hanatrial.ondemand.com/?hc_reset"
+        ]
     },
     "gde": {
         "name": "Graphical IDE",
@@ -815,7 +892,7 @@ const projects = {
         "description": `
             An application which can be used to write imperative <strong>Java</strong> code by dragging and dropping 
             functional blocks. The generated code can also be displayed inside the application, compiled and run. 
-            The front-end is done in <strong>UI5</strong> and the back-end is built in Java.
+            The front-end is done in <strong>UI5</strong> and the back-end is built in <strong>Java</strong>.
         `,
         "technologies": [
             {
@@ -898,7 +975,7 @@ const projects = {
         ]
     },
     "docgen": {
-        "name": "Invoice Generator (Remake)",
+        "name": "Invoice Generator (II)",
         "type": "academic",
         "description": `
             A <strong>micro-service</strong> architecture web application built for the <em>Service oriented 
@@ -1126,6 +1203,7 @@ const projects = {
                 "name": "WebSocket"
             }
         ],
+        "tags": ["teaching"],
         "period": "2019",
         "github": "https://github.com/serban-petrescu/utcn-sd-resources/",
         "youtube": "https://www.youtube.com/playlist?list=PLFVVA9FdSLI3GzulGsej25e-JzOZK8DGo"
@@ -1198,10 +1276,22 @@ const projects = {
                 "name": "AWS"
             },
             {
+                "name": "DynamoDB"
+            },
+            {
                 "name": "Terraform"
             },
             {
                 "name": "Cognito"
+            },
+            {
+                "name": "Lambda"
+            },
+            {
+                "name": "S3"
+            },
+            {
+                "name": "SQS"
             }
         ],
         "images": [
@@ -1222,7 +1312,8 @@ const projects = {
                 "description": "The checkout page which was integrated with several German payment providers."
             }
         ],
-        "period": "current",
+        "tags": ["architect", "lead"],
+        "period": "2019 - 2020",
         "link": "https://www.dipko.de/",
         "youtube": "https://www.youtube.com/watch?v=hglkZizds-w"
     },
@@ -1260,13 +1351,14 @@ const projects = {
                 "name": "OAuth"
             }
         ],
+        "tags": ["architect", "lead"],
         "period": "2017 - 2019"
     },
     "msg.cm": {
         "name": "Candidate Management",
         "type": "work",
         "description": `
-            An internal project for managing our entry-level job candidates. The project Was built using 
+            An internal project for managing our entry-level job candidates. The project was built using 
             <strong>Spring Boot</strong> and a <strong>PostgreSQL</strong> database, with <strong>React</strong> 
             on the front-end. 
             <br />
@@ -1293,6 +1385,7 @@ const projects = {
                 "name": "Docker"
             }
         ],
+        "tags": ["teaching"],
         "period": "2016 - 2018",
         "github": "https://github.com/serban-petrescu/candidate-management"
     },
@@ -1305,7 +1398,7 @@ const projects = {
             showcases that aim to be deployed on a cloud platform (e.g. AWS). 
             <br />
             <br />
-            I had mostly development-related tasks related to building our <strong>MEAN</strong>-stack-based solution.
+            I had mostly development-related tasks related to building a <strong>MEAN</strong> stack solution.
         `,
         "technologies": [
             {
@@ -1338,8 +1431,11 @@ const projects = {
             and pre-built business rules. 
             <br />
             <br />
-            My role in this project was similar to a full stack developer, whilst also being responsible 
-            for most of the design and architecture decisions (being basically an informal technical lead).
+            My role in this project was a combination of a solutions architect, development lead and full stack developer. 
+            <br />
+            <br />
+            We were a relatively small team of five developers and we built a series of <strong>Java</strong> and <strong>UI5</strong> 
+            MVPs over the span of a year.
         `,
         "technologies": [
             {
@@ -1381,6 +1477,7 @@ const projects = {
                 "description": "All these results would be fed into a ML algorithm during the underwriting process."
             }
         ],
+        "tags": ["architect", "lead"],
         "period": "2016 - 2017",
         "link": "https://www.minnosphere.com"
     },
@@ -1389,16 +1486,15 @@ const projects = {
         "type": "work",
         "description": `
             A customer add-on to FS-RI (Financial Services - Reinsurance) for the General Reinsurance Company. 
-            The add-on consisted of three <strong>UI5</strong> applications which pulled various performance 
+            <br />
+            <br />
+            The add-on consisted of several <strong>UI5</strong> applications which pulled various performance 
             indicators calculated by <strong>ABAP CDS</strong> views and exposed through <strong>SAP Gateway</strong>
-            services.
+            OData services.
         `,
         "technologies": [
             {
                 "name": "ABAP"
-            },
-            {
-                "name": "ABAP CDS"
             },
             {
                 "name": "SAP Gateway"
@@ -1407,6 +1503,7 @@ const projects = {
                 "name": "SAP UI5"
             }
         ],
+        "tags": ["lead"],
         "period": "2016"
     },
     "msg.taxo": {
@@ -1417,21 +1514,17 @@ const projects = {
             The main goal of the project was to automatically parse and classify candidates based on their CVs.
             <br />
             <br />
-            We had a small development team in which I was responsible for most technical decisions, under the guidance
-            of another software architect. 
+            We had a small development team in which I was the technical lead under the guidance of a senior software architect. 
         `,
         "technologies": [
             {
                 "name": "HANA"
             },
             {
-                "name": "SQLScript"
+                "name": "SQL"
             },
             {
                 "name": "SAP UI5"
-            },
-            {
-                "name": "Fiori"
             },
             {
                 "name": "D3.js"
@@ -1456,19 +1549,19 @@ const projects = {
             Various customer development projects centered on the Life Reinsurance Module. 
             <br />
             <br />
-            Initially, to get acquainted to the module and the underlying framework, I was part of the product development 
-            team. Afterwards, I worked on various customization projects for different international customers.
+            I was part of the product development team for a few months to get acquainted to the module and the underlying framework. 
+            Afterwards, I worked on customization projects for large enterprise customers.
         `,
         "technologies": [
             {
                 "name": "ABAP"
             }
         ],
-        "period": "2014 - 2016",
+        "period": "2014 - 2015",
         "link": "https://www.msg-global.com/reinsurance"
     },
     "fs-pm": {
-        "name": "SAP FS-PM",
+        "name": "SAP FS-PM add-on",
         "type": "work",
         "description": `
             A small customer addition to the Financial Services - Policy Management SAP module.
@@ -1478,7 +1571,7 @@ const projects = {
                 "name": "ABAP"
             }
         ],
-        "period": "2015",
+        "period": "2014 - 2015",
         "link": "https://www.msg-global.com/insurance"
     },
     "internship": {
@@ -1513,9 +1606,6 @@ const projects = {
             },
             {
                 "name": "SAP UI5"
-            },
-            {
-                "name": "Fiori"
             }
         ],
         "period": "2014"
@@ -1541,7 +1631,7 @@ const projects = {
                 "name": "HANA"
             },
             {
-                "name": "SQLScript"
+                "name": "SQL"
             },
             {
                 "name": "Android"
@@ -1679,7 +1769,7 @@ const projects = {
                 "name": "Spring"
             },
             {
-                "name": "AngularJS"
+                "name": "Angular"
             }
         ],
         "images": [
@@ -1831,8 +1921,8 @@ const data = {
     projects,
     highlights,
     "summary": `
-        <p>Hi! I'm Serban, an IT enthusiast which works full time as a Cloud Solution Architect, teaches Software Design at TU-CN and founded a tech start-up.</p>
-        <p>In the past, I typically fulfilled the roles of <strong>solution architect</strong> and <strong>lead developer</strong> with a strong focus on growing my team through technical challenges, training sessions, presentations and mentoring.</p> 
+        <p>Hi! I'm Serban, an IT enthusiast which works full time as a Cloud Solution Architect at DevFactory, taught Software Design at TU-CN and founded a local tech start-up.</p>
+        <p>I typically fulfill the roles of <strong>solution architect</strong> and <strong>lead developer</strong> with a strong focus on growing my team through technical challenges, training sessions, presentations and mentoring.</p> 
         <p>I have frequently switched between technologies, becoming proficient in NodeJS, Spring and the SAP ecosystem. My current target area of expertise is around <em>Amazon Web Services</em>, <em>Spring Boot</em> and <em>React</em>.</p>
     `
 }

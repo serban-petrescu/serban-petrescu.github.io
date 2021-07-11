@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {Segment, Divider, Container, Dropdown} from 'semantic-ui-react';
+import React, { Component } from 'react';
+import { Segment, Divider, Container, Dropdown } from 'semantic-ui-react';
 
 import ProjectsGrid from '../common/ProjectsGrid';
 
@@ -50,14 +50,19 @@ const optionComparator = (a, b) => a.text.localeCompare(b.text);
 const extractOptions = projects => unique(arrayToMap(projects)
     .map(project => project.technologies || [])
     .reduce((prev, curr) => prev.concat(curr), [])
-    .map(({name}) => name))
+    .map(({ name }) => name))
     .map(buildOption)
+    .concat([
+        { key: "architect", text: "Architect", value: "architect" },
+        { key: "lead", text: "Lead Developer", value: "lead" },
+        { key: "teaching", text: "Teaching & Training", value: "teaching" }
+    ])
     .sort(optionComparator);
 
-const projectMatches = ({name, description, technologies}, criteria) => {
+const projectMatches = ({ technologies, tags = [] }, criteria) => {
     for (let i = 0; i < criteria.length; ++i) {
         const value = criteria[i];
-        if (name.indexOf(value) !== -1 || description.indexOf(value) !== -1) {
+        if (tags.indexOf(value) !== -1) {
             return true;
         } else {
             for (let j = 0; j < technologies.length; ++j) {
@@ -73,8 +78,9 @@ const projectMatches = ({name, description, technologies}, criteria) => {
 export default class ProjectList extends Component {
     constructor(props) {
         super(props);
+        const query = new URLSearchParams(window.location.search).get('filter');
         this.state = {
-            criteria: [],
+            criteria: query ? query.split(',') : [],
             options: (extractOptions(props.projects))
         }
     }
@@ -102,24 +108,24 @@ export default class ProjectList extends Component {
     }
 
     render() {
-        const {onClickGallery, projects} = this.props;
-        const {options, criteria} = this.state;
+        const { onClickGallery, projects } = this.props;
+        const { options, criteria } = this.state;
         const filtered = this.process(projects);
         return (
             <Container>
-                <div className='section-divider'/>
+                <div className='section-divider' />
                 <Segment vertical className='project-list'>
-                    <Divider as='h2' className='header' horizontal>My Projects</Divider>
+                    <Divider id="my-projects" as='h2' className='header' horizontal>My Projects</Divider>
                     <Dropdown placeholder='Search by keywords' className='project-search'
-                              options={options} fluid search multiple selection allowAdditions clearable
-                              closeOnChange closeOnEscape value={criteria}
-                              onAddItem={(_, {value}) => this.addOption(value)}
-                              onChange={(_, {value}) => this.changeCriteria(value)}/>
+                        options={options} fluid search multiple selection allowAdditions clearable
+                        closeOnChange closeOnEscape value={criteria}
+                        onAddItem={(_, { value }) => this.addOption(value)}
+                        onChange={(_, { value }) => this.changeCriteria(value)} />
                     {
                         filtered.length ?
                             <ProjectsGrid projects={filtered}
-                                          onClickGallery={onClickGallery}
-                                          onClickLabel={name => this.addOption(name)}/> :
+                                onClickGallery={onClickGallery}
+                                onClickLabel={name => this.addOption(name)} /> :
                             <div className='no-projects'><em>No projects match the given criteria...</em></div>
                     }
 
