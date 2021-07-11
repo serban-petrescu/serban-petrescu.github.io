@@ -102,7 +102,7 @@ const experience = {
 };
 
 const accounts = {
-    "linkedin": "https://ro.linkedin.com/in/serban-petrescu-12b7a3a7",
+    "linkedin": "https://ro.linkedin.com/in/serban-petrescu",
     "github": "https://github.com/serban-petrescu/",
     "stackoverflow": "http://stackoverflow.com/users/7612556/serban-petrescu?tab=profile",
     "twitter": "https://twitter.com/petrescu_serban",
