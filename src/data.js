@@ -128,7 +128,7 @@ const projects = {
             a <strong>React</strong> UI and running on <strong>AWS</strong>. 
             <br />
             <br />
-            I have been coordinated multiple parallel tracks including: replacing parts of the system with SaaS offerings, 
+            I have been coordinating multiple parallel tracks including: replacing parts of the system with SaaS offerings, 
             lifting and shifting some of the servers from their data center to AWS, fixing high priority defects, stabilizing 
             and monitoring the product, etc.  
         `,
