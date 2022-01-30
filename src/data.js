@@ -31,7 +31,7 @@ const experience = {
             "to": null
         },
         "title": "VP Software Engineering @ DevFactory",
-        "body": "Leading a team of software engineers responsible for operating, maintaining and extending a recently acquired Sales Engagement platform.",
+        "body": "Leading a team of software engineers responsible for operating, maintaining and extending several widely used products.",
         "logo": "/logos/devfactory.png"
     }, {
         "period": {
@@ -119,6 +119,56 @@ const accounts = {
 };
 
 const projects = {
+    "eswvpis": {
+        "name": "InsideSales: PlayBooks",
+        "type": "work",
+        "description": `
+            A recently acquired Sales Engagement platform with a micro-service architecture, written in a heterogenous
+            mix of <strong>Golang</strong>, <strong>Rust</strong>, <strong>NodeJS</strong> and <strong>PHP</strong>, with
+            a <strong>React</strong> UI and running on <strong>AWS</strong>. 
+            <br />
+            <br />
+            I have been coordinated multiple parallel tracks including: replacing parts of the system with SaaS offerings, 
+            lifting and shifting some of the servers from their data center to AWS, fixing high priority defects, stabilizing 
+            and monitoring the product, etc.  
+        `,
+        "technologies": [
+            {
+                "name": "AWS"
+            },
+            {
+                "name": "MySQL"
+            },
+            {
+                "name": "PHP"
+            },
+            {
+                "name": "NodeJS"
+            },
+            {
+                "name": "Go"
+            },
+            {
+                "name": "Rust"
+            },
+            {
+                "name": "ECS"
+            },
+            {
+                "name": "Docker"
+            },
+            {
+                "name": "Lambda"
+            },
+            {
+                "name": "Twilio"
+            }
+        ],
+        "link": "https://www.insidesales.com/playbooks/",
+        "youtube": "https://www.youtube.com/watch?v=-sgE3UUVX3c",
+        "tags": ["architect", "lead"],
+        "period": "current"
+    },
     "eswp1": {
         "name": "Architecture Spec Work",
         "type": "work",
@@ -157,7 +207,7 @@ const projects = {
             }
         ],
         "tags": ["architect"],
-        "period": "current"
+        "period": "2020 - 2021"
     },
     "eswfi": {
         "name": "Financial Insights",
@@ -264,7 +314,7 @@ const projects = {
             which colleagues are coming at the office in which days and in which room / place. 
             <br /> <br />
             Currently, this product is being sold using a <strong>SaaS</strong> model, with the option of on-premise deployment on request.
-            The SaaS version is deployed on <strong>AWS</strong> (CloudFront, Load Balancer, ECS, RDS).
+            The SaaS version runs on <strong>AWS</strong> (CloudFront, Load Balancer, ECS, RDS).
         `,
         "technologies": [
             {
@@ -1257,7 +1307,7 @@ const projects = {
         "type": "work",
         "description": `
             I was initially the architect and lead developer for building a cloud-based, multi-tenant 
-            <strong>SaaS platform</strong> for managing municipal services. Currently, I serve as an 
+            <strong>SaaS platform</strong> for managing municipal services. In 2021, I served as an 
             occasional consultant for the team.
             <br />
             <br />
@@ -1321,7 +1371,7 @@ const projects = {
             }
         ],
         "tags": ["architect", "lead"],
-        "period": "2019 - 2020",
+        "period": "2019 - 2021",
         "link": "https://www.dipko.de/",
         "youtube": "https://www.youtube.com/watch?v=hglkZizds-w"
     },
@@ -1357,6 +1407,12 @@ const projects = {
             },
             {
                 "name": "OAuth"
+            }
+        ],
+        "images": [
+            {
+                "path": "/images/gsa.png",
+                "description": "The architecture of the micro-services and surrounding components (components managed by our team in blue)."
             }
         ],
         "tags": ["architect", "lead"],
@@ -1907,9 +1963,9 @@ const highlights = {
     },
     "work": {
         "title": "VP of Software Engineering",
-        "description": "Managing a software engineering team that monitors, operates, maintains and extends a Sales Engagement platform.",
+        "description": "Managing a software engineering team that monitors, operates, maintains and extends several widely used products.",
     },
-    "projects": [projects.msgcheckin, projects.dipko, projects.kickit]
+    "projects": [projects.eswvpis, projects.msgcheckin, projects.dipko]
 };
 
 const data = {

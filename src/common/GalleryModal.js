@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Modal, Header, Pagination, Icon } from 'semantic-ui-react';
+import mixpanel from 'mixpanel-browser';
 
 import './GalleryModal.scss';
 
@@ -18,6 +19,7 @@ export default class GalleryModal extends Component {
             title,
             images
         });
+        mixpanel.track('[Gallery] Open', { title });
     }
 
     close() {
@@ -26,6 +28,7 @@ export default class GalleryModal extends Component {
 
     changePage(page) {
         this.setState({ ...this.state, page: Math.min(Math.max(0, page), this.state.images.length - 1) });
+        mixpanel.track('[Gallery] Change page', { title: this.state.title, page });
     }
 
     render() {
@@ -36,7 +39,10 @@ export default class GalleryModal extends Component {
                 <Header icon='image' content={title} />
                 <Modal.Content className='gallery-main'>
                     <div className='gallery-image' style={{ backgroundImage: 'url(' + path + ')' }}
-                        onClick={() => window.open(path, '_blank')} />
+                        onClick={() => {
+                            mixpanel.track('[Gallery] Zoom image', { url: path, title });
+                            window.open(path, '_blank');
+                        }} />
                     <p className='gallery-description'>{description}</p>
                 </Modal.Content>
                 {

@@ -15,7 +15,7 @@ const ExperienceItem = ({ title, body, icon, logo, period, link }) => (
 
         <Item.Content className='experience-item-content'>
             {
-                link ? <Item.Header as="a" href={link} target="__blank">{title}</Item.Header> : <Item.Header>{title}</Item.Header>
+                link ? <Item.Header as="a" className="experience-item-link" href={link} target="__blank">{title}</Item.Header> : <Item.Header>{title}</Item.Header>
             }
             <Item.Meta>
                 <span>{formatPeriod(period)}</span>

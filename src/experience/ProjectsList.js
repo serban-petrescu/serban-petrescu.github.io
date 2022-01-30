@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Segment, Divider, Container, Dropdown } from 'semantic-ui-react';
+import mixpanel from 'mixpanel-browser';
 
 import ProjectsGrid from '../common/ProjectsGrid';
 
@@ -98,6 +99,7 @@ export default class ProjectList extends Component {
             criteria: [...this.state.criteria, value],
             options: [...this.state.options, buildOption(value)].sort(optionComparator)
         });
+        mixpanel.track('[Projects] Search', { value });
     }
 
     changeCriteria(value) {
@@ -105,6 +107,7 @@ export default class ProjectList extends Component {
             ...this.state,
             criteria: typeof value === 'string' ? [value] : value
         });
+        mixpanel.track('[Projects] Search', { value });
     }
 
     render() {
