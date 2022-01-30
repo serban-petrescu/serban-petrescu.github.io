@@ -356,6 +356,7 @@ const projects = {
         ],
         "tags": ["architect"],
         "link": "https://www.msgcheckin.com",
+        "youtube": "https://www.youtube.com/watch?v=vtY28vn6w9k",
         "period": "current"
     },
     "portfolio": {
