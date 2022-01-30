@@ -27,8 +27,16 @@ const experience = {
     }],
     "work": [{
         "period": {
-            "from": new Date(2020, 5, 15),
+            "from": new Date(2021, 7, 1),
             "to": null
+        },
+        "title": "VP Software Engineering @ DevFactory",
+        "body": "Leading a team of software engineers responsible for operating, maintaining and extending a recently acquired Sales Engagement platform.",
+        "logo": "/logos/devfactory.png"
+    }, {
+        "period": {
+            "from": new Date(2020, 5, 15),
+            "to": new Date(2021, 7, 1)
         },
         "title": "Cloud Solutions Architect @ DevFactory",
         "body": "Part of a team responsible for making high-level architecture decisions for more than two hundred products. These products span a wide range of industries and niches. Most of them are SaaS offerings running on AWS.",
@@ -1898,8 +1906,8 @@ const highlights = {
         "description": "Studying for my Master's degree at the faculty of Mathematics and Informatics, Babeș-Bolyai University."
     },
     "work": {
-        "title": "Cloud Solutions Architect",
-        "description": "Working in the central product management team at DevFactory, dealing with high-level solution architecture decisions.",
+        "title": "VP of Software Engineering",
+        "description": "Managing a software engineering team that monitors, operates, maintains and extends a Sales Engagement platform.",
     },
     "projects": [projects.msgcheckin, projects.dipko, projects.kickit]
 };
@@ -1910,9 +1918,9 @@ const data = {
     "emails": "Serban.Petrescu@outlook.com",
     "location": "Cluj-Napoca, Romania",
     "website": "https://serban-petrescu.github.io/",
-    "avatar": "/images/profile-image-square.png",
+    "avatar": "/images/profile_alt.jpg",
     "cover": "/images/cover.jpg",
-    "role": "Cloud Solutions Architect @ DevFactory",
+    "role": "VP Software Engineering @ DevFactory",
     "birthday": new Date(1993, 6, 9),
     "cv": "/downloads/CV_Serban_Petrescu.pdf",
     site,
