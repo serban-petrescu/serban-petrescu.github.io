@@ -1,5 +1,3 @@
-import ReactHtmlParser from 'react-html-parser';
-
 const padSingle = number => (number < 10 ? '0' : '') + number;
 
 export function formatDate(date) {
@@ -15,10 +13,10 @@ export function formatShortDate(date) {
     return padSingle(date.getMonth() + 1) + '.' + date.getFullYear();
 }
 
-export function formatPeriod({to, from, at}) {
+export function formatPeriod({ to, from, at }) {
     return at ? formatShortDate(at) : formatDate(from) + ' - ' + formatDate(to);
 }
 
 export function renderHtml(html) {
-    return ReactHtmlParser(html);
+    return <p dangerouslySetInnerHTML={{ __html: html }}></p>;
 }
