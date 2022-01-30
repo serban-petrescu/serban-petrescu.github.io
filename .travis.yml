@@ -1,8 +1,11 @@
 language: node_js
 node_js: '16'
 install: true
-before_script: npm ci
-script: npm run build
+before_script: 
+  - npm ci
+script: 
+  - npm run build
+  - cp CNAME build/CNAME
 branches:
   only:
     - source
