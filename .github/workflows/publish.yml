@@ -6,7 +6,7 @@ on:
 
 jobs:
     publish:
-        name: Analyze
+        name: Publish
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v3
@@ -21,7 +21,7 @@ jobs:
               run: |
                   npm run build
                   cp CNAME build/CNAME
-            - name: Deploy 🚀
+            - name: Deploy
               uses: JamesIves/github-pages-deploy-action@v4
               with:
                   folder: build
