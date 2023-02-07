@@ -79,7 +79,7 @@ const projectMatches = ({ technologies, tags = [] }, criteria) => {
 export default class ProjectList extends Component {
     constructor(props) {
         super(props);
-        const query = new URLSearchParams(window.location.search).get('filter');
+        const query = typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('filter') : '';
         this.state = {
             criteria: query ? query.split(',') : [],
             options: (extractOptions(props.projects))
