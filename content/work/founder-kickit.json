@@ -1,0 +1,9 @@
+{
+    "period": {
+        "from": "2014-02-28",
+        "to": "2019-09-30"
+    },
+    "title": "Co-Founder @ KickIT",
+    "body": "As a co-founder of a start-up, I was responsible for legal, financial, and administrative tasks. Our company operated in the outdoor sports industry and suffered loss of customers during the COVID crisis. I designed, built, and managed a cloud-native progressive web application using React and Spring Boot, deployed on AWS Elastic Beanstalk, focusing on a great user experience, a smooth continuous deployment pipeline, and robust monitoring and observability setup.",
+    "logo": "../media/kickit.png"
+}

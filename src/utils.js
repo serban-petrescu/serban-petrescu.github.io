@@ -1,20 +1,7 @@
-const padSingle = number => (number < 10 ? '0' : '') + number;
-
-export function formatDate(date) {
-    if (date) {
-        return padSingle(date.getDate()) + '.' + padSingle(date.getMonth() + 1) + '.' + date.getFullYear();
-    } else {
-        return 'present';
-    }
-}
-
-
-export function formatShortDate(date) {
-    return padSingle(date.getMonth() + 1) + '.' + date.getFullYear();
-}
+import React from "react";
 
 export function formatPeriod({ to, from, at }) {
-    return at ? formatShortDate(at) : formatDate(from) + ' - ' + formatDate(to);
+    return String(at ? at : (from || "present") + " - " + (to || "present"));
 }
 
 export function renderHtml(html) {

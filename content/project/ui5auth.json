@@ -1,0 +1,17 @@
+{
+    "name": "UI5 Auth",
+    "type": "personal",
+    "description": "Lightweight open-source <strong>UI5</strong> library which enables developers to build \n            user interfaces which adapt at runtime to user roles. \n            <br />\n            <br />\n            The main goal of this library was to decouple the responsibilities of regular UI5 applications: \n            role-based adaptation should be done declaratively and centrally for each app.",
+    "technologies": [
+        {
+            "name": "SAP UI5"
+        },
+        {
+            "name": "JavaScript"
+        }
+    ],
+    "period": "2017",
+    "github": "https://github.com/serban-petrescu/ui5-auth",
+    "blog": "https://blogs.sap.com/2017/03/27/ui5-authorization-adaptation-library/",
+    "highlighted": false
+}

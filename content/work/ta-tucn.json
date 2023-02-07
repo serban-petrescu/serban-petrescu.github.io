@@ -1,0 +1,9 @@
+{
+    "period": {
+        "from": "2018-01-31",
+        "to": "2018-06-30"
+    },
+    "title": "Teaching Assistant @ T.U. Cluj-Napoca",
+    "body": "As a lecturer of the Software Design laboratory for 3rd year computer science students, I developed my own teaching materials based on a flexible curriculum and evaluated student progress throughout the semester. I also graded their final exams to determine their overall performance in the course.",
+    "logo": "../media/utcn.png"
+}

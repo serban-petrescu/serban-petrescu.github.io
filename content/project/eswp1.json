@@ -1,0 +1,36 @@
+{
+    "name": "Architecture Spec Work",
+    "type": "work",
+    "description": "My main responsibility is to write detailed technical architecture specifications for a portfolio 200+ products. \n            I write about three specs per week, each requiring up to a few hundred man-days to implement.\n            <br />\n            <br />\n            Most specs extensively use <strong>AWS</strong> (AppSync, Lambda, DynamoDB, Cognito, etc.) but sometimes we \n            also tackle changes to legacy, monolithic, on-premise products.",
+    "technologies": [
+        {
+            "name": "AWS"
+        },
+        {
+            "name": "DynamoDB"
+        },
+        {
+            "name": "AppSync"
+        },
+        {
+            "name": "API Gateway"
+        },
+        {
+            "name": "Cognito"
+        },
+        {
+            "name": "SQS"
+        },
+        {
+            "name": "Lambda"
+        },
+        {
+            "name": "Step Functions"
+        }
+    ],
+    "tags": [
+        "architect"
+    ],
+    "period": "2020 - 2021",
+    "highlighted": false
+}

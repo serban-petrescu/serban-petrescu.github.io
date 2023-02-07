@@ -1,0 +1,30 @@
+{
+    "name": "UI5 Viz",
+    "type": "personal",
+    "description": "A simple open-source <strong>UI5</strong> library for displaying graph data. \n            I built it using a <em>D3 force graph</em> layout.",
+    "technologies": [
+        {
+            "name": "SAP UI5"
+        },
+        {
+            "name": "JavaScript"
+        },
+        {
+            "name": "D3.js"
+        }
+    ],
+    "images": [
+        {
+            "path": "../media/ui5viz0.png",
+            "description": "A graph derived from the metadata of an OData service."
+        },
+        {
+            "path": "../media/ui5viz1.png",
+            "description": "A graph showing the data of the same OData service."
+        }
+    ],
+    "period": "2017",
+    "github": "https://github.com/serban-petrescu/ui5-viz",
+    "blog": "https://blogs.sap.com/2017/06/29/graph-data-visualisation-in-ui5/",
+    "highlighted": false
+}

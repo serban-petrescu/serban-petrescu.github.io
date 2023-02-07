@@ -1,0 +1,23 @@
+{
+    "name": "Practical Dev Guide",
+    "type": "personal",
+    "description": "A YouTube series dedicated to teaching basic web application programming for students.\n            <br />\n            <br />\n            I am showcasing step-by-step how to build a typical <strong>Spring Boot</strong> application, backed by\n            an embedded <strong>H2</strong> database and fronted by a <strong>React</strong> user interface.",
+    "technologies": [
+        {
+            "name": "Spring"
+        },
+        {
+            "name": "H2"
+        },
+        {
+            "name": "React"
+        }
+    ],
+    "tags": [
+        "teaching"
+    ],
+    "youtube": "https://www.youtube.com/playlist?list=PLFVVA9FdSLI2XOmDEgu3noePIWlZRi0xI",
+    "github": "https://github.com/serban-petrescu/practical-dev-guide",
+    "period": "2020",
+    "highlighted": false
+}

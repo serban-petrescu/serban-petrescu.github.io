@@ -1,0 +1,9 @@
+{
+    "period": {
+        "from": "2011-09-01",
+        "to": "2011-10-15"
+    },
+    "title": "Leonardo da'Vinci Project",
+    "body": "A month-and-a-half-long exchange project set in Leipzig, Germany. Studied basic web technologies like HTML, PHP and JS at a local company.",
+    "logo": "../media/leonardo.png"
+}

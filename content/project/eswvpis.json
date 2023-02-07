@@ -1,0 +1,45 @@
+{
+  "period": "current",
+  "youtube": "https://www.youtube.com/watch?v=-sgE3UUVX3c",
+  "technologies": [
+    {
+      "name": "AWS"
+    },
+    {
+      "name": "MySQL"
+    },
+    {
+      "name": "PHP"
+    },
+    {
+      "name": "NodeJS"
+    },
+    {
+      "name": "Go"
+    },
+    {
+      "name": "Rust"
+    },
+    {
+      "name": "ECS"
+    },
+    {
+      "name": "Docker"
+    },
+    {
+      "name": "Lambda"
+    },
+    {
+      "name": "Twilio"
+    }
+  ],
+  "name": "InsideSales: PlayBooks",
+  "highlighted": true,
+  "tags": [
+    "architect",
+    "lead"
+  ],
+  "type": "work",
+  "link": "https://www.insidesales.com/playbooks/",
+  "description": "A recently acquired Sales Engagement platform with a micro-service architecture, written in a heterogenous\n            mix of <strong>Golang</strong>, <strong>Rust</strong>, <strong>NodeJS</strong> and <strong>PHP</strong>, with\n            a <strong>React</strong> UI and running on <strong>AWS</strong>. \n            <br />\n            <br />\n            I have been coordinating multiple parallel tracks including: replacing parts of the system with SaaS offerings, \n            lifting and shifting some of the servers from their data center to AWS, fixing high priority defects, stabilizing \n            and monitoring the product, etc."
+}

@@ -1,0 +1,69 @@
+{
+    "name": "DIPKO",
+    "type": "work",
+    "description": "I was initially the architect and lead developer for building a cloud-based, multi-tenant \n            <strong>SaaS platform</strong> for managing municipal services. In 2021, I served as an \n            occasional consultant for the team.\n            <br />\n            <br />\n            We implemented a modular <strong>NodeJS</strong> core, communicating with several \n            <strong>serverless micro-services</strong> and a monolithic <strong>Angular</strong> frontend application.",
+    "technologies": [
+        {
+            "name": "NodeJS"
+        },
+        {
+            "name": "Express"
+        },
+        {
+            "name": "GraphQL"
+        },
+        {
+            "name": "Angular"
+        },
+        {
+            "name": "PostgreSQL"
+        },
+        {
+            "name": "AWS"
+        },
+        {
+            "name": "DynamoDB"
+        },
+        {
+            "name": "Terraform"
+        },
+        {
+            "name": "Cognito"
+        },
+        {
+            "name": "Lambda"
+        },
+        {
+            "name": "S3"
+        },
+        {
+            "name": "SQS"
+        }
+    ],
+    "images": [
+        {
+            "path": "../media/dipko1.png",
+            "description": "The fully-customizable landing page of a tenant."
+        },
+        {
+            "path": "../media/dipko2.PNG",
+            "description": "The list of bath houses enrolled in the tenant's account."
+        },
+        {
+            "path": "../media/dipko3.PNG",
+            "description": "The administration view allowing tenant admins to customize each module of the site."
+        },
+        {
+            "path": "../media/dipko4.PNG",
+            "description": "The checkout page which was integrated with several German payment providers."
+        }
+    ],
+    "tags": [
+        "architect",
+        "lead"
+    ],
+    "period": "2019 - 2021",
+    "link": "https://www.dipko.de/",
+    "youtube": "https://www.youtube.com/watch?v=hglkZizds-w",
+    "highlighted": true
+}

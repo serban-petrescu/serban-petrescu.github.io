@@ -1,0 +1,39 @@
+.gallery {
+    max-width: calc(100vw - 5rem) !important;
+    max-height: calc(100vh - 5rem) !important;
+    width: calc(100vw - 5rem) !important;
+    height: calc(100vh - 5rem) !important;
+    min-width: 0;
+    min-height: 0;
+
+    .gallery-actions {
+        padding-bottom: 1em;
+        text-align: center;
+    }
+}
+
+.gallery.ui.active.modal.visible {
+    display: flex !important;
+    flex-direction: column;
+
+    .content.gallery-main {
+        flex-grow: 1;
+        display: flex !important;
+        flex-direction: column;
+        min-width: 0;
+        min-height: 0;
+
+        .gallery-image {
+            flex-grow: 1;
+
+            img {
+                object-fit: contain !important;
+            }
+        }
+
+        .gallery-description {
+            text-align: center;
+            padding-top: 1em;
+        }
+    }
+}

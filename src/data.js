@@ -1,122 +1,5 @@
-const experience = {
-    "certifications": [{
-        "period": {
-            "at": new Date(2021, 0, 9)
-        },
-        "title": "AWS Certified Solutions Architect - Professional",
-        "body": "Amazon Web Services",
-        "logo": "/logos/aws.png",
-        "link": "https://www.youracclaim.com/badges/caccd8ba-7310-4dcb-bb3b-0ec7b3a778ab/public_url"
-    },
-    {
-        "period": {
-            "at": new Date(2020, 1, 19)
-        },
-        "title": "AWS Certified Solutions Architect - Associate",
-        "body": "Amazon Web Services",
-        "logo": "/logos/aws.png",
-        "link": "https://www.youracclaim.com/badges/374ef4e9-8ec1-4ace-a988-f7d382c20cb5/public_url"
-    },
-    {
-        "period": {
-            "at": new Date(2011, 5, 1)
-        },
-        "title": "ESOL - Certificate in Advanced English",
-        "body": "University of Cambridge",
-        "logo": "/logos/cambridge.png"
-    }],
-    "work": [{
-        "period": {
-            "from": new Date(2021, 7, 1),
-            "to": null
-        },
-        "title": "VP Software Engineering @ DevFactory",
-        "body": "Leading a team of software engineers responsible for operating, maintaining and extending several widely used products.",
-        "logo": "/logos/devfactory.png"
-    }, {
-        "period": {
-            "from": new Date(2020, 5, 15),
-            "to": new Date(2021, 7, 1)
-        },
-        "title": "Cloud Solutions Architect @ DevFactory",
-        "body": "Part of a team responsible for making high-level architecture decisions for more than two hundred products. These products span a wide range of industries and niches. Most of them are SaaS offerings running on AWS.",
-        "logo": "/logos/devfactory.png"
-    }, {
-        "period": {
-            "from": new Date(2019, 2, 1),
-            "to": null
-        },
-        "title": "Lead IT Consultant @ msg-systems",
-        "body": "Currently involved as a part time consultant for topics related to: recruitment, architecture, internal trainings and cloud adoption. Previously, I had a broad range of responsibilities: software architecture, technical leadership, mentoring, hosting internal trainings, performing yearly evaluations, etc.",
-        "logo": "/logos/msg.png"
-    }, {
-        "period": {
-            "from": new Date(2014, 2, 1),
-            "to": new Date(2019, 9, 1)
-        },
-        "title": "Co-Founder @ KickIT",
-        "body": "Founded a start-up together with a close friend. I mostly dealt with the architecture, development and operations of our application.",
-        "logo": "/logos/kickit.png"
-    }, {
-        "period": {
-            "from": new Date(2018, 1, 1),
-            "to": new Date(2018, 6, 1)
-        },
-        "title": "Teaching Assistant @ T.U. Cluj-Napoca",
-        "body": "Six hours per week holding a Software Design laboratory together with my 3rd year Computer Science students.",
-        "logo": "/logos/utcn.png"
-    }],
-    "academic": [{
-        "period": {
-            "from": new Date(2017, 9, 1),
-            "to": null,
-        },
-        "title": "Babeș-Bolyai University",
-        "body": "Master's degree in Software Engineering at the faculty of Mathematics and Informatics.",
-        "logo": "/logos/ubb.png"
-    }, {
-        "period": {
-            "from": new Date(2013, 9, 1),
-            "to": new Date(2014, 0, 15)
-        },
-        "title": "SAP Development Course",
-        "body": "A series of lectures and laboratories hosted by msg which served as an introduction to the SAP world.",
-        "logo": "/logos/msg.png"
-    }, {
-        "period": {
-            "from": new Date(2012, 9, 1),
-            "to": new Date(2016, 6, 1)
-        },
-        "title": "Technical University of Cluj-Napoca",
-        "body": "Bachelor degree in Computer Science at the faculty of Computer Science and Information Technology.",
-        "logo": "/logos/utcn.png"
-    }, {
-        "period": {
-            "from": new Date(2011, 8, 1),
-            "to": new Date(2011, 9, 15)
-        },
-        "title": "Leonardo da'Vinci Project",
-        "body": "A month-and-a-half-long exchange project set in Leipzig, Germany. Studied basic web technologies like HTML, PHP and JS at a local company.",
-        "logo": "/logos/leonardo.png"
-    }, {
-        "period": {
-            "from": new Date(2008, 8, 15),
-            "to": new Date(2012, 5, 15)
-        },
-        "title": "Gheorghe Lazar National College Sibiu",
-        "body": "High school degree in Mathematics - Informatics. My first contact with programming. During this period, I've learnt C / C++, C# and PHP.",
-        "logo": "/logos/cngl.png"
-    }]
-};
-
-const accounts = {
-    "linkedin": "https://ro.linkedin.com/in/serban-petrescu",
-    "github": "https://github.com/serban-petrescu/",
-    "stackoverflow": "http://stackoverflow.com/users/7612556/serban-petrescu?tab=profile",
-    "twitter": "https://twitter.com/petrescu_serban",
-    "youtube": "https://www.youtube.com/channel/UCjpkihJT18wg41Qw3jdu_HA",
-    "medium": "https://serban-petrescu.medium.com/"
-};
+const fs = require('fs')
+const path = require('path')
 
 const projects = {
     "eswvpis": {
@@ -338,19 +221,19 @@ const projects = {
         ],
         "images": [
             {
-                "path": "/images/checkin1.PNG",
+                "path": "../media/checkin1.PNG",
                 "description": "The login, which was backed by the corporate LDAP."
             },
             {
-                "path": "/images/checkin2.PNG",
+                "path": "../media/checkin2.PNG",
                 "description": "The dashboard, which shows my team and my check-ins."
             },
             {
-                "path": "/images/checkin3.PNG",
+                "path": "../media/checkin3.PNG",
                 "description": "The map of a floor in one of our buildings."
             },
             {
-                "path": "/images/checkin4.PNG",
+                "path": "../media/checkin4.PNG",
                 "description": "The checkin view of a room with the photos of the colleagues working there."
             }
         ],
@@ -388,15 +271,15 @@ const projects = {
         ],
         "images": [
             {
-                "path": "/images/portfolio0.PNG",
+                "path": "../media/portfolio0.PNG",
                 "description": "The first UI5 version of the site."
             },
             {
-                "path": "/images/portfolio1.PNG",
+                "path": "../media/portfolio1.PNG",
                 "description": "The later re-write using JSX and Bulma."
             },
             {
-                "path": "/images/portfolio2.PNG",
+                "path": "../media/portfolio2.PNG",
                 "description": "The current version of the website."
             }
         ],
@@ -500,19 +383,19 @@ const projects = {
         ],
         "images": [
             {
-                "path": "/images/tex0.PNG",
+                "path": "../media/tex0.PNG",
                 "description": "The application provides several functionalities and also a configuration UI."
             },
             {
-                "path": "/images/tex1.PNG",
+                "path": "../media/tex1.PNG",
                 "description": "Most of the functionalities revolve around the employees, whose data may be imported from the HCM system."
             },
             {
-                "path": "/images/tex3.PNG",
+                "path": "../media/tex3.PNG",
                 "description": "Trip details may be added and viewed."
             },
             {
-                "path": "/images/tex2.PNG",
+                "path": "../media/tex2.PNG",
                 "description": "At the end of a trip, expenses may be reported and a settlement document is generated."
             }
         ],
@@ -550,7 +433,7 @@ const projects = {
         ],
         "images": [
             {
-                "path": "/images/trouble0.png",
+                "path": "../media/trouble0.png",
                 "description": "The architecture of the setup including the lambda and the micro-service."
             }
         ],
@@ -583,7 +466,7 @@ const projects = {
         ],
         "images": [
             {
-                "path": "/images/gdprInt0.png",
+                "path": "../media/gdprInt0.png",
                 "description": "The architecture of the setup including the lambdas and queues for handling failures."
             }
         ],
@@ -624,19 +507,19 @@ const projects = {
         ],
         "images": [
             {
-                "path": "/images/qAndA0.PNG",
+                "path": "../media/qAndA0.PNG",
                 "description": "The list of questions."
             },
             {
-                "path": "/images/qAndA1.PNG",
+                "path": "../media/qAndA1.PNG",
                 "description": "A form for asking a new question."
             },
             {
-                "path": "/images/qAndA2.PNG",
+                "path": "../media/qAndA2.PNG",
                 "description": "The detail view for a question, showing the votes and the answers."
             },
             {
-                "path": "/images/qAndA3.PNG",
+                "path": "../media/qAndA3.PNG",
                 "description": "The user is able to get notifications via email or via Web Push."
             }
         ],
@@ -669,7 +552,7 @@ const projects = {
         ],
         "images": [
             {
-                "path": "/images/diss1.PNG",
+                "path": "../media/diss1.PNG",
                 "description": "A level of the game where you must collect clothing items."
             }
         ],
@@ -738,15 +621,15 @@ const projects = {
         ],
         "images": [
             {
-                "path": "/images/KICK1.PNG",
+                "path": "../media/KICK1.PNG",
                 "description": "The home page of the application, showing the feed, PWA install prompt and upcoming events."
             },
             {
-                "path": "/images/KICK2.PNG",
+                "path": "../media/KICK2.PNG",
                 "description": "The screen for organizing a new match, showing the proposed time, the weather and how many people are coming."
             },
             {
-                "path": "/images/KICK3.PNG",
+                "path": "../media/KICK3.PNG",
                 "description": "The application can be used to organize soccer competitions (championships, tournaments, etc.)."
             }
         ],
@@ -862,11 +745,11 @@ const projects = {
         ],
         "images": [
             {
-                "path": "/images/ui5viz0.png",
+                "path": "../media/ui5viz0.png",
                 "description": "A graph derived from the metadata of an OData service."
             },
             {
-                "path": "/images/ui5viz1.png",
+                "path": "../media/ui5viz1.png",
                 "description": "A graph showing the data of the same OData service."
             }
         ],
@@ -907,7 +790,7 @@ const projects = {
         ],
         "images": [
             {
-                "path": "/images/epmws0.jpg",
+                "path": "../media/epmws0.jpg",
                 "description": "A side-by-side comparison of the Dynpro and UI5 user interfaces."
             }
         ],
@@ -940,7 +823,7 @@ const projects = {
         "period": "2015",
         "images": [
             {
-                "path": "/images/webpaint1.PNG",
+                "path": "../media/webpaint1.PNG",
                 "description": "The main drawing area of the application, with the shape palette on the top and the objects' properties on the left."
             }
         ]
@@ -973,15 +856,15 @@ const projects = {
         "period": "2015",
         "images": [
             {
-                "path": "/images/GDE1.PNG",
+                "path": "../media/GDE1.PNG",
                 "description": "The drag-and-drop area of the application. The functional blocks can be dragged from the menu strip on the right and properties of each block can be set using the Properties toolbox. Blocks can be moved and their contents explored."
             },
             {
-                "path": "/images/GDE2.PNG",
+                "path": "../media/GDE2.PNG",
                 "description": "The generated code area (corresponding to the previous schematic)."
             },
             {
-                "path": "/images/GDE3.PNG",
+                "path": "../media/GDE3.PNG",
                 "description": "The console area after compiling and running the Java schematic (can be done using either buttons or console commands)."
             }
         ]
@@ -1012,23 +895,23 @@ const projects = {
         "period": "2014",
         "images": [
             {
-                "path": "/images/Evidenta1.PNG",
+                "path": "../media/Evidenta1.PNG",
                 "description": "The job registry. Each line represents a job. The user can search through the jobs, add a new one, sort them, edit, delete or expand a job to see further attributes."
             },
             {
-                "path": "/images/Evidenta2.PNG",
+                "path": "../media/Evidenta2.PNG",
                 "description": "An expanded job, showing the data retrieved from the Agency's website (the last row)."
             },
             {
-                "path": "/images/Evidenta3.PNG",
+                "path": "../media/Evidenta3.PNG",
                 "description": "A fast entry screen, which can be used to enter the inquiry number for a job (after it was given to the Agency)."
             },
             {
-                "path": "/images/Evidenta4.PNG",
+                "path": "../media/Evidenta4.PNG",
                 "description": "A fast entry screen, which can be used to change the status of a job."
             },
             {
-                "path": "/images/Evidenta5.PNG",
+                "path": "../media/Evidenta5.PNG",
                 "description": "The court terms calendar."
             }
         ]
@@ -1067,15 +950,15 @@ const projects = {
         "period": "2019",
         "images": [
             {
-                "path": "/images/docGen1.PNG",
+                "path": "../media/docGen1.PNG",
                 "description": "The list of companies managed by the application."
             },
             {
-                "path": "/images/docGen2.PNG",
+                "path": "../media/docGen2.PNG",
                 "description": "A list of invoices for a selected company."
             },
             {
-                "path": "/images/docGen3.PNG",
+                "path": "../media/docGen3.PNG",
                 "description": "The form for creating a new invoice."
             }
         ],
@@ -1101,27 +984,27 @@ const projects = {
         "period": "2013 - 2014",
         "images": [
             {
-                "path": "/images/Factura1.PNG",
+                "path": "../media/Factura1.PNG",
                 "description": "The profile creation / modification screen."
             },
             {
-                "path": "/images/Factura2.PNG",
+                "path": "../media/Factura2.PNG",
                 "description": "The main screen. Allows the user to enter various data related to the invoice, to save, restore, print or even create a receipt for the invoice (opens a separate application). A summary of all invoices can also be generated."
             },
             {
-                "path": "/images/Factura3.PNG",
+                "path": "../media/Factura3.PNG",
                 "description": "A demo invoice generated by the program."
             },
             {
-                "path": "/images/Factura4.PNG",
+                "path": "../media/Factura4.PNG",
                 "description": "A demo invoice summary also generated by the program."
             },
             {
-                "path": "/images/Chitanta1.PNG",
+                "path": "../media/Chitanta1.PNG",
                 "description": "The receipt data entry screen (fields are auto-filled if the receipt is derived from an invoice)."
             },
             {
-                "path": "/images/Chitanta2.PNG",
+                "path": "../media/Chitanta2.PNG",
                 "description": "A demo receipt generated by the program."
             }
         ]
@@ -1149,15 +1032,15 @@ const projects = {
         "period": "2012 - 2014",
         "images": [
             {
-                "path": "/images/Form1.PNG",
+                "path": "../media/Form1.PNG",
                 "description": "The static input fields of the generator."
             },
             {
-                "path": "/images/Form2.PNG",
+                "path": "../media/Form2.PNG",
                 "description": "The file selection, template selection and the input field for the optional XML file."
             },
             {
-                "path": "/images/Form3.PNG",
+                "path": "../media/Form3.PNG",
                 "description": "The output of the generator."
             }
         ]
@@ -1182,19 +1065,19 @@ const projects = {
         "period": "2011",
         "images": [
             {
-                "path": "/images/Manager1.PNG",
+                "path": "../media/Manager1.PNG",
                 "description": "The first screen of the program. Allows the user to add or remove servers, to view the current status or to edit configurations."
             },
             {
-                "path": "/images/Manager2.PNG",
+                "path": "../media/Manager2.PNG",
                 "description": "The redirected console of the selected server (both input and output)."
             },
             {
-                "path": "/images/Manager3.PNG",
+                "path": "../media/Manager3.PNG",
                 "description": "The event scheduler for the selected server."
             },
             {
-                "path": "/images/Manager4.PNG",
+                "path": "../media/Manager4.PNG",
                 "description": "The event log for a server."
             }
         ]
@@ -1224,7 +1107,7 @@ const projects = {
         ],
         "images": [
             {
-                "path": "/images/nativefeedback0.png",
+                "path": "../media/nativefeedback0.png",
                 "description": "During the conference, the feedback was automatically analyzed and displayed on a TV."
             }
         ],
@@ -1355,19 +1238,19 @@ const projects = {
         ],
         "images": [
             {
-                "path": "/images/dipko1.png",
+                "path": "../media/dipko1.png",
                 "description": "The fully-customizable landing page of a tenant."
             },
             {
-                "path": "/images/dipko2.png",
+                "path": "../media/dipko2.PNG",
                 "description": "The list of bath houses enrolled in the tenant's account."
             },
             {
-                "path": "/images/dipko3.png",
+                "path": "../media/dipko3.PNG",
                 "description": "The administration view allowing tenant admins to customize each module of the site."
             },
             {
-                "path": "/images/dipko4.png",
+                "path": "../media/dipko4.PNG",
                 "description": "The checkout page which was integrated with several German payment providers."
             }
         ],
@@ -1412,7 +1295,7 @@ const projects = {
         ],
         "images": [
             {
-                "path": "/images/gsa.png",
+                "path": "../media/gsa.png",
                 "description": "The architecture of the micro-services and surrounding components (components managed by our team in blue)."
             }
         ],
@@ -1530,15 +1413,15 @@ const projects = {
         ],
         "images": [
             {
-                "path": "/images/nguw0.png",
+                "path": "../media/nguw0.png",
                 "description": "The user could define questions to build an underwriting questionnaire."
             },
             {
-                "path": "/images/nguw2.png",
+                "path": "../media/nguw2.png",
                 "description": "The answers from the questions would be used to compute further attributes using formulas."
             },
             {
-                "path": "/images/nguw1.png",
+                "path": "../media/nguw1.png",
                 "description": "All these results would be fed into a ML algorithm during the underwriting process."
             }
         ],
@@ -1598,11 +1481,11 @@ const projects = {
         "period": "2015 - 2016",
         "images": [
             {
-                "path": "/images/taxo1.PNG",
+                "path": "../media/taxo1.PNG",
                 "description": "The result obtained after parsing and analyzing the contents of my own CV."
             },
             {
-                "path": "/images/taxo2.PNG",
+                "path": "../media/taxo2.PNG",
                 "description": "The same results, but compared against the typical profile of a Java Developer (as deduced by the engine)."
             }
         ]
@@ -1650,15 +1533,15 @@ const projects = {
         `,
         "images": [
             {
-                "path": "/images/internshipBill1.PNG",
+                "path": "../media/internshipBill1.PNG",
                 "description": "Using the bill creation application, the user can add several items to a new bill."
             },
             {
-                "path": "/images/internshipBill2.PNG",
+                "path": "../media/internshipBill2.PNG",
                 "description": "Then the user must either search for the customer (business partner) or create a new one."
             },
             {
-                "path": "/images/internshipBill3.PNG",
+                "path": "../media/internshipBill3.PNG",
                 "description": "At the end, the user must agree to the terms and conditions. A PDF receipt is created afterwards."
             }
         ],
@@ -1713,19 +1596,19 @@ const projects = {
         ],
         "images": [
             {
-                "path": "/images/bachelor1.png",
+                "path": "../media/bachelor1.png",
                 "description": "The sensor maintenance application."
             },
             {
-                "path": "/images/backelor2.png",
+                "path": "../media/backelor2.png",
                 "description": "The real-time tracking application with a transport being currently selected."
             },
             {
-                "path": "/images/backelor3.png",
+                "path": "../media/backelor3.png",
                 "description": "The transport evolution comparison application (the user has selected to align the starts of the data series)."
             },
             {
-                "path": "/images/backelor4.png",
+                "path": "../media/backelor4.png",
                 "description": "The overall statistics application output."
             }
         ],
@@ -1761,11 +1644,11 @@ const projects = {
         ],
         "images": [
             {
-                "path": "/images/documentGen0.PNG",
+                "path": "../media/documentGen0.PNG",
                 "description": "The field configuration view (allows the users to define custom field validations)."
             },
             {
-                "path": "/images/documentGen1.PNG",
+                "path": "../media/documentGen1.PNG",
                 "description": "The document generation view. The users must fill in all defined fields with valid values."
             }
         ],
@@ -1795,15 +1678,15 @@ const projects = {
         ],
         "images": [
             {
-                "path": "/images/hospital1.PNG",
+                "path": "../media/hospital1.PNG",
                 "description": "The appointment list as seen by a doctor."
             },
             {
-                "path": "/images/hospital2.PNG",
+                "path": "../media/hospital2.PNG",
                 "description": "The patients list as seen by a nurse or secretary. The opened dialog can be used to make a new appointment."
             },
             {
-                "path": "/images/hospital3.PNG",
+                "path": "../media/hospital3.PNG",
                 "description": "A real-time notification received by the doctor when one of his patients has arrived at the hospital."
             }
         ],
@@ -1839,23 +1722,23 @@ const projects = {
         ],
         "images": [
             {
-                "path": "/images/bank1.PNG",
+                "path": "../media/bank1.PNG",
                 "description": "The home page of admin users."
             },
             {
-                "path": "/images/bank2.PNG",
+                "path": "../media/bank2.PNG",
                 "description": "The customer details page with the account list at the bottom."
             },
             {
-                "path": "/images/bank3.PNG",
+                "path": "../media/bank3.PNG",
                 "description": "The activity log of a user."
             },
             {
-                "path": "/images/bank4.png",
+                "path": "../media/bank4.png",
                 "description": "The account list (remake)."
             },
             {
-                "path": "/images/bank5.png",
+                "path": "../media/bank5.png",
                 "description": "The detail page for an account (remake)."
             }
         ],
@@ -1876,15 +1759,15 @@ const projects = {
         ],
         "images": [
             {
-                "path": "/images/ticket1.PNG",
+                "path": "../media/ticket1.PNG",
                 "description": "The view which displays a customer's previously opened tickets."
             },
             {
-                "path": "/images/ticket2.PNG",
+                "path": "../media/ticket2.PNG",
                 "description": "The view which shows an employee's unsolved tickets."
             },
             {
-                "path": "/images/ticket3.PNG",
+                "path": "../media/ticket3.PNG",
                 "description": "The employee performance statistics application for managers."
             }
         ],
@@ -1912,7 +1795,7 @@ const projects = {
         ],
         "images": [
             {
-                "path": "/images/book1.PNG",
+                "path": "../media/book1.PNG",
                 "description": "The home page of an admin user (notice the tiles for generating reports)."
             }
         ],
@@ -1933,11 +1816,11 @@ const projects = {
         ],
         "images": [
             {
-                "path": "/images/asm1.png",
+                "path": "../media/asm1.png",
                 "description": "The formula entry console prompt sequence."
             },
             {
-                "path": "/images/asm2.png",
+                "path": "../media/asm2.png",
                 "description": "The resulting graph plot."
             }
         ],
@@ -1945,51 +1828,24 @@ const projects = {
     }
 };
 
-const site = {
-    "repository": "https://github.com/serban-petrescu/serban-petrescu.github.io",
-    "print": "/print.html",
-    "libraries": [{
-        "name": "React",
-        "url": "https://github.com/facebook/react"
-    }, {
-        "name": "Semantic UI",
-        "url": "https://github.com/Semantic-Org/Semantic-UI-React"
-    }]
-};
 
 const highlights = {
-    "education": {
-        "title": "Software Engineering MSc.",
-        "description": "Studying for my Master's degree at the faculty of Mathematics and Informatics, Babeș-Bolyai University."
-    },
-    "work": {
-        "title": "VP of Software Engineering",
-        "description": "Managing a software engineering team that monitors, operates, maintains and extends several widely used products.",
-    },
     "projects": [projects.eswvpis, projects.msgcheckin, projects.dipko]
 };
 
 const data = {
-    "name": "Șerban Petrescu",
-    "phone": "+40 744 865 132",
-    "emails": "Serban.Petrescu@outlook.com",
-    "location": "Cluj-Napoca, Romania",
-    "website": "https://serban-petrescu.github.io/",
-    "avatar": "/images/profile_alt.jpg",
-    "cover": "/images/cover.jpg",
-    "role": "VP Software Engineering @ DevFactory",
-    "birthday": new Date(1993, 6, 9),
-    "cv": "/downloads/CV_Serban_Petrescu.pdf",
-    site,
-    experience,
-    accounts,
     projects,
-    highlights,
-    "summary": `
-        <p>Hi! I'm Serban, an IT enthusiast which works full time as a Cloud Solution Architect at DevFactory, taught Software Design at TU-CN and founded a local tech start-up.</p>
-        <p>I typically fulfill the roles of <strong>solution architect</strong> and <strong>lead developer</strong> with a strong focus on growing my team through technical challenges, training sessions, presentations and mentoring.</p> 
-        <p>I have frequently switched between technologies, becoming proficient in NodeJS, Spring and the SAP ecosystem. My current target area of expertise is around <em>Amazon Web Services</em>, <em>Spring Boot</em> and <em>React</em>.</p>
-    `
+    highlights
 }
 
-export default data;
+for (const key of Object.keys(projects)) {
+    fs.writeFileSync(
+        path.join('.', 'content', 'project', key + '.json'), 
+        JSON.stringify({
+            ...projects[key], 
+            highlighted: highlights.projects.includes(projects[key]),
+            description: projects[key].description.trim()
+        }, null, 4), 
+        {encoding: 'utf-8'
+    });
+}

@@ -1,0 +1,26 @@
+{
+    "name": "Conference Feedback",
+    "type": "personal",
+    "description": "A small application for submitting feedback after or during the <em>IT Conference on SAP \n            Technologies Cluj</em>.\n            <br />\n            <br />\n            Later on, I have also hosted a small training about <strong>cloud native</strong> development\n            using this application as an example.",
+    "period": "2018",
+    "technologies": [
+        {
+            "name": "HANA"
+        },
+        {
+            "name": "Spring"
+        },
+        {
+            "name": "UI5"
+        }
+    ],
+    "images": [
+        {
+            "path": "../media/nativefeedback0.png",
+            "description": "During the conference, the feedback was automatically analyzed and displayed on a TV."
+        }
+    ],
+    "youtube": "https://www.youtube.com/playlist?list=PLFVVA9FdSLI3jpwuu0BbbmuYMA5ogORzF",
+    "blog": "https://blogs.sap.com/2018/10/17/it-conference-on-sap-technologies-cluj-recap/",
+    "highlighted": false
+}

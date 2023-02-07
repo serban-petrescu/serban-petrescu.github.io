@@ -1,0 +1,28 @@
+{
+  "name": "msg Contiguous Learning",
+  "type": "work",
+  "description": "A series of technical <strong>trainings</strong> primarily for entry level developers and colleagues \n            that wanted to shift technologies. The target technologies were: <strong>Spring Boot</strong>, \n            <strong>NodeJS</strong>, <strong>React</strong>, and <strong>Angular</strong>.\n            <br />\n            <br />\n            I was responsible for preparing the training materials, presenting them, doing live demos, regularly \n            checking in with the trainees and finally reviewing their work.",
+  "technologies": [
+    {
+      "name": "Java"
+    },
+    {
+      "name": "Spring"
+    },
+    {
+      "name": "NodeJS"
+    },
+    {
+      "name": "React"
+    },
+    {
+      "name": "Angular"
+    }
+  ],
+  "tags": [
+    "teaching"
+  ],
+  "period": "2017 - 2020",
+  "github": "https://github.com/orgs/msg-CareerPaths/repositories",
+  "highlighted": false
+}

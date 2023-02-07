@@ -1,0 +1,32 @@
+{
+    "name": "Document Generator",
+    "type": "personal",
+    "description": "A application for land surveyors built on top of <strong>OpenOffice</strong>, which takes input \n            values from the user and optionally an XML data file and generates documents using user specified \n            templates. The values given by the user or read from the XML are either filled directly in the \n            templates or are used to build tables and hide / show sections.",
+    "technologies": [
+        {
+            "name": "Basic"
+        },
+        {
+            "name": "OpenOffice API"
+        },
+        {
+            "name": "C / C++"
+        }
+    ],
+    "period": "2012 - 2014",
+    "images": [
+        {
+            "path": "../media/Form1.PNG",
+            "description": "The static input fields of the generator."
+        },
+        {
+            "path": "../media/Form2.PNG",
+            "description": "The file selection, template selection and the input field for the optional XML file."
+        },
+        {
+            "path": "../media/Form3.PNG",
+            "description": "The output of the generator."
+        }
+    ],
+    "highlighted": false
+}

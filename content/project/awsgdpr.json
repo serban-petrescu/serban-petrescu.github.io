@@ -1,0 +1,31 @@
+{
+    "name": "GDPR Integration",
+    "type": "work",
+    "description": "A small integration project on <strong>AWS</strong> for handling newsletter subscription\n            and un-subscription actions to conform to GDPR.\n            <br />\n            <br />\n            I designed and fully implemented this solution directly on the customer's AWS account.",
+    "technologies": [
+        {
+            "name": "Java"
+        },
+        {
+            "name": "AWS"
+        },
+        {
+            "name": "Lambda"
+        },
+        {
+            "name": "Kinesis"
+        }
+    ],
+    "images": [
+        {
+            "path": "../media/gdprInt0.png",
+            "description": "The architecture of the setup including the lambdas and queues for handling failures."
+        }
+    ],
+    "tags": [
+        "architect",
+        "lead"
+    ],
+    "period": "2018",
+    "highlighted": false
+}

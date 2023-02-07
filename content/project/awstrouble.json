@@ -1,0 +1,34 @@
+{
+    "name": "Troubleshooting Service",
+    "type": "work",
+    "description": "A small integration project on <strong>AWS</strong> for parsing XML exports from a legacy system.\n            It consisted of a <strong>micro-service</strong> and a <strong>Lambda</strong> triggered by the \n            <strong>S3</strong> events.\n            <br />\n            <br />\n            I played the role of solution architect, designing and aligning the interfaces of the components,\n            whilst the implementation itself was tackled by other developers.",
+    "technologies": [
+        {
+            "name": "AWS"
+        },
+        {
+            "name": "Lambda"
+        },
+        {
+            "name": "S3"
+        },
+        {
+            "name": "DynamoDB"
+        },
+        {
+            "name": "Docker"
+        }
+    ],
+    "images": [
+        {
+            "path": "../media/trouble0.png",
+            "description": "The architecture of the setup including the lambda and the micro-service."
+        }
+    ],
+    "tags": [
+        "architect",
+        "lead"
+    ],
+    "period": "2018 - 2019",
+    "highlighted": false
+}

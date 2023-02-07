@@ -1,0 +1,21 @@
+{
+    "name": "GTFE Analysis Reports",
+    "type": "work",
+    "description": "A customer add-on to FS-RI (Financial Services - Reinsurance) for the General Reinsurance Company. \n            <br />\n            <br />\n            The add-on consisted of several <strong>UI5</strong> applications which pulled various performance \n            indicators calculated by <strong>ABAP CDS</strong> views and exposed through <strong>SAP Gateway</strong>\n            OData services.",
+    "technologies": [
+        {
+            "name": "ABAP"
+        },
+        {
+            "name": "SAP Gateway"
+        },
+        {
+            "name": "SAP UI5"
+        }
+    ],
+    "tags": [
+        "lead"
+    ],
+    "period": "2016",
+    "highlighted": false
+}

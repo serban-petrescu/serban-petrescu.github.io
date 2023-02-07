@@ -1,0 +1,23 @@
+{
+    "name": "UI5 JSX",
+    "type": "personal",
+    "description": "Babel plugin for transpiling inline <strong>JSX</strong> into <strong>UI5</strong> render functions. \n            It enables very easy custom control creation by simplifying the render process.",
+    "technologies": [
+        {
+            "name": "SAP UI5"
+        },
+        {
+            "name": "JavaScript"
+        },
+        {
+            "name": "JSX"
+        },
+        {
+            "name": "BabelJS"
+        }
+    ],
+    "period": "2017",
+    "github": "https://github.com/serban-petrescu/ui5-jsx-rm",
+    "blog": "https://blogs.sap.com/2017/07/15/bringing-jsx-to-ui5-controls/",
+    "highlighted": false
+}

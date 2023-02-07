@@ -1,0 +1,42 @@
+{
+    "name": "Invoice Generator (II)",
+    "type": "academic",
+    "description": "A <strong>micro-service</strong> architecture web application built for the <em>Service oriented \n            architecture</em> master course. \n            <br />\n            <br />\n            It is a re-implementation of the older invoice generator it using <strong>Spring</strong>, \n            <strong>Mithril</strong>, <strong>NodeJS</strong> and <strong>Docker</strong>.",
+    "technologies": [
+        {
+            "name": "Spring"
+        },
+        {
+            "name": "Hibernate"
+        },
+        {
+            "name": "MithrilJS"
+        },
+        {
+            "name": "NodeJS"
+        },
+        {
+            "name": "Docker"
+        },
+        {
+            "name": "Semantic UI"
+        }
+    ],
+    "period": "2019",
+    "images": [
+        {
+            "path": "../media/docGen1.PNG",
+            "description": "The list of companies managed by the application."
+        },
+        {
+            "path": "../media/docGen2.PNG",
+            "description": "A list of invoices for a selected company."
+        },
+        {
+            "path": "../media/docGen3.PNG",
+            "description": "The form for creating a new invoice."
+        }
+    ],
+    "github": "https://github.com/serban-petrescu/ubb-soa-docgen",
+    "highlighted": false
+}

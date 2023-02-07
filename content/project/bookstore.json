@@ -1,0 +1,24 @@
+{
+    "name": "Bookstore",
+    "type": "academic",
+    "description": "A small bookstore on the cloud. Is very similar to the bank applications, but the persistency was \n            done in XML files (stored in a Cloud Document Store) and the user also has the possibility of \n            generating reports in various formats (TXT, XML, CSV).",
+    "technologies": [
+        {
+            "name": "Java"
+        },
+        {
+            "name": "CMIS"
+        },
+        {
+            "name": "SAP UI5"
+        }
+    ],
+    "images": [
+        {
+            "path": "../media/book1.PNG",
+            "description": "The home page of an admin user (notice the tiles for generating reports)."
+        }
+    ],
+    "period": "2014",
+    "highlighted": false
+}

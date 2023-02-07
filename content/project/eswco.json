@@ -1,0 +1,30 @@
+{
+    "name": "Cost Optimization",
+    "type": "work",
+    "description": "I've performed extensive analysis on more than 500 AWS accounts to find \n            <strong>cost reduction</strong> opportunities.\n            <br />\n            <br />\n            This involved writing a suite of <strong>Lambdas</strong> that periodically queried the target accounts for \n            metrics and even executed some strategies (resource deletion, installing agents, etc.).",
+    "technologies": [
+        {
+            "name": "AWS"
+        },
+        {
+            "name": "Python"
+        },
+        {
+            "name": "Lambda"
+        },
+        {
+            "name": "Step Functions"
+        },
+        {
+            "name": "CloudWatch"
+        },
+        {
+            "name": "Systems Manager"
+        }
+    ],
+    "tags": [
+        "architect"
+    ],
+    "period": "2020 - 2021",
+    "highlighted": false
+}

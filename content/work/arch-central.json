@@ -1,0 +1,9 @@
+{
+    "period": {
+        "from": "2020-06-14",
+        "to": "2021-07-31"
+    },
+    "title": "Cloud Solutions Architect @ DevFactory",
+    "body": "As an ivory-tower architect, wrote technical architecture specifications for a portfolio of over 200 products. Produced an average of 3 specifications per week, with implementation requiring hundreds of man-days by engineers. Expert in utilizing AWS serverless technologies (Lambda, Step Functions, DynamoDB, Cognito, etc.) and experienced in modernizing legacy on-premise products. Demonstrated strong initiative by volunteering for additional tasks, such as peer review, legacy product analysis, cost reduction strategies, automation script creation, and more.",
+    "logo": "../media/devfactory.png"
+}

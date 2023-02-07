@@ -1,0 +1,34 @@
+{
+    "name": "SBWO",
+    "type": "personal",
+    "description": "A <strong>Java</strong> standalone application, with an embedded web server and embedded database. \n            The application aims to help small business to store, manage and use their business data. \n            <br />\n            <br />\n            I have built this project as an exercise in implementing various mechanisms from scratch \n            (user authentication, session management, scheduling, etc.) to enhance my skills.",
+    "technologies": [
+        {
+            "name": "Java"
+        },
+        {
+            "name": "EclipseLink"
+        },
+        {
+            "name": "Olingo"
+        },
+        {
+            "name": "Jetty"
+        },
+        {
+            "name": "PicoContainer"
+        },
+        {
+            "name": "H2"
+        },
+        {
+            "name": "SAP UI5"
+        },
+        {
+            "name": "JavaScript"
+        }
+    ],
+    "period": "2016 - 2017",
+    "github": "https://github.com/serban-petrescu/sbwo",
+    "highlighted": false
+}

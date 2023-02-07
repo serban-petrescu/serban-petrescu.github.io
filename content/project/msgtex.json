@@ -1,0 +1,48 @@
+{
+    "name": "Travel Expenses",
+    "type": "work",
+    "description": "A project for our internal finance department to help them manage travel expense reports, \n            calculate allowances and track business trips for our colleagues.\n            <br />\n            <br />\n            I acted as technical mentor and product owner for the fairly large team of developers\n            assigned to this project.",
+    "technologies": [
+        {
+            "name": "Java"
+        },
+        {
+            "name": "MongoDB"
+        },
+        {
+            "name": "PostgreSQL"
+        },
+        {
+            "name": "Spring"
+        },
+        {
+            "name": "SAP UI5"
+        },
+        {
+            "name": "Docker"
+        }
+    ],
+    "images": [
+        {
+            "path": "../media/tex0.PNG",
+            "description": "The application provides several functionalities and also a configuration UI."
+        },
+        {
+            "path": "../media/tex1.PNG",
+            "description": "Most of the functionalities revolve around the employees, whose data may be imported from the HCM system."
+        },
+        {
+            "path": "../media/tex3.PNG",
+            "description": "Trip details may be added and viewed."
+        },
+        {
+            "path": "../media/tex2.PNG",
+            "description": "At the end of a trip, expenses may be reported and a settlement document is generated."
+        }
+    ],
+    "tags": [
+        "teaching"
+    ],
+    "period": "2018",
+    "highlighted": false
+}

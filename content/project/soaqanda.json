@@ -1,0 +1,46 @@
+{
+    "name": "Simple Q&A",
+    "type": "academic",
+    "description": "A <strong>micro-service</strong> architecture web application built for the <em>Service oriented \n            architecture</em> master course. \n            <br />\n            <br />\n            It consisted of several <strong>NodeJS</strong> micro-services,\n            a <strong>Zuul</strong> API Gateway, a simplified <strong>OAuth 2.0</strong> authorization\n            server and a <strong>React</strong> user interface.",
+    "technologies": [
+        {
+            "name": "NodeJS"
+        },
+        {
+            "name": "Express"
+        },
+        {
+            "name": "React"
+        },
+        {
+            "name": "Spring"
+        },
+        {
+            "name": "OAuth"
+        },
+        {
+            "name": "Docker"
+        }
+    ],
+    "images": [
+        {
+            "path": "../media/qAndA0.PNG",
+            "description": "The list of questions."
+        },
+        {
+            "path": "../media/qAndA1.PNG",
+            "description": "A form for asking a new question."
+        },
+        {
+            "path": "../media/qAndA2.PNG",
+            "description": "The detail view for a question, showing the votes and the answers."
+        },
+        {
+            "path": "../media/qAndA3.PNG",
+            "description": "The user is able to get notifications via email or via Web Push."
+        }
+    ],
+    "period": "2019",
+    "github": "https://github.com/serban-petrescu/ubb-soa-qanda",
+    "highlighted": false
+}

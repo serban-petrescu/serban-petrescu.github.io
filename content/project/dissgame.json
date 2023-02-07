@@ -1,0 +1,29 @@
+{
+    "name": "Kindergarten Game",
+    "type": "academic",
+    "description": "A simple story-like game for kindergarten children based on the \"La Polul Nord\" story by Marin Sorescu.\n            <br />\n            <br />\n            I built it for the <em>Design of interactive software systems</em> master course, the challenge being \n            that the UI must be suitable for usage by four-year-olds.",
+    "technologies": [
+        {
+            "name": "NodeJS"
+        },
+        {
+            "name": "MelonJS"
+        },
+        {
+            "name": "Electron"
+        },
+        {
+            "name": "Grunt"
+        }
+    ],
+    "images": [
+        {
+            "path": "../media/diss1.PNG",
+            "description": "A level of the game where you must collect clothing items."
+        }
+    ],
+    "period": "2018",
+    "github": "https://github.com/serban-petrescu/diss-kindergarden-game",
+    "link": "https://serban-petrescu.github.io/diss-kindergarden-game/",
+    "highlighted": false
+}

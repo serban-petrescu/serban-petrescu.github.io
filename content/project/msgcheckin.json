@@ -1,0 +1,54 @@
+{
+  "period": "current",
+  "youtube": "https://www.youtube.com/watch?v=vtY28vn6w9k",
+  "technologies": [
+    {
+      "name": "Spring"
+    },
+    {
+      "name": "PostgreSQL"
+    },
+    {
+      "name": "React"
+    },
+    {
+      "name": "Semantic UI"
+    },
+    {
+      "name": "JSX"
+    },
+    {
+      "name": "AWS"
+    }
+  ],
+  "name": "msg.Check-In",
+  "highlighted": true,
+  "images": [
+    {
+      "path": "../media/checkin1.PNG",
+      "description": "The login, which was backed by the corporate LDAP."
+    },
+    {
+      "path": "../media/checkin2.PNG",
+      "description": "The dashboard, which shows my team and my check-ins."
+    },
+    {
+      "path": "../media/checkin3.PNG",
+      "description": "The map of a floor in one of our buildings."
+    },
+    {
+      "path": "../media/checkin4.PNG",
+      "description": "The checkin view of a room with the photos of the colleagues working there."
+    },
+    {
+      "description": "The high-level, cloud-native architecture of the product.",
+      "path": "../media/checkin.drawio.png"
+    }
+  ],
+  "tags": [
+    "architect"
+  ],
+  "type": "work",
+  "link": "https://www.msgcheckin.com",
+  "description": "A <strong>Spring Boot</strong> application with a <strong>Semantic UI React</strong> frontend for managing\n            which colleagues are coming at the office in which days and in which room / place. \n            <br /> <br />\n            Currently, this product is being sold using a <strong>SaaS</strong> model, with the option of on-premise deployment on request.\n            The SaaS version runs on <strong>AWS</strong> (CloudFront, Load Balancer, ECS, RDS)."
+}

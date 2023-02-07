@@ -1,0 +1,27 @@
+{
+    "name": "Ticket System",
+    "type": "academic",
+    "description": "A UI-only application for an online, web-based ticketing system. It has three types of users: \n            customers which may open support tickets, employees which must solve the tickets and managers \n            which can oversee the performance of the employees and must solve any customer complaints.",
+    "technologies": [
+        {
+            "name": "SAP UI5"
+        }
+    ],
+    "images": [
+        {
+            "path": "../media/ticket1.PNG",
+            "description": "The view which displays a customer's previously opened tickets."
+        },
+        {
+            "path": "../media/ticket2.PNG",
+            "description": "The view which shows an employee's unsolved tickets."
+        },
+        {
+            "path": "../media/ticket3.PNG",
+            "description": "The employee performance statistics application for managers."
+        }
+    ],
+    "period": "2015",
+    "link": "https://uidproject-p1940442392trial.dispatcher.hanatrial.ondemand.com/webapp/index.html?hc_reset",
+    "highlighted": false
+}

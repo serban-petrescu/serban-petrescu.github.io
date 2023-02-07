@@ -1,0 +1,33 @@
+{
+    "name": "Server Manager",
+    "type": "personal",
+    "description": "A program specifically designed to manage dedicated servers for \n            <a href=\"https://www.taleworlds.com/en/Games/Warband\">Mount and Blade: Warband</a>. \n            It allowed the simultaneous management of several servers, checking the logs, creating reports, \n            scheduling start, stop or restart actions.",
+    "technologies": [
+        {
+            "name": "C#"
+        },
+        {
+            "name": "Windows Forms"
+        }
+    ],
+    "period": "2011",
+    "images": [
+        {
+            "path": "../media/Manager1.PNG",
+            "description": "The first screen of the program. Allows the user to add or remove servers, to view the current status or to edit configurations."
+        },
+        {
+            "path": "../media/Manager2.PNG",
+            "description": "The redirected console of the selected server (both input and output)."
+        },
+        {
+            "path": "../media/Manager3.PNG",
+            "description": "The event scheduler for the selected server."
+        },
+        {
+            "path": "../media/Manager4.PNG",
+            "description": "The event log for a server."
+        }
+    ],
+    "highlighted": false
+}

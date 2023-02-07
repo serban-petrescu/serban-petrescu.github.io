@@ -1,0 +1,22 @@
+{
+    "name": "Assembly Graph Plotter",
+    "type": "academic",
+    "description": "A mathematical functions graph plotting application entirely written in <strong>assembly</strong>. \n            The user is able to enter the mathematical formula in the console and then the program plots the \n            function's graph.",
+    "technologies": [
+        {
+            "name": "Assembly"
+        }
+    ],
+    "images": [
+        {
+            "path": "../media/asm1.png",
+            "description": "The formula entry console prompt sequence."
+        },
+        {
+            "path": "../media/asm2.png",
+            "description": "The resulting graph plot."
+        }
+    ],
+    "period": "2013",
+    "highlighted": false
+}

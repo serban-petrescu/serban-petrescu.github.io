@@ -1,0 +1,32 @@
+{
+    "name": "Software Design Lab",
+    "type": "academic",
+    "description": "I've hosted the <em>Software Design</em> laboratory for a group of students at T.U. Cluj Napoca.\n            <br />\n            <br />\n            I prepared my own learning resources and recorded our sessions in which we explored various\n            architectural styles, design patterns and technologies (mostly <strong>Spring</strong> and \n            <strong>React</strong>).",
+    "technologies": [
+        {
+            "name": "Java"
+        },
+        {
+            "name": "JavaScript"
+        },
+        {
+            "name": "Spring"
+        },
+        {
+            "name": "Hibernate"
+        },
+        {
+            "name": "React"
+        },
+        {
+            "name": "WebSocket"
+        }
+    ],
+    "tags": [
+        "teaching"
+    ],
+    "period": "2019",
+    "github": "https://github.com/serban-petrescu/utcn-sd-resources/",
+    "youtube": "https://www.youtube.com/playlist?list=PLFVVA9FdSLI3GzulGsej25e-JzOZK8DGo",
+    "highlighted": false
+}

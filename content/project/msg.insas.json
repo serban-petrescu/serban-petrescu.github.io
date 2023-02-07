@@ -1,0 +1,28 @@
+{
+    "name": "Insurance as a service",
+    "type": "work",
+    "description": "A continuation of the \"Next Generation Underwriting\" project, but focused more towards \n            <strong>cloud enablement</strong>. The project consists of several smaller prototypes or \n            showcases that aim to be deployed on a cloud platform (e.g. AWS). \n            <br />\n            <br />\n            I had mostly development-related tasks related to building a <strong>MEAN</strong> stack solution.",
+    "technologies": [
+        {
+            "name": "NodeJS"
+        },
+        {
+            "name": "Express"
+        },
+        {
+            "name": "MongoDB"
+        },
+        {
+            "name": "Mongoose"
+        },
+        {
+            "name": "Angular"
+        },
+        {
+            "name": "TypeScript"
+        }
+    ],
+    "period": "2017",
+    "link": "https://www.minnosphere.com",
+    "highlighted": false
+}

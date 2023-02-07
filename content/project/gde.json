@@ -1,0 +1,38 @@
+{
+    "name": "Graphical IDE",
+    "type": "personal",
+    "description": "An application which can be used to write imperative <strong>Java</strong> code by dragging and dropping \n            functional blocks. The generated code can also be displayed inside the application, compiled and run. \n            The front-end is done in <strong>UI5</strong> and the back-end is built in <strong>Java</strong>.",
+    "technologies": [
+        {
+            "name": "Java"
+        },
+        {
+            "name": "HTML"
+        },
+        {
+            "name": "SAP UI5"
+        },
+        {
+            "name": "JavaScript"
+        },
+        {
+            "name": "FabricJS"
+        }
+    ],
+    "period": "2015",
+    "images": [
+        {
+            "path": "../media/GDE1.PNG",
+            "description": "The drag-and-drop area of the application. The functional blocks can be dragged from the menu strip on the right and properties of each block can be set using the Properties toolbox. Blocks can be moved and their contents explored."
+        },
+        {
+            "path": "../media/GDE2.PNG",
+            "description": "The generated code area (corresponding to the previous schematic)."
+        },
+        {
+            "path": "../media/GDE3.PNG",
+            "description": "The console area after compiling and running the Java schematic (can be done using either buttons or console commands)."
+        }
+    ],
+    "highlighted": false
+}

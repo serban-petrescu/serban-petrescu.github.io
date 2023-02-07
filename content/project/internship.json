@@ -1,0 +1,32 @@
+{
+    "name": "Internship Apps",
+    "type": "work",
+    "description": "Several primary insurance small <strong>UI5</strong> applications. All of them had \n            <strong>SAP Gateway</strong> backend services, which exposed RFCs from standard modules. \n            Most of the applications targeted the transport insurance segment and two of them targeted \n            small goods primary insurance.",
+    "images": [
+        {
+            "path": "../media/internshipBill1.PNG",
+            "description": "Using the bill creation application, the user can add several items to a new bill."
+        },
+        {
+            "path": "../media/internshipBill2.PNG",
+            "description": "Then the user must either search for the customer (business partner) or create a new one."
+        },
+        {
+            "path": "../media/internshipBill3.PNG",
+            "description": "At the end, the user must agree to the terms and conditions. A PDF receipt is created afterwards."
+        }
+    ],
+    "technologies": [
+        {
+            "name": "ABAP"
+        },
+        {
+            "name": "SAP Gateway"
+        },
+        {
+            "name": "SAP UI5"
+        }
+    ],
+    "period": "2014",
+    "highlighted": false
+}

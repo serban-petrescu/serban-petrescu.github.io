@@ -1,0 +1,35 @@
+{
+    "name": "Hospital",
+    "type": "academic",
+    "description": "Hospital appointment management <strong>cloud application</strong> realized with <strong>JPA</strong> \n            and <strong>UI5</strong>. Real-time notifications were supported by using <strong>WebSocket</strong> \n            communication between the clients and the cloud.",
+    "technologies": [
+        {
+            "name": "Java"
+        },
+        {
+            "name": "EclipseLink"
+        },
+        {
+            "name": "WebSocket"
+        },
+        {
+            "name": "SAP UI5"
+        }
+    ],
+    "images": [
+        {
+            "path": "../media/hospital1.PNG",
+            "description": "The appointment list as seen by a doctor."
+        },
+        {
+            "path": "../media/hospital2.PNG",
+            "description": "The patients list as seen by a nurse or secretary. The opened dialog can be used to make a new appointment."
+        },
+        {
+            "path": "../media/hospital3.PNG",
+            "description": "A real-time notification received by the doctor when one of his patients has arrived at the hospital."
+        }
+    ],
+    "period": "2015",
+    "highlighted": false
+}

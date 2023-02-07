@@ -1,0 +1,27 @@
+{
+    "name": "Web Paint",
+    "type": "academic",
+    "description": "A <strong>UI5</strong> app which uses <strong>FabricJS</strong> to allow the user to draw by  \n            drag-and-dropping shapes and import external pictures. The user can also resize, move and change\n            the colors of the shapes, use undo-redo functionality, save or load drawing files and also to export to PNG.",
+    "technologies": [
+        {
+            "name": "HTML"
+        },
+        {
+            "name": "SAP UI5"
+        },
+        {
+            "name": "JavaScript"
+        },
+        {
+            "name": "FabricJS"
+        }
+    ],
+    "period": "2015",
+    "images": [
+        {
+            "path": "../media/webpaint1.PNG",
+            "description": "The main drawing area of the application, with the shape palette on the top and the objects' properties on the left."
+        }
+    ],
+    "highlighted": false
+}

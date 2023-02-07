@@ -1,0 +1,17 @@
+{
+    "name": "SAPIM",
+    "type": "personal",
+    "description": "<strong>SAP API Manager</strong> command line interface which can be used to deploy, create\n            and remove API Proxies.\n            <br />\n            <br />\n            I built this CLI in my spare time to help the development process in <strong>SCP</strong> projects.",
+    "technologies": [
+        {
+            "name": "NodeJS"
+        },
+        {
+            "name": "SAP API Manager"
+        }
+    ],
+    "period": "2018",
+    "github": "https://github.com/serban-petrescu/sapim",
+    "blog": "https://blogs.sap.com/2018/02/03/sap-api-management-cli/",
+    "highlighted": false
+}

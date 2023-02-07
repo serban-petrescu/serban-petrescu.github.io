@@ -1,0 +1,30 @@
+{
+    "name": "Swadian Roleplay Mod",
+    "type": "personal",
+    "description": "A <a href=\"https://www.taleworlds.com/en/Games/Warband\">Mount and Blade: Warband</a> mod which \n            aimed to completely change the \n            game concept without forcing players to download anything. For this project, I was the \n            sole developer. It consisted of modified <strong>Python</strong> scripts which were run \n            by the server, <strong>PHP</strong> sites, <strong>C / C++</strong> \n            log parsers.",
+    "technologies": [
+        {
+            "name": "MySQL"
+        },
+        {
+            "name": "Python"
+        },
+        {
+            "name": "Assembly"
+        },
+        {
+            "name": "C / C++"
+        },
+        {
+            "name": "PHP"
+        },
+        {
+            "name": "HTML"
+        },
+        {
+            "name": "JavaScript"
+        }
+    ],
+    "period": "2010 - 2011",
+    "highlighted": false
+}

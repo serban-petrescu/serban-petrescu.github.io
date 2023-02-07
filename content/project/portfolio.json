@@ -1,0 +1,38 @@
+{
+    "name": "My Portfolio",
+    "type": "personal",
+    "description": "This very website, which is meant to showcase my experience and projects.\n            <br />\n            <br />\n            Initially built with vanilla <strong>UI5</strong>, then re-built with custom\n            controls using <strong>JSX</strong>, finally re-built again using <strong>React</strong>.",
+    "technologies": [
+        {
+            "name": "SAP UI5"
+        },
+        {
+            "name": "Bulma"
+        },
+        {
+            "name": "JSX"
+        },
+        {
+            "name": "React"
+        },
+        {
+            "name": "Semantic UI"
+        }
+    ],
+    "images": [
+        {
+            "path": "../media/portfolio0.PNG",
+            "description": "The first UI5 version of the site."
+        },
+        {
+            "path": "../media/portfolio1.PNG",
+            "description": "The later re-write using JSX and Bulma."
+        },
+        {
+            "path": "../media/portfolio2.PNG",
+            "description": "The current version of the website."
+        }
+    ],
+    "period": "2016 - 2019",
+    "highlighted": false
+}

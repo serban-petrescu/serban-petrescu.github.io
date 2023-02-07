@@ -1,0 +1,34 @@
+{
+    "name": "Document Generator (Remake)",
+    "type": "academic",
+    "description": "A remake of an older project, with <strong>MongoDB</strong> for storing the document \n            templates, <strong>Apache Derby + JDBC</strong> for storing the various user, template and field \n            configurations and an <strong>UI5</strong> interface. The <strong>OpenOffice</strong> API was called \n            directly from Java to generate the documents.",
+    "technologies": [
+        {
+            "name": "Java"
+        },
+        {
+            "name": "JDBC"
+        },
+        {
+            "name": "MongoDB"
+        },
+        {
+            "name": "OpenOffice API"
+        },
+        {
+            "name": "SAP UI5"
+        }
+    ],
+    "images": [
+        {
+            "path": "../media/documentGen0.PNG",
+            "description": "The field configuration view (allows the users to define custom field validations)."
+        },
+        {
+            "path": "../media/documentGen1.PNG",
+            "description": "The document generation view. The users must fill in all defined fields with valid values."
+        }
+    ],
+    "period": "2015",
+    "highlighted": false
+}

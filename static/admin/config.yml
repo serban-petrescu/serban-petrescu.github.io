@@ -1,0 +1,149 @@
+backend:
+  name: github
+  repo: serban-petrescu/serban-petrescu.github.io
+
+local_backend: true
+
+media_folder: content/media
+
+collections:
+  - name: 'education'
+    label: 'Education'
+    folder: 'content/education'
+    extension: json
+    create: true
+    editor: { preview: false }
+    fields:
+        - { label: 'Title', name: 'title', widget: 'string', required: true }
+        - { label: 'Body', name: 'body', widget: 'text', required: true }
+        - label: 'Period'
+          name: 'period'
+          widget: object
+          fields:
+            - { label: 'From', name: 'from', widget: 'date', required: true, date_format: 'DD.MM.YYYY' }
+            - { label: 'To', name: 'to', widget: 'date', required: false, date_format: 'DD.MM.YYYY' }
+        - { label: 'Logo', name: 'logo', widget: 'image', required: true, media_folder: '../media', choose_url: false }
+        
+  - name: 'certification'
+    label: 'Certifications'
+    folder: 'content/certification'
+    label_singular: 'Certification'
+    extension: json
+    create: true
+    editor: { preview: false }
+    fields:
+        - { label: 'Title', name: 'title', widget: 'string', required: true }
+        - { label: 'Body', name: 'body', widget: 'text', required: true }
+        - { label: 'Link', name: 'link', widget: 'string', required: false }
+        - label: 'Period'
+          name: 'period'
+          widget: object
+          fields:
+            - { label: 'At', name: 'at', widget: 'date', required: true, date_format: 'DD.MM.YYYY' }
+        - { label: 'Logo', name: 'logo', widget: 'image', required: true, media_folder: '../media', choose_url: false }
+        
+  - name: 'work'
+    label: 'Work'
+    folder: 'content/work'
+    extension: json
+    create: true
+    editor: { preview: false }
+    fields:
+        - { label: 'Title', name: 'title', widget: 'string', required: true }
+        - { label: 'Body', name: 'body', widget: 'text', required: true }
+        - label: 'Period'
+          name: 'period'
+          widget: object
+          fields:
+            - { label: 'From', name: 'from', widget: 'date', required: true, date_format: 'DD.MM.YYYY' }
+            - { label: 'To', name: 'to', widget: 'date', required: false, date_format: 'DD.MM.YYYY' }
+        - { label: 'Logo', name: 'logo', widget: 'image', required: true, media_folder: '../media', choose_url: false }
+        
+  - name: 'project'
+    label: 'Projects'
+    label_singular: 'Project'
+    folder: 'content/project'
+    extension: json
+    create: true
+    editor: { preview: false }
+    fields:
+        - { label: 'Name', name: 'name', widget: 'string', required: true }
+        - { label: 'Period', name: 'period', widget: 'string', required: true }
+        - { label: 'Highlight', name: 'highlighted', widget: "boolean", default: false}
+        - { label: 'Type', name: 'type', widget: 'select', options: ['academic', 'work', 'personal'] }
+        - { label: 'Description', name: 'description', widget: 'richtext', required: true }
+        - { label: 'Github', name: 'github', widget: 'string', required: false }
+        - { label: 'Link', name: 'link', widget: 'string', required: false }
+        - { label: 'Youtube', name: 'youtube', widget: 'string', required: false }
+        - { label: 'Blog', name: 'blog', widget: 'string', required: false }
+        - { label: 'Facebook', name: 'facebook', widget: 'string', required: false }
+        - label: 'Technologies'
+          name: 'technologies'
+          widget: list
+          fields:
+            - { label: 'Name', name: 'name', widget: 'string', required: true }
+        - label: 'Tags'
+          name: 'tags'
+          widget: list
+          summary: '{{fields.tag}}'
+          field: { label: 'Tag', name: 'tag', widget: 'string', required: true }
+        - label: 'Images'
+          name: 'images'
+          widget: list
+          fields:
+            - { label: 'Description', name: 'description', widget: 'text', required: true }
+            - { label: 'Image', name: 'path', widget: 'image', required: true, media_folder: '../media', choose_url: false }
+
+  - name: 'metadata'
+    label: 'Metadata'
+    files:
+      - label: 'Metadata'
+        name: 'metadata'
+        file: 'content/metadata/metadata.json'
+        fields:
+            - { label: 'Title', name: 'title', widget: 'string', required: true }
+            - { label: 'Description', name: 'description', widget: 'text', required: true }
+            - { label: 'Avatar', name: 'avatar', widget: 'image', required: true, media_folder: '../media', choose_url: false }
+            - { label: 'Cover', name: 'cover', widget: 'image', required: true, media_folder: '../media', choose_url: false }
+            - { label: 'Name', name: 'name', widget: 'string', required: true }
+            - { label: 'Phone', name: 'phone', widget: 'string', required: true }
+            - { label: 'Email', name: 'email', widget: 'string', required: true }
+            - { label: 'Location', name: 'location', widget: 'string', required: true }
+            - { label: 'Website', name: 'website', widget: 'string', required: true }
+            - { label: 'Role', name: 'role', widget: 'string', required: true }
+            - { label: 'Birthday', name: 'birthday', widget: 'date', required: true, date_format: 'DD.MM.YYYY' }
+            - { label: 'CV', name: 'cv', widget: 'string', required: true }
+            - { label: 'Summary', name: 'summary', widget: 'richtext', required: true }
+            - label: 'Highlights'
+              name: 'highlights'
+              widget: object
+              fields:
+              - label: 'Education'
+                name: 'education'
+                widget: object
+                fields:
+                  - { label: 'Title', name: 'title', widget: 'string', required: true }
+                  - { label: 'Description', name: 'description', widget: 'text', required: true }
+              - label: 'Work'
+                name: 'work'
+                widget: object
+                fields:
+                  - { label: 'Title', name: 'title', widget: 'string', required: true }
+                  - { label: 'Description', name: 'description', widget: 'text', required: true }
+            - label: 'Libraries'
+              name: 'libraries'
+              widget: list
+              fields:
+                - { label: 'Name', name: 'name', widget: 'string', required: true }
+                - { label: 'URL', name: 'url', widget: 'string', required: true }
+            - label: 'Accounts'
+              name: 'accounts'
+              widget: object
+              fields:
+                - { label: 'LinkedIn', name: 'linkedin', widget: 'string', required: false }
+                - { label: 'GitHub', name: 'github', widget: 'string', required: false }
+                - { label: 'StackOverflow', name: 'stackoverflow', widget: 'string', required: false }
+                - { label: 'Twitter', name: 'twitter', widget: 'string', required: false }
+                - { label: 'Youtube', name: 'youtube', widget: 'string', required: false }
+                - { label: 'Medium', name: 'medium', widget: 'string', required: false }
+

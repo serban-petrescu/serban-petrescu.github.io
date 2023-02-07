@@ -1,0 +1,31 @@
+{
+    "name": "Taxonomic Engine",
+    "type": "work",
+    "description": "A <strong>SCP</strong>, <strong>HANA</strong>, <strong>UI5</strong> project for the human resources industry. \n            The main goal of the project was to automatically parse and classify candidates based on their CVs.\n            <br />\n            <br />\n            We had a small development team in which I was the technical lead under the guidance of a senior software architect.",
+    "technologies": [
+        {
+            "name": "HANA"
+        },
+        {
+            "name": "SQL"
+        },
+        {
+            "name": "SAP UI5"
+        },
+        {
+            "name": "D3.js"
+        }
+    ],
+    "period": "2015 - 2016",
+    "images": [
+        {
+            "path": "../media/taxo1.PNG",
+            "description": "The result obtained after parsing and analyzing the contents of my own CV."
+        },
+        {
+            "path": "../media/taxo2.PNG",
+            "description": "The same results, but compared against the typical profile of a Java Developer (as deduced by the engine)."
+        }
+    ],
+    "highlighted": false
+}

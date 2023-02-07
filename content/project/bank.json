@@ -1,0 +1,49 @@
+{
+    "name": "Bank",
+    "type": "academic",
+    "description": "A small bank application on the cloud. Persistency was done with plain <strong>JDBC</strong> and the \n            user interface with <strong>UI5</strong>. This application was later remade by using \n            <strong>Hibernate</strong>, <strong>Spring</strong> and <strong>AngularJS</strong>.",
+    "technologies": [
+        {
+            "name": "Java"
+        },
+        {
+            "name": "JDBC"
+        },
+        {
+            "name": "SAP UI5"
+        },
+        {
+            "name": "Hibernate"
+        },
+        {
+            "name": "Spring"
+        },
+        {
+            "name": "Angular"
+        }
+    ],
+    "images": [
+        {
+            "path": "../media/bank1.PNG",
+            "description": "The home page of admin users."
+        },
+        {
+            "path": "../media/bank2.PNG",
+            "description": "The customer details page with the account list at the bottom."
+        },
+        {
+            "path": "../media/bank3.PNG",
+            "description": "The activity log of a user."
+        },
+        {
+            "path": "../media/bank4.png",
+            "description": "The account list (remake)."
+        },
+        {
+            "path": "../media/bank5.png",
+            "description": "The detail page for an account (remake)."
+        }
+    ],
+    "period": "2014 - 2015",
+    "highlighted": false
+}

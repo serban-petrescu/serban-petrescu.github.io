@@ -1,0 +1,40 @@
+{
+    "name": "GSA: Common Services",
+    "type": "work",
+    "description": "Architect and lead developer for building a suite of reusable <strong>micro-services</strong> supporting \n            business applications for a market-leading manufacturing company. \n            <br />\n            <br />\n            I've had a major role in guiding our customer through various architectural decisions, \n            whilst also implementing the most technically challenging components.",
+    "technologies": [
+        {
+            "name": "Spring"
+        },
+        {
+            "name": "HANA"
+        },
+        {
+            "name": "Hibernate"
+        },
+        {
+            "name": "Cloud Foundry"
+        },
+        {
+            "name": "SAP API Manager"
+        },
+        {
+            "name": "Bamboo"
+        },
+        {
+            "name": "OAuth"
+        }
+    ],
+    "images": [
+        {
+            "path": "../media/gsa.png",
+            "description": "The architecture of the micro-services and surrounding components (components managed by our team in blue)."
+        }
+    ],
+    "tags": [
+        "architect",
+        "lead"
+    ],
+    "period": "2017 - 2019",
+    "highlighted": false
+}

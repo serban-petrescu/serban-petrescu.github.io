@@ -1,0 +1,51 @@
+{
+    "name": "KickIT",
+    "type": "personal",
+    "description": "Co-founder for a Romanian startup, <em>KickIT</em>, targeting the amateur soccer scene.\n            <br />\n            <br /> \n            I was responsible for architecture, design, implementation and operations for the <strong>cloud-native</strong>\n            solution, consisting of a <strong>Spring Boot</strong> backend, <strong>Lambdas</strong> and a <strong>React PWA</strong> \n            deployed on AWS.",
+    "technologies": [
+        {
+            "name": "Java"
+        },
+        {
+            "name": "Spring"
+        },
+        {
+            "name": "PostgreSQL"
+        },
+        {
+            "name": "React"
+        },
+        {
+            "name": "AWS"
+        },
+        {
+            "name": "Lambda"
+        },
+        {
+            "name": "Docker"
+        },
+        {
+            "name": "Bulma"
+        }
+    ],
+    "images": [
+        {
+            "path": "../media/KICK1.PNG",
+            "description": "The home page of the application, showing the feed, PWA install prompt and upcoming events."
+        },
+        {
+            "path": "../media/KICK2.PNG",
+            "description": "The screen for organizing a new match, showing the proposed time, the weather and how many people are coming."
+        },
+        {
+            "path": "../media/KICK3.PNG",
+            "description": "The application can be used to organize soccer competitions (championships, tournaments, etc.)."
+        }
+    ],
+    "tags": [
+        "architect"
+    ],
+    "period": "2018 - 2019",
+    "facebook": "https://www.facebook.com/kickit.ro",
+    "highlighted": false
+}

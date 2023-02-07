@@ -1,0 +1,43 @@
+{
+    "name": "Job Registry",
+    "type": "personal",
+    "description": "This project was built in my spare time for a land surveyor. Using it, one can keep \n            track of all jobs and related court terms. It offers a calendar for seeing court \n            dates and automatically reads data from the <em>Ministry of Justice Web API</em> \n            and the <em>National Agency for Cadaster</em> website to update the data.",
+    "technologies": [
+        {
+            "name": "MySQL"
+        },
+        {
+            "name": "PHP"
+        },
+        {
+            "name": "HTML"
+        },
+        {
+            "name": "JavaScript"
+        }
+    ],
+    "period": "2014",
+    "images": [
+        {
+            "path": "../media/Evidenta1.PNG",
+            "description": "The job registry. Each line represents a job. The user can search through the jobs, add a new one, sort them, edit, delete or expand a job to see further attributes."
+        },
+        {
+            "path": "../media/Evidenta2.PNG",
+            "description": "An expanded job, showing the data retrieved from the Agency's website (the last row)."
+        },
+        {
+            "path": "../media/Evidenta3.PNG",
+            "description": "A fast entry screen, which can be used to enter the inquiry number for a job (after it was given to the Agency)."
+        },
+        {
+            "path": "../media/Evidenta4.PNG",
+            "description": "A fast entry screen, which can be used to change the status of a job."
+        },
+        {
+            "path": "../media/Evidenta5.PNG",
+            "description": "The court terms calendar."
+        }
+    ],
+    "highlighted": false
+}

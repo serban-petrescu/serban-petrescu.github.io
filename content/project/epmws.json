@@ -1,0 +1,38 @@
+{
+    "name": "EPM WebSocket",
+    "type": "personal",
+    "description": "A small personal project which realized real-time communication between an <strong>ABAP</strong> \n            based user interface (classic Dynpro), a <strong>UI5</strong> interface hosted on the ABAP system \n            and another UI5 interface hosted on <strong>SAP Cloud Platform</strong>.",
+    "technologies": [
+        {
+            "name": "ABAP"
+        },
+        {
+            "name": "SAP Gateway"
+        },
+        {
+            "name": "Java"
+        },
+        {
+            "name": "EclipseLink"
+        },
+        {
+            "name": "Olingo"
+        },
+        {
+            "name": "SAP UI5"
+        },
+        {
+            "name": "WebSocket"
+        }
+    ],
+    "images": [
+        {
+            "path": "../media/epmws0.jpg",
+            "description": "A side-by-side comparison of the Dynpro and UI5 user interfaces."
+        }
+    ],
+    "period": "2015",
+    "github": "https://github.com/serban-petrescu/epm-websockets",
+    "blog": "http://scn.sap.com/community/abap/connectivity/blog/2015/07/02/hcp-abap-and-websocket-part-1",
+    "highlighted": false
+}

@@ -1,0 +1,52 @@
+{
+    "name": "Next Generation Underwriting",
+    "type": "work",
+    "description": "Project focused on aiding underwriters in their work through <em>predictive analytics</em> \n            and pre-built business rules. \n            <br />\n            <br />\n            My role in this project was a combination of a solutions architect, development lead and full stack developer. \n            <br />\n            <br />\n            We were a relatively small team of five developers and we built a series of <strong>Java</strong> and <strong>UI5</strong> \n            MVPs over the span of a year.",
+    "technologies": [
+        {
+            "name": "Java"
+        },
+        {
+            "name": "R"
+        },
+        {
+            "name": "MySQL"
+        },
+        {
+            "name": "Olingo"
+        },
+        {
+            "name": "JAX-RS"
+        },
+        {
+            "name": "JavaScript"
+        },
+        {
+            "name": "SAP UI5"
+        },
+        {
+            "name": "D3.js"
+        }
+    ],
+    "images": [
+        {
+            "path": "../media/nguw0.png",
+            "description": "The user could define questions to build an underwriting questionnaire."
+        },
+        {
+            "path": "../media/nguw2.png",
+            "description": "The answers from the questions would be used to compute further attributes using formulas."
+        },
+        {
+            "path": "../media/nguw1.png",
+            "description": "All these results would be fed into a ML algorithm during the underwriting process."
+        }
+    ],
+    "tags": [
+        "architect",
+        "lead"
+    ],
+    "period": "2016 - 2017",
+    "link": "https://www.minnosphere.com",
+    "highlighted": false
+}

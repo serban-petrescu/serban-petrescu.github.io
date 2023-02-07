@@ -1,0 +1,31 @@
+{
+    "name": "Candidate Management",
+    "type": "work",
+    "description": "An internal project for managing our entry-level job candidates. The project was built using \n            <strong>Spring Boot</strong> and a <strong>PostgreSQL</strong> database, with <strong>React</strong> \n            on the front-end. \n            <br />\n            <br />\n            My role was that of a technical mentor, organizer and product owner.",
+    "technologies": [
+        {
+            "name": "Java"
+        },
+        {
+            "name": "Spring"
+        },
+        {
+            "name": "PostgreSQL"
+        },
+        {
+            "name": "React"
+        },
+        {
+            "name": "Redux"
+        },
+        {
+            "name": "Docker"
+        }
+    ],
+    "tags": [
+        "teaching"
+    ],
+    "period": "2016 - 2018",
+    "github": "https://github.com/serban-petrescu/candidate-management",
+    "highlighted": false
+}

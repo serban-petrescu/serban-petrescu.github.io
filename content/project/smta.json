@@ -1,0 +1,50 @@
+{
+    "name": "SMTA",
+    "type": "academic",
+    "description": "A shipment tracking application targeted at the transport insurance industry branch, consisting of two \n            tracking device prototypes (<em>Android, Arduino</em>) which communicate with <strong>cloud services</strong>,\n            which store the data, send out notifications and process the collected figures to expose analytical scenarios.\n\n            <br />\n            <br />\n\n            As this was my bachelor degree project, I've built it completely from scratch by myself.",
+    "technologies": [
+        {
+            "name": "Java"
+        },
+        {
+            "name": "HANA"
+        },
+        {
+            "name": "SQL"
+        },
+        {
+            "name": "Android"
+        },
+        {
+            "name": "Arduino"
+        },
+        {
+            "name": "C#"
+        },
+        {
+            "name": "SAP UI5"
+        }
+    ],
+    "images": [
+        {
+            "path": "../media/bachelor1.png",
+            "description": "The sensor maintenance application."
+        },
+        {
+            "path": "../media/backelor2.png",
+            "description": "The real-time tracking application with a transport being currently selected."
+        },
+        {
+            "path": "../media/backelor3.png",
+            "description": "The transport evolution comparison application (the user has selected to align the starts of the data series)."
+        },
+        {
+            "path": "../media/backelor4.png",
+            "description": "The overall statistics application output."
+        }
+    ],
+    "period": "2015 - 2016",
+    "github": "https://github.com/serban-petrescu/diploma-public",
+    "blog": "https://blogs.sap.com/2017/06/20/the-story-of-a-scp-based-tracking-solution/",
+    "highlighted": false
+}

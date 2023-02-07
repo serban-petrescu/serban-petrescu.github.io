@@ -1,0 +1,9 @@
+{
+    "period": {
+        "from": "2013-10-01",
+        "to": "2014-01-15"
+    },
+    "title": "SAP Development Course",
+    "body": "A series of lectures and laboratories hosted by msg which served as an introduction to the SAP world.",
+    "logo": "../media/msg.png"
+}
