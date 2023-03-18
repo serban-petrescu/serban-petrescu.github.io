@@ -1,8 +1,9 @@
 {
-    "period": {
-        "from": "2021-07-31"
-    },
-    "title": "VP Software Engineering @ DevFactory",
-    "body": "Led a team of 20 software engineers in the successful operation, maintenance, and extension of multiple SaaS products. Set up most of our internal processes, mentored and coached the engineers, and took most of high-level architectural decisions. Reduced outages by a factor of 5 through improved monitoring and observability. Cut cloud infrastructure costs in half through optimization efforts. Implemented new features, cleared the defect backlog and modernized a telephony system, migrating from a self-hosted solution to a serverless implementation using Twilio.",
-    "logo": "../media/devfactory.png"
+  "period": {
+    "from": "2021-07-31",
+    "to": "2023-02-20T07:23:33.620Z"
+  },
+  "title": "VP of Software Engineering @ DevFactory",
+  "body": "Led a team of 20 software engineers in the successful operation, maintenance, and extension of multiple SaaS products. Set up most of our internal processes, mentored and coached the engineers, and took most of high-level architectural decisions. Reduced outages by a factor of 5 through improved monitoring and observability. Cut cloud infrastructure costs in half through optimization efforts. Implemented new features, cleared the defect backlog and modernized a telephony system, migrating from a self-hosted solution to a serverless implementation using Twilio.",
+  "logo": "../media/devfactory.png"
 }

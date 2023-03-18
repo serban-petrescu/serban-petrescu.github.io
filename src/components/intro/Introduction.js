@@ -106,6 +106,7 @@ const Introduction = ({ cover, summary, social }) => (
                         <div className="is-flex">
                             <GatsbyImage
                                 className="ui large bordered rounded image"
+                                alt="Myself"
                                 image={getImage(cover)}
                             />
                         </div>

@@ -131,7 +131,7 @@ export const pageQuery = graphql`
                 }
             }
         }
-        work: allWorkJson(sort: { period: { to: DESC } }) {
+        work: allWorkJson(sort: { period: { from: DESC } }) {
             nodes {
                 title
                 body

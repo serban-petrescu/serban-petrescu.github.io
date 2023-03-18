@@ -1,5 +1,5 @@
 {
-  "period": "current",
+  "period": "2020 - 2023",
   "youtube": "https://www.youtube.com/watch?v=vtY28vn6w9k",
   "technologies": [
     {
@@ -25,12 +25,8 @@
   "highlighted": true,
   "images": [
     {
-      "path": "../media/checkin1.PNG",
-      "description": "The login, which was backed by the corporate LDAP."
-    },
-    {
       "path": "../media/checkin2.PNG",
-      "description": "The dashboard, which shows my team and my check-ins."
+      "description": "The dashboard, which shows my future check-ins."
     },
     {
       "path": "../media/checkin3.PNG",
@@ -38,7 +34,7 @@
     },
     {
       "path": "../media/checkin4.PNG",
-      "description": "The checkin view of a room with the photos of the colleagues working there."
+      "description": "The check-in flow allows checking in your team members as well."
     },
     {
       "description": "The high-level, cloud-native architecture of the product.",

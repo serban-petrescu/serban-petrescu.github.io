@@ -1,9 +1,9 @@
 {
-    "period": {
-        "from": "2014-02-28",
-        "to": "2020-06-30"
-    },
-    "title": "Lead Engineer @ msg-systems",
-    "body": "Served as a full-time employee with a versatile range of responsibilities including architecture, technical leadership, development, coaching, mentoring, hiring, training, and sales. My expertise includes SAP, Spring, NodeJS, React, and AWS, and I was recognized as an \"SAP Developer Hero\". As a leader, I managed teams of up to 10 people utilizing agile methodologies such as Scrum and Kanban. We successfully delivered several SaaS solutions used by thousands of users.",
-    "logo": "../media/msg.png"
+  "period": {
+    "from": "2014-02-28",
+    "to": "2020-06-30"
+  },
+  "title": "Lead Software Engineer @ msg-systems",
+  "body": "Served as a full-time employee with a versatile range of responsibilities including architecture, technical leadership, development, coaching, mentoring, hiring, training, and sales. My expertise includes SAP, Spring, NodeJS, React, and AWS, and I was recognized as an \"SAP Developer Hero\". As a leader, I managed teams of up to 10 people utilizing agile methodologies such as Scrum and Kanban. We successfully delivered several SaaS solutions used by thousands of users.",
+  "logo": "../media/msg.png"
 }

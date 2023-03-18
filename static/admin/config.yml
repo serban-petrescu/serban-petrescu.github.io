@@ -21,7 +21,7 @@ collections:
           widget: object
           fields:
             - { label: 'From', name: 'from', widget: 'date', required: true, date_format: 'DD.MM.YYYY' }
-            - { label: 'To', name: 'to', widget: 'date', required: false, date_format: 'DD.MM.YYYY' }
+            - { label: 'To', name: 'to', widget: 'date', required: false, default: null, date_format: 'DD.MM.YYYY' }
         - { label: 'Logo', name: 'logo', widget: 'image', required: true, media_folder: '../media', choose_url: false }
         
   - name: 'certification'
@@ -56,7 +56,7 @@ collections:
           widget: object
           fields:
             - { label: 'From', name: 'from', widget: 'date', required: true, date_format: 'DD.MM.YYYY' }
-            - { label: 'To', name: 'to', widget: 'date', required: false, date_format: 'DD.MM.YYYY' }
+            - { label: 'To', name: 'to', widget: 'date', required: false, default: null, date_format: 'DD.MM.YYYY' }
         - { label: 'Logo', name: 'logo', widget: 'image', required: true, media_folder: '../media', choose_url: false }
         
   - name: 'project'

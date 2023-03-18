@@ -1,48 +1,48 @@
 {
-    "title": "Șerban's Portfolio",
-    "description": "Portfolio of IT projects built by Șerban Petrescu",
-    "name": "Șerban Petrescu",
-    "phone": "+40 744 865 132",
-    "email": "Serban.Petrescu@outlook.com",
-    "location": "Cluj-Napoca, Romania",
-    "website": "https://www.spetrescu.ro/",
-    "avatar": "../media/profile_alt.jpg",
-    "cover": "../media/cover.jpg",
-    "role": "VP Software Engineering @ DevFactory",
-    "birthday": "1993-09-07",
-    "cv": "/downloads/CV_Serban_Petrescu.pdf",
-    "accounts": {
-        "linkedin": "https://ro.linkedin.com/in/serban-petrescu",
-        "github": "https://github.com/serban-petrescu/",
-        "stackoverflow": "http://stackoverflow.com/users/7612556/serban-petrescu?tab=profile",
-        "twitter": "https://twitter.com/petrescu_serban",
-        "youtube": "https://www.youtube.com/channel/UCjpkihJT18wg41Qw3jdu_HA",
-        "medium": "https://serban-petrescu.medium.com/"
+  "summary": "<p>Hi! I'm Serban, an IT enthusiast which works full time as a Cloud Solution Architect at DevFactory, taught Software Design at TU-CN and founded a local tech start-up.</p><p>I typically fulfill the roles of <strong>solution architect</strong> and <strong>lead developer</strong> with a strong focus on growing my team through technical challenges, training sessions, presentations and mentoring.</p><p>I have frequently switched between technologies, becoming proficient in NodeJS, Spring and the SAP ecosystem. My current target area of expertise is around <em>Amazon Web Services</em>, <em>Spring Boot</em> and <em>React</em>.</p>",
+  "accounts": {
+    "linkedin": "https://ro.linkedin.com/in/serban-petrescu",
+    "github": "https://github.com/serban-petrescu/",
+    "stackoverflow": "http://stackoverflow.com/users/7612556/serban-petrescu?tab=profile",
+    "twitter": "https://twitter.com/petrescu_serban",
+    "youtube": "https://www.youtube.com/channel/UCjpkihJT18wg41Qw3jdu_HA",
+    "medium": "https://serban-petrescu.medium.com/"
+  },
+  "repository": "https://github.com/serban-petrescu/serban-petrescu.github.io",
+  "name": "Șerban Petrescu",
+  "phone": "+40 744 865 132",
+  "cv": "/downloads/CV_Serban_Petrescu.pdf",
+  "location": "Cluj-Napoca, Romania",
+  "role": "VP of Software Engineering | Cloud Architect",
+  "cover": "../media/cover.jpg",
+  "title": "Șerban's Portfolio",
+  "avatar": "../media/profile_alt.jpg",
+  "libraries": [
+    {
+      "name": "Gatsby",
+      "url": "https://www.gatsbyjs.com/"
     },
-    "repository": "https://github.com/serban-petrescu/serban-petrescu.github.io",
-    "libraries": [
-        {
-            "name": "Gatsby",
-            "url": "https://www.gatsbyjs.com/"
-        },
-        {
-            "name": "React",
-            "url": "https://github.com/facebook/react"
-        },
-        {
-            "name": "Semantic UI",
-            "url": "https://github.com/Semantic-Org/Semantic-UI-React"
-        }
-    ],
-    "summary": "<p>Hi! I'm Serban, an IT enthusiast which works full time as a Cloud Solution Architect at DevFactory, taught Software Design at TU-CN and founded a local tech start-up.</p><p>I typically fulfill the roles of <strong>solution architect</strong> and <strong>lead developer</strong> with a strong focus on growing my team through technical challenges, training sessions, presentations and mentoring.</p><p>I have frequently switched between technologies, becoming proficient in NodeJS, Spring and the SAP ecosystem. My current target area of expertise is around <em>Amazon Web Services</em>, <em>Spring Boot</em> and <em>React</em>.</p>",
-    "highlights": {
-        "education": {
-            "title": "Software Engineering MSc.",
-            "description": "Studying for my Master's degree at the faculty of Mathematics and Informatics, Babeș-Bolyai University."
-        },
-        "work": {
-            "title": "VP of Software Engineering",
-            "description": "Managing a software engineering team that monitors, operates, maintains and extends several widely used products."
-        }
+    {
+      "name": "React",
+      "url": "https://github.com/facebook/react"
+    },
+    {
+      "name": "Semantic UI",
+      "url": "https://github.com/Semantic-Org/Semantic-UI-React"
     }
+  ],
+  "website": "https://www.spetrescu.ro/",
+  "email": "Serban.Petrescu@outlook.com",
+  "description": "Portfolio of IT projects built by Șerban Petrescu",
+  "birthday": "1993-09-07",
+  "highlights": {
+    "education": {
+      "title": "Software Engineering MSc.",
+      "description": "Studying for my Master's degree at the faculty of Mathematics and Informatics, Babeș-Bolyai University."
+    },
+    "work": {
+      "title": "VP of Software Engineering",
+      "description": "Managing a software engineering team that monitors, operates, maintains and extends several widely used products."
+    }
+  }
 }

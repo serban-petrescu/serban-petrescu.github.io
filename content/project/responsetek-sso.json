@@ -1,0 +1,22 @@
+{
+  "highlighted": false,
+  "name": "ResponseTek SSO",
+  "period": "2021",
+  "type": "work",
+  "link": "https://www.responsetek.com/platform/customer-feedback/",
+  "tags": [
+    "architect"
+  ],
+  "technologies": [
+    {
+      "name": "OAuth"
+    },
+    {
+      "name": "SAML"
+    },
+    {
+      "name": "C#"
+    }
+  ],
+  "description": "<p>Guided a small development team to enhance our customer feedback platform with SSO (Single Sign On) capabilities, by adding <strong>OAuth </strong>and <strong>SAML2 </strong>support.</p>\n\n<p>I analyzed the existing code base, derived the architecture, designed the solution and organized the engineering work to ensure the project's success.</p>"
+}

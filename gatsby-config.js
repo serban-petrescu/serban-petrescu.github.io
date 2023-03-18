@@ -57,7 +57,8 @@ module.exports = {
             resolve: `gatsby-plugin-sharp`,
             options: {
                 defaults: {
-                    backgroundColor: `white`
+                    backgroundColor: `white`,
+                    quality: 100
                 }
             }
         },
@@ -68,7 +69,7 @@ module.exports = {
                 short_name: `Șerban's Portfolio`,
                 start_url: `/`,
                 background_color: `#ffffff`,
-                theme_color: `#663399`,
+                theme_color: `#000000`,
                 display: `minimal-ui`,
                 icon: 'content/media/profile_alt.jpg'
             },

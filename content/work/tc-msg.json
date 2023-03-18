@@ -1,8 +1,9 @@
 {
-    "period": {
-        "from": "2020-06-30"
-    },
-    "title": "Technical Consultant @ msg-systems",
-    "body": "I provide technical consulting for cloud-native projects, making technical decisions and implementing challenging tasks for a SaaS product on AWS using Spring Boot and React. I also mentor and coach a group of high-potential developers.",
-    "logo": "../media/msg.png"
+  "period": {
+    "from": "2020-06-30",
+    "to": ""
+  },
+  "title": "Software Engineering Consultant @ msg-systems",
+  "body": "I provide technical consulting for cloud-native projects, making technical decisions and implementing challenging tasks for a SaaS product on AWS using Spring Boot and React. I also mentor and coach a group of high-potential developers.",
+  "logo": "../media/msg.png"
 }
