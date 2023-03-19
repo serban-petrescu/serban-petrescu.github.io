@@ -23,8 +23,8 @@
   "scripts": {
     "postinstall": "semantic-ui-css-patch",
     "build": "gatsby build",
-    "develop": "gatsby develop",
-    "start": "gatsby develop",
+    "develop": "gatsby develop --host=0.0.0.0",
+    "start": "gatsby develop --host=0.0.0.0",
     "serve": "gatsby serve",
     "clean": "gatsby clean"
   },
