@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@semantic-ui-react/css-patch": "1.0.0",
-    "gatsby": "5.5.0",
+    "gatsby": "5.10.0",
     "gatsby-plugin-image": "3.5.0",
     "gatsby-plugin-manifest": "5.5.0",
     "gatsby-plugin-sass": "6.5.0",
