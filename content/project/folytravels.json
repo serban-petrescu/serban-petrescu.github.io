@@ -1,0 +1,22 @@
+{
+  "highlighted": false,
+  "name": "Foly Sites",
+  "period": "2022",
+  "type": "personal",
+  "link": "https://www.folytravels.ro/",
+  "technologies": [
+    {
+      "name": "React"
+    },
+    {
+      "name": "Gatsby"
+    },
+    {
+      "name": "AWS"
+    },
+    {
+      "name": "Netlify"
+    }
+  ],
+  "description": "<p>I built from scratch a couple of static websites for my wife: a personal travel blog and an interior design presentation site. They are hosted using serverless <strong>AWS</strong> services.</p>\n\n<p>The content of the sites can be maintained by her using <strong>Netlify CMS</strong>.</p>"
+}
