@@ -1,5 +1,5 @@
 {
-  "summary": "<p>Hi! I'm Serban, an IT enthusiast which works full time as a VP of Engineering at Trilogy, taught Software Design at TU-CN and founded a local tech start-up.</p><p>I typically fulfill the roles of <strong>solution architect</strong> and <strong>lead developer</strong> with a strong focus on growing my team through technical challenges, training sessions, presentations and mentoring.</p><p>I have frequently switched between technologies, becoming proficient in NodeJS, Spring and the SAP ecosystem. My current target area of expertise is around <em>Amazon Web Services</em>, <em>Spring Boot</em> and <em>React</em>.</p>",
+  "summary": "<p>Hi! I'm Serban, an IT enthusiast which works full time as an SVP of Engineering at Trilogy, taught Software Design at TU-CN and founded a local tech start-up.</p><p>I typically fulfill the roles of <strong>solution architect</strong> and <strong>lead developer</strong> with a strong focus on growing my team through technical challenges, training sessions, presentations and mentoring.</p><p>I have frequently switched between technologies, becoming proficient in NodeJS, Spring and the SAP ecosystem. My current target area of expertise is around <em>Amazon Web Services</em>, <em>Spring Boot</em> and <em>React</em>.</p>",
   "accounts": {
     "linkedin": "https://ro.linkedin.com/in/serban-petrescu",
     "github": "https://github.com/serban-petrescu/",
@@ -13,7 +13,7 @@
   "phone": "+40 744 865 132",
   "cv": "/downloads/CV_Serban_Petrescu.pdf",
   "location": "Cluj-Napoca, Romania",
-  "role": "VP of Software Engineering | Cloud Architect",
+  "role": "SVP of Software Engineering | Cloud Architect",
   "cover": "../media/cover.jpg",
   "title": "Șerban's Portfolio",
   "avatar": "../media/profile_relaxed_square.jpg",
@@ -41,8 +41,8 @@
       "description": "Studying for my Master's degree at the faculty of Mathematics and Informatics, Babeș-Bolyai University."
     },
     "work": {
-      "title": "VP of Software Engineering",
-      "description": "Managing a software engineering team that monitors, operates, maintains and extends several widely used products."
+      "title": "SVP of Software Engineering",
+      "description": "Managing a software engineering team that monitors, operates, maintains and extends several strategic software products."
     }
   }
 }
