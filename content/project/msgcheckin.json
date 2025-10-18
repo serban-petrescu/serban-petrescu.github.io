@@ -1,5 +1,8 @@
 {
-  "period": "2020 - 2023",
+  "period": {
+    "from": "2020-01-01",
+    "to": ""
+  },
   "youtube": "https://www.youtube.com/watch?v=vtY28vn6w9k",
   "technologies": [
     {
@@ -22,7 +25,7 @@
     }
   ],
   "name": "msg.Check-In",
-  "highlighted": true,
+  "highlighted": false,
   "images": [
     {
       "path": "../media/checkin2.PNG",

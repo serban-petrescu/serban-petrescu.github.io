@@ -1,0 +1,50 @@
+{
+  "name": "TrashCat",
+  "type": "work",
+  "description": "An educational gaming platform that combines engaging <strong>Unity gameplay</strong> with research-backed <strong>spaced repetition algorithms</strong> to build mathematical fluency.\n            <br /><br />\n            As SVP, I served as both <strong>Product Manager</strong> and <strong>backend developer</strong>, designing and implementing the sophisticated learning algorithms that track individual fact mastery through seven sequential learning stages with dynamic difficulty adjustment.\n            <br /><br />\n            The game follows a cat navigating obstacles home by solving mathematical puzzles, supporting multiplication, addition, subtraction, and division aligned with Common Core standards. Built on <strong>AWS serverless architecture</strong> with a few hundred active users.",
+  "technologies": [
+    {
+      "name": "TypeScript"
+    },
+    {
+      "name": "NodeJS"
+    },
+    {
+      "name": "React"
+    },
+    {
+      "name": "Unity"
+    },
+    {
+      "name": "AWS"
+    },
+    {
+      "name": "Lambda"
+    },
+    {
+      "name": "DynamoDB"
+    }
+  ],
+  "tags": [
+    "architect"
+  ],
+  "period": {
+    "from": "2025-01-01",
+    "to": ""
+  },
+  "images": [
+    {
+      "path": "../media/trashcat-1.png",
+      "description": "Main menu showing the cat character, Practice/Speedrun mode selection, and progress bars for four math operations (Addition, Subtraction, Multiplication at 22%, Division)."
+    },
+    {
+      "path": "../media/trashcat-2.png",
+      "description": "Active gameplay with the cat running through city streets, dodging obstacles (dogs), answering multiplication questions (2 x 10 = ?), with a detailed mastery tracking grid showing progress across different factor groups."
+    },
+    {
+      "path": "../media/trashcat-3.png",
+      "description": "Rewards screen displaying overall progress (22%) with individual multiplication fact families (x0's, x1's, x10's, x5's, x2's) showing Building Speed and Fluency levels with claimable rewards."
+    }
+  ],
+  "highlighted": true
+}

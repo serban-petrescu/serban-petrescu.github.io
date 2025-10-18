@@ -1,0 +1,48 @@
+{
+  "name": "BrainLift Coach",
+  "type": "work",
+  "description": "An AI-powered knowledge curation and coaching platform that helps users build and maintain expertise through personalized learning paths.\n            <br /><br />\n            Features an <strong>activity recognition system</strong> that analyzes user work patterns and maps them to relevant learning content using LLM analysis. Implements a sophisticated lesson management system with automated assignment reviews and progression tracking.\n            <br /><br />\n            Uses <strong>Google OAuth 2.0</strong> authentication integrated with WorkSmart API, and includes content suggestion pipelines that generate insights from meeting transcripts, user activities, and expert content sources. Built on AWS infrastructure with SQS message queuing for scalable processing.",
+  "technologies": [
+    {
+      "name": "TypeScript"
+    },
+    {
+      "name": "Python"
+    },
+    {
+      "name": "AWS"
+    },
+    {
+      "name": "Lambda"
+    },
+    {
+      "name": "SQS"
+    },
+    {
+      "name": "AI/ML"
+    },
+    {
+      "name": "LLM"
+    }
+  ],
+  "tags": [
+    "architect",
+    "ai"
+  ],
+  "period": {
+    "from": "2025-01-01",
+    "to": ""
+  },
+  "link": "https://coach.crossover.com/",
+  "images": [
+    {
+      "path": "../media/brainlift-1.png",
+      "description": "Training dashboard showing the BrainLift learning journey with 27 structured lessons organized into courses like 'Foundations & Setup', displaying progress tracking with total lessons, completion status, and time invested."
+    },
+    {
+      "path": "../media/brainlift-2.png",
+      "description": "BrainLift detail view for a DevContainer development environment topic, featuring AI-generated relevant topics, time tracking analytics (49m weekly total, 5m daily average), and integration options for Live Coaching Extension and Read.ai for meeting insights."
+    }
+  ],
+  "highlighted": false
+}

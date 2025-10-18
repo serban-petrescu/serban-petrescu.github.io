@@ -1,0 +1,35 @@
+{
+  "name": "Crossover Hiring Platform",
+  "type": "work",
+  "description": "Led the engineering team building and operating Crossover's global hiring platform, processing tens of thousands of applications monthly from hundreds of thousands of visitors. \n            <br /><br />\n            Deeply involved in implementing AI-powered features including <strong>automatic AI grading</strong> of assessments, <strong>AI-based candidate screening and matching</strong>, and various AI automations throughout the hiring funnel.\n            <br /><br />\n            The platform handles the complete hiring lifecycle from sourcing and application processing to assessment management and candidate experience across multiple channels.",
+  "technologies": [
+    {
+      "name": "TypeScript"
+    },
+    {
+      "name": "React"
+    },
+    {
+      "name": "NodeJS"
+    },
+    {
+      "name": "AWS"
+    },
+    {
+      "name": "AI/ML"
+    },
+    {
+      "name": "Salesforce"
+    }
+  ],
+  "tags": [
+    "architect",
+    "ai"
+  ],
+  "period": {
+    "from": "2023-01-01",
+    "to": ""
+  },
+  "link": "https://www.crossover.com/",
+  "highlighted": true
+}

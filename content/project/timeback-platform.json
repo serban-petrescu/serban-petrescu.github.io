@@ -1,0 +1,36 @@
+{
+  "name": "TimeBack Platform",
+  "type": "work",
+  "description": "A <strong>1EdTech compliant</strong> backend platform focused on <strong>OneRoster Rostering</strong> and <strong>Caliper Analytics</strong> standards, providing the infrastructure for TimeBack and other learning applications.\n            <br /><br />\n            Built on <strong>AWS serverless architecture</strong> using API Gateway, Lambda, and RDS PostgreSQL. Features comprehensive modules for user management, authentication, event tracking, curriculum management, and analytics integration with <strong>QuickSight</strong>.\n            <br /><br />\n            Serves as the central data layer for Alpha's learning ecosystem, handling rostering data and learning analytics for multiple schools and applications.",
+  "technologies": [
+    {
+      "name": "TypeScript"
+    },
+    {
+      "name": "NodeJS"
+    },
+    {
+      "name": "AWS"
+    },
+    {
+      "name": "Lambda"
+    },
+    {
+      "name": "PostgreSQL"
+    },
+    {
+      "name": "GraphQL"
+    },
+    {
+      "name": "QuickSight"
+    }
+  ],
+  "tags": [
+    "architect"
+  ],
+  "period": {
+    "from": "2024-01-01",
+    "to": ""
+  },
+  "highlighted": false
+}

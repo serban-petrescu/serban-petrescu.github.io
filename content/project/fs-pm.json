@@ -1,13 +1,16 @@
 {
-    "name": "SAP FS-PM add-on",
-    "type": "work",
-    "description": "A small customer addition to the Financial Services - Policy Management SAP module.",
-    "technologies": [
-        {
-            "name": "ABAP"
-        }
-    ],
-    "period": "2014 - 2015",
-    "link": "https://www.msg-global.com/insurance",
-    "highlighted": false
+  "name": "SAP FS-PM add-on",
+  "type": "work",
+  "description": "A small customer addition to the Financial Services - Policy Management SAP module.",
+  "technologies": [
+    {
+      "name": "ABAP"
+    }
+  ],
+  "period": {
+    "from": "2014-01-01",
+    "to": "2015-12-31"
+  },
+  "link": "https://www.msg-global.com/insurance",
+  "highlighted": false
 }

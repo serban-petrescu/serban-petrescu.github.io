@@ -1,0 +1,50 @@
+{
+  "name": "Magic Academy (TeachTower)",
+  "type": "work",
+  "description": "An innovative <strong>3D Minecraft-like educational environment</strong> designed to gamify the learning experience for students. Visualizes a student's skill stack as interactive blocks in a virtual tower, where each block represents a skill or concept the student has learned or is mastering.\n            <br /><br />\n            Built with <strong>Unity</strong> as a multiplayer 3D game integrating with the CoachBot Platform for curriculum management and AI-generated educational content. Featured gameplay modules including combat, pets, avatar customization, multiplayer interactions, and in-app purchases.\n            <br /><br />\n            The game allowed players to earn diamonds by completing challenges and MCQs, redeem them for real-world prizes, and included premium membership features. Project was discontinued before launch despite significant technical development.",
+  "technologies": [
+    {
+      "name": "Unity"
+    },
+    {
+      "name": "C#"
+    },
+    {
+      "name": "AWS"
+    },
+    {
+      "name": "GraphQL"
+    },
+    {
+      "name": "AI/ML"
+    },
+    {
+      "name": "Multiplayer"
+    }
+  ],
+  "tags": [
+    "architect",
+    "ai"
+  ],
+  "period": {
+    "from": "2023-01-01",
+    "to": "2024-12-31"
+  },
+  "link": "https://www.magicacademy.learnwith.ai/",
+  "images": [
+    {
+      "path": "../media/magic-academy-1.webp",
+      "description": "Multiplayer environment with player avatars gathered in a scenic outdoor area featuring a lake and natural landscape, with 'Team Up with Friends to Complete Quests' overlay."
+    },
+    {
+      "path": "../media/magic-academy-2.webp",
+      "description": "Knight character with sword and shield standing before a tall skill tower built from colored blocks (yellow to green gradient), representing mastered learning objectives, with 'Build Your Magic Tower' text."
+    },
+    {
+      "path": "../media/magic-academy-3.webp",
+      "description": "Math challenge dialog showing an NPC and a mental addition word problem (John has 590 balloons, buys 100 more) with multiple choice answers, overlaid with 'Solve Math Challenges to Level Up' text."
+    }
+  ],
+  "highlighted": false
+}
+

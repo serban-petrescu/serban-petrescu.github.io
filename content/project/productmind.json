@@ -1,0 +1,37 @@
+{
+  "name": "ProductMind",
+  "type": "work",
+  "description": "A platform that converts and organizes files from <strong>Google Drive</strong>, <strong>Notion</strong>, and other sources into a comprehensive, searchable knowledge base for Trilogy's M&A due diligence process.\n            <br /><br />\n            Leverages <strong>AI-powered conversion</strong> tools (Claude, OpenAI GPT-4) to transform various file types into searchable Markdown format. Integrates with <strong>AWS Bedrock</strong> to provide AI-powered question answering over the aggregated knowledge base.\n            <br /><br />\n            Built on <strong>AWS serverless architecture</strong> using Lambda, DynamoDB, S3, and Step Functions. Features automated file conversion pipelines, metadata extraction, and centralized knowledge management for analyzing acquired company codebases and documentation.",
+  "technologies": [
+    {
+      "name": "Python"
+    },
+    {
+      "name": "AWS"
+    },
+    {
+      "name": "Lambda"
+    },
+    {
+      "name": "DynamoDB"
+    },
+    {
+      "name": "Bedrock"
+    },
+    {
+      "name": "AI/ML"
+    },
+    {
+      "name": "LLM"
+    }
+  ],
+  "tags": [
+    "architect",
+    "ai"
+  ],
+  "period": {
+    "from": "2024-01-01",
+    "to": ""
+  },
+  "highlighted": false
+}

@@ -1,33 +1,36 @@
 {
-    "name": "Financial Insights",
-    "type": "work",
-    "description": "We've set up and consumed the <strong>AWS Cost and Usage</strong> reports to break down and scrutinize the cost structure\n            for an AWS organization generating over 20M USD in yearly costs.\n            <br />\n            <br />\n            The insights that we found were then implemented as automation and pushed into <strong>QuickSight</strong> and \n            <strong>Google Sheets</strong> to be consumed by top executives.",
-    "technologies": [
-        {
-            "name": "AWS"
-        },
-        {
-            "name": "Python"
-        },
-        {
-            "name": "Lambda"
-        },
-        {
-            "name": "Step Functions"
-        },
-        {
-            "name": "Athena"
-        },
-        {
-            "name": "QuickSight"
-        },
-        {
-            "name": "Google APIs"
-        }
-    ],
-    "tags": [
-        "architect"
-    ],
-    "period": "2020",
-    "highlighted": false
+  "name": "Financial Insights",
+  "type": "work",
+  "description": "We've set up and consumed the <strong>AWS Cost and Usage</strong> reports to break down and scrutinize the cost structure\n            for an AWS organization generating over 20M USD in yearly costs.\n            <br />\n            <br />\n            The insights that we found were then implemented as automation and pushed into <strong>QuickSight</strong> and \n            <strong>Google Sheets</strong> to be consumed by top executives.",
+  "technologies": [
+    {
+      "name": "AWS"
+    },
+    {
+      "name": "Python"
+    },
+    {
+      "name": "Lambda"
+    },
+    {
+      "name": "Step Functions"
+    },
+    {
+      "name": "Athena"
+    },
+    {
+      "name": "QuickSight"
+    },
+    {
+      "name": "Google APIs"
+    }
+  ],
+  "tags": [
+    "architect"
+  ],
+  "period": {
+    "from": "2020-01-01",
+    "to": "2020-12-31"
+  },
+  "highlighted": false
 }

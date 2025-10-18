@@ -3,7 +3,7 @@ import { Card, Label, Button } from 'semantic-ui-react';
 import mixpanel from 'mixpanel-browser';
 
 import './ProjectCard.scss';
-import { renderHtml } from '../../utils';
+import { renderHtml, formatPeriod } from '../../utils';
 
 const typeColor = type => ({
     work: 'blue',
@@ -55,7 +55,7 @@ const ProjectCard = ({ name, description, period, technologies, link, blog, gith
                 </div>
                 <Label color={typeColor(type)} ribbon size='mini' className='type-ribbon'>{typeText(type)}</Label>
                 <Card.Header content={name} />
-                <Card.Meta content={period} />
+                <Card.Meta content={formatPeriod(period)} />
             </Card.Content>
             <Card.Content description={renderHtml(description)} />
             <Card.Content className='card-footer'>

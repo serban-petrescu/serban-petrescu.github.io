@@ -1,7 +1,10 @@
 {
   "highlighted": false,
   "name": "ResponseTek SSO",
-  "period": "2021",
+  "period": {
+    "from": "2021-01-01",
+    "to": "2021-12-31"
+  },
   "type": "work",
   "link": "https://www.responsetek.com/platform/customer-feedback/",
   "tags": [

@@ -1,0 +1,45 @@
+{
+  "name": "Reading Critters",
+  "type": "work",
+  "description": "A mobile application designed to help young children learn to read through personalized, <strong>AI-generated content</strong> tailored to their reading levels and interests.\n            <br /><br />\n            Features engaging lessons with tasks, steps, letters, words, and stories. Includes <strong>speech synthesis</strong> via ElevenlabsAPI and speech recognition capabilities. Uses <strong>OpenAI API</strong> for evaluating user responses and providing feedback.\n            <br /><br />\n            Built natively for iOS using <strong>SwiftUI</strong>, with integration to Apple's learning analytics frameworks. Implements a vision to help students \"read what they love, before they love to read\" through dynamically generated unlimited reading content that incorporates student interests.",
+  "technologies": [
+    {
+      "name": "Swift"
+    },
+    {
+      "name": "SwiftUI"
+    },
+    {
+      "name": "iOS"
+    },
+    {
+      "name": "AI/ML"
+    },
+    {
+      "name": "OpenAI"
+    },
+    {
+      "name": "Elevenlabs"
+    }
+  ],
+  "tags": [
+    "architect",
+    "ai"
+  ],
+  "period": {
+    "from": "2024-01-01",
+    "to": ""
+  },
+  "link": "https://apps.apple.com/us/app/reading-critters/id6502915924",
+  "images": [
+    {
+      "path": "../media/reading-critters-1.webp",
+      "description": "Letter tracing interface for teaching handwriting with the letter 'S', showing proper stroke formation with guide lines, and a cute cat mascot character at the top."
+    },
+    {
+      "path": "../media/reading-critters-2webp",
+      "description": "Interactive lessons teaching letters, words, and reading skills with the cute critter mascots guiding young learners."
+    }
+  ],
+  "highlighted": false
+}

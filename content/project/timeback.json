@@ -1,0 +1,47 @@
+{
+  "name": "TimeBack App",
+  "type": "work",
+  "description": "An educational monitoring and analytics platform deployed at Alpha schools that combines <strong>AI-powered surveillance</strong> and real-time coaching to enhance student learning.\n            <br /><br />\n            Built as a desktop <strong>Electron application</strong> that captures screen content and face/gaze data to create a comprehensive view of student engagement. Supports <strong>50+ learning platforms</strong> through a vision-first approach without complex API integrations.\n            <br /><br />\n            Features include real-time AI analysis and feedback, privacy-conscious design, standardized learning analytics via <strong>1EdTech Caliper</strong>, and integration with Alpha's learning ecosystem. The system provides teachers visibility into student engagement that was previously impossible in online learning environments.",
+  "technologies": [
+    {
+      "name": "TypeScript"
+    },
+    {
+      "name": "React"
+    },
+    {
+      "name": "Electron"
+    },
+    {
+      "name": "NodeJS"
+    },
+    {
+      "name": "AWS"
+    },
+    {
+      "name": "GraphQL"
+    },
+    {
+      "name": "AI/ML"
+    }
+  ],
+  "tags": [
+    "architect"
+  ],
+  "period": {
+    "from": "2025-01-01",
+    "to": ""
+  },
+  "link": "https://apps.apple.com/us/app/alpha-timeback/id6742113057",
+  "images": [
+    {
+      "path": "../media/timeback-1.png",
+      "description": "App launcher interface displaying tiles for multiple learning platforms (AlphaMath Fluency with fact grid tracker, Athena, Duolingo, Math Academy, TeachTales, TrashCat) with preview screenshots of each app's content."
+    },
+    {
+      "path": "../media/timeback-2.png",
+      "description": "Waste Dashboard analytics showing 'No Waste' time (4hr 9m) vs 'Wasted Time' (2hr 23m, 58%), identifying biggest waste type as 'L4: On-Device Distractions' with detailed bar chart breakdown across multiple days."
+    }
+  ],
+  "highlighted": false
+}

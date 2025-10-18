@@ -22,5 +22,9 @@ exports.createSchemaCustomization = ({ actions }) => {
         type WorkJson implements Node {
             period: PeriodJson!
         }
+
+        type ProjectJson implements Node {
+            period: PeriodJson!
+        }
     `);
 };

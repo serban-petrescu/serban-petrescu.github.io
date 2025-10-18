@@ -1,7 +1,10 @@
 {
   "highlighted": false,
   "name": "Foly Sites",
-  "period": "2022",
+  "period": {
+    "from": "2022-01-01",
+    "to": "2022-12-31"
+  },
   "type": "personal",
   "link": "https://www.folytravels.ro/",
   "technologies": [

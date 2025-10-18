@@ -1,0 +1,55 @@
+{
+  "name": "Athena",
+  "type": "work",
+  "description": "An <strong>AI-powered comprehensive AP course learning and SAT prep platform</strong> designed specifically for homeschoolers, offering personalized learning experiences at approximately $1k per student.\n            <br /><br />\n            Leverages the CoachBot Platform for core functionality including curriculum, user progress tracking, authentication, and AI-generated content. Features AI-generated video lessons, interactive quizzes, free response questions (FRQ) for skills assessment, and AI tutor support.\n            <br /><br />\n            Built on <strong>AWS serverless architecture</strong> using AppSync (GraphQL), Lambda, Cognito, and RDS PostgreSQL with persistent caching. Targets homeschoolers in ESA states with mastery-based progression and adaptive learning powered by CoachBot's algorithms.",
+  "technologies": [
+    {
+      "name": "TypeScript"
+    },
+    {
+      "name": "React"
+    },
+    {
+      "name": "AWS"
+    },
+    {
+      "name": "AppSync"
+    },
+    {
+      "name": "Lambda"
+    },
+    {
+      "name": "PostgreSQL"
+    },
+    {
+      "name": "GraphQL"
+    },
+    {
+      "name": "AI/ML"
+    }
+  ],
+  "tags": [
+    "architect",
+    "ai"
+  ],
+  "period": {
+    "from": "2024-01-01",
+    "to": ""
+  },
+  "link": "https://athena.learnwith.ai/",
+  "images": [
+    {
+      "path": "../media/athena-1.png",
+      "description": "Course dashboard for 3rd Grade Math showing Unit 1 (Multiplication) with expandable lessons like 'Understanding Multiplication With Groups' (+15 XP), Next Up panel, and Start Lesson button."
+    },
+    {
+      "path": "../media/athena-2.png",
+      "description": "Learning interface displaying the multiplication lesson with clear objectives and visual explanations using colored dots in groups (3 × 5 = 15) with progress tracking at 17%."
+    },
+    {
+      "path": "../media/athena-3.png",
+      "description": "Practice quiz showing visual multiplication problem with circles containing blue dots, asking students to complete the equation '__ × 4 = 20' with Submit button and help options."
+    }
+  ],
+  "highlighted": false
+}

@@ -1,0 +1,34 @@
+{
+  "name": "CoachBot Platform",
+  "type": "work",
+  "description": "An educational platform at the core of Trilogy's data-driven, AI-powered approach to highly adaptive, personalized learning. Tracks student activity and progress across various learning apps and generates customized recommendations.\n            <br /><br />\n            Features comprehensive modules including <strong>AI-generated content</strong>, adaptive learning recommendations, skills stack tracking, mastery calculations, and quiz generation. Supports multiple learning apps including TeachTower and TeachTap, as well as external platforms like Alpha School.\n            <br /><br />\n            Implements sophisticated algorithms for personalized learning paths, reward systems, antipattern detection, and analytics integration with <strong>AWS QuickSight</strong>. Built on AWS serverless infrastructure with extensive curriculum management aligned to educational standards.",
+  "technologies": [
+    {
+      "name": "TypeScript"
+    },
+    {
+      "name": "NodeJS"
+    },
+    {
+      "name": "AWS"
+    },
+    {
+      "name": "Lambda"
+    },
+    {
+      "name": "GraphQL"
+    },
+    {
+      "name": "AI/ML"
+    }
+  ],
+  "tags": [
+    "architect",
+    "ai"
+  ],
+  "period": {
+    "from": "2023-01-01",
+    "to": ""
+  },
+  "highlighted": false
+}

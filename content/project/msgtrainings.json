@@ -1,5 +1,8 @@
 {
-  "period": "2017 - 2023",
+  "period": {
+    "from": "2017-01-01",
+    "to": "2023-12-31"
+  },
   "github": "https://github.com/orgs/msg-CareerPaths/repositories",
   "technologies": [
     {

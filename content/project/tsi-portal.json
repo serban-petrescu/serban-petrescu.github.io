@@ -1,0 +1,36 @@
+{
+  "name": "TSI Self-Serve Portal",
+  "type": "work",
+  "description": "A self-service subscription management platform enabling Trilogy customers to independently manage renewals, invoices, and account information without sales representative intervention.\n            <br /><br />\n            Built on top of <strong>Salesforce</strong> and integrated with <strong>Oracle NetSuite/SuiteBilling</strong> for billing operations. Features extensive <strong>AI automations</strong> to streamline subscription renewals and customer interactions, including automated contract renewal workflows.\n            <br /><br />\n            The system handles both SaaS and non-SaaS products across Trilogy's portfolio, reducing operational costs for low-value ARR subscriptions while improving customer experience.",
+  "technologies": [
+    {
+      "name": "TypeScript"
+    },
+    {
+      "name": "React"
+    },
+    {
+      "name": "AWS"
+    },
+    {
+      "name": "Lambda"
+    },
+    {
+      "name": "Salesforce"
+    },
+    {
+      "name": "NetSuite"
+    },
+    {
+      "name": "AI/ML"
+    }
+  ],
+  "tags": [
+    "architect"
+  ],
+  "period": {
+    "from": "2023-01-01",
+    "to": ""
+  },
+  "highlighted": false
+}

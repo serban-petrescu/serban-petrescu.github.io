@@ -4,21 +4,21 @@
   "private": true,
   "dependencies": {
     "@semantic-ui-react/css-patch": "1.0.0",
-    "gatsby": "5.5.0",
-    "gatsby-plugin-image": "3.5.0",
-    "gatsby-plugin-manifest": "5.5.0",
-    "gatsby-plugin-sass": "6.5.0",
-    "gatsby-plugin-sharp": "5.5.0",
-    "gatsby-source-filesystem": "5.5.0",
-    "gatsby-transformer-json": "^5.5.0",
-    "gatsby-transformer-sharp": "5.5.0",
-    "mixpanel-browser": "2.43.0",
-    "react": "18.1.0",
-    "react-dom": "18.1.0",
-    "react-refresh": "^0.14.0",
-    "sass": "1.58.0",
-    "semantic-ui-css": "2.4.1",
-    "semantic-ui-react": "2.1.1"
+    "gatsby": "5.14.0",
+    "gatsby-plugin-image": "3.14.0",
+    "gatsby-plugin-manifest": "5.14.0",
+    "gatsby-plugin-sass": "6.14.0",
+    "gatsby-plugin-sharp": "5.14.0",
+    "gatsby-source-filesystem": "5.14.0",
+    "gatsby-transformer-json": "5.14.0",
+    "gatsby-transformer-sharp": "5.14.0",
+    "mixpanel-browser": "2.57.1",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-refresh": "0.14.2",
+    "sass": "1.93.2",
+    "semantic-ui-css": "2.5.0",
+    "semantic-ui-react": "2.1.5"
   },
   "scripts": {
     "postinstall": "semantic-ui-css-patch",
@@ -44,6 +44,6 @@
     ]
   },
   "devDependencies": {
-    "eslint": "^8.33.0"
+    "eslint": "^9.34.0"
   }
 }

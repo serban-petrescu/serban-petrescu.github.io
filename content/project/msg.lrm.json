@@ -1,13 +1,16 @@
 {
-    "name": "msg.LRM",
-    "type": "work",
-    "description": "Various customer development projects centered on the Life Reinsurance Module. \n            <br />\n            <br />\n            I was part of the product development team for a few months to get acquainted to the module and the underlying framework. \n            Afterwards, I worked on customization projects for large enterprise customers.",
-    "technologies": [
-        {
-            "name": "ABAP"
-        }
-    ],
-    "period": "2014 - 2015",
-    "link": "https://www.msg-global.com/reinsurance",
-    "highlighted": false
+  "name": "msg.LRM",
+  "type": "work",
+  "description": "Various customer development projects centered on the Life Reinsurance Module. \n            <br />\n            <br />\n            I was part of the product development team for a few months to get acquainted to the module and the underlying framework. \n            Afterwards, I worked on customization projects for large enterprise customers.",
+  "technologies": [
+    {
+      "name": "ABAP"
+    }
+  ],
+  "period": {
+    "from": "2014-01-01",
+    "to": "2015-12-31"
+  },
+  "link": "https://www.msg-global.com/reinsurance",
+  "highlighted": false
 }

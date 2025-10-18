@@ -6,27 +6,6 @@ import ProjectsGrid from '../common/ProjectsGrid';
 
 import './ProjectsList.scss';
 
-const parsePeriod = period => {
-    if (!period || typeof period !== 'string') {
-        return 0;
-    } else if (period === 'current') {
-        return 99999999;
-    } else if (period.indexOf('-') !== -1) {
-        const parts = period.split('-');
-        return parseInt(parts[1].trim() + parts[0].trim(), 10);
-    } else {
-        return parseInt(period + period, 10);
-    }
-}
-
-const comparator = (a, b) => {
-    const first = parsePeriod(b.period) - parsePeriod(a.period);
-    if (!first) {
-        return a.name.localeCompare(b.name);
-    } else {
-        return first;
-    }
-}
 
 const unique = array => array.filter((x, i) => array.indexOf(x) === i);
 
@@ -89,8 +68,7 @@ export default class ProjectList extends Component {
     process(projects = {}) {
         const criteria = this.state.criteria;
         return arrayToMap(projects)
-            .filter(criteria.length ? project => projectMatches(project, criteria) : () => true)
-            .sort(comparator);
+            .filter(criteria.length ? project => projectMatches(project, criteria) : () => true);
     }
 
     addOption(value) {

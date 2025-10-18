@@ -1,0 +1,51 @@
+{
+  "name": "TeachTap",
+  "type": "work",
+  "description": "A <strong>\"TikTok for education\"</strong> mobile app designed to help high school students prepare for AP exams and SATs through engaging, personalized, AI-generated content. Featured on <strong>Dr. Phil</strong> and reached thousands of users before being discontinued due to commercial viability concerns.\n            <br /><br />\n            Featured <strong>AI-animated historical figures as teachers</strong>, offering interactive lessons in a scrollable TikTok-style interface with gamified progress tracking. Students could engage in conversations with AI teachers, ask questions, and receive personalized responses.\n            <br /><br />\n            Built with <strong>React Native</strong> for cross-platform mobile deployment, integrated with CoachBot Platform for curriculum and progress tracking. Used AWS AppSync (GraphQL), Lambda, RDS MySQL, and Cognito. Notable for its innovative approach to making test prep engaging through AI-powered interactive historical personalities.",
+  "technologies": [
+    {
+      "name": "TypeScript"
+    },
+    {
+      "name": "React Native"
+    },
+    {
+      "name": "AWS"
+    },
+    {
+      "name": "AppSync"
+    },
+    {
+      "name": "Lambda"
+    },
+    {
+      "name": "MySQL"
+    },
+    {
+      "name": "GraphQL"
+    },
+    {
+      "name": "AI/ML"
+    }
+  ],
+  "tags": [
+    "architect",
+    "ai"
+  ],
+  "period": {
+    "from": "2023-01-01",
+    "to": "2024-12-31"
+  },
+  "link": "https://apps.apple.com/us/app/teachtap/id6449712355",
+  "images": [
+    {
+      "path": "../media/teach-tap-2.webp",
+      "description": "AI-animated historical figure (Isaac Newton in period costume) teaching in TikTok-style vertical video format with 'AI POWERED TEACHERS' branding, showing interactive educational content cards."
+    },
+    {
+      "path": "../media/teach-tap-3.webp",
+      "description": "Scrollable content feed displaying multiple AP World History topics (Latin American independence movements, mercantilism) in card format with 'FULLY MASTER ANY TOPIC' overlay, showing the diverse educational content library."
+    }
+  ],
+  "highlighted": false
+}

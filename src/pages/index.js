@@ -194,7 +194,7 @@ export const pageQuery = graphql`
             }
         }
 
-        projects: allProjectJson {
+        projects: allProjectJson(sort: { period: { from: DESC } }) {
             nodes {
                 id
                 name
@@ -203,7 +203,10 @@ export const pageQuery = graphql`
                 technologies {
                     name
                 }
-                period
+                period {
+                    from(formatString: "YYYY")
+                    to(formatString: "YYYY")
+                }
                 images {
                     path {
                         childImageSharp {
@@ -221,7 +224,7 @@ export const pageQuery = graphql`
             }
         }
 
-        highlightedProjects: allProjectJson(filter: { highlighted: { eq: true }}, sort: { period: DESC }) {
+        highlightedProjects: allProjectJson(filter: { highlighted: { eq: true }}, sort: { period: { from: DESC } }) {
             nodes {
                 id
                 name
@@ -230,7 +233,10 @@ export const pageQuery = graphql`
                 technologies {
                     name
                 }
-                period
+                period {
+                    from(formatString: "YYYY")
+                    to(formatString: "YYYY")
+                }
                 images {
                     path {
                         childImageSharp {

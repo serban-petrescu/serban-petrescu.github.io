@@ -1,0 +1,51 @@
+{
+  "name": "TeachTales",
+  "type": "work",
+  "description": "An educational application that allows students in grades 2-6 to practice reading and comprehension skills through <strong>highly engaging AI-generated stories</strong> tailored to their choices, grade level, and reading proficiency.\n            <br /><br />\n            Students create and shape their own stories through interactive choices, making reading a fun and magical experience. Features automated content generation with comprehension tracking, progress monitoring, and story sharing capabilities.\n            <br /><br />\n            Built with <strong>React</strong> web and mobile apps backed by <strong>AWS serverless infrastructure</strong> (Lambda, RDS MySQL). Deployed using AWS CDK with automated database migrations and static data seeding.",
+  "technologies": [
+    {
+      "name": "TypeScript"
+    },
+    {
+      "name": "React"
+    },
+    {
+      "name": "NodeJS"
+    },
+    {
+      "name": "AWS"
+    },
+    {
+      "name": "Lambda"
+    },
+    {
+      "name": "MySQL"
+    },
+    {
+      "name": "AI/ML"
+    }
+  ],
+  "tags": [
+    "architect",
+    "ai"
+  ],
+  "period": {
+    "from": "2023-01-01",
+    "to": ""
+  },
+  "images": [
+    {
+      "path": "../media/teach-tales-1.webp",
+      "description": "Story reading interface showing 'The Underwater Match' with AI-generated illustration of underwater basketball featuring the Hulk, alongside comprehension assessment with multiple-choice guiding questions."
+    },
+    {
+      "path": "../media/teach-tales-2.png",
+      "description": "'What Happens Next?' branching choice interface allowing students to shape the story's direction by selecting from three dramatic options (Stealthy Route, Thorough Reconnaissance, Direct Assault), with quiz accuracy feedback showing 100%."
+    },
+    {
+      "path": "../media/teach-tales-3.webp",
+      "description": "Story text and comprehension question interface showing continued narrative with embedded assessment asking 'What did The Hulk and Percy do to change the game's outcome?' with multiple choice answers."
+    }
+  ],
+  "highlighted": false
+}

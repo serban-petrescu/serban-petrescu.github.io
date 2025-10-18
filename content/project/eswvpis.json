@@ -1,5 +1,8 @@
 {
-  "period": "2021 - 2023",
+  "period": {
+    "from": "2021-01-01",
+    "to": "2023-12-31"
+  },
   "youtube": "https://www.youtube.com/watch?v=-sgE3UUVX3c",
   "technologies": [
     {

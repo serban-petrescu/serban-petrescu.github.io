@@ -1,5 +1,8 @@
 {
-  "period": "2019 - 2020",
+  "period": {
+    "from": "2019-01-01",
+    "to": "2020-12-31"
+  },
   "facebook": "https://www.facebook.com/msg.systems.romania/photos/a.405982052747843/2353226104690085/",
   "technologies": [
     {
