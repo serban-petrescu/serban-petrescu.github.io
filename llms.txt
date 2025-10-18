@@ -1,0 +1,77 @@
+# Șerban Petrescu
+SVP of Software Engineering | Cloud Architect
+
+Email: Serban.Petrescu@outlook.com
+Phone: +40 744 865 132
+Location: Cluj-Napoca, Romania
+LinkedIn: https://ro.linkedin.com/in/serban-petrescu
+GitHub: https://github.com/serban-petrescu/
+Website: https://www.spetrescu.ro/
+
+## Professional Summary
+
+Builder and technical leader serving as SVP of Software Engineering at Trilogy. Built independent engineering organization from 6 to 35 people while scaling from 3 to 11 concurrent products and achieving 3x productivity improvement. Products span education (AI tutoring platform enabling thousands of students to achieve 99th percentile results), recruiting (platform processing hundreds of thousands of monthly visitors), and sales (managing thousands of semi-automated contract renewals across 200+ products, hundreds of millions in ARR).
+
+Player-coach approach: combine strategic leadership with hands-on execution as product manager, architect, and full-stack engineer. Known for building both technical systems and high-performing teams. Prior experience: 6+ years as Lead Software Engineer at msg systems, recognized as SAP Developer Hero.
+
+## Key Achievements
+
+- Shipped a new AI-powered tutoring platform from concept to production, enabling thousands of students to achieve 99th percentile test results.
+- Extended the Crossover hiring platform processing tens of thousands of applications monthly, implementing AI-powered screening and assessment grading.
+- Led strategic AI adoption across organization during 2024, achieving productivity gains while industry-wide metrics declined.
+- Reduced cloud infrastructure costs by 50% and outages by 5x for $20M ARR SaaS product (Playbooks).
+
+## Work Experience
+
+### SVP of Software Engineering @ Trilogy (New Products)
+*Feb 2023 - Invalid date*
+
+Built independent department from 6 to 30-40 people while scaling from 3 to 11 concurrent products. Started as VP leading backend engineering team, promoted to SVP with expanded scope including design, product, and operations, managing $6M/year budget with full autonomy over team structure and processes.
+
+Spearheaded AI adoption strategy during 2024, achieving productivity gains while industry-wide metrics declined. Built internal automation and productivity infrastructure (CI/CD pipelines, JIRA automations, dashboards). Shipped multiple greenfield products from concept to production as hands-on product manager, architect, and full-stack engineer, including TimeBack (AI tutoring platform enabling 99th percentile learning outcomes) and enhanced Trilogy Sales Platform (managing thousands of automated contract renewals across 200+ products).
+
+### VP of Software Engineering @ Trilogy (Central Engineering)
+*Aug 2021 - Feb 2023*
+
+Led team of 4 to 10-15 engineers (grown through internal transfers) operating and extending two acquired SaaS products: InsideSales Playbooks ($20M/year ARR sales engagement platform) and ResponseTek. Focus on operational excellence and large-scale modernization of existing products.
+
+Reduced outages by 5x and cut cloud infrastructure costs in half. Led major modernization: telephony system migration from self-hosted to serverless (Twilio), cleared defect backlog, implemented new features while maintaining production stability.
+
+
+### Additional Roles
+
+**Software Engineering Consultant @ msg-systems (Part-time, 1-2 hours/week)** - Jun 2020 - Invalid date
+**Cloud Solutions Architect @ DevFactory** - Jun 2020 - Jul 2021
+**Teaching Assistant @ T.U. Cluj-Napoca** - Feb 2019 - Jun 2019
+**Co-Founder @ KickIT** - Sep 2018 - Jun 2020
+**Lead Software Engineer @ msg-systems** - Apr 2014 - Jun 2020
+
+
+## Skills
+
+**Technical Leadership**: Architecture, Code Review, Technical Decision-Making, Team Mentoring, Process Design
+
+**Management**: Hiring, Performance Reviews, Budget Management, Strategic Planning, Stakeholder Management
+
+**Technologies**: TypeScript, Java, NodeJS, React, Spring Boot, Unity, AWS (Lambda, AppSync, DynamoDB, RDS), GraphQL, Salesforce
+
+**Specializations**: Cloud-Native Architectures, AI/ML Integration, Serverless, DevOps, Cost Optimization
+
+## Certifications
+
+- **AWS Certified Solutions Architect - Professional** (Jan 2021): Amazon Web Services
+- **AWS Certified Solutions Architect - Associate** (Jan 2020): Amazon Web Services
+- **Cambridge Certificate in Advanced English (C1)** (May 2011): University of Cambridge
+
+## Education
+
+### Babes-Bolyai University
+*Oct 2017 - Jun 2019*
+
+Master's degree in Software Engineering at the faculty of Mathematics and Informatics (dissertation pending).
+
+### Technical University of Cluj-Napoca
+*Sep 2012 - Jun 2016*
+
+Bachelor's degree in Computer Science at the faculty of Computer Science and Information Technology.
+
