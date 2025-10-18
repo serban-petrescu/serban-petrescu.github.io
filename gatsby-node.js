@@ -100,7 +100,7 @@ const generateLlmsTxt = async (graphql) => {
 
     const renderPeriod = (period) => {
         if (period.at) return period.at;
-        const to = period.to || 'Present';
+        const to = (period.to && period.to !== 'Invalid date') ? period.to : 'Present';
         return `${period.from} - ${to}`;
     };
 
