@@ -3,7 +3,7 @@
     "from": "2021-08-01",
     "to": "2023-02-20"
   },
-  "title": "VP of Software Engineering @ Trilogy",
+  "title": "VP of Software Engineering @ Trilogy (Central Engineering)",
   "body": "Led team of 4 to 10-15 engineers (grown through internal transfers) operating and extending two acquired SaaS products: InsideSales Playbooks ($20M/year ARR sales engagement platform) and ResponseTek. Focus on operational excellence and large-scale modernization of existing products.\n\nReduced outages by 5x and cut cloud infrastructure costs in half. Led major modernization: telephony system migration from self-hosted to serverless (Twilio), cleared defect backlog, implemented new features while maintaining production stability.",
   "logo": "../media/trilogy.png",
   "featured": true

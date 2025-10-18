@@ -1,10 +1,10 @@
 {
   "period": {
-    "from": "2024-09-01",
+    "from": "2023-02-20",
     "to": ""
   },
-  "title": "SVP of Software Engineering @ Trilogy",
-  "body": "Leading independent department of 30-40 people (engineering, design, product, operations) with full autonomy over $6M/year budget, team structure, and processes. Expanded from backend engineering team to full product organization including non-engineering functions.\n\nShipped multiple greenfield products from concept to production as hands-on product manager, architect, and full-stack engineer. Notable launches: TimeBack (AI tutoring platform for Alpha School enabling 99th percentile learning outcomes) and enhanced Trilogy Sales Platform (managing thousands of automated contract renewals across 200+ products). Balance strategic leadership with technical execution while directly managing all reports.",
+  "title": "SVP of Software Engineering @ Trilogy (New Products)",
+  "body": "Built independent department from 6 to 30-40 people while scaling from 3 to 11 concurrent products. Started as VP leading backend engineering team, promoted to SVP with expanded scope including design, product, and operations, managing $6M/year budget with full autonomy over team structure and processes.\n\nSpearheaded AI adoption strategy during 2024, achieving productivity gains while industry-wide metrics declined. Built internal automation and productivity infrastructure (CI/CD pipelines, JIRA automations, dashboards). Shipped multiple greenfield products from concept to production as hands-on product manager, architect, and full-stack engineer, including TimeBack (AI tutoring platform enabling 99th percentile learning outcomes) and enhanced Trilogy Sales Platform (managing thousands of automated contract renewals across 200+ products).",
   "logo": "../media/trilogy.png",
   "featured": true
 }

@@ -122,7 +122,7 @@ export default function CV({ data }) {
             </section>
 
             <footer className="cv-footer">
-                <p>Full portfolio available at <a href={metadata.website}>{metadata.website}</a></p>
+                <p>Full portfolio available at <a href={metadata.website}>{new URL(metadata.website).hostname}</a></p>
             </footer>
         </div>
     );
