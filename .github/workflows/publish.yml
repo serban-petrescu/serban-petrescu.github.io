@@ -18,7 +18,8 @@ jobs:
             - name: Install dependencies
               run: |
                   npm ci --include=optional
-                  npm rebuild @parcel/watcher
+                  npm uninstall @parcel/watcher
+                  npm install @parcel/watcher --force
             - name: Clean
               run: npm run clean
             - name: Build
