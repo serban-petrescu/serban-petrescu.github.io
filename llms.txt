@@ -24,7 +24,7 @@ Player-coach approach: combine strategic leadership with hands-on execution as p
 ## Work Experience
 
 ### SVP of Software Engineering @ Trilogy (New Products)
-*Feb 2023 - Invalid date*
+*Feb 2023 - Present*
 
 Built independent department from 6 to 30-40 people while scaling from 3 to 11 concurrent products. Started as VP leading backend engineering team, promoted to SVP with expanded scope including design, product, and operations, managing $6M/year budget with full autonomy over team structure and processes.
 
@@ -40,7 +40,7 @@ Reduced outages by 5x and cut cloud infrastructure costs in half. Led major mode
 
 ### Additional Roles
 
-**Software Engineering Consultant @ msg-systems (Part-time, 1-2 hours/week)** - Jun 2020 - Invalid date
+**Software Engineering Consultant @ msg-systems (Part-time, 1-2 hours/week)** - Jun 2020 - Present
 **Cloud Solutions Architect @ DevFactory** - Jun 2020 - Jul 2021
 **Teaching Assistant @ T.U. Cluj-Napoca** - Feb 2019 - Jun 2019
 **Co-Founder @ KickIT** - Sep 2018 - Jun 2020
