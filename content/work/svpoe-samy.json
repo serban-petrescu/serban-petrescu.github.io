@@ -3,7 +3,8 @@
     "from": "2024-09-01",
     "to": ""
   },
-  "title": "SVP of Software Engineering (Trilogy)",
-  "body": "Leading Trilogy's new products engineering department of 30 engineers to build, maintain and operate all our new products, spanning from mobile apps to 3D games: TeachTap, TeachTales, Reading Critters, Magic Academy, Athena, the Crossover Hiring Platform and the Trilogy Sales Platform.\n\nResponsible for hiring, management, setting up our internal processes, technical leadership, coaching and mentoring the engineers, defining and spearheading our AI adoption strategy, etc.",
-  "logo": "../media/trilogy.png"
+  "title": "SVP of Software Engineering @ Trilogy",
+  "body": "Leading independent department of 30-40 people (engineering, design, product, operations) with full autonomy over $6M/year budget, team structure, and processes. Expanded from backend engineering team to full product organization including non-engineering functions.\n\nShipped multiple greenfield products from concept to production as hands-on product manager, architect, and full-stack engineer. Notable launches: TimeBack (AI tutoring platform for Alpha School enabling 99th percentile learning outcomes) and enhanced Trilogy Sales Platform (managing thousands of automated contract renewals across 200+ products). Balance strategic leadership with technical execution while directly managing all reports.",
+  "logo": "../media/trilogy.png",
+  "featured": true
 }

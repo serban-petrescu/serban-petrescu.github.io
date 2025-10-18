@@ -1,0 +1,438 @@
+@import "../index.scss";
+
+.cv-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    font-size: 10.5pt;
+    line-height: 1.4;
+    color: #333;
+    background: white;
+}
+
+.cv-print-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: #0066cc;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background: #0052a3;
+        transform: scale(1.05);
+    }
+
+    &:active {
+        transform: scale(0.95);
+    }
+}
+
+.cv-header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #333;
+
+    .cv-avatar {
+        flex-shrink: 0;
+        
+        img {
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+        }
+    }
+
+    .cv-header-content {
+        flex: 1;
+    }
+
+    h1 {
+        margin: 0 0 0.5rem 0;
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #000;
+    }
+
+    .cv-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #555;
+        margin-bottom: 0.75rem;
+    }
+
+    .cv-contact {
+        display: flex;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        font-size: 0.95rem;
+        color: #666;
+
+        a {
+            color: #0066cc;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.cv-section {
+    margin-bottom: 1.5rem;
+    page-break-inside: avoid;
+
+    h2 {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: #000;
+        margin: 0 0 0.75rem 0;
+        padding-bottom: 0.25rem;
+        border-bottom: 1px solid #ccc;
+        page-break-after: avoid;
+    }
+
+    h4 {
+        font-size: 0.95rem;
+        font-weight: 600;
+        margin: 0 0 0.25rem 0;
+    }
+
+    p {
+        margin: 0 0 0.5rem 0;
+        text-align: justify;
+    }
+}
+
+.cv-summary {
+    page-break-inside: auto;
+}
+
+.cv-work-experience {
+    page-break-inside: auto;
+}
+
+.cv-item {
+    margin-bottom: 1.25rem;
+    page-break-inside: avoid;
+
+    .cv-item-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 0.4rem;
+
+        h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #222;
+            margin: 0;
+            flex: 1;
+        }
+
+        .cv-period {
+            font-size: 0.9rem;
+            color: #666;
+            font-style: italic;
+            white-space: nowrap;
+            margin-left: 1rem;
+        }
+    }
+
+    .cv-item-body {
+        color: #444;
+        line-height: 1.5;
+        font-size: 0.95rem;
+
+        strong {
+            font-weight: 600;
+            color: #222;
+        }
+    }
+}
+
+.cv-item-compact {
+    margin-bottom: 1rem;
+    page-break-inside: avoid;
+
+    .cv-item-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 0.25rem;
+
+        h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #222;
+            margin: 0;
+            flex: 1;
+        }
+
+        .cv-period-small {
+            font-size: 0.9rem;
+            color: #666;
+            font-style: italic;
+            white-space: nowrap;
+            margin-left: 1rem;
+        }
+    }
+
+    .cv-cert-body,
+    .cv-edu-body {
+        font-size: 0.95rem;
+        color: #555;
+    }
+}
+
+.cv-edu-other {
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid #eee;
+    font-size: 0.9rem;
+    color: #666;
+    
+    p {
+        margin: 0;
+    }
+}
+
+.cv-other-roles {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #ddd;
+    page-break-inside: avoid;
+
+    h3 {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #444;
+        margin: 0 0 0.75rem 0;
+        page-break-after: avoid;
+    }
+
+    .cv-role-compact {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 0.5rem;
+        font-size: 0.95rem;
+
+        .cv-role-title {
+            flex: 1;
+            color: #555;
+        }
+
+        .cv-role-period {
+            color: #777;
+            font-style: italic;
+            white-space: nowrap;
+            margin-left: 1rem;
+            font-size: 0.9rem;
+        }
+    }
+}
+
+.cv-achievements {
+    margin: 0;
+    padding-left: 1.5rem;
+
+    li {
+        margin-bottom: 0.5rem;
+        line-height: 1.5;
+        text-align: justify;
+        font-size: 0.95rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.cv-two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    page-break-inside: avoid;
+
+    .cv-column {
+        page-break-inside: avoid;
+        
+        h2 {
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+            page-break-after: avoid;
+        }
+    }
+}
+
+.cv-skills {
+    .cv-skill-group {
+        margin-bottom: 1rem;
+
+        h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            color: #222;
+        }
+
+        p {
+            font-size: 0.95rem;
+            color: #555;
+            margin: 0 0 0.5rem 0;
+        }
+    }
+}
+
+.cv-footer {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #ccc;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+
+    a {
+        color: #0066cc;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+// Print styles
+@media print {
+    .cv-print-button {
+        display: none !important;
+    }
+
+    .cv-container {
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
+        font-size: 10pt;
+    }
+
+    .cv-header {
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.75rem;
+
+        .cv-avatar img {
+            width: 100px;
+            height: 100px;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+
+        .cv-title {
+            font-size: 1.1rem;
+        }
+
+        .cv-contact {
+            font-size: 0.9rem;
+            gap: 1rem;
+        }
+    }
+
+    .cv-section {
+        margin-bottom: 1.5rem;
+
+        h2 {
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+        }
+    }
+
+    .cv-item {
+        margin-bottom: 1rem;
+
+        .cv-item-header h3 {
+            font-size: 1rem;
+        }
+
+        .cv-item-body {
+            font-size: 9.5pt;
+        }
+    }
+
+    .cv-achievements {
+        li {
+            margin-bottom: 0.5rem;
+            font-size: 9.5pt;
+        }
+    }
+
+    .cv-two-column {
+        gap: 1.5rem;
+    }
+
+    .cv-skills .cv-skill-group {
+        margin-bottom: 0.75rem;
+
+        h4 {
+            font-size: 0.95rem;
+        }
+
+        p {
+            font-size: 9pt;
+        }
+    }
+
+    .cv-item-compact {
+        margin-bottom: 0.75rem;
+
+        .cv-item-header h4 {
+            font-size: 0.95rem;
+        }
+
+        .cv-cert-body,
+        .cv-edu-body {
+            font-size: 9pt;
+        }
+    }
+
+    .cv-footer {
+        margin-top: 1.5rem;
+        padding-top: 0.75rem;
+        font-size: 8.5pt;
+    }
+
+    a {
+        color: #000 !important;
+        text-decoration: none !important;
+    }
+
+    // Ensure proper page breaks
+    h2, h3 {
+        page-break-after: avoid;
+    }
+
+    .cv-item,
+    .cv-item-compact,
+    .cv-skill-group {
+        page-break-inside: avoid;
+    }
+}
+
+

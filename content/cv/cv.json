@@ -1,0 +1,28 @@
+{
+  "summary": "Builder and technical leader serving as SVP of Software Engineering at Trilogy. Built independent engineering organization from ~6 to 30-40 people while scaling from 3 to 11 concurrent products and achieving 3x productivity improvement. Products span education (Alpha School's AI tutoring platform enabling thousands of students to achieve 99th percentile results), recruiting (Crossover platform processing hundreds of thousands of monthly visitors), and sales (Trilogy Sales Platform managing thousands of semi-automated contract renewals across 200+ products generating hundreds of millions in ARR).\n\nPlayer-coach approach: combine strategic leadership with hands-on execution as product manager, architect, and full-stack engineer. Known for building both technical systems and high-performing teams - hold best promotion track record across leadership in Trilogy. Prior experience: 6+ years as Lead Software Engineer at msg systems, recognized as SAP Developer Hero.",
+  "achievements": [
+    "Built engineering products enabling thousands of Alpha School students to achieve 99th percentile test results through AI-powered personalized learning platform (CoachBot/TimeBack), serving as product manager, architect, and full-stack engineer.",
+    "Scaled organization from ~6 to 30-40 people while growing from 3 to 11 concurrent products across education, recruiting, and sales domains, achieving 3x improvement in per-capita productivity through strategic AI adoption, automation infrastructure, and high-quality hiring.",
+    "Built Crossover hiring platform processing hundreds of thousands of monthly visitors, tens of thousands of monthly applications, and thousands of hires, implementing AI-powered candidate screening and assessment grading.",
+    "Reduced cloud infrastructure costs by 50% and outages by 5x through improved monitoring and observability for InsideSales Playbooks ($20M/year ARR product) while leading modernization efforts."
+  ],
+  "skillGroups": [
+    {
+      "category": "Technical Leadership",
+      "skills": "Architecture, Code Review, Technical Decision-Making, Team Mentoring, Process Design"
+    },
+    {
+      "category": "Management",
+      "skills": "Hiring, Performance Reviews, Budget Management, Strategic Planning, Stakeholder Management"
+    },
+    {
+      "category": "Technologies",
+      "skills": "TypeScript, Java, NodeJS, React, Spring Boot, Unity, AWS (Lambda, AppSync, DynamoDB, RDS), GraphQL, Salesforce"
+    },
+    {
+      "category": "Specializations",
+      "skills": "Cloud-Native Architectures, AI/ML Integration, Serverless, DevOps, Cost Optimization"
+    }
+  ]
+}
+

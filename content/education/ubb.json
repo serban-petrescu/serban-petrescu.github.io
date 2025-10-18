@@ -1,8 +1,10 @@
 {
   "period": {
-    "from": "2017-10-01"
+    "from": "2017-10-01",
+    "to": "2019-06-30"
   },
-  "title": "Babeș-Bolyai University",
-  "body": "Master's degree in Software Engineering at the faculty of Mathematics and Informatics.",
-  "logo": "../media/ubb.png"
+  "title": "Babes-Bolyai University",
+  "body": "Master's degree in Software Engineering at the faculty of Mathematics and Informatics (dissertation pending).",
+  "logo": "../media/ubb.png",
+  "featured": true
 }

@@ -3,7 +3,8 @@
     "from": "2021-08-01",
     "to": "2023-02-20"
   },
-  "title": "VP of Software Engineering (ResponseTek, Playbooks)",
-  "body": "Led a team of 20 software engineers in the successful operation, maintenance, and extension of multiple SaaS products. Set up most of our internal processes, mentored and coached the engineers, and took most of high-level architectural decisions. Reduced outages by a factor of 5 through improved monitoring and observability. Cut cloud infrastructure costs in half through optimization efforts. Implemented new features, cleared the defect backlog and modernized a telephony system, migrating from a self-hosted solution to a serverless implementation using Twilio.",
-  "logo": "../media/trilogy.png"
+  "title": "VP of Software Engineering @ Trilogy",
+  "body": "Led team of 4 to 10-15 engineers (grown through internal transfers) operating and extending two acquired SaaS products: InsideSales Playbooks ($20M/year ARR sales engagement platform) and ResponseTek. Focus on operational excellence and large-scale modernization of existing products.\n\nReduced outages by 5x and cut cloud infrastructure costs in half. Led major modernization: telephony system migration from self-hosted to serverless (Twilio), cleared defect backlog, implemented new features while maintaining production stability.",
+  "logo": "../media/trilogy.png",
+  "featured": true
 }

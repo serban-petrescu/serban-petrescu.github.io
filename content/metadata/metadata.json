@@ -1,5 +1,5 @@
 {
-  "summary": "<p>Hi! I'm Serban, an IT enthusiast which works full time as an SVP of Engineering at Trilogy, taught Software Design at TU-CN and founded a local tech start-up.</p><p>I typically fulfill the roles of <strong>solution architect</strong> and <strong>lead developer</strong> with a strong focus on growing my team through technical challenges, training sessions, presentations and mentoring.</p><p>I have frequently switched between technologies, becoming proficient in NodeJS, Spring and the SAP ecosystem. My current target area of expertise is around <em>Amazon Web Services</em>, <em>Spring Boot</em> and <em>React</em>.</p>",
+  "summary": "<p>Hi! I'm Serban, an IT professional with a passion for code. I work full time as an SVP of Engineering at Trilogy, taught Software Design at TU-CN and founded a local tech start-up.</p><p>I lead an engineering organization of 30-40 people building full-stack products across diverse domains: Unity games, mobile apps, cloud platforms, and Salesforce extensions. I manage the complete engineering lifecycle—hiring (writing JDs, designing assessments, interviewing), architectural reviews and specifications, quarterly budget management ($6M/year), performance management, code reviews, and strategic planning with C-level executives on pricing, cost optimization, and portfolio evolution. I still write code regularly.</p><p>I have frequently switched between technologies, becoming proficient in TypeScript, Java, NodeJS, Spring, React, Unity and the SAP ecosystem. My current target area of expertise is around <em>Amazon Web Services</em>, <em>AI/ML integration</em> and <em>cloud-native architectures</em>.</p>",
   "accounts": {
     "linkedin": "https://ro.linkedin.com/in/serban-petrescu",
     "github": "https://github.com/serban-petrescu/",
@@ -38,11 +38,11 @@
   "highlights": {
     "education": {
       "title": "Software Engineering MSc.",
-      "description": "Studying for my Master's degree at the faculty of Mathematics and Informatics, Babeș-Bolyai University."
+      "description": "Master's degree at the faculty of Mathematics and Informatics, Babeș-Bolyai University (dissertation pending)."
     },
     "work": {
       "title": "SVP of Software Engineering",
-      "description": "Managing a software engineering team that monitors, operates, maintains and extends several strategic software products."
+      "description": "Leading a 30-40 engineer organization building full-stack products across Unity games, mobile apps, cloud platforms, and Salesforce extensions."
     }
   }
 }

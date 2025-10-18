@@ -3,7 +3,8 @@
     "from": "2023-02-20",
     "to": "2024-09-30"
   },
-  "title": "VP of Software Engineering (GT School, Crossover, Trilogy Sales Platform)",
-  "body": "Leading an engineering department of 20 engineers that build, maintain and operate several of our strategic products: GT School CoachBot, the Crossover Hiring Platform and the Trilogy Sales Platform.\n\nResponsible for setting up the hiring pipelines, interviewing candidates, setting up our internal processes and guidelines, leading, coaching and mentoring the engineers, taking important technical decisions, etc.",
-  "logo": "../media/trilogy.png"
+  "title": "VP of Software Engineering @ Trilogy",
+  "body": "Led backend engineering team, growing from ~6 to ~20 engineers while scaling from 3 to 8 concurrent products. Established hiring pipelines, internal processes, and engineering best practices enabling rapid team growth.\n\nSpearheaded AI adoption strategy during 2024, achieving productivity gains while industry-wide metrics showed decreases. Built internal automation and productivity infrastructure (CI/CD pipelines, JIRA automations, dashboard/leaderboard systems) alongside transforming engineering processes. Shipped multiple greenfield products from development through production operations.",
+  "logo": "../media/trilogy.png",
+  "featured": true
 }

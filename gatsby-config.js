@@ -52,6 +52,13 @@ module.exports = {
                 path: `${__dirname}/content/project`,
             },
         },
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `cv`,
+                path: `${__dirname}/content/cv`,
+            },
+        },
         `gatsby-transformer-sharp`,
         {
             resolve: `gatsby-plugin-sharp`,
