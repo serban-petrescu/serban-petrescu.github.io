@@ -17,7 +17,7 @@ Player-coach approach: combine strategic leadership with hands-on execution as p
 ## Key Achievements
 
 - Shipped TimeBack (Alpha School's AI tutoring platform) from concept to production as product manager, architect, and full-stack engineer, enabling thousands of students to achieve 99th percentile test results.
-- Built and extended Crossover hiring platform processing hundreds of thousands of monthly visitors and tens of thousands of applications, implementing AI-powered screening and assessment grading.
+- Extended Crossover hiring platform processing hundreds of thousands of monthly visitors and tens of thousands of applications, implementing AI-powered screening and assessment grading.
 - Led strategic AI adoption across organization during 2024, achieving productivity gains while industry-wide metrics declined.
 - Reduced cloud infrastructure costs by 50% and outages by 5x for $20M ARR SaaS product (Playbooks).
 
