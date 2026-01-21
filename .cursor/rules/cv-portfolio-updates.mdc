@@ -1,0 +1,56 @@
+---
+description: This rule is useful when updating the CV and portfolio content
+alwaysApply: false
+---
+# CV & Portfolio Content Update Rules
+
+**When to use this rule:**
+- User asks to update CV content
+- User asks to update portfolio site content
+- User asks to add new projects or work experience
+- User mentions LinkedIn profile updates
+
+## CV Update Workflow
+
+### For CV content changes:
+1. **Update source JSON first:** `content/cv/cv.json`
+   - Contains: summary, achievements, skillGroups
+   - This feeds the `/cv` page via GraphQL
+
+2. **Consider related updates:**
+   - If updating work accomplishments → check `content/work/*.json`
+   - If updating project highlights → check featured projects in `content/project/*.json`
+   - If updating skills → verify against actual tech used in projects
+
+3. **Maintain consistency:**
+   - CV summary should align with `content/metadata/metadata.json` intro
+   - Work experience should match between `content/work/*.json` and `content/cv/cv.json`
+   - Featured projects (`highlighted: true`) should reflect current priorities
+
+### For work history changes:
+1. **Update appropriate work JSON file** in `content/work/`
+2. **Check if CV needs updating** - `content/cv/cv.json`
+3. **Check if site metadata needs updating** - `content/metadata/metadata.json`
+4. **Consider if project files need updating** - dates, descriptions, etc.
+
+### For new projects:
+1. **Create project JSON** in `content/project/[name].json`
+2. **Follow existing pattern:** name, type, description, technologies, tags, period, images, highlighted
+3. **Add images** to `content/media/` if needed
+4. **Consider if it should be featured:** Set `"highlighted": true` for top 3 projects
+5. **Update work history** if this project represents significant work in a role
+
+## LinkedIn Sync
+When updating LinkedIn:
+- Use content from `content/cv/cv.json` as baseline
+- Reference `career-strategy.md` for tone and positioning
+- LinkedIn can be slightly more detailed than CV (more space available)
+- Keep "About" section aligned with site summary but can expand on player-coach philosophy
+- Work descriptions can include more context than CV's condensed version
+
+## Key Principles
+- **Data-driven:** All content in JSON, not hardcoded
+- **Consistency:** CV, site, and LinkedIn should tell the same story
+- **Featured projects:** Only 3 projects marked as `highlighted: true`
+- **Featured work/education:** Use `featured: true` flag for items to show on CV
+- **Reality over optimization:** Don't sugar-coat, reflect actual experience

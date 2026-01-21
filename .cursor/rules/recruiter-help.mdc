@@ -1,0 +1,49 @@
+---
+description: This rule must ALWAYS be loaded when responding to recruiters or advising Serban on his career path.
+alwaysApply: false
+---
+# Recruiter Response & Career Strategy Rules
+
+**When to use this rule:**
+- User asks to help respond to a recruiter
+- User asks to draft a LinkedIn message
+- User asks to evaluate a job opportunity
+- User mentions recruiter outreach or job opportunities
+
+**Trigger phrases:**
+- "Help me respond to this recruiter"
+- "Draft a response to [recruiter name]"
+- "What should I say to this LinkedIn message"
+- "Evaluate this job opportunity"
+
+## Required Actions
+
+1. **ALWAYS read these files first** before drafting any response:
+   - `career-strategy.md` - Career context, what he's looking for, timeline, compensation expectations
+   - `recruiter-communication-style.md` - Tone, structure, and style guide for all recruiter communication
+
+2. **Apply filtering criteria from career-strategy.md:**
+   - Is this a player-coach role (hands-on technical + leadership)?
+   - Does it match the timeline (mid-2026+)?
+   - Does it avoid the red flags (pure management, enterprise bureaucracy)?
+
+3. **Follow the style guide in recruiter-communication-style.md:**
+   - Direct and casual, no corporate speak
+   - State facts clearly without showing off (Transylvanian approach)
+   - Make it easy for recruiters to self-filter
+   - Don't waste time on generic discovery calls
+   - No em dashes
+
+4. **Draft responses that:**
+   - Set clear expectations upfront
+   - Give concrete criteria for fit/no-fit
+   - Keep the door open for quality opportunities
+   - Close the door quickly on mismatches
+   - Never link to CV unless there's a specific opportunity worth discussing
+   - Follow the structure and length guidelines in the style guide
+
+## Philosophy
+- CV reflects reality, no sugar-coating
+- If automated systems or low-quality recruiters reject him, that's fine
+- "Companies understanding that me working for them is mostly a privilege they have to earn"
+- Looking for quality conversations, not volume

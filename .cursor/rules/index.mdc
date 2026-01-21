@@ -1,0 +1,42 @@
+---
+description: This rule is helpful for understanding the repository structure when searching for or modifying content
+alwaysApply: false
+---
+# Portfolio Repository Rules
+
+## Repository Structure
+This is a Gatsby-based portfolio website for Serban Petrescu. All content is stored as structured JSON files:
+
+- **Work history:** `content/work/*.json`
+- **Projects:** `content/project/*.json` (50+ projects)
+- **Education:** `content/education/*.json`
+- **Certifications:** `content/certification/*.json`
+- **CV content:** `content/cv/cv.json` (generates printable CV at `/cv`)
+- **Site metadata:** `content/metadata/metadata.json`
+
+## Content Update Patterns
+
+### When updating content:
+1. **Always use structured JSON** - Never hardcode content in React components
+2. **Follow existing patterns** - Look at similar JSON files first
+3. **Maintain consistency** - Use same field structure as other files in the same category
+4. **Update related files** - If updating work history, may need to update CV summary too
+
+### JSON File Patterns:
+- **Work:** `{ period: { from, to }, title, body, logo, featured }`
+- **Projects:** `{ name, type, description, technologies, tags, period, images, highlighted }`
+- **Education:** `{ period, title, body, logo, featured }`
+- **Certifications:** `{ period: { at }, title, body, logo }`
+
+## Code Style
+- This is a React/Gatsby codebase
+- Use functional components
+- SCSS for styling
+- GraphQL for data queries
+- No hardcoded content - everything comes from JSON
+
+## Important Files
+- `gatsby-node.js` - Defines GraphQL schema types
+- `src/pages/index.js` - Main portfolio page
+- `src/pages/cv.js` - Printable CV page
+- `gatsby-config.js` - Site configuration

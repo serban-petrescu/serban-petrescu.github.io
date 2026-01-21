@@ -1,0 +1,34 @@
+{
+  "name": "Incept",
+  "type": "work",
+  "description": "A strategic content generation platform that provides the infrastructure for creating, managing, and publishing educational content across Trilogy's learning applications.\n            <br /><br />\n            As SVP and architect, I designed the platform architecture addressing three core challenges: <strong>curriculum modeling</strong> (three-level hierarchy from official standards to app-specific curricula with knowledge graph relationships), <strong>AI-powered content generation</strong> (canonical authoring format optimized for LLMs with programmatic QTI conversion), and <strong>safe publishing workflows</strong> (draft/production separation with preview capabilities).\n            <br /><br />\n            The platform serves a 15-person academic team, replacing direct database edits with proper tooling. Features include a <strong>Content Generation SDK</strong> with shared utilities (data models, QTI converters, LLM tools), a <strong>Second Brain knowledge base</strong> for pedagogical principles, and standards-compliant delivery via <strong>1EdTech QTI 3.0</strong>. Supports both batch generation for reviewed instructional materials and real-time generation for personalized interventions.",
+  "technologies": [
+    {
+      "name": "TypeScript"
+    },
+    {
+      "name": "Python"
+    },
+    {
+      "name": "AWS"
+    },
+    {
+      "name": "GraphQL"
+    },
+    {
+      "name": "AI/ML"
+    },
+    {
+      "name": "QTI 3.0"
+    }
+  ],
+  "tags": [
+    "architect",
+    "ai"
+  ],
+  "period": {
+    "from": "2024-01-01",
+    "to": ""
+  },
+  "highlighted": false
+}
