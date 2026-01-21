@@ -10,13 +10,15 @@ Website: https://www.spetrescu.ro/
 
 ## Professional Summary
 
-Builder and technical leader serving as SVP of Software Engineering at Trilogy, leading an independent department of 30-40 people. Products span education (Alpha School's AI tutoring platform enabling thousands of students to achieve 99th percentile results), recruiting (Crossover platform processing hundreds of thousands of monthly visitors), and sales (Trilogy Sales Platform managing thousands of semi-automated contract renewals across 200+ products, hundreds of millions in ARR).
+Builder and technical leader serving as SVP of Software Engineering at Trilogy, leading 0→1 product development across a portfolio of educational technology products. Edtech work spans three pillars: learning applications (7+ apps including AI tutoring, spaced repetition games, adaptive platforms), content generation infrastructure (curriculum modeling, AI-powered authoring, publishing workflows), and learning analytics (engagement tracking, mastery measurement, outcome correlation).
 
-Player-coach approach: combine strategic leadership with hands-on execution as product manager, architect, and full-stack engineer. Known for building both technical systems and high-performing teams. Prior experience: 6+ years as Lead Software Engineer at msg systems, recognized as SAP Developer Hero.
+Implemented learning science principles directly: spaced repetition, mastery-based progression, automaticity building, knowledge graph-driven curricula. This enables thousands of Alpha School students to achieve 99th percentile outcomes.
+
+Player-coach approach: combine strategic leadership ($6M budget, team of 40) with hands-on execution as product manager, architect, and full-stack engineer. Prior: 6+ years Lead Software Engineer at msg systems, SAP Developer Hero.
 
 ## Key Achievements
 
-- Shipped TimeBack (Alpha School's AI tutoring platform) from concept to production as product manager, architect, and full-stack engineer, enabling thousands of students to achieve 99th percentile test results.
+- Shipped 7+ learning products from concept to production spanning learning apps (TrashCat, Athena, TeachTap, TeachTales), content infrastructure (Incept), and analytics (TimeBack), implementing spaced repetition, mastery-based progression, and knowledge graph-driven curricula.
 - Extended Crossover hiring platform processing hundreds of thousands of monthly visitors and tens of thousands of applications, implementing AI-powered screening and assessment grading.
 - Led strategic AI adoption across organization during 2024, achieving productivity gains while industry-wide metrics declined.
 - Reduced cloud infrastructure costs by 50% and outages by 5x for $20M ARR SaaS product (Playbooks).
@@ -26,14 +28,16 @@ Player-coach approach: combine strategic leadership with hands-on execution as p
 ### SVP of Software Engineering @ Trilogy (New Products)
 *Feb 2023 - Present*
 
-Built independent department from 6 to 30-40 people while scaling from 3 to 11 concurrent products, achieving 3x productivity improvement. Started as VP leading backend engineering team, promoted to SVP with expanded scope including design, product, and operations, managing $6M/year budget with full autonomy over team structure and processes.
+Built independent department from 6 to 40 people while scaling from 3 to 11 concurrent products, achieving 3x productivity improvement. Managing $6M/year budget with full autonomy over team structure and processes.
 
-Spearheaded AI adoption strategy during 2024, achieving productivity gains while industry-wide metrics declined. Built internal automation and productivity infrastructure (CI/CD pipelines, JIRA automations, dashboards). Shipped multiple greenfield products from concept to production as hands-on product manager, architect, and full-stack engineer, including TimeBack (Alpha School's AI tutoring platform enabling 99th percentile learning outcomes) and enhanced Trilogy Sales Platform (managing thousands of automated contract renewals across 200+ products).
+Education technology focus: Shipped 7+ learning products from concept to production spanning three pillars: learning apps (TrashCat, Athena, TeachTap, TeachTales, Magic Academy, ReadingCritters), content infrastructure (Incept platform for curriculum modeling, AI-powered content generation, QTI standardization), and analytics (TimeBack for student engagement tracking and outcome measurement).
+
+Implemented learning science principles directly: spaced repetition, mastery-based progression, automaticity building, knowledge graphs for prerequisite relationships. This work enables thousands of Alpha School students to achieve 99th percentile outcomes. Also extended Crossover hiring platform and Trilogy Sales Platform.
 
 ### VP of Software Engineering @ Trilogy (Central Engineering)
 *Aug 2021 - Feb 2023*
 
-Led team of 4 to 10-15 engineers (grown through internal transfers) operating and extending two acquired SaaS products: InsideSales Playbooks ($20M/year ARR sales engagement platform) and ResponseTek. Focus on operational excellence and large-scale modernization of existing products.
+Led team of 4 to 14 engineers (grown through internal transfers) operating and extending two acquired SaaS products: InsideSales Playbooks ($20M/year ARR sales engagement platform) and ResponseTek. Focus on operational excellence and large-scale modernization of existing products.
 
 Reduced outages by 5x and cut cloud infrastructure costs in half. Led major modernization: telephony system migration from self-hosted to serverless (Twilio), cleared defect backlog, implemented new features while maintaining production stability.
 
