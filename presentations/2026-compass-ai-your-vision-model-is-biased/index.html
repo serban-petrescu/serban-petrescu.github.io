@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Vision Model Is Biased</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="deck.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+<section class="text title-slide">
+  <h1>Your Vision Model Is Biased</h1>
+  <p class="subtitle">Lessons from shipping real-time video detection</p>
+  <p class="byline">Serban Petrescu &middot; Trilogy / TimeBack &middot; Compass AI 2026</p>
+  <svg class="title-viz" viewBox="0 0 1728 230" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="var(--line)" stroke-width="1.5" opacity="0.55">
+      <line x1="0" y1="20" x2="0" y2="170" /><line x1="345.6" y1="20" x2="345.6" y2="170" /><line x1="691.2" y1="20" x2="691.2" y2="170" /><line x1="1036.8" y1="20" x2="1036.8" y2="170" /><line x1="1382.4" y1="20" x2="1382.4" y2="170" /><line x1="1727" y1="20" x2="1727" y2="170" />
+    </g>
+    <g>
+      <rect class="ch" style="--i: 0" x="0" y="40" width="54" height="90" rx="4" fill="var(--ok)" />
+      <rect class="ch" style="--i: 1" x="57.6" y="40" width="54" height="90" rx="4" fill="var(--ok)" />
+      <rect class="ch" style="--i: 2" x="115.2" y="40" width="54" height="90" rx="4" fill="var(--ok)" />
+      <rect class="ch" style="--i: 3" x="172.8" y="40" width="54" height="90" rx="4" fill="var(--accent)" />
+      <rect class="ch" style="--i: 4" x="230.4" y="40" width="54" height="90" rx="4" fill="var(--accent)" />
+      <rect class="ch" style="--i: 5" x="288" y="40" width="54" height="90" rx="4" fill="var(--ok)" />
+      <rect class="ch" style="--i: 6" x="345.6" y="40" width="54" height="90" rx="4" fill="var(--ok)" />
+      <rect class="ch" style="--i: 7" x="403.2" y="40" width="54" height="90" rx="4" fill="var(--ok)" />
+      <rect class="ch" style="--i: 8" x="460.8" y="40" width="54" height="90" rx="4" fill="var(--ok)" />
+      <rect class="ch" style="--i: 9" x="518.4" y="40" width="54" height="90" rx="4" fill="var(--ok)" />
+      <rect class="ch" style="--i: 10" x="576" y="40" width="54" height="90" rx="4" fill="var(--ok)" />
+      <rect class="ch" style="--i: 11" x="633.6" y="40" width="54" height="90" rx="4" fill="var(--accent)" />
+      <rect class="ch" style="--i: 12" x="691.2" y="40" width="54" height="90" rx="4" fill="var(--accent)" />
+      <rect class="ch" style="--i: 13" x="748.8" y="40" width="54" height="90" rx="4" fill="var(--accent)" />
+      <rect class="ch" style="--i: 14" x="806.4" y="40" width="54" height="90" rx="4" fill="var(--ok)" />
+      <rect class="ch" style="--i: 15" x="864" y="40" width="54" height="90" rx="4" fill="var(--ok)" />
+      <rect class="ch" style="--i: 16" x="921.6" y="40" width="54" height="90" rx="4" fill="var(--ok)" />
+      <rect class="ch" style="--i: 17" x="979.2" y="40" width="54" height="90" rx="4" fill="var(--alarm)" />
+      <rect class="ch" style="--i: 18" x="1036.8" y="40" width="54" height="90" rx="4" fill="var(--ok)" />
+      <rect class="ch" style="--i: 19" x="1094.4" y="40" width="54" height="90" rx="4" fill="var(--ok)" />
+      <rect class="ch" style="--i: 20" x="1152" y="40" width="54" height="90" rx="4" fill="var(--ok)" />
+      <rect class="ch" style="--i: 21" x="1209.6" y="40" width="54" height="90" rx="4" fill="var(--ok)" />
+      <rect class="ch" style="--i: 22" x="1267.2" y="40" width="54" height="90" rx="4" fill="var(--accent)" />
+      <rect class="ch" style="--i: 23" x="1324.8" y="40" width="54" height="90" rx="4" fill="var(--ok)" />
+      <rect class="ch" style="--i: 24" x="1382.4" y="40" width="54" height="90" rx="4" fill="var(--ok)" />
+      <rect class="ch" style="--i: 25" x="1440" y="40" width="54" height="90" rx="4" fill="var(--ok)" />
+      <rect class="ch" style="--i: 26" x="1497.6" y="40" width="54" height="90" rx="4" fill="var(--ok)" />
+      <rect class="ch" style="--i: 27" x="1555.2" y="40" width="54" height="90" rx="4" fill="var(--ok)" />
+      <rect class="ch" style="--i: 28" x="1612.8" y="40" width="54" height="90" rx="4" fill="var(--ok)" />
+      <rect class="ch" style="--i: 29" x="1670.4" y="40" width="54" height="90" rx="4" fill="var(--ok)" />
+    </g>
+    <line x1="0" y1="170" x2="1728" y2="170" stroke="var(--line)" stroke-width="2" />
+    <g font-family="Source Code Pro, monospace" font-size="20" fill="var(--faint)" text-anchor="middle">
+      <text x="0" y="204" text-anchor="start">0:00</text>
+      <text x="345.6" y="204">1:00</text>
+      <text x="691.2" y="204">2:00</text>
+      <text x="1036.8" y="204">3:00</text>
+      <text x="1382.4" y="204">4:00</text>
+      <text x="1728" y="204" text-anchor="end">5:00</text>
+    </g>
+  </svg>
+  <aside class="notes">
+    <ul>
+      <li>I build the system that <strong>watches students take tests so no human has to</strong></li>
+      <li><strong>18 months, 5 architectures, 4 failed</strong>; the cost of each one</li>
+    </ul>
+  </aside>
+</section>
+
+<section class="text">
+  <h2>No teacher in the room, and no one watching the test</h2>
+  <div class="cols">
+    <div class="col">
+      <h3>What we build</h3>
+      <ul>
+        <li>Trilogy's new products division: the software behind <span class="accent">Alpha School</span></li>
+        <li>A private US school: digital-first, AI-first, physical and online campuses</li>
+        <li>No teachers: adaptive learning apps, and guides in the room</li>
+        <li>Two hours of academics a day, each student on their own path</li>
+        <li>Progress checked with periodic standardized tests</li>
+      </ul>
+    </div>
+    <div class="col">
+      <h3>The problem</h3>
+      <ul>
+        <li>Students alone with devices <span class="accent">cheat</span>, idle, and work on the wrong thing</li>
+        <li>Official third-party tests kept bringing surprises</li>
+        <li>The answer: proctoring software</li>
+      </ul>
+      <h3 style="margin-top: 48px">We detect</h3>
+      <ul>
+        <li>Cheating</li>
+        <li>Wasted time</li>
+        <li>Self-harm behaviors, raised to a safety officer</li>
+      </ul>
+    </div>
+  </div>
+  <aside class="notes">
+    <ul>
+      <li>New products division: <strong>the software behind Alpha School</strong></li>
+      <li>Private US school, digital-first, <strong>no teachers</strong>; guides in the room, nobody at a whiteboard</li>
+      <li><strong>2 hours of academics a day</strong>, adaptive apps, each student on their own path; standardized tests through the year</li>
+      <li>Alone with a device, kids <strong>cheat, idle, work on the wrong thing</strong></li>
+      <li>Internal scores <strong>didn't match fully proctored third-party exams</strong>, in both directions: we were measuring conditions, not learning</li>
+      <li>So: <strong>proctoring software</strong>. Detects cheating, wasted time, self-harm</li>
+      <li>Self-harm: <strong>our job stops at detection</strong>; a human safety officer reviews every one</li>
+      <li>Today: <strong>three cheating detections</strong></li>
+    </ul>
+  </aside>
+</section>
+
+<section class="text">
+  <h2>One billion students. Zero humans.</h2>
+  <div class="body">
+    <ul>
+      <li>The founder's goal: improve education for <span style="color: var(--accent); font-weight: 600">1 billion students</span> in 20 years.</li>
+      <li>Humans bootstrap the detectors. Every human left in the loop is one we are working to remove.</li>
+      <li>Today, no human reviews a production detection before the student sees it.</li>
+    </ul>
+  </div>
+  <div class="stats">
+    <div class="stat">
+      <div class="n">1</div>
+      <div class="l">engineer built it</div>
+    </div>
+    <div class="stat">
+      <div class="n">2 mo</div>
+      <div class="l">to real student traffic</div>
+    </div>
+    <div class="stat">
+      <div class="n">140k</div>
+      <div class="l">hours of video a month</div>
+    </div>
+    <div class="stat">
+      <div class="n">3,400</div>
+      <div class="l">students, last 30 days</div>
+    </div>
+    <div class="stat">
+      <div class="n">335B</div>
+      <div class="l">tokens a month</div>
+    </div>
+  </div>
+  <p class="punch">Eighteen months of mistakes. Every one was a bias we put there ourselves.</p>
+  <aside class="notes">
+    <ul>
+      <li>Founder's target: <strong>1 billion students in 20 years</strong>. Shapes everything we build</li>
+      <li>Every product needs a path to that scale, so <strong>every human step is one we design out</strong></li>
+      <li>Direction, not a finished state, and about the software: <strong>schools keep their people</strong></li>
+      <li>Today <strong>no human reviews a finding before it reaches the student</strong></li>
+      <li>Annotators still review <strong>after the fact</strong>: that's how we keep measuring precision and recall</li>
+      <li>Wasn't like this at the start; <strong>this talk is how we earned it</strong></li>
+      <li>Scale: <strong>3,400 students</strong>, <strong>140k hours of video a month</strong>, <strong>335B tokens</strong></li>
+      <li><strong>Very few people</strong>: one engineer took the initial vision pipeline to production <strong>in two months</strong>, part-time</li>
+    </ul>
+  </aside>
+</section>
+
+<section class="text" data-ref="Footage: Markus, our product owner.">
+  <h2>Three ways students cheat</h2>
+  <div class="det-cards">
+    <div class="det-card">
+      <h3>Unauthorized device use</h3>
+      <img src="assets/footage/frames/a12-webcam-0412.png" alt="Markus holding a phone in front of the webcam" />
+      <div class="cap">A handheld device, visibly in use. Judged from the webcam alone.</div>
+    </div>
+    <div class="det-card">
+      <h3>Help from another person</h3>
+      <div class="quote">&ldquo;The answer is&nbsp;B.&rdquo;</div>
+      <div class="cap">Another person supplies the answer to the active question.</div>
+    </div>
+    <div class="det-card">
+      <h3>Unauthorized app use</h3>
+      <img src="assets/footage/frames/uau-chatgpt-0344.png" alt="The test question pasted into ChatGPT with the reply coming back" />
+      <div class="cap">An external tool used to obtain the answer to the question on screen.</div>
+    </div>
+  </div>
+  <aside class="notes">
+    <ul>
+      <li><strong>Markus</strong>, product owner, today's guinea pig</li>
+      <li><strong>Device use</strong>: smartphone in hand, <strong>judged from the webcam</strong>. Markus lifts his phone</li>
+      <li><strong>Help from another person</strong>: sibling, parent, colleague. No footage, Markus was alone. Remember <strong>"the answer is B"</strong>: the canonical case</li>
+      <li><strong>App use</strong>: alt-tab to ChatGPT. He <strong>screenshots the question, pastes it, asks "what is the answer"</strong></li>
+      <li>Before anyone asks: <strong>phone below the desk is invisible</strong>; some schools add a <strong>second, side camera</strong></li>
+      <li>Some signals are going <strong>deterministic</strong> (full-screen, window focus). This talk is <strong>the vision side</strong>, where none exists</li>
+    </ul>
+  </aside>
+</section>
+
+<section class="text" data-ref="Boundary rules from the production annotation instructions; the same rules humans are graded against.">
+  <h2>Every flagged behavior has an allowed twin</h2>
+  <div class="pairs">
+    <div class="pair-head">
+      <div class="h flagged">Flagged</div>
+      <div class="h allowed">Allowed</div>
+    </div>
+    <div class="cat">Device use</div>
+    <div class="pair">
+      <div class="flag">Phone in hand</div>
+      <div class="ok">Phone lying on the desk, untouched</div>
+    </div>
+    <div class="cat">Help from another person</div>
+    <div class="pair">
+      <div class="flag">&ldquo;The answer is B.&rdquo;</div>
+      <div class="ok">&ldquo;Your screen froze, let me fix it.&rdquo;</div>
+    </div>
+    <div class="cat">App use</div>
+    <div class="pair">
+      <div class="flag">Pastes the question into ChatGPT, submits the answer it gives</div>
+      <div class="ok">A calculator, on a math test that allows one</div>
+    </div>
+  </div>
+  <p class="punch">To the camera, each pair looks nearly identical.</p>
+  <aside class="notes">
+    <ul>
+      <li>The rules need <strong>judgment at the boundary</strong></li>
+      <li>Proposal: <strong>ban talking</strong>. Dies in a real classroom: tech help, bathroom, "how does this work"</li>
+      <li><strong>Calculators are allowed</strong> in some test sections, so no ban there either</li>
+      <li>Alpha: everyone on their own path, <strong>the room is mostly not taking a test</strong></li>
+      <li>Production bug: we <strong>flagged the kid behind the test-taker</strong> for being on their phone. Every such case had to become a rule</li>
+      <li><strong>Phone in hand</strong> = flag; on the desk, or in someone else's hand = nothing</li>
+      <li><strong>"The answer is B"</strong> = flag; <strong>"your screen froze"</strong> = fine</li>
+      <li><strong>ChatGPT for the answer</strong> = flag; <strong>permitted calculator</strong> = fine</li>
+      <li><strong>The gap between the pixels and the rule is where every failure in this talk lives</strong></li>
+    </ul>
+  </aside>
+</section>
+
+<section class="text">
+  <h2>Precision below 0.90 disqualifies a detector</h2>
+  <div class="stats" style="top: 200px">
+    <div class="stat">
+      <div class="n">0.90</div>
+      <div class="l">precision: of what we flag, the share that is real. 0.95 is the goal. The hard gate.</div>
+    </div>
+    <div class="stat">
+      <div class="n">0.90</div>
+      <div class="l">recall: of what happened, the share we catch. Second priority.</div>
+    </div>
+    <div class="stat">
+      <div class="n">&le;2 min</div>
+      <div class="l">latency, event to warning. Constant, never accumulating.</div>
+    </div>
+  </div>
+  <svg class="bar-viz" style="top: 450px" viewBox="0 0 1728 345" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--accent-soft)" />
+      </marker>
+    </defs>
+
+    <g>
+      <rect x="900" y="4" width="22" height="22" rx="4" fill="var(--accent)" />
+      <text class="caplab" x="932" y="22" fill="var(--muted)">present</text>
+      <rect x="1070" y="4" width="22" height="22" rx="4" fill="var(--ok)" />
+      <text class="caplab" x="1102" y="22" fill="var(--muted)">caught</text>
+      <rect x="1240" y="4" width="22" height="22" rx="4" fill="var(--bad)" />
+      <text class="caplab" x="1272" y="22" fill="var(--muted)">false alarm</text>
+      <rect x="1460" y="4" width="22" height="22" rx="4" fill="none" stroke="var(--faint)" stroke-width="2" stroke-dasharray="7 5" />
+      <text class="caplab" x="1492" y="22" fill="var(--muted)">missed</text>
+    </g>
+
+    <g stroke="var(--line)" stroke-width="1.5" opacity="0.55">
+      <line x1="0" y1="46" x2="0" y2="266" /><line x1="345.6" y1="46" x2="345.6" y2="266" /><line x1="691.2" y1="46" x2="691.2" y2="266" /><line x1="1036.8" y1="46" x2="1036.8" y2="266" /><line x1="1382.4" y1="46" x2="1382.4" y2="266" /><line x1="1727" y1="46" x2="1727" y2="266" />
+    </g>
+
+    <text class="rowlab" x="0" y="24">WHAT HAPPENED</text>
+    <g>
+      <rect x="115.2" y="36" width="172.8" height="50" rx="6" fill="var(--accent)" />
+      <text class="evlab" x="201.6" y="68" text-anchor="middle" fill="var(--bg)">phone</text>
+      <rect x="518.4" y="36" width="230.4" height="50" rx="6" fill="var(--accent)" />
+      <text class="evlab" x="633.6" y="68" text-anchor="middle" fill="var(--bg)">ChatGPT</text>
+      <rect x="1094.4" y="36" width="115.2" height="50" rx="6" fill="var(--accent)" />
+      <text class="evlab" x="1152" y="68" text-anchor="middle" fill="var(--bg)">help</text>
+      <rect x="1440" y="36" width="115.2" height="50" rx="6" fill="var(--accent)" />
+      <text class="evlab" x="1497.6" y="68" text-anchor="middle" fill="var(--bg)">phone</text>
+    </g>
+
+    <g fill="none" stroke="var(--accent-soft)" stroke-width="3">
+      <path d="M 135 92 C 150 140, 220 145, 252 178" marker-end="url(#arrow)" />
+      <path d="M 540 92 C 555 140, 625 145, 657 178" marker-end="url(#arrow)" />
+      <path d="M 1460 92 C 1475 140, 1545 145, 1577 178" marker-end="url(#arrow)" />
+    </g>
+
+    <line x1="0" y1="140" x2="1728" y2="140" stroke="var(--faint)" stroke-width="2" stroke-dasharray="2 10" stroke-linecap="round" opacity="0.7" />
+
+    <text class="rowlab" x="0" y="174">WHAT WE FLAGGED</text>
+    <g>
+      <rect x="230.4" y="186" width="54" height="50" rx="4" fill="var(--ok)" /><rect x="288" y="186" width="54" height="50" rx="4" fill="var(--ok)" /><rect x="345.6" y="186" width="54" height="50" rx="4" fill="var(--ok)" />
+      <rect x="633.6" y="186" width="54" height="50" rx="4" fill="var(--ok)" /><rect x="691.2" y="186" width="54" height="50" rx="4" fill="var(--ok)" /><rect x="748.8" y="186" width="54" height="50" rx="4" fill="var(--ok)" /><rect x="806.4" y="186" width="54" height="50" rx="4" fill="var(--ok)" />
+      <rect x="921.6" y="186" width="54" height="50" rx="4" fill="var(--bad)" /><rect x="979.2" y="186" width="54" height="50" rx="4" fill="var(--bad)" />
+      <rect x="1209.6" y="186" width="54" height="50" rx="4" fill="none" stroke="var(--faint)" stroke-width="2" stroke-dasharray="7 5" /><rect x="1267.2" y="186" width="54" height="50" rx="4" fill="none" stroke="var(--faint)" stroke-width="2" stroke-dasharray="7 5" />
+      <rect x="1555.2" y="186" width="54" height="50" rx="4" fill="var(--ok)" /><rect x="1612.8" y="186" width="54" height="50" rx="4" fill="var(--ok)" />
+    </g>
+
+    <line x1="0" y1="266" x2="1728" y2="266" stroke="var(--line)" stroke-width="2" />
+    <g font-family="Source Code Pro, monospace" font-size="20" fill="var(--faint)" text-anchor="middle">
+      <text x="0" y="300" text-anchor="start">0:00</text>
+      <text x="345.6" y="300">1:00</text>
+      <text x="691.2" y="300">2:00</text>
+      <text x="1036.8" y="300">3:00</text>
+      <text x="1382.4" y="300">4:00</text>
+      <text x="1728" y="300" text-anchor="end">5:00</text>
+    </g>
+  </svg>
+  <p class="punch">No single flag ever punishes a student on its own.</p>
+  <aside class="notes">
+    <ul>
+      <li>Honesty: <strong>we set these mid-build</strong>, not up front</li>
+      <li>Order: <strong>precision, then recall, then latency</strong></li>
+      <li><strong>Precision</strong>: of what we flagged, how much was true. <strong>Recall</strong>: of what happened, how much we caught</li>
+      <li><strong>A cheater who escapes beats a student wrongly accused</strong></li>
+      <li>Latency: near real time is enough, <strong>≤2 minutes</strong></li>
+      <li>Picture: green on real events; <strong>red with nothing above = false alarm</strong> (precision); <strong>dashed = miss</strong> (recall). Both 0.75 here, <strong>both fail</strong></li>
+      <li>Precision <strong>never hits 1.00</strong>, not with human proctors either</li>
+      <li>So <strong>no single flag punishes</strong>: warnings, strikes, a human reviews any test invalidation</li>
+      <li><strong>0.90 is the entry ticket</strong>, before a detector counts at all</li>
+    </ul>
+  </aside>
+</section>
+
+<section class="text">
+  <h2>We build gold ten seconds at a time</h2>
+  <div class="body">
+    <ul>
+      <li>Every week brought a new model and a new idea. Every demo looked good.</li>
+      <li>Picking needs a harness: run every idea against the same sessions, scored the same way.</li>
+      <li>Pre-trained or not: a quality claim needs a figure behind it.</li>
+    </ul>
+  </div>
+  <svg class="bar-viz" style="top: 440px" viewBox="0 0 1728 345" xmlns="http://www.w3.org/2000/svg">
+    <g>
+      <rect x="1140" y="4" width="22" height="22" rx="4" fill="var(--accent)" />
+      <text class="caplab" x="1172" y="22" fill="var(--muted)">present</text>
+      <rect x="1300" y="4" width="22" height="22" rx="4" fill="var(--ok)" />
+      <text class="caplab" x="1332" y="22" fill="var(--muted)">clean</text>
+      <rect x="1450" y="4" width="22" height="22" rx="4" fill="var(--alarm)" />
+      <text class="caplab" x="1482" y="22" fill="var(--muted)">undecided</text>
+    </g>
+    <text class="rowlab" x="0" y="24">FIVE REAL MINUTES OF GOLD: WORK ALONE, ONE SESSION</text>
+
+    <g stroke="var(--line)" stroke-width="1.5" opacity="0.55">
+      <line x1="345.6" y1="56" x2="345.6" y2="200" /><line x1="691.2" y1="56" x2="691.2" y2="200" /><line x1="1036.8" y1="56" x2="1036.8" y2="200" /><line x1="1382.4" y1="56" x2="1382.4" y2="200" />
+    </g>
+
+    <g>
+      <rect x="0" y="70" width="54" height="90" rx="4" fill="var(--accent)" /><rect x="57.6" y="70" width="54" height="90" rx="4" fill="var(--accent)" /><rect x="115.2" y="70" width="54" height="90" rx="4" fill="var(--accent)" /><rect x="172.8" y="70" width="54" height="90" rx="4" fill="var(--accent)" /><rect x="230.4" y="70" width="54" height="90" rx="4" fill="var(--ok)" /><rect x="288" y="70" width="54" height="90" rx="4" fill="var(--accent)" /><rect x="345.6" y="70" width="54" height="90" rx="4" fill="var(--ok)" /><rect x="403.2" y="70" width="54" height="90" rx="4" fill="var(--ok)" /><rect x="460.8" y="70" width="54" height="90" rx="4" fill="var(--ok)" /><rect x="518.4" y="70" width="54" height="90" rx="4" fill="var(--accent)" /><rect x="576" y="70" width="54" height="90" rx="4" fill="var(--accent)" /><rect x="633.6" y="70" width="54" height="90" rx="4" fill="var(--accent)" /><rect x="691.2" y="70" width="54" height="90" rx="4" fill="var(--accent)" /><rect x="748.8" y="70" width="54" height="90" rx="4" fill="var(--accent)" /><rect x="806.4" y="70" width="54" height="90" rx="4" fill="var(--accent)" /><rect x="864" y="70" width="54" height="90" rx="4" fill="var(--alarm)" /><rect x="921.6" y="70" width="54" height="90" rx="4" fill="var(--ok)" /><rect x="979.2" y="70" width="54" height="90" rx="4" fill="var(--accent)" /><rect x="1036.8" y="70" width="54" height="90" rx="4" fill="var(--accent)" /><rect x="1094.4" y="70" width="54" height="90" rx="4" fill="var(--accent)" /><rect x="1152" y="70" width="54" height="90" rx="4" fill="var(--accent)" /><rect x="1209.6" y="70" width="54" height="90" rx="4" fill="var(--ok)" /><rect x="1267.2" y="70" width="54" height="90" rx="4" fill="var(--ok)" /><rect x="1324.8" y="70" width="54" height="90" rx="4" fill="var(--ok)" /><rect x="1382.4" y="70" width="54" height="90" rx="4" fill="var(--ok)" /><rect x="1440" y="70" width="54" height="90" rx="4" fill="var(--ok)" /><rect x="1497.6" y="70" width="54" height="90" rx="4" fill="var(--ok)" /><rect x="1555.2" y="70" width="54" height="90" rx="4" fill="var(--ok)" /><rect x="1612.8" y="70" width="54" height="90" rx="4" fill="var(--ok)" /><rect x="1670.4" y="70" width="54" height="90" rx="4" fill="var(--alarm)" />
+    </g>
+
+    <line x1="0" y1="200" x2="1728" y2="200" stroke="var(--line)" stroke-width="2" />
+    <g font-family="Source Code Pro, monospace" font-size="20" fill="var(--faint)" text-anchor="middle">
+      <text x="0" y="232" text-anchor="start">4:00</text>
+      <text x="345.6" y="232">5:00</text>
+      <text x="691.2" y="232">6:00</text>
+      <text x="1036.8" y="232">7:00</text>
+      <text x="1382.4" y="232">8:00</text>
+      <text x="1728" y="232" text-anchor="end">9:00</text>
+    </g>
+
+    <text class="caplab" x="0" y="278">every block carries polarity, difficulty and a written reason. One of the orange blocks:</text>
+    <text x="0" y="322" font-size="26" font-style="italic" fill="var(--ink)">&ldquo;The student observes something off-camera and speaks, maybe to herself. Surely about the test question though.&rdquo;</text>
+  </svg>
+
+  <p class="punch">We annotate in 10-second blocks to keep it simple. In around 13% of them, humans could not decide on the first pass.</p>
+  <aside class="notes">
+    <ul>
+      <li>Harness built <strong>in month five</strong>. Should have been <strong>week one</strong>: the mistake I'd most want you to avoid</li>
+      <li>You need to answer <strong>"is this iteration better?"</strong> That needs a <strong>gold dataset</strong> you trust completely</li>
+      <li><strong>10-second blocks</strong>, per detection type: <strong>present, clean, or undecided</strong></li>
+      <li>Undecided is <strong>scored separately</strong>: a coin flip on a block six people couldn't agree on says nothing about the model</li>
+      <li><strong>13% undecided on the first pass</strong>; dropped as rules sharpened, <strong>never zero</strong></li>
+      <li><strong>Three full-time annotators</strong> keep it alive: new sessions, production findings</li>
+      <li>Which raises: <strong>how much do humans agree with each other?</strong></li>
+    </ul>
+  </aside>
+</section>
+
+<section class="text">
+  <h2>Six annotators, one session, three verdicts on the same ten seconds</h2>
+  <svg class="bar-viz" viewBox="0 0 1728 345" xmlns="http://www.w3.org/2000/svg">
+    <g>
+      <rect x="1140" y="4" width="22" height="22" rx="4" fill="var(--accent)" />
+      <text class="caplab" x="1172" y="22" fill="var(--muted)">present</text>
+      <rect x="1300" y="4" width="22" height="22" rx="4" fill="var(--ok)" />
+      <text class="caplab" x="1332" y="22" fill="var(--muted)">clean</text>
+      <rect x="1450" y="4" width="22" height="22" rx="4" fill="var(--alarm)" />
+      <text class="caplab" x="1482" y="22" fill="var(--muted)">undecided</text>
+    </g>
+
+    <g stroke="var(--line)" stroke-width="1.5" opacity="0.55">
+      <line x1="0" y1="46" x2="0" y2="266" /><line x1="345.6" y1="46" x2="345.6" y2="266" /><line x1="691.2" y1="46" x2="691.2" y2="266" /><line x1="1036.8" y1="46" x2="1036.8" y2="266" /><line x1="1382.4" y1="46" x2="1382.4" y2="266" /><line x1="1727" y1="46" x2="1727" y2="266" />
+    </g>
+
+    <text class="rowlab" x="0" y="24">SERBAN &middot; NINE SEPARATE EVENTS</text>
+    <g>
+      <rect x="0" y="36" width="54" height="44" rx="4" fill="var(--ok)" /><rect x="57.6" y="36" width="54" height="44" rx="4" fill="var(--ok)" /><rect x="115.2" y="36" width="54" height="44" rx="4" fill="var(--accent)" /><rect x="172.8" y="36" width="54" height="44" rx="4" fill="var(--accent)" /><rect x="230.4" y="36" width="54" height="44" rx="4" fill="var(--accent)" /><rect x="288" y="36" width="54" height="44" rx="4" fill="var(--ok)" /><rect x="345.6" y="36" width="54" height="44" rx="4" fill="var(--ok)" /><rect x="403.2" y="36" width="54" height="44" rx="4" fill="var(--accent)" /><rect x="460.8" y="36" width="54" height="44" rx="4" fill="var(--ok)" /><rect x="518.4" y="36" width="54" height="44" rx="4" fill="var(--ok)" /><rect x="576" y="36" width="54" height="44" rx="4" fill="var(--ok)" /><rect x="633.6" y="36" width="54" height="44" rx="4" fill="var(--accent)" /><rect x="691.2" y="36" width="54" height="44" rx="4" fill="var(--accent)" /><rect x="748.8" y="36" width="54" height="44" rx="4" fill="var(--accent)" /><rect x="806.4" y="36" width="54" height="44" rx="4" fill="var(--accent)" /><rect x="864" y="36" width="54" height="44" rx="4" fill="var(--ok)" /><rect x="921.6" y="36" width="54" height="44" rx="4" fill="var(--ok)" /><rect x="979.2" y="36" width="54" height="44" rx="4" fill="var(--ok)" /><rect x="1036.8" y="36" width="54" height="44" rx="4" fill="var(--accent)" /><rect x="1094.4" y="36" width="54" height="44" rx="4" fill="var(--accent)" /><rect x="1152" y="36" width="54" height="44" rx="4" fill="var(--ok)" /><rect x="1209.6" y="36" width="54" height="44" rx="4" fill="var(--ok)" /><rect x="1267.2" y="36" width="54" height="44" rx="4" fill="var(--ok)" /><rect x="1324.8" y="36" width="54" height="44" rx="4" fill="var(--ok)" /><rect x="1382.4" y="36" width="54" height="44" rx="4" fill="var(--accent)" /><rect x="1440" y="36" width="54" height="44" rx="4" fill="var(--accent)" /><rect x="1497.6" y="36" width="54" height="44" rx="4" fill="var(--accent)" /><rect x="1555.2" y="36" width="54" height="44" rx="4" fill="var(--accent)" /><rect x="1612.8" y="36" width="54" height="44" rx="4" fill="var(--ok)" /><rect x="1670.4" y="36" width="54" height="44" rx="4" fill="var(--ok)" />
+    </g>
+
+    <text class="rowlab" x="0" y="112">KSHAMA &middot; ONE STRETCH, START TO END</text>
+    <g fill="var(--accent)">
+      <rect x="0" y="124" width="54" height="44" rx="4" /><rect x="57.6" y="124" width="54" height="44" rx="4" /><rect x="115.2" y="124" width="54" height="44" rx="4" /><rect x="172.8" y="124" width="54" height="44" rx="4" /><rect x="230.4" y="124" width="54" height="44" rx="4" /><rect x="288" y="124" width="54" height="44" rx="4" /><rect x="345.6" y="124" width="54" height="44" rx="4" /><rect x="403.2" y="124" width="54" height="44" rx="4" /><rect x="460.8" y="124" width="54" height="44" rx="4" /><rect x="518.4" y="124" width="54" height="44" rx="4" /><rect x="576" y="124" width="54" height="44" rx="4" /><rect x="633.6" y="124" width="54" height="44" rx="4" /><rect x="691.2" y="124" width="54" height="44" rx="4" /><rect x="748.8" y="124" width="54" height="44" rx="4" /><rect x="806.4" y="124" width="54" height="44" rx="4" /><rect x="864" y="124" width="54" height="44" rx="4" /><rect x="921.6" y="124" width="54" height="44" rx="4" /><rect x="979.2" y="124" width="54" height="44" rx="4" /><rect x="1036.8" y="124" width="54" height="44" rx="4" /><rect x="1094.4" y="124" width="54" height="44" rx="4" /><rect x="1152" y="124" width="54" height="44" rx="4" /><rect x="1209.6" y="124" width="54" height="44" rx="4" /><rect x="1267.2" y="124" width="54" height="44" rx="4" /><rect x="1324.8" y="124" width="54" height="44" rx="4" /><rect x="1382.4" y="124" width="54" height="44" rx="4" /><rect x="1440" y="124" width="54" height="44" rx="4" /><rect x="1497.6" y="124" width="54" height="44" rx="4" /><rect x="1555.2" y="124" width="54" height="44" rx="4" /><rect x="1612.8" y="124" width="54" height="44" rx="4" /><rect x="1670.4" y="124" width="54" height="44" rx="4" />
+    </g>
+
+    <text class="rowlab" x="0" y="200">DULE &middot; BLOCK BY BLOCK, MIXED VERDICTS</text>
+    <g>
+      <rect x="0" y="212" width="54" height="44" rx="4" fill="var(--alarm)" /><rect x="57.6" y="212" width="54" height="44" rx="4" fill="var(--ok)" /><rect x="115.2" y="212" width="54" height="44" rx="4" fill="var(--accent)" /><rect x="172.8" y="212" width="54" height="44" rx="4" fill="var(--accent)" /><rect x="230.4" y="212" width="54" height="44" rx="4" fill="var(--accent)" /><rect x="288" y="212" width="54" height="44" rx="4" fill="var(--ok)" /><rect x="345.6" y="212" width="54" height="44" rx="4" fill="var(--ok)" /><rect x="403.2" y="212" width="54" height="44" rx="4" fill="var(--accent)" /><rect x="460.8" y="212" width="54" height="44" rx="4" fill="var(--accent)" /><rect x="518.4" y="212" width="54" height="44" rx="4" fill="var(--ok)" /><rect x="576" y="212" width="54" height="44" rx="4" fill="var(--ok)" /><rect x="633.6" y="212" width="54" height="44" rx="4" fill="var(--accent)" /><rect x="691.2" y="212" width="54" height="44" rx="4" fill="var(--accent)" /><rect x="748.8" y="212" width="54" height="44" rx="4" fill="var(--accent)" /><rect x="806.4" y="212" width="54" height="44" rx="4" fill="var(--ok)" /><rect x="864" y="212" width="54" height="44" rx="4" fill="var(--ok)" /><rect x="921.6" y="212" width="54" height="44" rx="4" fill="var(--ok)" /><rect x="979.2" y="212" width="54" height="44" rx="4" fill="var(--ok)" /><rect x="1036.8" y="212" width="54" height="44" rx="4" fill="var(--accent)" /><rect x="1094.4" y="212" width="54" height="44" rx="4" fill="var(--accent)" /><rect x="1152" y="212" width="54" height="44" rx="4" fill="var(--accent)" /><rect x="1209.6" y="212" width="54" height="44" rx="4" fill="var(--ok)" /><rect x="1267.2" y="212" width="54" height="44" rx="4" fill="var(--ok)" /><rect x="1324.8" y="212" width="54" height="44" rx="4" fill="var(--ok)" /><rect x="1382.4" y="212" width="54" height="44" rx="4" fill="var(--accent)" /><rect x="1440" y="212" width="54" height="44" rx="4" fill="var(--accent)" /><rect x="1497.6" y="212" width="54" height="44" rx="4" fill="var(--accent)" /><rect x="1555.2" y="212" width="54" height="44" rx="4" fill="var(--ok)" /><rect x="1612.8" y="212" width="54" height="44" rx="4" fill="var(--ok)" /><rect x="1670.4" y="212" width="54" height="44" rx="4" fill="var(--ok)" />
+    </g>
+
+    <line x1="0" y1="266" x2="1728" y2="266" stroke="var(--line)" stroke-width="2" />
+    <g font-family="Source Code Pro, monospace" font-size="20" fill="var(--faint)" text-anchor="middle">
+      <text x="0" y="300" text-anchor="start">0:00</text>
+      <text x="345.6" y="300">1:00</text>
+      <text x="691.2" y="300">2:00</text>
+      <text x="1036.8" y="300">3:00</text>
+      <text x="1382.4" y="300">4:00</text>
+      <text x="1728" y="300" text-anchor="end">5:00</text>
+    </g>
+    <text class="caplab" x="0" y="332">help from another person &middot; one test, condensed &middot; three trained annotators</text>
+  </svg>
+
+  <div class="quotes">
+    <p class="lead">The same ten seconds. Opposite verdicts, all with confident reasons:</p>
+    <div class="quote-row">
+      <div class="who">Serban <span class="v flag">flagged</span></div>
+      <div class="q">&ldquo;Done fully by the peer. No input from the student.&rdquo;</div>
+    </div>
+    <div class="quote-row">
+      <div class="who">Kshama <span class="v flag">flagged</span></div>
+      <div class="q">&ldquo;An older sibling sits next to the student for the entire test.&rdquo;</div>
+    </div>
+    <div class="quote-row">
+      <div class="who">Dule <span class="v clean">clean</span></div>
+      <div class="q">&ldquo;Three children are present, but nothing contributes to an answer.&rdquo;</div>
+    </div>
+  </div>
+  <p class="punch">Disagreement was the point: every divergence told us which rule to write.</p>
+  <aside class="notes">
+    <ul>
+      <li>Gold forced us to <strong>think hard about the rules for the first time</strong></li>
+      <li>Exercise: <strong>six of us, same session, independently</strong></li>
+      <li>Session: younger student, <strong>older sibling beside him the whole test</strong></li>
+      <li><strong>Kshama</strong>: one stretch, start to end. Sibling present and participating = <strong>one violation</strong></li>
+      <li><strong>Me</strong>: <strong>nine events</strong>, one per answer given</li>
+      <li><strong>Dule</strong>: block by block, <strong>evidence inside each block</strong></li>
+      <li>Same ten seconds: <strong>two flagged, one clean</strong>, all confident</li>
+      <li>Metrics: the same footage is <strong>one true positive, or nine, or a string of blocks</strong>. First <strong>decide what a single detection is</strong></li>
+      <li><strong>Disagreement was the point</strong>: it forced explicit rules. <strong>First real defense against bias</strong></li>
+      <li><strong>Our assumptions went into the pipeline</strong>, including what counts as true</li>
+    </ul>
+  </aside>
+</section>
+
+<section class="text" data-ref="Checked September 2026: Live sessions now run unlimited, the model may decline to answer, and input is still one JPEG per second. Replaying a live stream against gold is still impractical.">
+  <h2>Attempt 1: a model that only speaks when spoken to</h2>
+  <svg class="live-viz" viewBox="0 0 1728 430" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="40" width="340" height="340" rx="12" fill="var(--surface)" stroke="var(--line)" />
+    <text class="rowlab" x="24" y="76">STUDENT DEVICE</text>
+    <rect x="24" y="100" width="292" height="150" rx="8" fill="var(--bg)" stroke="var(--line)" />
+    <circle cx="170" cy="160" r="30" fill="var(--muted)" opacity="0.5" />
+    <path d="M 112 250 Q 170 190 228 250 Z" fill="var(--muted)" opacity="0.5" />
+    <path d="M 42 300 q 8 -18 16 0 q 8 22 16 0 q 8 -14 16 0 q 8 26 16 0 q 8 -12 16 0 q 8 20 16 0 q 8 -16 16 0 q 8 24 16 0 q 8 -10 16 0 q 8 18 16 0 q 8 -22 16 0 q 8 14 16 0 q 8 -26 16 0 q 8 12 16 0 q 8 -18 16 0 q 8 20 16 0" fill="none" stroke="var(--muted)" stroke-width="2.5" opacity="0.7" />
+    <text class="caplab" x="24" y="345">webcam + mic</text>
+
+    <rect x="1388" y="40" width="340" height="340" rx="12" fill="var(--surface)" stroke="var(--line)" />
+    <text class="rowlab" x="1412" y="76">GEMINI LIVE</text>
+    <text class="caplab" x="1412" y="110">a stateful websocket call</text>
+    <defs>
+      <linearGradient id="gemGrad" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="var(--accent-soft)" />
+        <stop offset="1" stop-color="var(--accent)" />
+      </linearGradient>
+    </defs>
+    <g transform="translate(1500, 165) scale(1.16)">
+      <path d="M50 0 C54 28 72 46 100 50 C72 54 54 72 50 100 C46 72 28 54 0 50 C28 46 46 28 50 0 Z" fill="url(#gemGrad)" />
+    </g>
+    <text class="caplab" x="1412" y="345">answers only when spoken to</text>
+
+    <text class="caplab" x="380" y="76">1 JPEG per second</text>
+    <g>
+      <rect class="frame" x="380" y="88" width="40" height="28" rx="4" fill="var(--accent)" opacity="0.9" style="animation-delay: 0s" />
+      <rect class="frame" x="380" y="88" width="40" height="28" rx="4" fill="var(--accent)" opacity="0.9" style="animation-delay: -1s" />
+      <rect class="frame" x="380" y="88" width="40" height="28" rx="4" fill="var(--accent)" opacity="0.9" style="animation-delay: -2s" />
+      <rect class="frame" x="380" y="88" width="40" height="28" rx="4" fill="var(--accent)" opacity="0.9" style="animation-delay: -3s" />
+      <rect class="frame" x="380" y="88" width="40" height="28" rx="4" fill="var(--accent)" opacity="0.9" style="animation-delay: -4s" />
+    </g>
+
+    <text class="caplab" x="380" y="168">PCM audio, continuous</text>
+    <g>
+      <circle class="adot" cx="386" cy="190" r="6" fill="var(--muted)" style="animation-delay: 0s" />
+      <circle class="adot" cx="386" cy="190" r="6" fill="var(--muted)" style="animation-delay: -0.5s" />
+      <circle class="adot" cx="386" cy="190" r="6" fill="var(--muted)" style="animation-delay: -1s" />
+      <circle class="adot" cx="386" cy="190" r="6" fill="var(--muted)" style="animation-delay: -1.5s" />
+      <circle class="adot" cx="386" cy="190" r="6" fill="var(--muted)" style="animation-delay: -2s" />
+    </g>
+
+    <text class="caplab" x="380" y="248">every 30 seconds, our app asks; every time, it answers</text>
+    <g class="nudge">
+      <rect x="380" y="262" width="520" height="48" rx="24" fill="rgba(242, 153, 74, 0.10)" stroke="var(--alarm)" stroke-width="2.5" />
+      <text x="640" y="294" font-size="24" font-family="Source Code Pro, monospace" fill="var(--alarm)" text-anchor="middle">[SYSTEM] What do you see?</text>
+    </g>
+    <g class="reply">
+      <rect x="868" y="262" width="520" height="48" rx="24" fill="var(--accent-dim)" stroke="var(--accent)" stroke-width="2.5" />
+      <text x="1128" y="294" font-size="25" fill="var(--accent-soft)" text-anchor="middle">&ldquo;The student is reading the question.&rdquo;</text>
+    </g>
+    <g class="reply" style="animation-delay: -10s">
+      <rect x="868" y="262" width="520" height="48" rx="24" fill="var(--accent-dim)" stroke="var(--accent)" stroke-width="2.5" />
+      <text x="1128" y="294" font-size="25" fill="var(--accent-soft)" text-anchor="middle">&ldquo;The student looked away. Flagging it.&rdquo;</text>
+    </g>
+    <text class="caplab" x="380" y="360">a question every 30 seconds is a demand for an answer every 30 seconds</text>
+  </svg>
+
+  <div class="stats" style="top: 680px">
+    <div class="stat">
+      <div class="n">n/a</div>
+      <div class="l">precision: never measured.</div>
+    </div>
+    <div class="stat">
+      <div class="n">n/a</div>
+      <div class="l">recall: never measured.</div>
+    </div>
+    <div class="stat">
+      <div class="n">30 s</div>
+      <div class="l">latency: the nudge cadence, by construction.</div>
+    </div>
+  </div>
+
+  <p class="punch">Ask a model every 30 seconds whether anything happened, and it will tell you something did.</p>
+
+  <aside class="notes">
+    <ul>
+      <li>Core decision up front: <strong>one big intelligence in the middle</strong>, all context, skills, tools. Works in other products of ours. <strong>Here it failed</strong>; the rest of the talk is how</li>
+      <li>Attempt 1: <strong>Gemini Live</strong>, the tech behind talking to Gemini in the app. Stream video + audio, have a conversation</li>
+      <li>Structural mismatch: <strong>built for calls, it only answers when spoken to</strong></li>
+      <li>Our shape is the opposite: <strong>two hours of nothing, then ten seconds that matter</strong></li>
+      <li>Only way to get output: <strong>nudge it</strong>. And every nudge got an answer, <strong>whether or not anything happened</strong></li>
+      <li>Never left engineering</li>
+      <li>Latency = <strong>the nudge cadence</strong>: ask every 30s, learn 30s late</li>
+      <li>Also didn't fit: we archive recordings for review, so <strong>everything streamed twice</strong></li>
+    </ul>
+  </aside>
+</section>
+
+<section class="text" data-ref="In production February to June 2025.">
+  <h2>Attempt 2: stills gave 0.20 recall and a spiralling backlog</h2>
+  <svg class="live-viz fviz" viewBox="0 0 1728 430" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="40" width="340" height="340" rx="12" fill="var(--surface)" stroke="var(--line)" />
+    <text class="rowlab" x="24" y="76">STUDENT DEVICE</text>
+    <rect x="24" y="100" width="292" height="150" rx="8" fill="var(--bg)" stroke="var(--line)" />
+    <circle cx="170" cy="160" r="30" fill="var(--muted)" opacity="0.5" />
+    <path d="M 112 250 Q 170 190 228 250 Z" fill="var(--muted)" opacity="0.5" />
+    <text class="caplab" x="24" y="318">screen + webcam,</text>
+    <text class="caplab" x="24" y="345">one composite JPEG</text>
+
+    <text class="caplab" x="380" y="76">1 frame per second</text>
+    <g>
+      <rect class="frame10" x="380" y="88" width="40" height="28" rx="4" fill="var(--accent)" opacity="0.9" style="animation-delay: 0s" />
+      <rect class="frame10" x="380" y="88" width="40" height="28" rx="4" fill="var(--accent)" opacity="0.9" style="animation-delay: -1s" />
+      <rect class="frame10" x="380" y="88" width="40" height="28" rx="4" fill="var(--accent)" opacity="0.9" style="animation-delay: -2s" />
+    </g>
+
+    <rect x="700" y="52" width="360" height="96" rx="10" fill="var(--bg)" stroke="var(--line)" />
+    <text class="rowlab" x="724" y="86">BATCH</text>
+    <text class="caplab" x="724" y="114">5 new frames + 2 for context</text>
+    <text class="caplab" x="724" y="140">identical frames skipped</text>
+    <text class="caplab" x="1084" y="86">strictly in order:</text>
+    <text class="caplab" x="1084" y="114">the next batch waits for this one</text>
+
+    <rect x="700" y="190" width="360" height="94" rx="10" fill="var(--surface)" stroke="var(--line)" />
+    <text class="rowlab" x="724" y="226">CLAUDE 3.5 SONNET</text>
+    <text class="caplab" x="724" y="258">reads the batch, decides the rules</text>
+    <g stroke="#D97757" stroke-width="7" stroke-linecap="round" transform="translate(1022, 222)">
+      <line x1="-16" y1="0" x2="16" y2="0" />
+      <line x1="0" y1="-16" x2="0" y2="16" />
+      <line x1="-11.5" y1="-11.5" x2="11.5" y2="11.5" />
+      <line x1="-11.5" y1="11.5" x2="11.5" y2="-11.5" />
+    </g>
+
+    <path d="M 880 148 V 190" fill="none" stroke="var(--line)" stroke-width="2.5" />
+    <path d="M 1060 237 H 1378" fill="none" stroke="var(--accent)" stroke-width="2.5" />
+    <circle class="vdot" cx="1066" cy="237" r="6" fill="var(--accent)" />
+
+    <rect x="1388" y="40" width="340" height="340" rx="12" fill="var(--surface)" stroke="var(--line)" />
+    <text class="rowlab" x="1412" y="76">VERDICTS</text>
+    <text class="caplab" x="1412" y="110">minutes behind, falling further</text>
+    <text class="caplab" x="1412" y="196">unprocessed footage:</text>
+    <rect x="1412" y="212" width="292" height="26" rx="6" fill="var(--bg)" stroke="var(--line)" />
+    <rect class="backlog" x="1414" y="214" width="288" height="22" rx="5" fill="var(--alarm)" opacity="0.85" />
+    <text class="caplab" x="1412" y="278">1 minute of footage took</text>
+    <text class="caplab" x="1412" y="306">5 minutes to process</text>
+    <text class="caplab" x="1412" y="345">the backlog only grows</text>
+
+  </svg>
+
+  <div class="stats" style="top: 680px">
+    <div class="stat">
+      <div class="n">0.70</div>
+      <div class="l">precision: far below the 0.90 gate.</div>
+    </div>
+    <div class="stat">
+      <div class="n">0.20</div>
+      <div class="l">recall: stills are blind to motion and deaf to audio.</div>
+    </div>
+    <div class="stat">
+      <div class="n">5x</div>
+      <div class="l">latency: a backlog that compounds all session.</div>
+    </div>
+  </div>
+
+  <p class="punch">Blind to motion, deaf to audio, and $1,000 per student per month.</p>
+
+  <aside class="notes">
+    <ul>
+      <li>Our diagnosis of attempt 1: <strong>the model is the problem</strong></li>
+      <li>Best model then: <strong>Claude Sonnet</strong></li>
+      <li>Backend batched screenshots: <strong>1 composite JPEG/second, 5 per batch, 2 for context</strong>, plus a summary</li>
+      <li>Why the summary: <strong>a screenshot alone means nothing</strong>. Calculator allowed in one section, banned in the next, etc</li>
+      <li>So each call carried the previous verdicts: <strong>sequential by construction</strong></li>
+      <li><strong>Precision 0.70</strong>: below the bar, but no longer noise</li>
+      <li><strong>Recall 0.20</strong>: <strong>deaf</strong>. Someone dictates answers, stills show nothing. A phone lifted between samples <strong>never existed</strong></li>
+      <li><strong>Latency killed it</strong>: 1 minute took 5 to process, <strong>compounding</strong>. After 30 min of test, <strong>2 hours behind</strong></li>
+      <li>Also <strong>absurdly expensive</strong></li>
+    </ul>
+  </aside>
+</section>
+
+
+<section class="text" data-ref="In production July 2025 to August 2026: 72,000 hours of footage, on a few hundred students for most of that span.">
+  <h2>Attempt 3: audio doubled recall and hid the precision gap</h2>
+  <svg class="live-viz fviz" viewBox="0 0 1728 430" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="40" width="340" height="340" rx="12" fill="var(--surface)" stroke="var(--line)" />
+    <text class="rowlab" x="24" y="76">STUDENT DEVICE</text>
+    <rect x="24" y="100" width="292" height="150" rx="8" fill="var(--bg)" stroke="var(--line)" />
+    <circle cx="170" cy="160" r="30" fill="var(--muted)" opacity="0.5" />
+    <path d="M 112 250 Q 170 190 228 250 Z" fill="var(--muted)" opacity="0.5" />
+    <text class="caplab" x="24" y="318">webcam + screen + mic,</text>
+    <text class="caplab" x="24" y="345">streamed live</text>
+
+    <rect x="380" y="120" width="220" height="94" rx="10" fill="var(--surface)" stroke="var(--line)" />
+    <text class="rowlab" x="404" y="156">LIVEKIT</text>
+    <text class="caplab" x="404" y="186">10-second chunks</text>
+    <path d="M 340 167 H 380" fill="none" stroke="var(--line)" stroke-width="2.5" />
+
+    <text class="caplab" x="380" y="102">motion and speech, out of the box</text>
+    <g>
+      <g class="frame10" style="animation-delay: 0s">
+        <rect x="630" y="140" width="70" height="48" rx="5" fill="var(--accent)" opacity="0.9" />
+        <path d="M 638 176 q 4 -10 8 0 q 4 8 8 0 q 4 -12 8 0 q 4 6 8 0 q 4 -8 8 0 q 4 10 8 0" fill="none" stroke="var(--bg)" stroke-width="2" />
+      </g>
+      <g class="frame10" style="animation-delay: -1s">
+        <rect x="630" y="140" width="70" height="48" rx="5" fill="var(--accent)" opacity="0.9" />
+        <path d="M 638 176 q 4 -10 8 0 q 4 8 8 0 q 4 -12 8 0 q 4 6 8 0 q 4 -8 8 0 q 4 10 8 0" fill="none" stroke="var(--bg)" stroke-width="2" />
+      </g>
+      <g class="frame10" style="animation-delay: -2s">
+        <rect x="630" y="140" width="70" height="48" rx="5" fill="var(--accent)" opacity="0.9" />
+        <path d="M 638 176 q 4 -10 8 0 q 4 8 8 0 q 4 -12 8 0 q 4 6 8 0 q 4 -8 8 0 q 4 10 8 0" fill="none" stroke="var(--bg)" stroke-width="2" />
+      </g>
+    </g>
+    <text class="caplab" x="380" y="248">each chunk sent exactly as LiveKit handed it over</text>
+
+    <rect x="960" y="60" width="320" height="320" rx="12" fill="var(--surface)" stroke="var(--line)" />
+    <text class="rowlab" x="984" y="96">GEMINI 2.5 FLASH</text>
+    <text class="caplab" x="984" y="126">one call per chunk</text>
+    <defs>
+      <linearGradient id="gemGrad12" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="var(--accent-soft)" />
+        <stop offset="1" stop-color="var(--accent)" />
+      </linearGradient>
+    </defs>
+    <g transform="translate(1216, 100) scale(0.3)">
+      <path d="M50 0 C54 28 72 46 100 50 C72 54 54 72 50 100 C46 72 28 54 0 50 C28 46 46 28 50 0 Z" fill="url(#gemGrad12)" />
+    </g>
+    <rect x="984" y="146" width="272" height="164" rx="8" fill="var(--bg)" stroke="var(--line)" />
+    <g stroke="var(--muted)" stroke-width="3" opacity="0.5">
+      <line x1="1000" y1="166" x2="1240" y2="166" /><line x1="1000" y1="182" x2="1200" y2="182" /><line x1="1000" y1="198" x2="1236" y2="198" /><line x1="1000" y1="214" x2="1180" y2="214" /><line x1="1000" y1="230" x2="1230" y2="230" /><line x1="1000" y1="246" x2="1210" y2="246" /><line x1="1000" y1="262" x2="1238" y2="262" /><line x1="1000" y1="278" x2="1190" y2="278" /><line x1="1000" y1="294" x2="1225" y2="294" />
+    </g>
+    <text class="caplab" x="984" y="340">one huge prompt: every rule,</text>
+    <text class="caplab" x="984" y="366">vision + reasoning in one</text>
+
+    <text class="caplab" x="380" y="388">still sequential</text>
+
+    <rect x="1388" y="40" width="340" height="340" rx="12" fill="var(--surface)" stroke="var(--line)" />
+    <text class="rowlab" x="1412" y="76">VERDICTS</text>
+    <text class="caplab" x="1412" y="110">with a start time per insight,</text>
+    <text class="caplab" x="1412" y="136">as the model recalls it</text>
+    <path d="M 1280 160 H 1388" fill="none" stroke="var(--accent)" stroke-width="2.5" />
+    <circle class="vdot12" cx="1286" cy="160" r="6" fill="var(--accent)" />
+    <text class="caplab" x="1412" y="196">unprocessed footage:</text>
+    <rect x="1412" y="212" width="292" height="26" rx="6" fill="var(--bg)" stroke="var(--line)" />
+    <rect class="backlog" x="1414" y="214" width="288" height="22" rx="5" fill="var(--alarm)" opacity="0.85" style="animation-duration: 24s" />
+    <text class="caplab" x="1412" y="278">1 minute of footage took</text>
+    <text class="caplab" x="1412" y="306">2 minutes to process</text>
+    <text class="caplab" x="1412" y="345">still behind, just slower</text>
+  </svg>
+
+  <div class="stats" style="top: 680px">
+    <div class="stat">
+      <div class="n">0.80</div>
+      <div class="l">precision, on our annotated sessions. So we thought.</div>
+    </div>
+    <div class="stat">
+      <div class="n">0.40</div>
+      <div class="l">recall: audio and motion doubled it.</div>
+    </div>
+    <div class="stat">
+      <div class="n">2x</div>
+      <div class="l">latency: still compounding.</div>
+    </div>
+  </div>
+
+  <p class="punch">We shipped it everywhere, and our own number was wrong by a factor of eight.</p>
+
+  <aside class="notes">
+    <ul>
+      <li>Attempt 2 was <strong>deaf</strong> and <strong>never got motion</strong> from stills, however we massaged the prompt</li>
+      <li>From Live: Gemini does <strong>audio natively</strong>; the nudge was the problem, not the model. So: <strong>regular Gemini, not Live</strong></li>
+      <li><strong>LiveKit</strong> landed sessions on S3 in <strong>10-second chunks</strong>, video + audio; we sent them <strong>exactly as LiveKit gave them</strong>.</li>
+      <li>Motion and speech in one step: <strong>recall doubled to 0.40</strong></li>
+      <li><strong>One prompt did everything</strong>: every rule, every exception, perception + judgment. <strong>It kept growing</strong></li>
+      <li>Still <strong>sequential</strong>; latency from 5x to <strong>~2x</strong>. Still behind, less</li>
+      <li><strong>Precision 0.80 on our annotated sessions</strong></li>
+      <li>In production until <strong>August 2026</strong>. Spring: <strong>dozens to several hundred students</strong></li>
+      <li><strong>A review team read every finding</strong> before a student saw it.</li>
+    </ul>
+  </aside>
+</section>
+
+<section class="text" data-ref="Production human-review queue, June 2026: eight sessions, 8 April to 11 May 2026, each one a water bottle flagged as a phone. Reproduced in isolation on a three-line prompt.">
+  <h2>&ldquo;They are drinking from the phone&rdquo;</h2>
+  <svg class="live-viz" viewBox="0 0 1728 430" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <clipPath id="wbClip">
+        <rect x="0" y="10" width="730" height="410" rx="12" />
+      </clipPath>
+    </defs>
+    <image href="assets/footage/frames/water-bottle-flag.png" x="0" y="10" width="730" height="410" preserveAspectRatio="xMidYMid slice" clip-path="url(#wbClip)" />
+    <rect x="0" y="10" width="730" height="410" rx="12" fill="none" stroke="var(--line)" stroke-width="2" />
+
+    <rect x="778" y="10" width="950" height="410" rx="12" fill="var(--surface)" stroke="var(--alarm)" stroke-width="2" />
+    <text class="rowlab" x="818" y="56" fill="var(--alarm)">PROCTORING INSIGHT</text>
+    <g font-family="Source Code Pro, monospace" font-size="26">
+      <text x="818" y="114" fill="var(--muted)">type:</text>
+      <text x="1030" y="114" fill="var(--ink)">UnauthorizedDeviceUse</text>
+      <text x="818" y="158" fill="var(--muted)">confidence:</text>
+      <text x="1030" y="158" fill="var(--alarm)">HIGH</text>
+      <text x="818" y="202" fill="var(--muted)">duration:</text>
+      <text x="1030" y="202" fill="var(--ink)">8 sec</text>
+    </g>
+    <line x1="818" y1="234" x2="1688" y2="234" stroke="var(--line)" stroke-width="2" />
+    <text x="818" y="290" font-size="48" font-style="italic" fill="var(--ink)">&ldquo;Student is holding a phone in their hand</text>
+    <text x="818" y="342" font-size="48" font-style="italic" fill="var(--ink)">and appears to be <tspan fill="var(--alarm)">drinking from it</tspan> while</text>
+    <text x="818" y="394" font-size="48" font-style="italic" fill="var(--ink)">the assessment is active.&rdquo;</text>
+  </svg>
+
+  <div class="stats" style="top: 680px">
+    <div class="stat">
+      <div class="n">90%</div>
+      <div class="l">of flags reaching human review were false.</div>
+    </div>
+    <div class="stat">
+      <div class="n">8</div>
+      <div class="l">sessions in five weeks, same behavior, same flag.</div>
+    </div>
+    <div class="stat">
+      <div class="n">HIGH</div>
+      <div class="l">confidence, on every one of them.</div>
+    </div>
+  </div>
+
+  <p class="punch">No human would ever say a student is drinking from their phone.</p>
+
+  <aside class="notes">
+    <ul>
+      <li>New cohort, <strong>production stopped matching the harness</strong></li>
+      <li>Review team measured precision at <strong>0.10</strong>: 9 in 10 wrong. Harness still said <strong>0.80</strong></li>
+      <li>One of them: <strong>Gemini 2.5 Flash, a ten-second video</strong>. Thermos on desk, picks it up, opens the cap, drinks</li>
+      <li>Model: <strong>"holding a phone and is drinking from it."</strong></li>
+      <li>First instinct: another prompt line. This time <strong>we stopped</strong></li>
+      <li>It <strong>falsified the premise</strong>: a LLM is not good at this</li>
+      <li><strong>Not a missing rule</strong>. Any human who sees someone drink <strong>knows it isn't a phone</strong></li>
+      <li><strong>8 similar sessions</strong>, reproduced <strong>in isolation on a three-line prompt</strong>: still a phone</li>
+      <li>Carried context: once one chunk said phone, <strong>the next inherited it</strong>, long after the thermos went down</li>
+    </ul>
+  </aside>
+</section>
+
+<section class="text" data-ref="Measured on our three hardest water-bottle sessions, May 2026. See Vo et al., &ldquo;Vision Language Models are Biased&rdquo;, ICLR 2026.">
+  <h2>Prompting harder made it worse</h2>
+  <svg class="live-viz" style="height: 560px" viewBox="0 0 1728 560" xmlns="http://www.w3.org/2000/svg">
+
+    <text class="rowlab" x="0" y="28">FALSE ALARMS ON THE THREE HARDEST SESSIONS, BY QUESTION SHAPE</text>
+    <g>
+      <text class="caplab" x="0" y="88">&ldquo;Is this person holding a phone?&rdquo;</text>
+      <rect x="0" y="100" width="328" height="30" rx="5" fill="var(--alarm)" />
+      <text x="344" y="124" font-size="26" font-family="Source Code Pro, monospace" fill="var(--alarm)">41% false</text>
+
+      <text class="caplab" x="0" y="196">the production prompt: 400 lines of rules and exclusions</text>
+      <rect x="0" y="208" width="264" height="30" rx="5" fill="var(--alarm)" opacity="0.7" />
+      <text x="280" y="232" font-size="26" font-family="Source Code Pro, monospace" fill="var(--alarm)" opacity="0.85">33%</text>
+
+      <text class="caplab" x="0" y="304">&ldquo;What object, if any, is in each hand?&rdquo;</text>
+      <rect x="0" y="316" width="216" height="30" rx="5" fill="var(--ok)" />
+      <text x="232" y="340" font-size="26" font-family="Source Code Pro, monospace" fill="var(--ok)">27%</text>
+
+      <text class="caplab" x="0" y="412">describe first, classify the text after</text>
+      <rect x="0" y="424" width="216" height="30" rx="5" fill="var(--ok)" />
+      <text x="232" y="448" font-size="26" font-family="Source Code Pro, monospace" fill="var(--ok)">27%</text>
+    </g>
+    <text class="caplab" x="0" y="530">and the input mattered four times more: the webcam was 10% of the pixels we sent &middot; 67% &rarr; 40% on that change alone</text>
+
+    <text class="rowlab" x="940" y="28">PRECISION, PROMPT VERSION BY PROMPT VERSION</text>
+    <line x1="980" y1="70" x2="980" y2="460" stroke="var(--line)" stroke-width="2" />
+    <line x1="980" y1="460" x2="1700" y2="460" stroke="var(--line)" stroke-width="2" />
+    <polyline points="980,330 1082,300 1184,270 1286,240 1388,205 1490,175 1592,150 1694,130" fill="none" stroke="var(--accent)" stroke-width="3.5" />
+    <polyline points="980,345 1082,352 1184,362 1286,372 1388,385 1490,396 1592,408 1694,418" fill="none" stroke="var(--alarm)" stroke-width="3.5" />
+    <text x="1690" y="118" font-size="26" fill="var(--accent)" text-anchor="end">on our annotated videos</text>
+    <text x="1690" y="452" font-size="26" fill="var(--alarm)" text-anchor="end">in production</text>
+    <path d="M 1660 150 V 400" fill="none" stroke="var(--faint)" stroke-width="2" stroke-dasharray="6 5" />
+    <text class="caplab" x="1240" y="280">the gap kept growing</text>
+    <g font-family="Source Code Pro, monospace" font-size="20" fill="var(--faint)">
+      <text x="980" y="494">v1</text>
+      <text x="1330" y="494" text-anchor="middle">one rule added per false positive</text>
+      <text x="1694" y="494" text-anchor="end">v8</text>
+    </g>
+  </svg>
+
+  <p class="punch">Every prompt line fitted the prompt harder to the videos we had handpicked.</p>
+
+  <aside class="notes">
+    <ul>
+      <li>How the prompt reached <strong>400 lines</strong>: reviewer flags, engineer adds that video to the dataset, <strong>tunes the prompt</strong></li>
+      <li>That loop is <strong>overfitting</strong>, with prompts instead of parameters</li>
+      <li>Right chart: <strong>we only ever looked at the top line</strong>. New cohort (homeschool, traditional classrooms) = <strong>the bottom line was the truth</strong></li>
+      <li>Left: the <strong>three hardest sessions</strong>, worst footage, not average traffic</li>
+      <li>Go through the left chart.</li>
+      <li>Literature: the <strong>vision encoder sees it right, the language head overrules it</strong>. The <strong>largest lever is the input</strong></li>
+      <li><strong>Webcam alone: 67% → 40%</strong>. Same model, same prompt</li>
+      <li><strong>Three biases, compounding</strong>: in the prompt, in the pixels, in a handpicked dataset. <strong>Then we blamed the model</strong></li>
+    </ul>
+  </aside>
+</section>
+
+<section class="text" data-ref="August 2026 cutover. Wherever a hard signal existed (test state, full-screen, window focus), vision stopped being consulted at all.">
+  <h2>Making the pipeline dumber is what raised precision</h2>
+  <svg class="live-viz" style="height: 300px" viewBox="0 0 1728 300" xmlns="http://www.w3.org/2000/svg">
+
+    <text class="rowlab" x="0" y="24">CUT THE SESSION INTO WINDOWS. ASK EACH ONE QUESTION AT A TIME.</text>
+    <g>
+      <rect x="0" y="44" width="212" height="52" rx="6" fill="var(--surface)" stroke="var(--line)" />
+      <rect x="216" y="44" width="212" height="52" rx="6" fill="var(--surface)" stroke="var(--line)" />
+      <rect x="432" y="44" width="212" height="52" rx="6" fill="var(--surface)" stroke="var(--accent)" stroke-width="2.5" />
+      <rect x="648" y="44" width="212" height="52" rx="6" fill="var(--surface)" stroke="var(--line)" />
+      <rect x="864" y="44" width="212" height="52" rx="6" fill="var(--surface)" stroke="var(--line)" />
+      <rect x="1080" y="44" width="212" height="52" rx="6" fill="var(--surface)" stroke="var(--line)" />
+      <rect x="1296" y="44" width="212" height="52" rx="6" fill="var(--surface)" stroke="var(--line)" />
+      <rect x="1512" y="44" width="216" height="52" rx="6" fill="var(--surface)" stroke="var(--line)" />
+      <text class="caplab" x="106" y="78" text-anchor="middle">60 s</text>
+    </g>
+    <g opacity="0.75">
+      <rect x="432" y="108" width="32" height="24" rx="3" fill="var(--ok)" /><rect x="468" y="108" width="32" height="24" rx="3" fill="var(--ok)" /><rect x="504" y="108" width="32" height="24" rx="3" fill="var(--accent)" /><rect x="540" y="108" width="32" height="24" rx="3" fill="var(--accent)" /><rect x="576" y="108" width="32" height="24" rx="3" fill="var(--ok)" /><rect x="612" y="108" width="32" height="24" rx="3" fill="var(--ok)" />
+    </g>
+    <text class="caplab" x="680" y="128">the 10-second gold blocks align: six per window, scoreable directly</text>
+
+    <path d="M 538 96 V 170" fill="none" stroke="var(--accent)" stroke-width="2.5" />
+    <g>
+      <rect x="120" y="176" width="420" height="60" rx="10" fill="var(--bg)" stroke="var(--line)" />
+      <text x="144" y="214" font-size="26" fill="var(--muted)">device in use? <tspan font-family="Source Code Pro, monospace" fill="var(--ok)">NO</tspan></text>
+      <rect x="580" y="176" width="420" height="60" rx="10" fill="var(--bg)" stroke="var(--line)" />
+      <text x="604" y="214" font-size="26" fill="var(--muted)">someone helping? <tspan font-family="Source Code Pro, monospace" fill="var(--alarm)">YES</tspan></text>
+      <rect x="1040" y="176" width="420" height="60" rx="10" fill="var(--bg)" stroke="var(--line)" />
+      <text x="1064" y="214" font-size="26" fill="var(--muted)">only the test on screen? <tspan font-family="Source Code Pro, monospace" fill="var(--ok)">YES</tspan></text>
+    </g>
+    <text class="caplab" x="120" y="262">one rule per question, yes or no &middot; no memory, no order: every window independent, in parallel</text>
+  </svg>
+
+  <div class="det-cards" style="top: 580px">
+    <div class="det-card" style="border-color: var(--accent)">
+      <h3>The vision pipeline, kept dumb</h3>
+      <div class="cap">one window, one rule, yes or no</div>
+      <div class="cap">stateless, parallel, replayable</div>
+      <div class="cap" style="color: var(--accent-soft); margin-top: 28px">one question per call</div>
+    </div>
+    <div class="det-card">
+      <h3 style="color: var(--ok)">Deterministic code</h3>
+      <div class="cap">When did the test start and end?</div>
+      <div class="cap">Is a calculator allowed right now?</div>
+      <div class="cap" style="color: var(--ok); margin-top: 28px">no model at all</div>
+    </div>
+    <div class="det-card">
+      <h3 style="color: var(--muted)">One smart model, at the end</h3>
+      <div class="cap">reads all the text, builds the story of the test</div>
+      <div class="cap">reads text only, never sees a frame</div>
+      <div class="cap" style="margin-top: 28px">after the test, not during</div>
+    </div>
+  </div>
+
+  <aside class="notes">
+    <ul>
+      <li>Claim that didn't go down well: <strong>for this problem, AI is dumb</strong></li>
+      <li>One uber-model <strong>failed</strong>. Three changes:</li>
+      <li><strong>1. Vision, kept dumb</strong>: one simple question at a time. <strong>Device in hand, yes/no</strong>; whether it's allowed isn't its problem.</li>
+      <li>One rule per question, per 60s window. No memory, no order, fully parallel. </li>
+      <li><strong>2. Deterministic code filters</strong>: test start/end come from the test service; calculator allowed = <strong>a rule in a table</strong>.</li>
+      <li><strong>3. One smart model, at the end, over text only</strong>: reads everything, <strong>reasons out the story of the test</strong></li>
+      <li><strong>Watching a test doesn't need deep intelligence. Judging one does.</strong></li>
+      <li>Looks like <strong>classical computer vision</strong>: narrow perception, rules on top</li>
+      <li>Nothing sequential = <strong>latency stops accumulating</strong></li>
+    </ul>
+  </aside>
+</section>
+
+<section class="text" data-ref="Khayatan et al. 2026, When Prompts Override Vision: a question that presupposes an object is the largest single cause of hallucination, and describe-then-classify is the structural fix. We had shipped the same split before we read it.">
+  <h2>Separating the eyes from the judge cleared the gate</h2>
+  <div class="inline-video" style="width: 1660px">
+    <video data-autoplay muted playsinline loop poster="assets/previews/v13-panels-poster.png">
+      <source src="assets/video/v13-panels-v2.mp4" type="video/mp4" />
+    </video>
+  </div>
+
+  <p class="punch">The model that decides never sees a pixel.</p>
+
+  <aside class="notes">
+    <ul>
+      <li>Two calls; <strong>the split is the whole point</strong></li>
+      <li><strong>Neutral narrator</strong>: <strong>no rule vocabulary</strong>. "Describe the scene, the people, the dialogue, the hands, any object, the screen." <strong>The word phone never appears</strong></li>
+      <li><strong>Classifier</strong>: gets <strong>only the text</strong>, carries <strong>all the rule words</strong></li>
+      <li>Finding: loaded wording that costs <strong>14 points in front of video</strong> costs <strong>almost nothing in front of text</strong></li>
+      <li>Classifier answers <strong>booleans</strong> over the narration</li>
+      <li>Literature published the same split this year: presupposing questions are <strong>the largest cause of hallucination</strong>.</li>
+      <li>Side effect: narration is text, so <strong>new classifiers re-run over stored narrations with zero vision calls</strong></li>
+      <li>Callback to attempt 2: this is <strong>the unlearning</strong>. <strong>The judge never sees a pixel</strong></li>
+    </ul>
+  </aside>
+</section>
+
+<section class="text" data-ref="In production since the August 2026 cutover: 145,000 hours of footage. A detector reaches this rung by clearing 0.90 on the gold set, then 0.90 precision across 200 human reviews.">
+  <h2>The window graph holds 0.95 precision at a constant two minutes</h2>
+  <svg class="live-viz fviz" viewBox="0 0 1728 430" xmlns="http://www.w3.org/2000/svg">
+
+    <rect x="0" y="80" width="260" height="230" rx="12" fill="var(--surface)" stroke="var(--line)" />
+    <text class="rowlab" x="24" y="116">STUDENT DEVICE</text>
+    <text class="caplab" x="24" y="150">webcam + screen + mic</text>
+    <text class="caplab" x="24" y="286">10-second chunks</text>
+
+    <rect x="330" y="80" width="290" height="230" rx="12" fill="var(--surface)" stroke="var(--line)" />
+    <text class="rowlab" x="354" y="116">WINDOWS</text>
+    <text class="caplab" x="354" y="150">60 seconds, per stream</text>
+    <g>
+      <rect x="354" y="176" width="110" height="40" rx="5" fill="var(--bg)" stroke="var(--line)" />
+      <rect x="474" y="176" width="110" height="40" rx="5" fill="var(--bg)" stroke="var(--line)" />
+      <rect x="354" y="226" width="110" height="40" rx="5" fill="var(--bg)" stroke="var(--line)" />
+      <rect x="474" y="226" width="110" height="40" rx="5" fill="var(--bg)" stroke="var(--line)" />
+    </g>
+    <text class="caplab" x="354" y="296">stateless, parallel</text>
+
+    <rect x="690" y="80" width="290" height="230" rx="12" fill="var(--surface)" stroke="var(--line)" />
+    <text class="rowlab" x="714" y="116">NARRATORS</text>
+    <text class="caplab" x="714" y="150">one per stream</text>
+    <text class="caplab" x="714" y="184">neutral: describe,</text>
+    <text class="caplab" x="714" y="212">never judge</text>
+    <text class="caplab" x="714" y="296">pixels end here</text>
+
+    <rect x="1050" y="80" width="290" height="230" rx="12" fill="var(--surface)" stroke="var(--line)" />
+    <text class="rowlab" x="1074" y="116">CLASSIFIERS</text>
+    <text class="caplab" x="1074" y="150">one per rule, text only</text>
+    <g font-family="Source Code Pro, monospace" font-size="22">
+      <text x="1074" y="196" fill="var(--ok)">device? no</text>
+      <text x="1074" y="230" fill="var(--ok)">helping? no</text>
+      <text x="1074" y="264" fill="var(--alarm)">on the test? no</text>
+    </g>
+    <text class="caplab" x="1074" y="296">yes or no, with a reason</text>
+
+    <rect x="1410" y="50" width="318" height="290" rx="12" fill="var(--surface)" stroke="var(--accent)" stroke-width="2.5" />
+    <text class="rowlab" x="1434" y="86" fill="var(--accent-soft)">CONSOLIDATOR</text>
+    <text class="caplab" x="1434" y="122">the only memory in the system</text>
+    <text class="caplab" x="1434" y="160">puts windows back in order</text>
+    <text class="caplab" x="1434" y="188">carries history across them</text>
+    <text class="caplab" x="1434" y="216">decides when a warning</text>
+    <text class="caplab" x="1434" y="244">is earned</text>
+    <text class="caplab" x="1434" y="282">not a model: code you can</text>
+    <text class="caplab" x="1434" y="310">read, state you can inspect</text>
+
+    <path d="M 260 195 H 330" fill="none" stroke="var(--accent)" stroke-width="2.5" />
+    <circle class="vdot17" cx="266" cy="195" r="6" fill="var(--accent)" />
+    <path d="M 620 195 H 690" fill="none" stroke="var(--accent)" stroke-width="2.5" />
+    <circle class="vdot17" cx="626" cy="195" r="6" fill="var(--accent)" style="animation-delay: -2s" />
+    <path d="M 980 195 H 1050" fill="none" stroke="var(--accent)" stroke-width="2.5" />
+    <circle class="vdot17" cx="986" cy="195" r="6" fill="var(--accent)" style="animation-delay: -3s" />
+    <path d="M 1340 195 H 1410" fill="none" stroke="var(--accent)" stroke-width="2.5" />
+    <circle class="vdot17" cx="1346" cy="195" r="6" fill="var(--accent)" style="animation-delay: -1s" />
+
+    <path d="M 1569 340 V 372" fill="none" stroke="var(--alarm)" stroke-width="2.5" />
+    <rect x="1300" y="376" width="428" height="52" rx="26" fill="rgba(242, 153, 74, 0.08)" stroke="var(--alarm)" stroke-width="2" />
+    <text x="1514" y="410" font-size="26" fill="var(--alarm)" text-anchor="middle">warning to the student, then strikes</text>
+
+    <text class="caplab" x="0" y="410">where a deterministic signal exists (test state, full-screen, focus), vision is not consulted at all</text>
+  </svg>
+
+  <div class="stats" style="top: 690px">
+    <div class="stat">
+      <div class="n">0.95</div>
+      <div class="l">precision on live traffic, against gold and human review.</div>
+    </div>
+    <div class="stat">
+      <div class="n">0.90</div>
+      <div class="l">recall, measured the same way.</div>
+    </div>
+    <div class="stat">
+      <div class="n">2 min</div>
+      <div class="l">from the event to the warning. Constant.</div>
+    </div>
+  </div>
+
+  <p class="punch">Stateless everywhere, except one place built to remember.</p>
+
+  <aside class="notes">
+    <ul>
+      <li>In production now: <strong>the window graph</strong>. Narrators and classifiers feeding each other</li>
+      <li>Chunks → 60s windows → narrators → classifiers on text</li>
+      <li><strong>All state lives in the consolidator</strong></li>
+      <li>Consolidator: raw findings <strong>plus deterministic facts</strong> (test running? calculator allowed?) → what students see.</li>
+      <li><strong>0.95 precision, 0.90 recall on live traffic</strong>: from gold <strong>and</strong> production reviews</li>
+      <li>The ladder: <strong>0.90 on gold → 0.80 over 50 reviews → 0.90 over 200</strong></li>
+      <li><strong>2 minutes, constant</strong>, 10-minute test or 2-hour test</li>
+      <li>Scale: <strong>~26M windows a month</strong>, <strong>145k hours</strong> since the cutover</li>
+    </ul>
+  </aside>
+</section>
+
+<section class="text" data-ref="The standing challenge: catch two more true windows than production on one insight, hold precision at 0.90, at a cost we can carry.">
+  <h2>62 models auditioned for one job</h2>
+  <svg class="live-viz" style="height: 560px" viewBox="0 0 1728 560" xmlns="http://www.w3.org/2000/svg">
+
+    <text class="rowlab" x="0" y="24">THE FUNNEL, RE-RUN EVERY MONDAY</text>
+    <g>
+      <rect x="0" y="48" width="700" height="52" rx="8" fill="var(--surface)" stroke="var(--line)" />
+      <text x="20" y="82" font-size="26" fill="var(--ink)">62 models watched across every vendor catalog</text>
+
+      <rect x="0" y="116" width="560" height="52" rx="8" fill="var(--surface)" stroke="var(--line)" />
+      <text x="20" y="150" font-size="26" fill="var(--ink)">can watch a full minute of video</text>
+      <text x="580" y="150" font-size="24" fill="var(--faint)">most cap at 5 images</text>
+
+      <rect x="0" y="184" width="430" height="52" rx="8" fill="var(--surface)" stroke="var(--line)" />
+      <text x="20" y="218" font-size="26" fill="var(--ink)">allowed to see student video</text>
+      <text x="450" y="218" font-size="24" fill="var(--faint)">US-hosted, DPA</text>
+
+      <rect x="0" y="252" width="310" height="52" rx="8" fill="var(--surface)" stroke="var(--line)" />
+      <text x="20" y="286" font-size="26" fill="var(--ink)">baked against prod</text>
+      <text x="330" y="286" font-size="24" fill="var(--faint)">same run, same sessions, 3 reps</text>
+
+      <rect x="0" y="320" width="190" height="52" rx="8" fill="var(--surface)" stroke="var(--line)" />
+      <text x="20" y="354" font-size="26" fill="var(--ink)">above the floor</text>
+      <text x="210" y="354" font-size="24" fill="var(--faint)">precision 0.90, at a carryable cost</text>
+
+      <rect x="0" y="388" width="96" height="52" rx="8" fill="var(--accent)" />
+      <text x="20" y="422" font-size="26" font-weight="600" fill="var(--bg)">1 job</text>
+    </g>
+
+    <text class="rowlab" x="820" y="24">HOW AUDITIONS END</text>
+    <g font-size="25">
+      <text x="820" y="74" fill="var(--muted)">glm-5.3-flash <tspan dx="12" fill="var(--alarm)" font-family="Source Code Pro, monospace">extremely high error rate</tspan></text>
+      <text x="820" y="122" fill="var(--muted)">pegasus-1.5 <tspan dx="12" fill="var(--alarm)" font-family="Source Code Pro, monospace">quotas don't even support our tests</tspan></text>
+      <text x="820" y="170" fill="var(--muted)">nova-2-lite <tspan dx="12" fill="var(--alarm)" font-family="Source Code Pro, monospace">never returns the schema it was asked for</tspan></text>
+      <text x="820" y="218" fill="var(--muted)">nova-pro <tspan dx="12" fill="var(--alarm)" font-family="Source Code Pro, monospace">fires on half the hard tail</tspan></text>
+      <text x="820" y="266" fill="var(--muted)">gemma-4 <tspan dx="12" fill="var(--alarm)" font-family="Source Code Pro, monospace">6.5 minutes to watch 1 minute</tspan></text>
+      <text x="820" y="314" fill="var(--muted)">claude-sonnet-5 <tspan dx="12" fill="var(--alarm)" font-family="Source Code Pro, monospace">57x the cost</tspan></text>
+      <text x="820" y="362" fill="var(--muted)">gemini-3.8-flash <tspan dx="12" fill="var(--alarm)" font-family="Source Code Pro, monospace">ties on quality, 2.4x the cost</tspan></text>
+    </g>
+
+    <rect x="0" y="476" width="820" height="72" rx="12" fill="var(--surface)" stroke="var(--accent)" stroke-width="2.5" />
+    <text x="24" y="506" font-size="24" fill="var(--accent-soft)" font-weight="600">THE CHAMPION &middot; gemini-3.1-flash-lite</text>
+    <text x="24" y="536" font-size="24" fill="var(--muted)">nobody beats it on precision, recall, cost and latency together</text>
+
+    <rect x="870" y="476" width="858" height="72" rx="12" fill="var(--surface)" stroke="var(--ok)" stroke-width="2.5" />
+    <text x="894" y="506" font-size="24" fill="var(--ok)" font-weight="600">THE CHALLENGER, CONFIRMED THIS WEEK &middot; Ling + TypeSafe Jev</text>
+    <text x="894" y="536" font-size="24" fill="var(--muted)">holds every precision floor at half the cost; the promotion call is pending</text>
+  </svg>
+
+  <p class="punch">Every new model gets a blind check first: what do you see? what do you hear?</p>
+
+  <aside class="notes">
+    <ul>
+      <li>Today: <strong>Gemini 3.1 Flash Lite</strong>, up from 2.5 Flash</li>
+      <li>Every Monday, an AI finds new models and scores them on <strong>precision, recall, cost, latency together</strong></li>
+      <li><strong>3.1 Flash Lite still wins</strong>. 3.8 Flash <strong>ties on quality at 2.4x cost</strong>, so it loses</li>
+      <li><strong>The funnel kills most before quality</strong>: too slow, input too large, quotas/scale don't fit; never returns the schema</li>
+      <li><strong>Challenger</strong>: narration is our biggest waste. We pay a general model to reason; we need <strong>video in, description out</strong></li>
+      <li><strong>Ling + a small typed classifier: pre-checks held, &lt;half the cost</strong>.</li>
+      <li>Favorite failure: we sent <strong>HLS from LiveKit</strong>. 2.5 read it fine. <strong>Gemini 3 silently drops the audio</strong></li>
+      <li>Now: <strong>blind capability check first</strong>. "Worked yesterday, works tomorrow" is a bias too. Same mistake as picture-in-picture</li>
+    </ul>
+  </aside>
+</section>
+
+<section class="text" data-ref="Vision model only, list prices, against a fixed unit: the normalized student at 34 recorded hours per month. Monthly totals at today's scale.">
+  <h2>Cheaper and better are the same direction</h2>
+  <svg class="live-viz" style="height: 560px" viewBox="0 0 1728 560" xmlns="http://www.w3.org/2000/svg">
+
+    <line x1="140" y1="30" x2="140" y2="470" stroke="var(--line)" stroke-width="2" />
+    <line x1="140" y1="470" x2="1700" y2="470" stroke="var(--line)" stroke-width="2" />
+    <text class="caplab" x="30" y="40">precision</text>
+    <g font-family="Source Code Pro, monospace" font-size="20" fill="var(--faint)" text-anchor="end">
+      <text x="126" y="78">1.0</text>
+      <text x="126" y="238">0.8</text>
+      <text x="126" y="398">0.6</text>
+    </g>
+    <g font-family="Source Code Pro, monospace" font-size="20" fill="var(--faint)" text-anchor="middle">
+      <text x="300" y="505">$1,000</text>
+      <text x="820" y="505">$100</text>
+      <text x="1340" y="505">$10</text>
+    </g>
+    <text class="caplab" x="1700" y="552" text-anchor="end">cost per student, per month</text>
+
+    <line x1="140" y1="150" x2="1700" y2="150" stroke="var(--accent)" stroke-width="2" stroke-dasharray="10 8" opacity="0.6" />
+    <text class="caplab" x="165" y="140" fill="var(--accent)">the 0.90 precision gate</text>
+
+    <g class="fragment">
+      <line x1="180" y1="440" x2="588" y2="440" stroke="var(--faint)" stroke-width="2.5" stroke-dasharray="7 6" />
+      <line x1="180" y1="428" x2="180" y2="452" stroke="var(--faint)" stroke-width="2.5" />
+      <line x1="588" y1="428" x2="588" y2="452" stroke="var(--faint)" stroke-width="2.5" />
+      <circle cx="384" cy="440" r="14" fill="var(--bg)" stroke="var(--faint)" stroke-width="3" stroke-dasharray="5 4" />
+      <text x="384" y="447" font-size="20" fill="var(--faint)" text-anchor="middle">?</text>
+      <text x="384" y="388" font-size="26" fill="var(--ink)" text-anchor="middle">Gemini Live &middot; $280 to $1,700</text>
+      <text x="384" y="418" font-size="22" fill="var(--faint)" text-anchor="middle">we never measured it: not cost, not precision</text>
+    </g>
+
+    <g class="fragment">
+      <circle cx="320" cy="310" r="14" fill="var(--alarm)" />
+      <text x="350" y="288" font-size="26" fill="var(--ink)">Frames + Sonnet &middot; ~$1,000</text>
+      <text x="350" y="318" font-size="22" fill="var(--faint)">$3.4M a month &middot; precision 0.70</text>
+    </g>
+
+    <g class="fragment">
+      <circle cx="790" cy="230" r="14" fill="var(--alarm)" />
+      <text x="820" y="208" font-size="26" fill="var(--ink)">Video chunks &middot; ~$120</text>
+      <text x="820" y="238" font-size="22" fill="var(--faint)">$410k a month &middot; 0.80 on our set, 0.10 in production</text>
+    </g>
+
+    <g class="fragment">
+      <circle cx="1290" cy="110" r="14" fill="var(--ok)" />
+      <text x="1256" y="88" font-size="26" fill="var(--ink)" text-anchor="end">Window graph &middot; $26</text>
+      <text x="1256" y="118" font-size="22" fill="var(--faint)" text-anchor="end">$88k a month &middot; precision 0.95</text>
+    </g>
+
+    <g class="fragment">
+      <circle cx="1470" cy="126" r="14" fill="none" stroke="var(--ok)" stroke-width="3" stroke-dasharray="6 5" />
+      <text x="1450" y="184" font-size="26" fill="var(--ink)" text-anchor="middle">Ling + Jev &middot; ~$12</text>
+      <text x="1450" y="214" font-size="22" fill="var(--faint)" text-anchor="middle">$41k a month &middot; every floor held, promotion pending</text>
+    </g>
+
+    <g class="fragment">
+      <defs>
+        <marker id="costArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--accent)" />
+        </marker>
+      </defs>
+      <path d="M 250 400 C 600 380, 1000 280, 1400 140" fill="none" stroke="var(--accent)" stroke-width="3.5" stroke-dasharray="2 8" marker-end="url(#costArrow)" opacity="0.8" />
+    </g>
+  </svg>
+
+  <p class="punch">The cheapest system we ever ran is the most accurate one. That is not a coincidence.</p>
+
+  <aside class="notes">
+    <ul>
+      <li><strong>Five systems, 18 months</strong>. X: vision cost per student per month, <strong>log, cheaper to the right</strong>. Y: precision.</li>
+      <li><strong>Streaming</strong>: never measured either axis. List-price reconstruction: <strong>$280 at 30s cadence, $1,700 at 5s</strong></li>
+      <li><strong>Frames + Sonnet</strong>: <strong>$1,000/student</strong>, $3.4M/month at today's volume, <strong>0.70</strong></li>
+      <li><strong>Video chunks</strong>: <strong>$120</strong>, $410k/month, <strong>0.80 on our set, 0.10 in production</strong>.</li>
+      <li><strong>Window graph</strong>: <strong>$26</strong>, $88k/month, <strong>0.95</strong>. First time above the gate, <strong>1/40th of the frames price</strong></li>
+      <li><strong>Challenger</strong>: <strong>$12</strong>, $41k/month, every floor held.</li>
+      <li>Direction: from <strong>"watch everything, decide everything"</strong> to <strong>classical CV</strong>: narrow perception, rules on top</li>
+    </ul>
+  </aside>
+</section>
+
+<section class="text">
+  <h2>Six rules we would follow if we started again</h2>
+  <div class="body" style="top: 210px">
+    <ol style="font-size: 34px; line-height: 1.45; margin-left: 1.2em">
+      <li style="margin: 0.6em 0; font-size: 34px">Build gold before you build anything: annotate to align, and let the disagreements write the rules.</li>
+      <li style="margin: 0.6em 0; font-size: 34px">Set the bar before the architecture: precision is a gate, recall a target, latency a constant.</li>
+      <li style="margin: 0.6em 0; font-size: 34px">Keep it simple: no silver bullets, however strong the launch benchmarks looked.</li>
+      <li style="margin: 0.6em 0; font-size: 34px">The question shapes the answer: keep rule words away from the eyes, and your own bias out of the dataset.</li>
+      <li style="margin: 0.6em 0; font-size: 34px">Make the pipeline dumber: deterministic where code can decide, one binary question where it cannot.</li>
+      <li style="margin: 0.6em 0; font-size: 34px">Measure the input before you judge the model: check what it actually receives, and what it perceives.</li>
+    </ol>
+  </div>
+  <p class="punch">Every mistake was a bias we put there ourselves. That is the good news: so were all the fixes.</p>
+  <aside class="notes">
+    <ul>
+      <li>Ordered <strong>for someone starting today</strong></li>
+      <li><strong>1. Gold first.</strong> We did it in month five</li>
+      <li><strong>2. Bar before architecture.</strong> We set ours halfway</li>
+      <li><strong>3. Keep it simple.</strong> The silver bullet is what gets you <strong>a 400-line prompt</strong></li>
+      <li><strong>4. The question shapes the answer.</strong> <strong>Rule words away from the pixels</strong>; your bias out of the dataset</li>
+      <li><strong>5. Make it dumber.</strong> Code where code can decide; <strong>one binary question</strong> where it can't</li>
+      <li>6. Measure the input first. Webcam at 10% of the frame, audio dropped; both times <strong>I blamed the model</strong></li>
+      <li>Leave-with line: the title is <strong>a little unfair to the model</strong>. Every bias was <strong>ours</strong>: in a question, a frame, a dataset, a definition</li>
+    </ul>
+  </aside>
+</section>
+
+<section class="text title-slide">
+  <h1>Thank you</h1>
+  <p class="subtitle">Questions?</p>
+  <p class="byline">Serban Petrescu &middot; Trilogy / TimeBack &middot; spetrescu.ro</p>
+  <aside class="notes">
+    <ul>
+      <li><strong>Narrator still sees pixels, why no phone?</strong> Nothing in its prompt points at a phone; errors land in <strong>text we can read and re-run</strong></li>
+      <li><strong>When is one big model right?</strong> Reasoning over text. Breaks when <strong>perception + a loaded rule share one prompt</strong>. Split "what happened" from "what it means"</li>
+      <li><strong>Why don't labs fix the prior?</strong> It's a feature on average. <strong>Vo: 17% vs 95% probe</strong>; "only what you see" <strong>&lt;2 pts</strong>. Design around it</li>
+      <li><strong>Is my prompt overfitted?</strong> Every line fixes one seen failure = yes. <strong>Test on a different population</strong>; delete half and re-run</li>
+      <li><strong>How much gold?</strong> <strong>Coverage + real disagreement beat volume</strong>. Then the ladder: gold, 50 reviews, 200 reviews</li>
+    </ul>
+  </aside>
+</section>
+
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        fragmentInURL: true,
+        slideNumber: true,
+        transition: "none",
+        width: 1920,
+        height: 1080,
+        margin: 0,
+        minScale: 0.2,
+        maxScale: 2,
+        controls: false,
+        progress: true,
+        pdfMaxPagesPerSlide: 1,
+        pdfSeparateFragments: false,
+        plugins: [RevealMarkdown, RevealNotes],
+      }).then(() => {
+        Reveal.getSlides().forEach((slide) => {
+          if (!slide.classList.contains("text")) return;
+          const ref = slide.getAttribute("data-ref");
+          if (ref && !slide.querySelector(".slide-ref")) {
+            const el = document.createElement("div");
+            el.className = "slide-ref";
+            el.textContent = ref;
+            slide.appendChild(el);
+          }
+          if (!slide.querySelector(".wordmark")) {
+            const img = document.createElement("img");
+            img.className = "wordmark";
+            img.src = "theme/trilogy-wordmark-white.png";
+            img.alt = "Trilogy";
+            slide.appendChild(img);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

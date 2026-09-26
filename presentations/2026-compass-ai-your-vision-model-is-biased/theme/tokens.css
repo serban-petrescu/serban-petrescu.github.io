@@ -1,0 +1,66 @@
+/* Compass 2026 talk theme: Trilogy-derived. One source of truth for reveal.js, SVGs and Remotion.
+   Brand anchors: Trilogy blue #003874 (logo + trilogy.com), footer navy #093A74, Source Sans (trilogy.com body face).
+   Everything else is derived from the brand blue (tints/shades on the same hue, ~212 deg). */
+:root {
+  /* surfaces (dark deck) */
+  --bg: #06162b;          /* navy-950: slide background */
+  --surface: #0b2445;     /* navy-900: panels, cards, code blocks */
+  --line: #123564;        /* navy-800: borders, rules, grid lines */
+  --line-soft: rgba(255, 255, 255, 0.08);
+
+  /* brand */
+  --brand: #003874;       /* Trilogy blue: large fills only; never text on the dark bg (1.6:1) */
+  --brand-deep: #093a74;  /* Trilogy footer navy */
+
+  /* text */
+  --ink: #f4f7fb;         /* primary text, 16.9:1 on bg */
+  --muted: #a9b8cc;       /* secondary text, 9.0:1 */
+  --faint: #6b7c93;       /* captions, axis labels, 4.3:1 (24px minimum) */
+
+  /* the one accent */
+  --accent: #5ca8f5;      /* sky-400: big numbers, highlights, links, the moving thing in a video; 7.2:1 */
+  --accent-soft: #8cc2fa; /* sky-300: accent on surfaces or small text; 9.7:1 */
+  --accent-dim: rgba(92, 168, 245, 0.18); /* accent fills behind highlighted rows/cells */
+
+  /* semantic, charts and diagrams only, never decoration */
+  --alarm: #f2994a;       /* false alarm / wrong / disqualified, 8.2:1 */
+  --ok: #3dcf9a;          /* correct / clean / above floor, 9.2:1 */
+
+  /* typography */
+  --font-text: "Source Sans 3", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "Source Code Pro", "JetBrains Mono", ui-monospace, monospace;
+
+  /* 1920x1080 scale */
+  --size-title: 88px;
+  --size-h2: 56px;
+  --size-body: 32px;
+  --size-caption: 22px;
+  --size-big: 240px;      /* the one number per slide */
+  --size-big-unit: 40px;  /* its unit, in --muted */
+
+  /* geometry */
+  --gutter: 96px;         /* slide safe margin */
+  --radius: 8px;
+  --stroke: 3px;          /* diagram strokes at 1080p */
+  --logo-w: 140px;        /* white wordmark, bottom-right, every slide but the title */
+  --logo-w-title: 360px;
+
+  /* motion (Remotion) */
+  --dur-enter: 300ms;     /* ease-out cubic; no bounce, no overshoot */
+  --dur-emphasis: 600ms;
+  --fps: 30;
+}
+
+/* light variant for the printed handout (reveal ?print-pdf) */
+.print, .light {
+  --bg: #ffffff;
+  --surface: #f2f5f9;
+  --line: #cfd8e3;
+  --ink: #06162b;
+  --muted: #3b4a5e;
+  --faint: #6b7c93;
+  --accent: #003874;      /* brand blue carries the accent on white, 11.6:1 */
+  --accent-soft: #093a74;
+  --alarm: #c86a1e;
+  --ok: #1f8a63;
+}
