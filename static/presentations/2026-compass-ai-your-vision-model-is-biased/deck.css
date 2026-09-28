@@ -358,6 +358,76 @@ html, body, .reveal-viewport, .reveal {
   color: var(--ink);
 }
 
+/* Loop: 10s idle, strike "Model", write "Pipeline" above, hold 10s, un-write, un-strike. Scoped to .present so it restarts on every visit. */
+.title-slide .swap {
+  position: relative;
+  display: inline-block;
+}
+
+.title-slide .swap-strike {
+  position: absolute;
+  left: -4%;
+  top: 36%;
+  width: 108%;
+  height: 40%;
+  overflow: visible;
+}
+
+.title-slide .swap-strike path {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 9px;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+  stroke-dasharray: 1 3;
+  stroke-dashoffset: 1.1;
+}
+
+.title-slide .swap-new {
+  position: absolute;
+  left: 50%;
+  bottom: 94%;
+  transform: translateX(-50%) rotate(-3deg);
+  font-size: 76px;
+  font-style: italic;
+  font-weight: 600;
+  color: var(--accent);
+  white-space: nowrap;
+  /* Padding gives the italic overhang room inside the clip box; without it the final "e" gets shaved. */
+  padding: 0.1em 0.25em;
+  clip-path: inset(0 100% 0 0);
+}
+
+.title-slide.present .swap {
+  animation: swap-dim 24s ease-in-out infinite;
+}
+
+.title-slide.present .swap-strike path {
+  animation: swap-strike 24s ease-in-out infinite;
+}
+
+.title-slide.present .swap-new {
+  animation: swap-write 24s ease-in-out infinite;
+}
+
+@keyframes swap-strike {
+  0%, 41.7% { stroke-dashoffset: 1.1; }
+  44.2%, 92.5% { stroke-dashoffset: 0; }
+  95.4%, 100% { stroke-dashoffset: 1.1; }
+}
+
+@keyframes swap-write {
+  0%, 44.6% { clip-path: inset(0 100% 0 0); }
+  48.3%, 89.6% { clip-path: inset(0 0 0 0); }
+  92.5%, 100% { clip-path: inset(0 0 0 100%); }
+}
+
+@keyframes swap-dim {
+  0%, 41.7% { color: var(--ink); }
+  44.2%, 92.5% { color: var(--muted); }
+  95.4%, 100% { color: var(--ink); }
+}
+
 .reveal .slides section.text.title-slide .subtitle {
   position: absolute;
   left: 96px;
@@ -680,4 +750,34 @@ html, body, .reveal-viewport, .reveal {
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
+}
+
+.reveal .slides section.text .bias-tag {
+  position: absolute;
+  left: 96px;
+  top: 40px;
+  padding: 4px 14px;
+  border: 2px solid var(--alarm);
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 22px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--alarm);
+}
+
+.reveal .slides section.text .bias-chip {
+  display: inline-block;
+  margin-left: 0.3em;
+  padding: 0 10px;
+  border: 2px solid var(--alarm);
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 20px;
+  line-height: 1.5;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--alarm);
+  vertical-align: 0.2em;
+  white-space: nowrap;
 }
