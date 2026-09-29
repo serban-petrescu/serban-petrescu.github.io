@@ -304,7 +304,7 @@
       <li>Precision is the top KPI: of what we flag, how much a human agrees with. 0.90 hard floor, 0.95 goal</li>
       <li>Recall second: of what happened, how much we caught</li>
       <li><strong>We would rather a kid cheat successfully than accuse one wrongly</strong></li>
-      <li>Timeline: 4 events, we caught 3, one false alarm. 0.75 and 0.75, both fail</li>
+      <li>Timeline, walk it once: 4 events, we caught 3, one false alarm. 0.75 and 0.75, both fail</li>
       <li>Latency: under two minutes</li>
       <li>We set these mid-build. Setting them on day one would have saved us pain</li>
     </ul>
@@ -512,7 +512,7 @@
 
   <aside class="notes">
     <ul>
-      <li>Attempt 1: Gemini Live, the tech behind a call with Gemini. Big smart model, everything streamed in</li>
+      <li>Attempt 1, 2025: Gemini Live on Gemini 2.0, the tech behind a call with Gemini. Big smart model, everything streamed in</li>
       <li>JPEGs and audio in, answers back in real time</li>
       <li>Built for conversation: it only speaks when spoken to</li>
       <li>So we nudged it: a system message every N seconds asking "is the student cheating?"</li>
@@ -694,7 +694,8 @@
       <li>Inputs matter, so back to Gemini, but Flash, not Live: real video, audio, motion</li>
       <li>We sent the 10-second chunks exactly as LiveKit gave them</li>
       <li>One prompt did everything</li>
-      <li><strong>Bias 4, design bias</strong>: we kept the sequence and the memory we had designed in. That is what makes latency compound: 5x on Sonnet, still ~2x here</li>
+      <li><strong>Bias 4, design bias</strong>: we carried Sonnet's rolling window over to video without asking whether a minute of video already has enough context. One line, move on</li>
+      <li>That sequence plus memory is what makes latency compound: 5x on Sonnet, still ~2x here</li>
       <li>Precision close to the bar on our gold set</li>
       <li>We shipped it because a human reviewed every finding before the student saw it. The reviewer covered the precision gap</li>
     </ul>
@@ -757,7 +758,7 @@
   </aside>
 </section>
 
-<section class="text" data-ref="Measured on our three hardest water-bottle sessions, May 2026. See Vo et al., &ldquo;Vision Language Models are Biased&rdquo;, ICLR 2026." data-bias="Bias 5 &middot; the prompt">
+<section class="text" data-ref="Measured on our three hardest water-bottle sessions, May 2026; Gemini 3 models on the webcam-only input: 0 of 30 false. See Vo et al., &ldquo;Vision Language Models are Biased&rdquo;, ICLR 2026." data-bias="Bias 5 &middot; the prompt">
   <h2>Prompting harder made it worse</h2>
   <svg class="live-viz" style="height: 560px" viewBox="0 0 1728 560" xmlns="http://www.w3.org/2000/svg">
 
@@ -804,8 +805,8 @@
       <li><strong>Bias 5, prompt bias</strong>: the question makes the eyes look for the thing</li>
       <li>"Is this person holding a phone?" alone: 41% wrong on our sessions</li>
       <li>The prompt grew to 400 lines of don't-detect-this, only-focus-on-that, one rule per false positive</li>
-      <li>That loop is overfitting: tuned to the videos we had, and the gap to production kept growing</li>
-      <li>Describe first, classify after: the hallucinations mostly go away</li>
+      <li><strong>Say the word: that loop is overfitting</strong>, with prompts instead of weights. The gap to production kept growing</li>
+      <li>Describe first, classify after: the hallucinations mostly go away. On Gemini 3 models, near zero</li>
       <li>And the input: the webcam was 10% of the pixels we sent. Fixing that alone: 67% to 40%</li>
     </ul>
   </aside>
@@ -872,6 +873,7 @@
       <li>Facts separate from enforcement: deterministic code applies the rules</li>
       <li>One smart model at the end, over text only: patterns across the session</li>
       <li>Close to classical computer vision, just multimodal</li>
+      <li>Once we understood the problem, the rebuild took a couple of weeks</li>
     </ul>
   </aside>
 </section>
@@ -978,9 +980,9 @@
 
   <aside class="notes">
     <ul>
-      <li>The window graph: 60-second windows, narrators feeding classifiers</li>
+      <li>The window graph: 60-second windows (worked best), narrators feeding classifiers. No memory to carry a bias forward</li>
       <li>Consolidator: deterministic, merges all findings and data sources, enforces the rules. The only stateful part</li>
-      <li>0.95 precision, 0.90 recall, on gold and on live traffic reviewed by annotators</li>
+      <li>0.95 precision, 0.90 recall, on gold and on live traffic reviewed by annotators. Round numbers on purpose, if asked: ~93 annotators, ~96 gold, recall ~91</li>
       <li>Burned once, so production review is part of the measurement</li>
       <li>Good enough that we removed the human in the middle: students see findings directly</li>
       <li>Latency: two minutes, constant</li>
@@ -1042,10 +1044,9 @@
   <aside class="notes">
     <ul>
       <li>Now we can shop for models: 2.5 Flash to 3.1 Flash Lite</li>
-      <li>Weekly check: can it watch a minute of video, DPA, US-hosted, then bake against production</li>
-      <li>Cheapest one above the floors wins. 3.8 Flash ties on quality, costs more</li>
+      <li>One sentence on the funnel: every week an AI auditions new models, cheapest one above the floors wins</li>
       <li>Challenger: Ling for vision, TypeSafe Jev for the yes/no classifier</li>
-      <li><strong>Bias 6, model-selection bias</strong>: we sent LiveKit's HLS as-is. Gemini 2 read it unofficially; Gemini 3 silently dropped the audio</li>
+      <li><strong>Bias 6, the "worked before" bias</strong>: we sent LiveKit's HLS as-is. Gemini 2 read it unofficially; Gemini 3 silently dropped the audio</li>
       <li>So Gemini 3 looked worse. It wasn't, it was deaf</li>
       <li>Now every audition starts with a capability check. "Worked before" is a bias too</li>
     </ul>
@@ -1123,12 +1124,10 @@
 
   <aside class="notes">
     <ul>
-      <li>X precision, Y cost per student per month, log scale. Goal: bottom right</li>
-      <li>Gemini Live: never measured</li>
-      <li>Frames + Sonnet: ~$1,000. $3.4M a month at today's scale</li>
-      <li>Video chunks: ~$120</li>
-      <li>Window graph: $26, with prompt and video caching, cheaper tokens per frame. Under $100k a month</li>
-      <li>Ling + Jev: ~$12, maybe slightly less precise, still checking</li>
+      <li>Don't read every point: start and end only</li>
+      <li>Sonnet: ~$1,000 per student, $3.4M a month at today's scale</li>
+      <li>Window graph: $26, under $100k a month. Ling + Jev may reach ~$12</li>
+      <li>The most expensive systems were the worst ones</li>
     </ul>
   </aside>
 </section>
@@ -1155,6 +1154,7 @@
       <li>5. Start dumb, add complexity; don't start complex and strip it</li>
       <li>6. Check the model actually gets the input you think you send</li>
       <li>The biases weren't the model's. They were ours, which is why we could fix them</li>
+      <li>Fixing was fast, understanding was slow: 18 months down wrong paths, a couple of weeks to build and ship the window graph</li>
     </ul>
   </aside>
 </section>
