@@ -4,10 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Your Vision Model Is Biased</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="vendor/reveal/reveal.css" />
+    <link rel="stylesheet" href="vendor/fonts/fonts.css" />
     <link rel="stylesheet" href="deck.css" />
   </head>
   <body>
@@ -758,11 +756,11 @@
   </aside>
 </section>
 
-<section class="text" data-ref="Measured on our three hardest water-bottle sessions, May 2026; Gemini 3 models on the webcam-only input: 0 of 30 false. See Vo et al., &ldquo;Vision Language Models are Biased&rdquo;, ICLR 2026." data-bias="Bias 5 &middot; the prompt">
+<section class="text" data-ref="Measured on our hardest water-bottle sessions, May 2026; Gemini 3 models on the webcam-only input: 0 of 30 false. See Vo et al., &ldquo;Vision Language Models are Biased&rdquo;, ICLR 2026." data-bias="Bias 5 &middot; the prompt">
   <h2>Prompting harder made it worse</h2>
   <svg class="live-viz" style="height: 560px" viewBox="0 0 1728 560" xmlns="http://www.w3.org/2000/svg">
 
-    <text class="rowlab" x="0" y="28">FALSE ALARMS ON THE THREE HARDEST SESSIONS, BY QUESTION SHAPE</text>
+    <text class="rowlab" x="0" y="28">FALSE ALARMS ON THE HARDEST SESSIONS, BY QUESTION SHAPE</text>
     <g>
       <text class="caplab" x="0" y="88">&ldquo;Is this person holding a phone?&rdquo;</text>
       <rect x="0" y="100" width="328" height="30" rx="5" fill="var(--alarm)" />
@@ -780,7 +778,7 @@
       <rect x="0" y="424" width="216" height="30" rx="5" fill="var(--ok)" />
       <text x="232" y="448" font-size="26" font-family="Source Code Pro, monospace" fill="var(--ok)">27%</text>
     </g>
-    <text class="caplab" x="0" y="530">and the input mattered four times more: the webcam was 10% of the pixels we sent &middot; 67% &rarr; 40% on that change alone</text>
+    <text class="caplab" x="0" y="530">two inputs: the picture-in-picture recording, where the webcam is ~10% of the pixels, or the webcam stream alone &middot; same model, same prompt: 67% &rarr; 40%</text>
 
     <text class="rowlab" x="940" y="28">PRECISION, PROMPT VERSION BY PROMPT VERSION</text>
     <line x1="980" y1="70" x2="980" y2="460" stroke="var(--line)" stroke-width="2" />
@@ -805,9 +803,8 @@
       <li><strong>Bias 5, prompt bias</strong>: the question makes the eyes look for the thing</li>
       <li>"Is this person holding a phone?" alone: 41% wrong on our sessions</li>
       <li>The prompt grew to 400 lines of don't-detect-this, only-focus-on-that, one rule per false positive</li>
-      <li><strong>Say the word: that loop is overfitting</strong>, with prompts instead of weights. The gap to production kept growing</li>
-      <li>Describe first, classify after: the hallucinations mostly go away. On Gemini 3 models, near zero</li>
-      <li>And the input: the webcam was 10% of the pixels we sent. Fixing that alone: 67% to 40%</li>
+      <li><strong>The loop is overfitting</strong>, with prompts instead of weights. The gap to production kept growing</li>
+      <li>And the input: we sent picture-in-picture recording. Switching to the webcam stream alone: <strong>67% to 40%, 27 points</strong></li>
     </ul>
   </aside>
 </section>
@@ -1176,9 +1173,8 @@
 
       </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/markdown/markdown.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+    <script src="vendor/reveal/reveal.js"></script>
+    <script src="vendor/reveal/plugin/notes/notes.js"></script>
     <script>
       Reveal.initialize({
         hash: true,
@@ -1194,7 +1190,7 @@
         progress: true,
         pdfMaxPagesPerSlide: 1,
         pdfSeparateFragments: false,
-        plugins: [RevealMarkdown, RevealNotes],
+        plugins: [RevealNotes],
       }).then(() => {
         Reveal.getSlides().forEach((slide) => {
           if (!slide.classList.contains("text")) return;
