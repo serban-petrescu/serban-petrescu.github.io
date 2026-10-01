@@ -438,6 +438,32 @@ html, body, .reveal-viewport, .reveal {
   margin: 0;
 }
 
+.reveal .slides section.text.title-slide .socials {
+  position: absolute;
+  left: 96px;
+  top: 680px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  font-size: 36px;
+}
+
+.reveal .slides section.text.title-slide .socials a,
+.reveal .slides section.text.title-slide .socials .row {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.reveal .slides section.text.title-slide .socials .k {
+  display: inline-block;
+  width: 200px;
+  font-family: var(--font-mono);
+  font-size: 24px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
 .reveal .slides section.text.title-slide .byline {
   position: absolute;
   left: 96px;
