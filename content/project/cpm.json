@@ -1,0 +1,32 @@
+{
+  "name": "CPM",
+  "type": "work",
+  "role": "Department lead",
+  "description": "A bid and pricing modeling app for Trilogy deals, with an MCP server so AI agents can build and query models directly.",
+  "technologies": [
+    {
+      "name": "Python"
+    },
+    {
+      "name": "AWS"
+    },
+    {
+      "name": "CDK"
+    },
+    {
+      "name": "AppSync"
+    },
+    {
+      "name": "React"
+    }
+  ],
+  "tags": [
+    "lead",
+    "ai"
+  ],
+  "period": {
+    "from": "2025-02-10",
+    "to": ""
+  },
+  "highlighted": false
+}

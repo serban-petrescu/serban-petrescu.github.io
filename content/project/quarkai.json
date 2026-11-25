@@ -1,0 +1,38 @@
+{
+  "name": "Quark AI",
+  "type": "work",
+  "role": "Department lead",
+  "description": "AI features for the Quark Publishing Platform, used by enterprise content teams. A multi-agent content copilot, an MCP server that lets AI agents operate the platform under the user's own permissions, and AI-generated authoring templates.",
+  "technologies": [
+    {
+      "name": "TypeScript"
+    },
+    {
+      "name": "Python"
+    },
+    {
+      "name": "AWS"
+    },
+    {
+      "name": "Bedrock AgentCore"
+    },
+    {
+      "name": "Keycloak"
+    },
+    {
+      "name": "Terraform"
+    },
+    {
+      "name": "AI/ML"
+    }
+  ],
+  "tags": [
+    "lead",
+    "ai"
+  ],
+  "period": {
+    "from": "2026-05-01",
+    "to": ""
+  },
+  "highlighted": false
+}

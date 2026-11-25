@@ -1,0 +1,56 @@
+{
+  "name": "Nex",
+  "type": "work",
+  "role": "Creator and architect. Built about 90% of it.",
+  "outcome": "Writes nearly all of our pull requests. Around 1,000 merged a week across the department, one production release a day, and about 80 people using it.",
+  "description": "An AI software factory that takes a ticket or a chat message all the way to production. It scopes the work, writes a plan, implements it, tests it on a live environment built for that one pull request, and drives it to merge.\n\nWe rent the model and swap it whenever a better one ships. The harness is ours: an isolated cloud sandbox per task, organizational memory with provenance, independent AI review, and guardrails tested like production code. I built most of it by having Nex build itself.",
+  "technologies": [
+    {
+      "name": "TypeScript"
+    },
+    {
+      "name": "AWS"
+    },
+    {
+      "name": "Lambda"
+    },
+    {
+      "name": "Step Functions"
+    },
+    {
+      "name": "Bedrock AgentCore"
+    },
+    {
+      "name": "PostgreSQL"
+    },
+    {
+      "name": "CDK"
+    },
+    {
+      "name": "React"
+    },
+    {
+      "name": "AI/ML"
+    }
+  ],
+  "tags": [
+    "architect",
+    "ai"
+  ],
+  "period": {
+    "from": "2026-03-15",
+    "to": ""
+  },
+  "link": "https://wseng.ai/nex",
+  "blog": "https://wseng.ai/writing",
+  "images": [
+    {
+      "path": "../media/nex-architecture.png",
+      "description": "Nex architecture: each event starts one isolated task. The model and coding agent are rented and swappable. Memory, checked replies, the verification floor and guardrails form the owned harness."
+    }
+  ],
+  "highlighted": true,
+  "order": 1,
+  "blogLabel": "Writing",
+  "linkLabel": "What is Nex"
+}

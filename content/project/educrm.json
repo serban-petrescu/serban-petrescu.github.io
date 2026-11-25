@@ -1,19 +1,10 @@
 {
   "name": "EduCRM",
   "type": "work",
-  "description": "A comprehensive admissions, enrollment, and Student Information System (SIS) for Alpha School and sister schools, managing the complete student lifecycle from initial inquiry through enrollment and rostering.\n            <br /><br />\n            Built as an integrated ecosystem centered on <strong>HubSpot</strong> with custom middleware services. Handles lead capture, application processing with <strong>Stripe</strong> payment integration via custom PayGate service, shadow day scheduling, offer management, and deposit collection with <strong>Maxio</strong> subscriptions.\n            <br /><br />\n            Serves multiple Alpha School brands and supports various enrollment types including full-time students, ancillary programs, camps, and marketing events. Integrates with learning platforms like Dash, TimeBack, and CoachBot for post-enrollment student management.",
+  "description": "Admissions and marketing for Alpha School and its sister schools, built around HubSpot. It covers lead capture, applications with Stripe payments, shadow-day scheduling, offers and deposits, plus the marketing metrics and admissions reporting on top.",
   "technologies": [
     {
       "name": "TypeScript"
-    },
-    {
-      "name": "React"
-    },
-    {
-      "name": "NodeJS"
-    },
-    {
-      "name": "AWS"
     },
     {
       "name": "HubSpot"
@@ -22,17 +13,17 @@
       "name": "Stripe"
     },
     {
-      "name": "Maxio"
-    },
-    {
-      "name": "QuickSight"
+      "name": "AWS"
     }
   ],
-  "tags": ["architect"],
+  "tags": [
+    "architect"
+  ],
   "period": {
     "from": "2025-01-01",
     "to": ""
   },
   "link": "https://alpha.school/",
-  "highlighted": false
+  "highlighted": false,
+  "role": "Architect, then department lead"
 }

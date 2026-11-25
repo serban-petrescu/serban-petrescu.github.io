@@ -17,7 +17,7 @@ const typeText = type => ({
     personal: 'Personal'
 })[type] || 'Unknown';
 
-const ProjectCard = ({ name, description, period, technologies, link, blog, github, youtube, facebook, images,
+const ProjectCard = ({ name, role, description, period, technologies, link, blog, github, youtube, facebook, images,
     type, onClickGallery, onClickLabel }) => (
     <div className='project-highlight'>
         <Card raised color='grey'>
@@ -56,6 +56,7 @@ const ProjectCard = ({ name, description, period, technologies, link, blog, gith
                 <Label color={typeColor(type)} ribbon size='mini' className='type-ribbon'>{typeText(type)}</Label>
                 <Card.Header content={name} />
                 <Card.Meta content={formatPeriod(period)} />
+                {role && <Card.Meta className='project-role' content={role} />}
             </Card.Content>
             <Card.Content description={renderHtml(description)} />
             <Card.Content className='card-footer'>

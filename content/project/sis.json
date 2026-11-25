@@ -1,0 +1,28 @@
+{
+  "name": "Student Information System",
+  "type": "work",
+  "role": "Department lead",
+  "description": "A rebuild of Alpha School's student information system: families, enrollments, rosters and staff workflows, replacing a legacy system one capability at a time while both run side by side.",
+  "technologies": [
+    {
+      "name": "TypeScript"
+    },
+    {
+      "name": "NodeJS"
+    },
+    {
+      "name": "AWS"
+    },
+    {
+      "name": "PostgreSQL"
+    }
+  ],
+  "tags": [
+    "lead"
+  ],
+  "period": {
+    "from": "2025-10-05",
+    "to": ""
+  },
+  "highlighted": false
+}

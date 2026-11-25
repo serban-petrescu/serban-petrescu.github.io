@@ -1,0 +1,44 @@
+{
+  "name": "GameCraft",
+  "type": "work",
+  "role": "Department lead",
+  "description": "An internal AI game studio. A designer describes a math game in chat. An agent then writes the game design, generates art, audio and 3D assets, builds a 2D or 3D web game, playtests it and publishes it. Every game plugs into the TrashCat fluency engine, so students practice math facts while they play.",
+  "technologies": [
+    {
+      "name": "TypeScript"
+    },
+    {
+      "name": "React"
+    },
+    {
+      "name": "Phaser"
+    },
+    {
+      "name": "Three.js"
+    },
+    {
+      "name": "AWS"
+    },
+    {
+      "name": "Lambda"
+    },
+    {
+      "name": "Bedrock AgentCore"
+    },
+    {
+      "name": "DynamoDB"
+    },
+    {
+      "name": "AI/ML"
+    }
+  ],
+  "tags": [
+    "lead",
+    "ai"
+  ],
+  "period": {
+    "from": "2026-06-14",
+    "to": ""
+  },
+  "highlighted": false
+}

@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react';
-import { Item, Divider, Segment, Container } from 'semantic-ui-react';
+import { Item, Segment, Container } from 'semantic-ui-react';
 import mixpanel from 'mixpanel-browser';
 
+import SectionHeader from '../common/SectionHeader';
 import ExperienceItem from './ExperienceItem';
 
 import './ExperienceList.scss';
 
-const ExperienceList = ({ title, items }) => {
+const ExperienceList = ({ id, title, items }) => {
     useEffect(() => {
         mixpanel.track_links('.experience-item-link', '[Experience] View details');
     }, []);
@@ -14,8 +15,7 @@ const ExperienceList = ({ title, items }) => {
     return (
         <Container>
             <Segment vertical className='experience-list'>
-                <div className='section-divider'></div>
-                <Divider as='h2' className='header' horizontal>{title}</Divider>
+                <SectionHeader id={id} title={title} />
                 <Item.Group divided>
                     {(items || []).map((item, key) => <ExperienceItem {...item} key={key} />)}
                 </Item.Group>

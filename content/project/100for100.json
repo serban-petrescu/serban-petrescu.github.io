@@ -1,0 +1,34 @@
+{
+  "name": "100 for 100",
+  "type": "work",
+  "role": "Department lead",
+  "description": "\"$100 for 100%\": parents subscribe, and when their child scores 100% on a state-aligned math test, the child gets a $100 gift card. The product is the loop in between: test, study the gaps, retest, until the student masters grade-level math.",
+  "technologies": [
+    {
+      "name": "TypeScript"
+    },
+    {
+      "name": "React"
+    },
+    {
+      "name": "NodeJS"
+    },
+    {
+      "name": "AWS"
+    },
+    {
+      "name": "Lambda"
+    },
+    {
+      "name": "CDK"
+    }
+  ],
+  "tags": [
+    "lead"
+  ],
+  "period": {
+    "from": "2026-02-16",
+    "to": ""
+  },
+  "highlighted": false
+}

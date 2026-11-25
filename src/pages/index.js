@@ -1,14 +1,16 @@
 import React, { Component } from "react";
 import mixpanel from "mixpanel-browser";
+import { graphql } from "gatsby";
 
 import Hero from "../components/hero/Hero";
 import Introduction from "../components/intro/Introduction";
 import Footer from "../components/footer/Footer";
-import Highlights from "../components/intro/Highlights";
+import SelectedWork from "../components/work/SelectedWork";
 import ExperienceList from "../components/experience/ExperienceList";
+import Credentials from "../components/experience/Credentials";
+import TalksAndWriting from "../components/writing/TalksAndWriting";
 import GalleryModal from "../components/common/GalleryModal";
 import ProjectList from "../components/experience/ProjectsList";
-import { graphql } from "gatsby";
 
 function toMap(projects = []) {
     const result = {};
@@ -17,6 +19,8 @@ function toMap(projects = []) {
     }
     return result;
 }
+
+const byOrder = (a, b) => (a.order || 99) - (b.order || 99);
 
 export default class App extends Component {
     constructor(props) {
@@ -29,50 +33,42 @@ export default class App extends Component {
     }
 
     render() {
+        const { metadata, highlightedProjects, projects, work, certifications, education, talks, writing } = this.props.data;
         const onClickGallery = ({ name, images }) => modal.open(name, images);
+        const archive = projects.nodes.filter((project) => !project.highlighted);
         let modal;
         return (
             <div>
                 <Hero
-                    name={this.props.data.metadata.name}
-                    title={this.props.data.metadata.role}
-                    avatar={this.props.data.metadata.avatar}
-                    linkedin={this.props.data.metadata.accounts.linkedin}
-                    cv={this.props.data.metadata.cv}
+                    name={metadata.name}
+                    title={metadata.role}
+                    tagline={metadata.tagline}
+                    avatar={metadata.avatar}
+                    linkedin={metadata.accounts.linkedin}
+                    cv={metadata.cv}
+                    writing={metadata.writing}
                 />
                 <Introduction
-                    cover={this.props.data.metadata.cover}
-                    summary={this.props.data.metadata.summary}
-                    social={this.props.data.metadata.accounts}
+                    cover={metadata.cover}
+                    summary={metadata.summary}
+                    social={metadata.accounts}
                 />
-                <Highlights
-                    {...this.props.data.metadata.highlights}
-                    projects={this.props.data.highlightedProjects.nodes}
+                <SelectedWork
+                    projects={[...highlightedProjects.nodes].sort(byOrder)}
                     onClickGallery={onClickGallery}
                 />
-                <div id="work" />
-                <ExperienceList
-                    title="Work History"
-                    items={this.props.data.work.nodes}
+                <ExperienceList id="work" title="Experience" items={work.nodes} />
+                <TalksAndWriting
+                    talks={talks.nodes}
+                    posts={writing.nodes}
+                    writingUrl={metadata.writing}
+                    mediumUrl={metadata.accounts.medium}
                 />
-                <div id="certifications" />
-                <ExperienceList
-                    title="Certifications"
-                    items={this.props.data.certifications.nodes}
-                />
-                <div id="academic" />
-                <ExperienceList
-                    title="Education"
-                    items={this.props.data.education.nodes}
-                />
-                <div id="projects" />
-                <ProjectList
-                    projects={toMap(this.props.data.projects.nodes)}
-                    onClickGallery={onClickGallery}
-                />
+                <Credentials certifications={certifications.nodes} education={education.nodes} />
+                <ProjectList projects={toMap(archive)} onClickGallery={onClickGallery} />
                 <GalleryModal ref={(ref) => (modal = ref)} />
                 <div className="section-divider" />
-                <Footer {...this.props.data.metadata} />
+                <Footer {...metadata} />
             </div>
         );
     }
@@ -100,10 +96,46 @@ export const Head = ({ data }) => (
 );
 
 export const pageQuery = graphql`
+    fragment ProjectFields on ProjectJson {
+        id
+        name
+        type
+        role
+        linkLabel
+        blogLabel
+        outcome
+        order
+        highlighted
+        description
+        technologies {
+            name
+        }
+        period {
+            from(formatString: "YYYY")
+            to(formatString: "YYYY")
+        }
+        images {
+            path {
+                childImageSharp {
+                    gatsbyImageData(placeholder: BLURRED)
+                }
+            }
+            description
+        }
+        github
+        tags
+        link
+        youtube
+        blog
+        facebook
+    }
+
     query {
         education: allEducationJson(sort: { period: { from: DESC } }) {
             nodes {
                 title
+                degree
+                featured
                 body
                 period {
                     from(formatString: "DD.MM.YYYY")
@@ -119,15 +151,10 @@ export const pageQuery = graphql`
         certifications: allCertificationJson(sort: { period: { at: DESC } }) {
             nodes {
                 title
-                body
+                short
+                link
                 period {
                     at(formatString: "DD.MM.YYYY")
-                }
-                link
-                logo {
-                    childImageSharp {
-                        gatsbyImageData(width: 80, placeholder: BLURRED)
-                    }
                 }
             }
         }
@@ -166,20 +193,11 @@ export const pageQuery = graphql`
                 }
             }
             role
-            birthday
+            tagline
+            writing
             cv
             summary
             repository
-            highlights {
-                education {
-                    title
-                    description
-                }
-                work {
-                    title
-                    description
-                }
-            }
             libraries {
                 name
                 url
@@ -194,63 +212,41 @@ export const pageQuery = graphql`
             }
         }
 
-        projects: allProjectJson(sort: { period: { from: DESC } }) {
+        talks: allTalkJson(sort: { date: DESC }) {
             nodes {
-                id
-                name
-                type
-                description
-                technologies {
-                    name
-                }
-                period {
-                    from(formatString: "YYYY")
-                    to(formatString: "YYYY")
-                }
-                images {
-                    path {
-                        childImageSharp {
-                            gatsbyImageData(placeholder: BLURRED)
-                        }
+                title
+                event
+                date(formatString: "D MMM YYYY")
+                abstract
+                slides
+                pdf
+                image {
+                    childImageSharp {
+                        gatsbyImageData(width: 640, placeholder: BLURRED)
                     }
-                    description
                 }
-                github
-                tags
-                link
-                youtube
-                blog
-                facebook
             }
         }
 
-        highlightedProjects: allProjectJson(filter: { highlighted: { eq: true }}, sort: { period: { from: DESC } }) {
+        writing: allWritingJson(sort: { order: ASC }) {
             nodes {
-                id
-                name
-                type
-                description
-                technologies {
-                    name
-                }
-                period {
-                    from(formatString: "YYYY")
-                    to(formatString: "YYYY")
-                }
-                images {
-                    path {
-                        childImageSharp {
-                            gatsbyImageData(placeholder: BLURRED)
-                        }
-                    }
-                    description
-                }
-                github
-                tags
-                link
-                youtube
-                blog
-                facebook
+                title
+                summary
+                url
+                source
+                date(formatString: "MMM YYYY")
+            }
+        }
+
+        projects: allProjectJson(sort: { period: { from: DESC } }) {
+            nodes {
+                ...ProjectFields
+            }
+        }
+
+        highlightedProjects: allProjectJson(filter: { highlighted: { eq: true } }) {
+            nodes {
+                ...ProjectFields
             }
         }
     }

@@ -1,0 +1,34 @@
+{
+  "name": "TimeBack Store",
+  "type": "work",
+  "role": "Bootstrapped it, then handed it to the team",
+  "description": "An app store for education apps. Parents browse a catalog, check out with family pricing and discount codes, and TimeBack creates the student accounts at checkout. App developers integrate through one redirect, an entitlements API and a payment webhook, without touching payments or identity themselves.",
+  "technologies": [
+    {
+      "name": "TypeScript"
+    },
+    {
+      "name": "React"
+    },
+    {
+      "name": "AWS"
+    },
+    {
+      "name": "Lambda"
+    },
+    {
+      "name": "PostgreSQL"
+    },
+    {
+      "name": "Stripe"
+    }
+  ],
+  "tags": [
+    "architect"
+  ],
+  "period": {
+    "from": "2026-06-01",
+    "to": ""
+  },
+  "highlighted": false
+}

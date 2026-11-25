@@ -7,11 +7,12 @@ import withVisibility from '../hoc/withVisibility';
 
 import "./Hero.scss";
 
-const Hero = ({ name, title, avatar, linkedin, visible, cv }) => {
+const Hero = ({ name, title, tagline, avatar, linkedin, visible, cv, writing }) => {
 
     useEffect(() => {
         mixpanel.track_links('.go-to-linkedin', '[Hero] Linkedin Nav');
         mixpanel.track_links('.download-cv', '[Hero] CV Download');
+        mixpanel.track_links('.go-to-writing', '[Hero] Writing Nav');
     }, []);
 
     return (
@@ -21,6 +22,7 @@ const Hero = ({ name, title, avatar, linkedin, visible, cv }) => {
                     <GatsbyImage className="ui small image circular" image={getImage(avatar)} alt="avatar" />
                     <Header as='h1' content={name} inverted />
                     <Header as='h3' content={title} inverted />
+                    <p className="hero-tagline">{tagline}</p>
                     <Button className='action-button go-to-linkedin' color='linkedin' size='large' as='a' target='_blank' href={linkedin}>
                         <Icon name='linkedin' />
                         Get in touch
@@ -28,6 +30,10 @@ const Hero = ({ name, title, avatar, linkedin, visible, cv }) => {
                     <Button className='action-button download-cv' color='orange' size='large' as='a' target='_blank' href={cv}>
                         <Icon name='file pdf' />
                         Download CV
+                    </Button>
+                    <Button className='action-button go-to-writing' inverted size='large' as='a' target='_blank' href={writing}>
+                        <Icon name='pencil' />
+                        Writing
                     </Button>
                 </Container>
             </Transition>

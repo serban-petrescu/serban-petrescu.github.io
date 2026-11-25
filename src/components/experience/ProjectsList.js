@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Segment, Divider, Container, Dropdown } from 'semantic-ui-react';
+import { Segment, Container, Dropdown, Button } from 'semantic-ui-react';
 import mixpanel from 'mixpanel-browser';
 
 import ProjectsGrid from '../common/ProjectsGrid';
+import SectionHeader from '../common/SectionHeader';
 
 import './ProjectsList.scss';
 
@@ -61,8 +62,15 @@ export default class ProjectList extends Component {
         const query = typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('filter') : '';
         this.state = {
             criteria: query ? query.split(',') : [],
-            options: (extractOptions(props.projects))
+            options: (extractOptions(props.projects)),
+            open: Boolean(query)
         }
+    }
+
+    toggle() {
+        const open = !this.state.open;
+        this.setState({ ...this.state, open });
+        mixpanel.track('[Projects] Toggle archive', { open });
     }
 
     process(projects = {}) {
@@ -90,25 +98,33 @@ export default class ProjectList extends Component {
 
     render() {
         const { onClickGallery, projects } = this.props;
-        const { options, criteria } = this.state;
+        const { options, criteria, open } = this.state;
         const filtered = this.process(projects);
+        const count = Object.keys(projects || {}).length;
         return (
             <Container>
-                <div className='section-divider' />
-                <Segment vertical className='project-list'>
-                    <Divider id="my-projects" as='h2' className='header' horizontal>My Projects</Divider>
-                    <Dropdown placeholder='Search by keywords' className='project-search'
+                <Segment vertical className={open ? 'project-list open' : 'project-list'}>
+                    <SectionHeader id='projects' title='Project Archive' />
+                    <p className='project-archive-intro'>
+                        Everything else I have built or led since 2010: {count} projects across work, side projects and university.
+                    </p>
+                    <div className='project-archive-toggle'>
+                        <Button basic onClick={() => this.toggle()}>
+                            {open ? 'Hide the archive' : `Browse all ${count} projects`}
+                        </Button>
+                    </div>
+                    {open && <Dropdown placeholder='Search by keywords' className='project-search'
                         options={options} fluid search multiple selection allowAdditions clearable
                         closeOnChange closeOnEscape value={criteria}
                         onAddItem={(_, { value }) => this.addOption(value)}
-                        onChange={(_, { value }) => this.changeCriteria(value)} />
-                    {
+                        onChange={(_, { value }) => this.changeCriteria(value)} />}
+                    {open && (
                         filtered.length ?
                             <ProjectsGrid projects={filtered}
                                 onClickGallery={onClickGallery}
                                 onClickLabel={name => this.addOption(name)} /> :
                             <div className='no-projects'><em>No projects match the given criteria...</em></div>
-                    }
+                    )}
 
                 </Segment>
             </Container>

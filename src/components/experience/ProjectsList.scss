@@ -1,5 +1,5 @@
 .project-search {
-    margin: 3em 0 1em 0;
+    margin: 2em 0 1em 0;
 }
 
 .no-projects {
@@ -8,5 +8,16 @@
 }
 
 .project-list {
-    min-height: 85vh;
+    .project-archive-intro,
+    .project-archive-toggle {
+        text-align: center;
+    }
+
+    .project-archive-intro {
+        color: rgba(0, 0, 0, 0.6);
+    }
+
+    &.open {
+        min-height: 85vh;
+    }
 }

@@ -15,10 +15,12 @@ exports.createSchemaCustomization = ({ actions }) => {
 
         type EducationJson implements Node {
             period: PeriodJson!
+            degree: String
         }
 
         type CertificationJson implements Node {
             period: PeriodJson!
+            short: String
         }
 
         type WorkJson implements Node {
@@ -27,6 +29,31 @@ exports.createSchemaCustomization = ({ actions }) => {
 
         type ProjectJson implements Node {
             period: PeriodJson!
+            role: String
+            linkLabel: String
+            blogLabel: String
+            outcome: String
+            order: Int
+            highlighted: Boolean
+        }
+
+        type TalkJson implements Node {
+            title: String!
+            event: String!
+            date: Date @dateformat
+            abstract: String
+            slides: String
+            pdf: String
+            image: File @fileByRelativePath
+        }
+
+        type WritingJson implements Node {
+            title: String!
+            summary: String
+            url: String!
+            source: String
+            date: Date @dateformat
+            order: Int
         }
     `);
 };

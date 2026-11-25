@@ -59,6 +59,20 @@ module.exports = {
                 path: `${__dirname}/content/cv`,
             },
         },
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `talk`,
+                path: `${__dirname}/content/talk`,
+            },
+        },
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `writing`,
+                path: `${__dirname}/content/writing`,
+            },
+        },
         `gatsby-transformer-sharp`,
         {
             resolve: `gatsby-plugin-sharp`,

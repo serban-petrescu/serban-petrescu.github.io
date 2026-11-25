@@ -1,32 +1,27 @@
 {
-  "name": "TimeBack App",
+  "name": "StudyFilm",
   "type": "work",
-  "description": "An educational monitoring and analytics platform deployed at Alpha schools that combines <strong>AI-powered surveillance</strong> and real-time coaching to enhance student learning.\n            <br /><br />\n            Built as a desktop <strong>Electron application</strong> that captures screen content and face/gaze data to create a comprehensive view of student engagement. Supports <strong>50+ learning platforms</strong> through a vision-first approach without complex API integrations.\n            <br /><br />\n            Features include real-time AI analysis and feedback, privacy-conscious design, standardized learning analytics via <strong>1EdTech Caliper</strong>, and integration with Alpha's learning ecosystem. The system provides teachers visibility into student engagement that was previously impossible in online learning environments.",
+  "description": "Three pieces: a desktop recorder, a vision pipeline, and a web app for parents and guides. The desktop app records what students do while they learn, plus webcam and microphone during tests.\n\nVision LLMs analyze short windows of each session to find wasted time, write coaching tips and flag possible cheating. Every change is measured against a human-annotated data set. One input change cut false positives on our hardest cases by 27 points. I presented the lessons at Compass AI 2026.",
   "technologies": [
     {
       "name": "TypeScript"
     },
     {
-      "name": "React"
-    },
-    {
       "name": "Electron"
     },
     {
-      "name": "NodeJS"
+      "name": "React"
     },
     {
       "name": "AWS"
-    },
-    {
-      "name": "GraphQL"
     },
     {
       "name": "AI/ML"
     }
   ],
   "tags": [
-    "architect"
+    "architect",
+    "ai"
   ],
   "period": {
     "from": "2025-01-01",
@@ -43,5 +38,10 @@
       "description": "Waste Dashboard analytics showing 'No Waste' time (4hr 9m) vs 'Wasted Time' (2hr 23m, 58%), identifying biggest waste type as 'L4: On-Device Distractions' with detailed bar chart breakdown across multiple days."
     }
   ],
-  "highlighted": false
+  "highlighted": true,
+  "role": "Architect, hands-on engineer",
+  "outcome": "Records millions of study sessions a quarter for thousands of Alpha School students. Vision models turn them into coaching for students, parents and guides.",
+  "blog": "/presentations/2026-compass-ai-your-vision-model-is-biased/",
+  "order": 2,
+  "blogLabel": "Compass talk"
 }
