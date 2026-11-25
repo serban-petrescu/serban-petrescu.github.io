@@ -1,5 +1,76 @@
 ---
-import HomePage from "../components/HomePage.astro";
+import Base from "../layouts/Base.astro";
+import {
+    getArchive,
+    getCertifications,
+    getEducation,
+    getMetadata,
+    getSelectedWork,
+    getTalks,
+    getWork,
+    getWriting,
+} from "../lib/content";
+import About from "../components/About.astro";
+import Archive from "../components/Archive.astro";
+import Credentials from "../components/Credentials.astro";
+import Experience from "../components/Experience.astro";
+import Gallery from "../components/Gallery.astro";
+import Hero from "../components/Hero.astro";
+import SelectedWork from "../components/SelectedWork.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import TalksAndWriting from "../components/TalksAndWriting.astro";
+
+const [metadata, selected, archive, work, certifications, education, talks, writing] = await Promise.all([
+    getMetadata(),
+    getSelectedWork(),
+    getArchive(),
+    getWork(),
+    getCertifications(),
+    getEducation(),
+    getTalks(),
+    getWriting(),
+]);
+
+const heroProps = {
+    name: metadata.name,
+    role: metadata.role,
+    tagline: metadata.tagline,
+    avatar: metadata.avatar,
+    linkedin: metadata.accounts.linkedin,
+    cv: metadata.cv,
+    writing: metadata.writing,
+};
+
+const person = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: metadata.name,
+    jobTitle: metadata.role,
+    url: metadata.website,
+    email: metadata.email,
+    telephone: metadata.phone,
+    sameAs: [metadata.accounts.linkedin, metadata.accounts.github, metadata.accounts.medium, metadata.writing],
+};
 ---
 
-<HomePage hero="full" />
+<Base title={metadata.title} description={metadata.description} trackVisit>
+    <script slot="head" type="application/ld+json" set:html={JSON.stringify(person)} />
+    <SiteHeader name={metadata.name} />
+    <main>
+        <Hero {...heroProps} />
+        <About summary={metadata.summary} cover={metadata.cover} accounts={metadata.accounts} />
+        <SelectedWork projects={selected} />
+        <Experience work={work} />
+        <TalksAndWriting
+            talks={talks}
+            writing={writing}
+            wsengUrl={metadata.writing}
+            mediumUrl={metadata.accounts.medium}
+        />
+        <Credentials certifications={certifications} education={education} />
+        <Archive projects={archive} />
+    </main>
+    <SiteFooter repository={metadata.repository} />
+    <Gallery projects={[...selected, ...archive]} />
+</Base>

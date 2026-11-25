@@ -19,7 +19,7 @@ const { name, role, tagline, avatar, ...actions } = Astro.props;
 
 <section class="hero">
     <div class="inner wrap">
-        <Image class="avatar" src={avatar} alt={name} width={144} height={144} loading="eager" />
+        <Image class="avatar" src={avatar} alt={name} width={144} height={144} densities={[1, 2]} loading="eager" />
         <h1>{name}</h1>
         <p class="role">{role}</p>
         <p class="tagline">{tagline}</p>
