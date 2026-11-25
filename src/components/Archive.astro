@@ -1,6 +1,7 @@
 ---
 import type { Project } from "../lib/content";
-import ArchiveCard from "./ArchiveCard.astro";
+import { year } from "../lib/dates";
+import ArchiveRow from "./ArchiveRow.astro";
 import Icon from "./Icon.astro";
 
 interface Props {
@@ -8,6 +9,27 @@ interface Props {
 }
 
 const { projects } = Astro.props;
+
+// Era boundaries follow the career, not the calendar: Trilogy from 2021, msg systems and KickIT before that.
+const eras = [
+    { label: "2021 to now", from: 2021, to: 9999 },
+    { label: "2017 to 2020", from: 2017, to: 2020 },
+    { label: "2010 to 2016", from: 2010, to: 2016 },
+].map((era) => ({
+    ...era,
+    projects: projects.filter(({ data }) => {
+        const start = Number(year(data.period.from));
+        return start >= era.from && start <= era.to;
+    }),
+}));
+
+const types = [
+    { value: "all", label: "All" },
+    { value: "work", label: "Work" },
+    { value: "personal", label: "Side projects" },
+    { value: "academic", label: "University" },
+];
+
 const keywords = [
     ...new Set(projects.flatMap(({ data }) => [...data.technologies.map((tech) => tech.name), ...data.tags])),
 ].sort((a, b) => a.localeCompare(b));
@@ -25,30 +47,39 @@ const keywords = [
         </button>
     </div>
     <div id="archive-body" class="archive-body" hidden>
-        <div class="filter">
+        <div class="toolbar">
+            <div class="types" role="group" aria-label="Project type">
+                {types.map(({ value, label }) => (
+                    <button type="button" data-type-filter={value} aria-pressed={value === "all" ? "true" : "false"}>
+                        {label}
+                    </button>
+                ))}
+            </div>
             <label class="search">
                 <Icon name="search" />
-                <span class="visually-hidden">Filter by technology or role</span>
-                <input
-                    type="search"
-                    list="archive-keywords"
-                    placeholder="Filter by technology or role, e.g. AWS"
-                    data-archive-input
-                />
+                <span class="visually-hidden">Filter by technology</span>
+                <input type="search" list="archive-keywords" placeholder="Technology, e.g. AWS" data-archive-input />
             </label>
             <datalist id="archive-keywords">
                 {keywords.map((keyword) => (
                     <option value={keyword} />
                 ))}
             </datalist>
+        </div>
+        <div class="status">
             <ul class="chips" data-archive-chips></ul>
             <p class="count" data-archive-count aria-live="polite"></p>
         </div>
-        <div class="grid">
-            {projects.map((project) => (
-                <ArchiveCard project={project} />
-            ))}
-        </div>
+        {eras.map((era) => (
+            <div class="era" data-era>
+                <h3>{era.label}</h3>
+                <ul class="rows">
+                    {era.projects.map((project) => (
+                        <ArchiveRow project={project} />
+                    ))}
+                </ul>
+            </div>
+        ))}
         <p class="empty" data-archive-empty hidden>
             No projects match these filters.
         </p>
@@ -65,7 +96,9 @@ const keywords = [
     const chips = root.querySelector<HTMLUListElement>("[data-archive-chips]")!;
     const count = root.querySelector<HTMLElement>("[data-archive-count]")!;
     const empty = root.querySelector<HTMLElement>("[data-archive-empty]")!;
-    const cards = [...root.querySelectorAll<HTMLElement>(".archive-card")];
+    const typeButtons = [...root.querySelectorAll<HTMLButtonElement>("[data-type-filter]")];
+    const eras = [...root.querySelectorAll<HTMLElement>("[data-era]")];
+    const rows = [...root.querySelectorAll<HTMLElement>(".archive-row")];
     const label = toggle.textContent!.trim();
 
     const params = new URLSearchParams(location.search);
@@ -73,13 +106,14 @@ const keywords = [
         .split(",")
         .map((value) => value.trim())
         .filter(Boolean);
+    let type = "all";
 
-    // A card matches when any of its technologies or tags equals any active filter (same rule as the old site).
-    const matches = (card: HTMLElement) => {
+    // A row matches when its type fits and any of its technologies or tags equals any active filter.
+    const matches = (row: HTMLElement) => {
+        if (type !== "all" && row.dataset.type !== type) return false;
         if (!criteria.length) return true;
-        const keywords: string[] = JSON.parse(card.dataset.keywords ?? "[]");
-        const lower = keywords.map((keyword) => keyword.toLowerCase());
-        return criteria.some((criterion) => lower.includes(criterion.toLowerCase()));
+        const keywords: string[] = JSON.parse(row.dataset.keywords ?? "[]").map((k: string) => k.toLowerCase());
+        return criteria.some((criterion) => keywords.includes(criterion.toLowerCase()));
     };
 
     function syncUrl() {
@@ -106,12 +140,14 @@ const keywords = [
 
     function apply() {
         let visible = 0;
-        for (const card of cards) {
-            const show = matches(card);
-            card.hidden = !show;
+        for (const row of rows) {
+            const show = matches(row);
+            row.hidden = !show;
             if (show) visible += 1;
         }
-        count.textContent = criteria.length ? `${visible} of ${cards.length} projects` : "";
+        for (const era of eras) era.hidden = !era.querySelector(".archive-row:not([hidden])");
+        const filtered = criteria.length > 0 || type !== "all";
+        count.textContent = filtered ? `${visible} of ${rows.length} projects` : "";
         empty.hidden = visible > 0;
         renderChips();
         syncUrl();
@@ -131,6 +167,14 @@ const keywords = [
         apply();
     }
 
+    function setType(value: string) {
+        type = value;
+        for (const button of typeButtons)
+            button.setAttribute("aria-pressed", String(button.dataset.typeFilter === value));
+        track("[Projects] Filter type", { type: value });
+        apply();
+    }
+
     function setOpen(open: boolean, trackIt = true) {
         body.hidden = !open;
         toggle.setAttribute("aria-expanded", String(open));
@@ -139,6 +183,7 @@ const keywords = [
     }
 
     toggle.addEventListener("click", () => setOpen(body.hidden));
+    for (const button of typeButtons) button.addEventListener("click", () => setType(button.dataset.typeFilter!));
     input.addEventListener("change", () => {
         addCriterion(input.value);
         input.value = "";
@@ -148,10 +193,6 @@ const keywords = [
         event.preventDefault();
         addCriterion(input.value);
         input.value = "";
-    });
-    root.addEventListener("click", (event) => {
-        const tag = (event.target as Element).closest<HTMLElement>("[data-add-filter]");
-        if (tag) addCriterion(tag.dataset.addFilter!);
     });
 
     if (criteria.length) {
@@ -179,20 +220,45 @@ const keywords = [
         margin-top: 28px;
     }
 
-    .filter {
+    .toolbar {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
+        justify-content: space-between;
         gap: 12px;
-        margin-bottom: 20px;
+    }
+
+    .types {
+        display: inline-flex;
+        padding: 3px;
+        border: 1px solid var(--border);
+        border-radius: 9px;
+        background: var(--surface);
+    }
+
+    .types button {
+        font: inherit;
+        font-size: 14px;
+        padding: 6px 12px;
+        border: 0;
+        border-radius: 6px;
+        background: transparent;
+        color: var(--muted);
+        cursor: pointer;
+    }
+
+    .types button[aria-pressed="true"] {
+        background: var(--bg);
+        color: var(--ink);
+        box-shadow: 0 1px 2px rgb(0 0 0 / 0.08);
     }
 
     .search {
         display: flex;
         align-items: center;
         gap: 8px;
-        flex: 1 1 320px;
-        padding: 8px 12px;
+        flex: 0 1 280px;
+        padding: 7px 12px;
         border: 1px solid var(--border);
         border-radius: 8px;
         color: var(--muted);
@@ -200,12 +266,22 @@ const keywords = [
 
     .search input {
         flex: 1;
+        min-width: 0;
         border: 0;
         outline: 0;
         background: transparent;
         color: var(--ink);
         font: inherit;
-        font-size: 15px;
+        font-size: 14.5px;
+    }
+
+    .status {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px;
+        min-height: 12px;
+        margin: 12px 0 4px;
     }
 
     .chips {
@@ -220,7 +296,7 @@ const keywords = [
     .chips :global(button) {
         font: inherit;
         font-size: 13px;
-        padding: 5px 10px;
+        padding: 4px 10px;
         border-radius: 999px;
         border: 1px solid var(--accent);
         background: var(--accent-soft);
@@ -234,10 +310,26 @@ const keywords = [
         color: var(--muted);
     }
 
-    .grid {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 16px;
+    .era {
+        margin-top: 28px;
+    }
+
+    .era[hidden] {
+        display: none;
+    }
+
+    .era h3 {
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--muted);
+        margin: 0 0 6px 8px;
+    }
+
+    .rows {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        border-bottom: 1px solid var(--border);
     }
 
     .empty {
@@ -246,15 +338,9 @@ const keywords = [
         padding: 24px 0;
     }
 
-    @media (max-width: 960px) {
-        .grid {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-    }
-
-    @media (max-width: 620px) {
-        .grid {
-            grid-template-columns: minmax(0, 1fr);
+    @media (max-width: 640px) {
+        .search {
+            flex: 1 1 100%;
         }
     }
 </style>

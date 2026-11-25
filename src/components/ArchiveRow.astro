@@ -1,0 +1,139 @@
+---
+import { paragraphs, type Project } from "../lib/content";
+import { yearRange } from "../lib/dates";
+import { teaser } from "../lib/text";
+import ProjectLinks from "./ProjectLinks.astro";
+
+interface Props {
+    project: Project;
+}
+
+const { project } = Astro.props;
+const { name, type, role, description, period, technologies, tags } = project.data;
+const keywords = [...technologies.map((tech) => tech.name), ...tags];
+const typeLabel = { work: "Work", academic: "University", personal: "Side project" }[type];
+const meta = [typeLabel, role, yearRange(period)].filter(Boolean).join(" · ");
+---
+
+<li class="archive-row" data-type={type} data-keywords={JSON.stringify(keywords)}>
+    <details>
+        <summary>
+            <span class="name">{name}</span>
+            <span class="teaser">{teaser(description)}</span>
+        </summary>
+        <div class="detail">
+            <p class="meta">{meta}</p>
+            <div class="body">
+                {paragraphs(description).map((paragraph) => (
+                    <p set:html={paragraph} />
+                ))}
+            </div>
+            <ul class="tags">
+                {technologies.map(({ name: tech }) => (
+                    <li>{tech}</li>
+                ))}
+            </ul>
+            <ProjectLinks project={project} event="[Projects] View details" />
+        </div>
+    </details>
+</li>
+
+<style>
+    .archive-row {
+        border-top: 1px solid var(--border);
+    }
+
+    .archive-row[hidden] {
+        display: none;
+    }
+
+    summary {
+        display: grid;
+        grid-template-columns: minmax(0, 17rem) minmax(0, 1fr);
+        gap: 24px;
+        align-items: baseline;
+        padding: 11px 8px;
+        cursor: pointer;
+        list-style: none;
+        border-radius: 6px;
+    }
+
+    summary::-webkit-details-marker {
+        display: none;
+    }
+
+    summary:hover {
+        background: var(--surface);
+    }
+
+    .name {
+        font-weight: 600;
+        color: var(--ink);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .teaser {
+        font-size: 15px;
+        color: var(--muted);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    details[open] .teaser {
+        visibility: hidden;
+    }
+
+    .detail {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin: 0 8px 20px calc(17rem + 24px + 8px);
+        max-width: 70ch;
+    }
+
+    .meta {
+        margin: 0;
+        font-size: 13.5px;
+        color: var(--muted);
+    }
+
+    .body {
+        font-size: 15px;
+        color: var(--ink-2);
+    }
+
+    .body p:last-child {
+        margin-bottom: 0;
+    }
+
+    @media (max-width: 760px) {
+        summary {
+            grid-template-columns: minmax(0, 1fr);
+            gap: 2px;
+        }
+
+        .name {
+            white-space: normal;
+        }
+
+        .teaser {
+            font-size: 14px;
+            white-space: normal;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+        }
+
+        details[open] .teaser {
+            display: none;
+        }
+
+        .detail {
+            margin-left: 8px;
+        }
+    }
+</style>
