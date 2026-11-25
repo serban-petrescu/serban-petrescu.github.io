@@ -1,0 +1,42 @@
+---
+interface Props {
+    repository: string;
+}
+
+const { repository } = Astro.props;
+---
+
+<footer class="site-footer">
+    <div class="wrap">
+        <a href={repository} target="_blank" rel="noopener">
+            Source
+        </a>
+        <a href="/cv/">CV</a>
+        <a href="/llms.txt">llms.txt</a>
+        <span>Built with Astro.</span>
+    </div>
+</footer>
+
+<style>
+    .site-footer {
+        margin-top: 96px;
+        border-top: 1px solid var(--border);
+        padding: 24px 0 48px;
+        font-size: 14px;
+        color: var(--muted);
+    }
+
+    .wrap {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    a {
+        color: var(--muted);
+    }
+
+    span {
+        margin-left: auto;
+    }
+</style>

@@ -1,0 +1,31 @@
+---
+import Icon from "./Icon.astro";
+
+interface Props {
+    linkedin: string;
+    cv: string;
+    writing: string;
+}
+
+const { linkedin, cv, writing } = Astro.props;
+---
+
+<div class="hero-actions">
+    <a class="button primary" href={linkedin} target="_blank" rel="noopener" data-track="[Hero] Linkedin Nav">
+        <Icon name="linkedin" /> Get in touch
+    </a>
+    <a class="button" href={cv} target="_blank" rel="noopener" data-track="[Hero] CV Download">
+        <Icon name="download" /> Download CV
+    </a>
+    <a class="button" href={writing} target="_blank" rel="noopener" data-track="[Hero] Writing Nav">
+        <Icon name="pen" /> Writing
+    </a>
+</div>
+
+<style>
+    .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+</style>

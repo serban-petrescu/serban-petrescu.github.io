@@ -1,0 +1,146 @@
+---
+import { Image } from "astro:assets";
+
+// Static weights, not the variable font: Chrome embeds variable fonts as Type 3 glyphs, which breaks PDF text extraction.
+import "@fontsource/inter/latin-400.css";
+import "@fontsource/inter/latin-600.css";
+import "@fontsource/inter/latin-700.css";
+import "@fontsource/inter/latin-ext-400.css";
+import "@fontsource/inter/latin-ext-600.css";
+import "@fontsource/inter/latin-ext-700.css";
+import "@fontsource/inter/latin-400-italic.css";
+import "../styles/cv.css";
+import Icon from "../components/Icon.astro";
+import Base from "../layouts/Base.astro";
+import { getCertifications, getCv, getEducation, getMetadata, getWork, paragraphs } from "../lib/content";
+import { monthRange, year, yearRange } from "../lib/dates";
+
+const [metadata, cv, work, certifications, education] = await Promise.all([
+    getMetadata(),
+    getCv(),
+    getWork(),
+    getCertifications(),
+    getEducation(),
+]);
+
+const featured = work.filter(({ data }) => data.featured);
+const additional = work.filter(({ data }) => !data.featured);
+const degrees = education.filter(({ data }) => data.featured);
+---
+
+<Base title={`CV - ${metadata.name}`} description={`CV of ${metadata.name}`} noindex>
+    <div class="cv-container">
+        <button class="cv-print-button" type="button" aria-label="Print CV" data-print>
+            <Icon name="print" />
+        </button>
+
+        <header class="cv-header">
+            <div class="cv-avatar">
+                <Image src={metadata.avatar} alt={metadata.name} width={240} height={240} loading="eager" />
+            </div>
+            <div class="cv-header-content">
+                <h1>{metadata.name}</h1>
+                <div class="cv-title">{metadata.role}</div>
+                <div class="cv-contact">
+                    <span>
+                        <a href={`mailto:${metadata.email}`}>{metadata.email}</a>
+                    </span>
+                    <span>
+                        <a href={`tel:${metadata.phone}`}>{metadata.phone}</a>
+                    </span>
+                    <span>{metadata.location}</span>
+                    <span>
+                        <a href={metadata.accounts.linkedin} target="_blank" rel="noopener">
+                            LinkedIn
+                        </a>
+                    </span>
+                    <span>
+                        <a href={metadata.accounts.github} target="_blank" rel="noopener">
+                            GitHub
+                        </a>
+                    </span>
+                </div>
+            </div>
+        </header>
+
+        <section class="cv-section cv-summary">
+            <h2>Professional Summary</h2>
+            {paragraphs(cv.summary).map((paragraph) => (
+                <p>{paragraph}</p>
+            ))}
+        </section>
+
+        <section class="cv-section">
+            <h2>Key Achievements</h2>
+            <ul class="cv-achievements">
+                {cv.achievements.map((achievement) => (
+                    <li>{achievement}</li>
+                ))}
+            </ul>
+        </section>
+
+        <section class="cv-section cv-work-experience">
+            <h2>Work Experience</h2>
+            {featured.map(({ data }) => (
+                <div class="cv-item">
+                    <div class="cv-item-header">
+                        <h3>{data.title}</h3>
+                        <span class="cv-period">{monthRange(data.period)}</span>
+                    </div>
+                    <div class="cv-item-body">
+                        {paragraphs(data.body).map((paragraph) => (
+                            <p>{paragraph}</p>
+                        ))}
+                    </div>
+                </div>
+            ))}
+            <div class="cv-other-roles">
+                <h3>Additional Roles</h3>
+                {additional.map(({ data }) => (
+                    <div class="cv-role-compact">
+                        <span class="cv-role-title">{data.title}</span>
+                        <span class="cv-role-period">{monthRange(data.period)}</span>
+                    </div>
+                ))}
+            </div>
+        </section>
+
+        <section class="cv-section cv-two-column">
+            <div class="cv-column">
+                <h2>Skills</h2>
+                {cv.skillGroups.map((group) => (
+                    <p class="cv-line">
+                        <strong>{group.category}:</strong> {group.skills}
+                    </p>
+                ))}
+            </div>
+            <div class="cv-column">
+                <h2>Certifications</h2>
+                {certifications.map(({ data }) => (
+                    <p class="cv-line">
+                        {data.short} <span class="cv-year">{year(data.period.at)}</span>
+                    </p>
+                ))}
+            </div>
+            <div class="cv-column">
+                <h2>Education</h2>
+                {degrees.map(({ data }) => (
+                    <p class="cv-line">
+                        <strong>{data.degree}</strong>, {data.title}{" "}
+                        <span class="cv-year">{yearRange(data.period)}</span>
+                    </p>
+                ))}
+            </div>
+        </section>
+
+        <footer class="cv-footer">
+            <p>
+                Full portfolio available at <a href={metadata.website}>{new URL(metadata.website).hostname}</a>
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        document.querySelector("[data-print]")?.addEventListener("click", () => window.print());
+    </script>
+</Base>

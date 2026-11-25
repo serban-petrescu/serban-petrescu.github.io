@@ -1,33 +1,28 @@
 name: Release
 
 on:
-    push:
-        branches: [source]
+  push:
+    branches: [source]
 
 jobs:
-    publish:
-        name: Publish
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v3
-            - uses: actions/setup-node@v3
-              with:
-                  node-version: 18
-                  cache: 'npm'
-                  cache-dependency-path: 'package-lock.json'
-            - name: Install dependencies
-              run: |
-                  npm ci --include=optional
-                  npm uninstall @parcel/watcher
-                  npm install @parcel/watcher --force
-            - name: Clean
-              run: npm run clean
-            - name: Build
-              run: |
-                  npm run build
-                  cp CNAME public/CNAME
-            - name: Deploy
-              uses: JamesIves/github-pages-deploy-action@v4
-              with:
-                  folder: public
-                  branch: master
+  publish:
+    name: Publish
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Lint
+        run: pnpm lint
+      - name: Build
+        run: pnpm build
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist
+          branch: master

@@ -1,0 +1,88 @@
+---
+interface Props {
+    name: string;
+}
+
+const { name } = Astro.props;
+const links = [
+    { href: "/#work", label: "Work" },
+    { href: "/#experience", label: "Experience" },
+    { href: "/#talks-and-writing", label: "Writing" },
+    { href: "/#archive", label: "Archive" },
+    { href: "/cv/", label: "CV" },
+];
+---
+
+<header class="site-header">
+    <nav class="wrap" aria-label="Main">
+        <a class="home" href="/">
+            {name}
+        </a>
+        <ul>
+            {links.map(({ href, label }) => (
+                <li>
+                    <a href={href}>{label}</a>
+                </li>
+            ))}
+        </ul>
+    </nav>
+</header>
+
+<style>
+    .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: color-mix(in srgb, var(--bg) 88%, transparent);
+        backdrop-filter: saturate(180%) blur(10px);
+        border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+        display: flex;
+        align-items: baseline;
+        gap: 24px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        font-size: 15px;
+    }
+
+    .home {
+        font-weight: 700;
+        color: var(--ink);
+        margin-right: auto;
+    }
+
+    ul {
+        display: flex;
+        gap: 22px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    ul a {
+        color: var(--ink-2);
+    }
+
+    ul a:hover {
+        color: var(--accent);
+        text-decoration: none;
+    }
+
+    @media (max-width: 640px) {
+        nav {
+            gap: 12px;
+        }
+
+        ul {
+            gap: 14px;
+            font-size: 14px;
+        }
+
+        ul li:nth-child(2),
+        ul li:nth-child(4) {
+            display: none;
+        }
+    }
+</style>

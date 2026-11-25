@@ -1,0 +1,64 @@
+---
+import type { Project } from "../lib/content";
+import Icon from "./Icon.astro";
+
+interface Props {
+    project: Project;
+    event: string;
+}
+
+const { project, event } = Astro.props;
+const { name, link, linkLabel, blog, blogLabel, github, youtube, facebook, images } = project.data;
+
+const links = [
+    link && { href: link, label: linkLabel ?? "Website", icon: "link", type: "Link" },
+    blog && { href: blog, label: blogLabel ?? "Blog post", icon: "file", type: "Blog" },
+    github && { href: github, label: "Code", icon: "github", type: "GitHub" },
+    youtube && { href: youtube, label: "Video", icon: "youtube", type: "YouTube" },
+    facebook && { href: facebook, label: "Facebook", icon: "link", type: "Facebook" },
+].filter(Boolean) as { href: string; label: string; icon: "link" | "file" | "github" | "youtube"; type: string }[];
+---
+
+{(links.length > 0 || images.length > 0) && (
+    <div class="project-links">
+        {links.map(({ href, label, icon, type }) => (
+            <a
+                class="button"
+                href={href}
+                target="_blank"
+                rel="noopener"
+                data-track={event}
+                data-track-name={name}
+                data-track-type={type}
+                aria-label={`${label}: ${name}`}
+            >
+                <Icon name={icon} /> {label}
+            </a>
+        ))}
+        {images.length > 0 && (
+            <button
+                class="button"
+                type="button"
+                data-gallery={project.id}
+                data-track="[Gallery] Open"
+                data-track-title={name}
+                aria-label={`Gallery: ${name}`}
+            >
+                <Icon name="image" /> Gallery
+            </button>
+        )}
+    </div>
+)}
+
+<style>
+    .project-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .project-links .button {
+        font-size: 13px;
+        padding: 7px 11px;
+    }
+</style>

@@ -1,0 +1,211 @@
+---
+import { getImage } from "astro:assets";
+
+import type { Project } from "../lib/content";
+import Icon from "./Icon.astro";
+
+interface Props {
+    projects: Project[];
+}
+
+const { projects } = Astro.props;
+
+// Images are optimised at build time and loaded lazily, only when a gallery opens.
+const galleries = Object.fromEntries(
+    await Promise.all(
+        projects
+            .filter(({ data }) => data.images.length > 0)
+            .map(async ({ id, data }) => [
+                id,
+                {
+                    title: data.name,
+                    images: await Promise.all(
+                        data.images.map(async (image) => {
+                            const optimised = await getImage({
+                                src: image.path,
+                                width: Math.min(image.path.width, 1600),
+                                format: "webp",
+                            });
+                            return {
+                                src: optimised.src,
+                                width: optimised.attributes.width,
+                                height: optimised.attributes.height,
+                                description: image.description,
+                            };
+                        }),
+                    ),
+                },
+            ]),
+    ),
+);
+---
+
+<dialog class="gallery" data-gallery-dialog aria-labelledby="gallery-title">
+    <header>
+        <h2 id="gallery-title" data-gallery-title></h2>
+        <button type="button" class="close" data-gallery-close aria-label="Close gallery">
+            <Icon name="close" />
+        </button>
+    </header>
+    <figure>
+        <figcaption data-gallery-caption></figcaption>
+    </figure>
+    <footer>
+        <button type="button" class="button" data-gallery-prev aria-label="Previous image">
+            <Icon name="left" />
+        </button>
+        <span data-gallery-position></span>
+        <button type="button" class="button" data-gallery-next aria-label="Next image">
+            <Icon name="right" />
+        </button>
+    </footer>
+</dialog>
+
+<script type="application/json" id="gallery-data" set:html={JSON.stringify(galleries)} />
+<script>
+    import { track } from "../lib/analytics";
+
+    type GalleryImage = { src: string; width: number; height: number; description: string };
+    type Gallery = { title: string; images: GalleryImage[] };
+
+    const dialog = document.querySelector<HTMLDialogElement>("[data-gallery-dialog]")!;
+    const data: Record<string, Gallery> = JSON.parse(document.getElementById("gallery-data")!.textContent!);
+    const title = dialog.querySelector<HTMLElement>("[data-gallery-title]")!;
+    const figure = dialog.querySelector<HTMLElement>("figure")!;
+    const image = document.createElement("img");
+    figure.prepend(image);
+    const caption = dialog.querySelector<HTMLElement>("[data-gallery-caption]")!;
+    const position = dialog.querySelector<HTMLElement>("[data-gallery-position]")!;
+    const prev = dialog.querySelector<HTMLButtonElement>("[data-gallery-prev]")!;
+    const next = dialog.querySelector<HTMLButtonElement>("[data-gallery-next]")!;
+    const footer = dialog.querySelector<HTMLElement>("footer")!;
+
+    let current: Gallery | undefined;
+    let page = 0;
+
+    function show(index: number) {
+        if (!current) return;
+        page = Math.min(Math.max(0, index), current.images.length - 1);
+        const item = current.images[page];
+        image.src = item.src;
+        image.width = item.width;
+        image.height = item.height;
+        image.alt = item.description;
+        caption.textContent = item.description;
+        position.textContent = `${page + 1} / ${current.images.length}`;
+        prev.disabled = page === 0;
+        next.disabled = page === current.images.length - 1;
+    }
+
+    function change(index: number) {
+        show(index);
+        track("[Gallery] Change page", { title: current?.title, page });
+    }
+
+    document.addEventListener("click", (event) => {
+        const trigger = (event.target as Element).closest<HTMLElement>("[data-gallery]");
+        if (!trigger) return;
+        current = data[trigger.dataset.gallery!];
+        if (!current) return;
+        title.textContent = current.title;
+        footer.hidden = current.images.length < 2;
+        show(0);
+        dialog.showModal();
+    });
+
+    prev.addEventListener("click", () => change(page - 1));
+    next.addEventListener("click", () => change(page + 1));
+    dialog.querySelector("[data-gallery-close]")!.addEventListener("click", () => dialog.close());
+    dialog.addEventListener("click", (event) => {
+        if (event.target === dialog) dialog.close();
+    });
+    dialog.addEventListener("keydown", (event) => {
+        if (event.key === "ArrowLeft") change(page - 1);
+        if (event.key === "ArrowRight") change(page + 1);
+    });
+</script>
+
+<style>
+    .gallery {
+        width: min(1200px, calc(100vw - 32px));
+        max-height: calc(100vh - 32px);
+        padding: 0;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        background: var(--bg);
+        color: var(--ink);
+    }
+
+    .gallery::backdrop {
+        background: rgb(0 0 0 / 0.6);
+    }
+
+    .gallery[open] {
+        display: flex;
+        flex-direction: column;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 14px 18px;
+        border-bottom: 1px solid var(--border);
+    }
+
+    h2 {
+        font-size: 17px;
+    }
+
+    .close {
+        all: unset;
+        cursor: pointer;
+        color: var(--muted);
+        display: grid;
+    }
+
+    figure {
+        margin: 0;
+        padding: 16px;
+        min-height: 0;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        overflow: auto;
+    }
+
+    figure img {
+        max-height: calc(100vh - 220px);
+        width: auto;
+        object-fit: contain;
+    }
+
+    figcaption {
+        max-width: 80ch;
+        text-align: center;
+        font-size: 14.5px;
+        color: var(--muted);
+    }
+
+    footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+        padding: 12px;
+        border-top: 1px solid var(--border);
+        font-size: 14px;
+        color: var(--muted);
+    }
+
+    footer[hidden] {
+        display: none;
+    }
+
+    footer .button:disabled {
+        opacity: 0.4;
+        cursor: default;
+    }
+</style>

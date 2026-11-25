@@ -1,0 +1,83 @@
+---
+import { Image } from "astro:assets";
+
+import { paragraphs, type Work } from "../lib/content";
+import { monthRange } from "../lib/dates";
+
+interface Props {
+    work: Work[];
+}
+
+const { work } = Astro.props;
+---
+
+<section id="experience" class="section wrap">
+    <h2 class="section-title">Experience</h2>
+    <ol class="timeline">
+        {work.map(({ data }) => (
+            <li>
+                <Image class="logo" src={data.logo} alt="" width={96} />
+                <div>
+                    <h3>{data.title}</h3>
+                    <p class="period">{monthRange(data.period)}</p>
+                    <div class="body">
+                        {paragraphs(data.body).map((paragraph) => (
+                            <p set:html={paragraph} />
+                        ))}
+                    </div>
+                </div>
+            </li>
+        ))}
+    </ol>
+</section>
+
+<style>
+    .timeline {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    li {
+        display: grid;
+        grid-template-columns: 48px minmax(0, 1fr);
+        gap: 20px;
+        padding: 24px 0;
+        border-top: 1px solid var(--border);
+    }
+
+    li:first-child {
+        border-top: 0;
+        padding-top: 0;
+    }
+
+    li :global(.logo) {
+        width: 48px;
+        height: 48px;
+        object-fit: contain;
+        border-radius: 8px;
+        background: #fff;
+        padding: 4px;
+        border: 1px solid var(--border);
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    .period {
+        margin: 2px 0 10px;
+        font-size: 14px;
+        color: var(--muted);
+    }
+
+    .body {
+        max-width: 78ch;
+        color: var(--ink-2);
+        font-size: 15.5px;
+    }
+
+    .body p:last-child {
+        margin-bottom: 0;
+    }
+</style>

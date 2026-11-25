@@ -1,0 +1,7 @@
+dist
+.astro
+public
+content
+.context
+pnpm-lock.yaml
+*.md

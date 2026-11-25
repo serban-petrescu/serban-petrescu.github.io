@@ -1,0 +1,260 @@
+---
+import type { Project } from "../lib/content";
+import ArchiveCard from "./ArchiveCard.astro";
+import Icon from "./Icon.astro";
+
+interface Props {
+    projects: Project[];
+}
+
+const { projects } = Astro.props;
+const keywords = [
+    ...new Set(projects.flatMap(({ data }) => [...data.technologies.map((tech) => tech.name), ...data.tags])),
+].sort((a, b) => a.localeCompare(b));
+---
+
+<section id="archive" class="section wrap archive" data-archive>
+    <h2 class="section-title">Project archive</h2>
+    <div class="intro">
+        <p>
+            Everything else I have built or led since 2010: {projects.length} projects across work, side projects and
+            university.
+        </p>
+        <button class="button" type="button" data-archive-toggle aria-expanded="false" aria-controls="archive-body">
+            Browse all {projects.length} projects
+        </button>
+    </div>
+    <div id="archive-body" class="archive-body" hidden>
+        <div class="filter">
+            <label class="search">
+                <Icon name="search" />
+                <span class="visually-hidden">Filter by technology or role</span>
+                <input
+                    type="search"
+                    list="archive-keywords"
+                    placeholder="Filter by technology or role, e.g. AWS"
+                    data-archive-input
+                />
+            </label>
+            <datalist id="archive-keywords">
+                {keywords.map((keyword) => (
+                    <option value={keyword} />
+                ))}
+            </datalist>
+            <ul class="chips" data-archive-chips></ul>
+            <p class="count" data-archive-count aria-live="polite"></p>
+        </div>
+        <div class="grid">
+            {projects.map((project) => (
+                <ArchiveCard project={project} />
+            ))}
+        </div>
+        <p class="empty" data-archive-empty hidden>
+            No projects match these filters.
+        </p>
+    </div>
+</section>
+
+<script>
+    import { track } from "../lib/analytics";
+
+    const root = document.querySelector<HTMLElement>("[data-archive]")!;
+    const toggle = root.querySelector<HTMLButtonElement>("[data-archive-toggle]")!;
+    const body = root.querySelector<HTMLElement>("#archive-body")!;
+    const input = root.querySelector<HTMLInputElement>("[data-archive-input]")!;
+    const chips = root.querySelector<HTMLUListElement>("[data-archive-chips]")!;
+    const count = root.querySelector<HTMLElement>("[data-archive-count]")!;
+    const empty = root.querySelector<HTMLElement>("[data-archive-empty]")!;
+    const cards = [...root.querySelectorAll<HTMLElement>(".archive-card")];
+    const label = toggle.textContent!.trim();
+
+    const params = new URLSearchParams(location.search);
+    const criteria = (params.get("filter") ?? "")
+        .split(",")
+        .map((value) => value.trim())
+        .filter(Boolean);
+
+    // A card matches when any of its technologies or tags equals any active filter (same rule as the old site).
+    const matches = (card: HTMLElement) => {
+        if (!criteria.length) return true;
+        const keywords: string[] = JSON.parse(card.dataset.keywords ?? "[]");
+        const lower = keywords.map((keyword) => keyword.toLowerCase());
+        return criteria.some((criterion) => lower.includes(criterion.toLowerCase()));
+    };
+
+    function syncUrl() {
+        const url = new URL(location.href);
+        if (criteria.length) url.searchParams.set("filter", criteria.join(","));
+        else url.searchParams.delete("filter");
+        history.replaceState(null, "", url);
+    }
+
+    function renderChips() {
+        chips.replaceChildren(
+            ...criteria.map((criterion) => {
+                const item = document.createElement("li");
+                const button = document.createElement("button");
+                button.type = "button";
+                button.textContent = `${criterion} ×`;
+                button.setAttribute("aria-label", `Remove filter ${criterion}`);
+                button.addEventListener("click", () => removeCriterion(criterion));
+                item.append(button);
+                return item;
+            }),
+        );
+    }
+
+    function apply() {
+        let visible = 0;
+        for (const card of cards) {
+            const show = matches(card);
+            card.hidden = !show;
+            if (show) visible += 1;
+        }
+        count.textContent = criteria.length ? `${visible} of ${cards.length} projects` : "";
+        empty.hidden = visible > 0;
+        renderChips();
+        syncUrl();
+    }
+
+    function addCriterion(value: string) {
+        const criterion = value.trim();
+        if (!criterion || criteria.some((existing) => existing.toLowerCase() === criterion.toLowerCase())) return;
+        criteria.push(criterion);
+        track("[Projects] Search", { value: criterion });
+        apply();
+    }
+
+    function removeCriterion(value: string) {
+        criteria.splice(criteria.indexOf(value), 1);
+        track("[Projects] Search", { value: criteria });
+        apply();
+    }
+
+    function setOpen(open: boolean, trackIt = true) {
+        body.hidden = !open;
+        toggle.setAttribute("aria-expanded", String(open));
+        toggle.textContent = open ? "Hide the archive" : label;
+        if (trackIt) track("[Projects] Toggle archive", { open });
+    }
+
+    toggle.addEventListener("click", () => setOpen(body.hidden));
+    input.addEventListener("change", () => {
+        addCriterion(input.value);
+        input.value = "";
+    });
+    input.addEventListener("keydown", (event) => {
+        if (event.key !== "Enter") return;
+        event.preventDefault();
+        addCriterion(input.value);
+        input.value = "";
+    });
+    root.addEventListener("click", (event) => {
+        const tag = (event.target as Element).closest<HTMLElement>("[data-add-filter]");
+        if (tag) addCriterion(tag.dataset.addFilter!);
+    });
+
+    if (criteria.length) {
+        setOpen(true, false);
+        apply();
+        root.scrollIntoView();
+    }
+</script>
+
+<style>
+    .intro {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 24px;
+        flex-wrap: wrap;
+    }
+
+    .intro p {
+        margin: 0;
+        color: var(--muted);
+    }
+
+    .archive-body {
+        margin-top: 28px;
+    }
+
+    .filter {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+
+    .search {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex: 1 1 320px;
+        padding: 8px 12px;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        color: var(--muted);
+    }
+
+    .search input {
+        flex: 1;
+        border: 0;
+        outline: 0;
+        background: transparent;
+        color: var(--ink);
+        font: inherit;
+        font-size: 15px;
+    }
+
+    .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .chips :global(button) {
+        font: inherit;
+        font-size: 13px;
+        padding: 5px 10px;
+        border-radius: 999px;
+        border: 1px solid var(--accent);
+        background: var(--accent-soft);
+        color: var(--ink);
+        cursor: pointer;
+    }
+
+    .count {
+        margin: 0;
+        font-size: 14px;
+        color: var(--muted);
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .empty {
+        text-align: center;
+        color: var(--muted);
+        padding: 24px 0;
+    }
+
+    @media (max-width: 960px) {
+        .grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+
+    @media (max-width: 620px) {
+        .grid {
+            grid-template-columns: minmax(0, 1fr);
+        }
+    }
+</style>

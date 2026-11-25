@@ -1,0 +1,115 @@
+---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
+import Icon, { type IconName } from "./Icon.astro";
+
+interface Props {
+    summary: string;
+    cover: ImageMetadata;
+    accounts: Record<"github" | "linkedin" | "youtube" | "twitter" | "stackoverflow" | "medium", string>;
+}
+
+const { summary, cover, accounts } = Astro.props;
+
+const socials: { name: IconName; label: string; href: string }[] = [
+    { name: "github", label: "GitHub", href: accounts.github },
+    { name: "linkedin", label: "LinkedIn", href: accounts.linkedin },
+    { name: "medium", label: "Medium", href: accounts.medium },
+    { name: "youtube", label: "YouTube", href: accounts.youtube },
+    { name: "twitter", label: "Twitter", href: accounts.twitter },
+    { name: "stackoverflow", label: "StackOverflow", href: accounts.stackoverflow },
+];
+---
+
+<section id="about" class="section wrap about">
+    <div>
+        <h2 class="section-title">About</h2>
+        <div class="summary" set:html={summary} />
+        <ul class="socials">
+            {socials.map(({ name, label, href }) => (
+                <li>
+                    <a
+                        href={href}
+                        target="_blank"
+                        rel="noopener"
+                        data-track="[Intro] Click social"
+                        data-track-type={label}
+                    >
+                        <Icon name={name} label={label} />
+                    </a>
+                </li>
+            ))}
+        </ul>
+    </div>
+    <Image
+        class="cover"
+        src={cover}
+        alt="Serban speaking at a conference"
+        widths={[360, 720]}
+        sizes="(max-width: 860px) 100vw, 360px"
+    />
+</section>
+
+<style>
+    .about {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 360px;
+        gap: 56px;
+        align-items: start;
+    }
+
+    .summary :global(a) {
+        text-decoration: underline;
+        text-underline-offset: 3px;
+    }
+
+    .summary {
+        max-width: var(--prose);
+        font-size: 18px;
+        color: var(--ink-2);
+    }
+
+    .about :global(.cover) {
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
+        margin-top: 44px;
+    }
+
+    .socials {
+        display: flex;
+        gap: 18px;
+        margin: 8px 0 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .socials a {
+        color: var(--muted);
+    }
+
+    .socials a:hover {
+        color: var(--ink);
+    }
+
+    .socials :global(.icon) {
+        width: 20px;
+        height: 20px;
+    }
+
+    @media (max-width: 860px) {
+        .about {
+            grid-template-columns: minmax(0, 1fr);
+            gap: 32px;
+        }
+
+        .about :global(.cover) {
+            margin-top: 0;
+            width: min(100%, 420px);
+        }
+
+        .summary {
+            font-size: 17px;
+        }
+    }
+</style>

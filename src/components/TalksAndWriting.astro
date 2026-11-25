@@ -1,0 +1,233 @@
+---
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+
+import { dayMonthYear, monthYear } from "../lib/dates";
+import Icon from "./Icon.astro";
+
+interface Props {
+    talks: CollectionEntry<"talk">[];
+    writing: CollectionEntry<"writing">[];
+    wsengUrl: string;
+    mediumUrl: string;
+}
+
+const { talks, writing, wsengUrl, mediumUrl } = Astro.props;
+
+const groups = [
+    { source: "wseng.ai", href: wsengUrl, blurb: "How we run engineering with AI: essays and a weekly journal." },
+    { source: "Medium", href: mediumUrl, blurb: "Earlier posts on AI and AWS." },
+].map((group) => ({ ...group, posts: writing.filter(({ data }) => data.source === group.source) }));
+---
+
+<section id="talks-and-writing" class="section wrap">
+    <h2 class="section-title">Talks & writing</h2>
+    <div class="columns">
+        <div>
+            <h3 class="column-title">Talks</h3>
+            {talks.map(({ data }) => (
+                <article class="talk">
+                    <a
+                        href={data.slides}
+                        target="_blank"
+                        rel="noopener"
+                        data-track="[Talks] Open slides"
+                        data-track-title={data.title}
+                    >
+                        <Image
+                            class="thumb"
+                            src={data.image}
+                            alt={`Title slide of ${data.title}`}
+                            widths={[220, 440]}
+                            sizes="220px"
+                        />
+                    </a>
+                    <div>
+                        <h4>{data.title}</h4>
+                        <p class="meta">
+                            {data.event} · {dayMonthYear(data.date)}
+                        </p>
+                        <p class="abstract">{data.abstract}</p>
+                        <div class="links">
+                            <a
+                                class="button"
+                                href={data.slides}
+                                target="_blank"
+                                rel="noopener"
+                                data-track="[Talks] Open slides"
+                                data-track-title={data.title}
+                            >
+                                <Icon name="play" /> Slides
+                            </a>
+                            <a
+                                class="button"
+                                href={data.pdf}
+                                target="_blank"
+                                rel="noopener"
+                                data-track="[Talks] Open PDF"
+                                data-track-title={data.title}
+                            >
+                                <Icon name="file" /> PDF
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            ))}
+        </div>
+        <div>
+            <h3 class="column-title">Writing</h3>
+            {groups.map(({ source, href, blurb, posts }) => (
+                <div class="group">
+                    <a
+                        class="source"
+                        href={href}
+                        target="_blank"
+                        rel="noopener"
+                        data-track="[Writing] Open all"
+                        data-track-source={source}
+                    >
+                        {source} <Icon name="arrow" />
+                    </a>
+                    <p class="blurb">{blurb}</p>
+                    <ul class="posts">
+                        {posts.map(({ data }) => (
+                            <li>
+                                <a
+                                    href={data.url}
+                                    target="_blank"
+                                    rel="noopener"
+                                    data-track="[Writing] Open post"
+                                    data-track-title={data.title}
+                                    data-track-source={source}
+                                >
+                                    {data.title}
+                                </a>
+                                <span class="date">{monthYear(data.date)}</span>
+                                <span class="summary">{data.summary}</span>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>
+
+<style>
+    .columns {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 56px;
+    }
+
+    .column-title {
+        font-size: 18px;
+        margin-bottom: 18px;
+    }
+
+    .talk {
+        display: grid;
+        grid-template-columns: 200px minmax(0, 1fr);
+        gap: 18px;
+        margin-bottom: 28px;
+    }
+
+    .talk :global(.thumb) {
+        border-radius: 8px;
+        border: 1px solid var(--border);
+    }
+
+    h4 {
+        font-size: 16.5px;
+    }
+
+    .meta {
+        margin: 2px 0 8px;
+        font-size: 14px;
+        color: var(--muted);
+    }
+
+    .abstract {
+        font-size: 15px;
+        color: var(--ink-2);
+        margin-bottom: 12px;
+    }
+
+    .links {
+        display: flex;
+        gap: 8px;
+    }
+
+    .links .button {
+        font-size: 13px;
+        padding: 7px 11px;
+    }
+
+    .group + .group {
+        margin-top: 28px;
+    }
+
+    .source {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-weight: 600;
+        font-size: 16px;
+    }
+
+    .source :global(.icon) {
+        width: 14px;
+        height: 14px;
+    }
+
+    .blurb {
+        margin: 2px 0 12px;
+        font-size: 14.5px;
+        color: var(--muted);
+    }
+
+    .posts {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .posts li {
+        margin-bottom: 14px;
+    }
+
+    .posts a {
+        font-weight: 600;
+        color: var(--ink);
+    }
+
+    .posts a:hover {
+        color: var(--accent);
+    }
+
+    .date {
+        margin-left: 8px;
+        white-space: nowrap;
+        font-size: 13px;
+        color: var(--muted);
+    }
+
+    .summary {
+        display: block;
+        font-size: 15px;
+        color: var(--muted);
+    }
+
+    @media (max-width: 860px) {
+        .columns {
+            grid-template-columns: minmax(0, 1fr);
+            gap: 40px;
+        }
+    }
+
+    @media (max-width: 520px) {
+        .talk {
+            grid-template-columns: minmax(0, 1fr);
+        }
+    }
+</style>
