@@ -12,6 +12,8 @@ export default function CV({ data }) {
         return `${period.from} - ${period.to}`;
     };
 
+    const renderYears = (period) => `${period.from.slice(-4)} to ${period.to.slice(-4)}`;
+
     const handlePrint = () => {
         window.print();
     };
@@ -67,7 +69,11 @@ export default function CV({ data }) {
                             <h3>{job.title}</h3>
                             <span className="cv-period">{renderPeriod(job.period)}</span>
                         </div>
-                        <div className="cv-item-body" dangerouslySetInnerHTML={{ __html: job.body.replace(/\n\n/g, '<br/><br/>') }} />
+                        <div className="cv-item-body">
+                            {job.body.split('\n\n').map((para, pIdx) => (
+                                <p key={pIdx}>{para}</p>
+                            ))}
+                        </div>
                     </div>
                 ))}
                 {work.nodes.filter(job => !job.featured).length > 0 && (
@@ -86,37 +92,29 @@ export default function CV({ data }) {
             <section className="cv-section cv-two-column">
                 <div className="cv-column">
                     <h2>Skills</h2>
-                    <div className="cv-skills">
-                        {cv.skillGroups.map((group, idx) => (
-                            <div key={idx} className="cv-skill-group">
-                                <h4>{group.category}</h4>
-                                <p>{group.skills}</p>
-                            </div>
-                        ))}
-                    </div>
+                    {cv.skillGroups.map((group, idx) => (
+                        <p key={idx} className="cv-line">
+                            <strong>{group.category}:</strong> {group.skills}
+                        </p>
+                    ))}
                 </div>
 
                 <div className="cv-column">
                     <h2>Certifications</h2>
                     {certifications.nodes.map((cert, idx) => (
-                        <div key={idx} className="cv-item-compact">
-                            <div className="cv-item-header">
-                                <h4>{cert.title}</h4>
-                                <span className="cv-period-small">{renderPeriod(cert.period)}</span>
-                            </div>
-                            <div className="cv-cert-body">{cert.body}</div>
-                        </div>
+                        <p key={idx} className="cv-line">
+                            {cert.short || cert.title} <span className="cv-year">{cert.period.at}</span>
+                        </p>
                     ))}
+                </div>
 
+                <div className="cv-column">
                     <h2>Education</h2>
                     {education.nodes.filter(edu => edu.featured).map((edu, idx) => (
-                        <div key={idx} className="cv-item-compact">
-                            <div className="cv-item-header">
-                                <h4>{edu.title}</h4>
-                                <span className="cv-period-small">{renderPeriod(edu.period)}</span>
-                            </div>
-                            <div className="cv-edu-body">{edu.body}</div>
-                        </div>
+                        <p key={idx} className="cv-line">
+                            <strong>{edu.degree}</strong>, {edu.title}{" "}
+                            <span className="cv-year">{renderYears(edu.period)}</span>
+                        </p>
                     ))}
                 </div>
             </section>
@@ -181,9 +179,10 @@ export const pageQuery = graphql`
         certifications: allCertificationJson(sort: { period: { at: DESC } }) {
             nodes {
                 title
+                short
                 body
                 period {
-                    at(formatString: "MMM YYYY")
+                    at(formatString: "YYYY")
                 }
             }
         }
@@ -191,6 +190,7 @@ export const pageQuery = graphql`
         education: allEducationJson(sort: { period: { from: DESC } }) {
             nodes {
                 title
+                degree
                 body
                 featured
                 period {

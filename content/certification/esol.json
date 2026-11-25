@@ -4,5 +4,6 @@
     },
     "title": "Cambridge Certificate in Advanced English (C1)",
     "body": "University of Cambridge",
-    "logo": "../media/cambridge.png"
+    "logo": "../media/cambridge.png",
+    "short": "Cambridge Advanced English (C1)"
 }

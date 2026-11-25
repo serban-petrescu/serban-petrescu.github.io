@@ -1,28 +1,24 @@
 {
-  "summary": "Builder and technical leader serving as SVP of Software Engineering at Trilogy, leading 0→1 product development across a portfolio of educational technology products. Edtech work spans three pillars: learning applications (7+ apps including AI tutoring, spaced repetition games, adaptive platforms), content generation infrastructure (curriculum modeling, AI-powered authoring, publishing workflows), and learning analytics (engagement tracking, mastery measurement, outcome correlation).\n\nImplemented learning science principles directly: spaced repetition, mastery-based progression, automaticity building, knowledge graph-driven curricula. This enables thousands of Alpha School students to achieve 99th percentile outcomes.\n\nPlayer-coach approach: combine strategic leadership ($6M budget, team of 40) with hands-on execution as product manager, architect, and full-stack engineer. Prior: 6+ years Lead Software Engineer at msg systems, SAP Developer Hero.",
+  "summary": "Builder and engineering leader. I run Product Engineering for WS.Eng, Trilogy's new-products department, and still ship code every week. Player-coach: strategy, hiring and architecture on one side, product management and hands-on code on the other.\n\nMy focus is AI-native engineering: the machinery that lets a few strong engineers steering agents outship a large team. I've applied it to edtech, hiring and SaaS products. Before Trilogy: lead engineer at msg systems (SAP Developer Hero) and cloud architect at DevFactory.",
   "achievements": [
-    "Shipped 7+ learning products from concept to production spanning learning apps (TrashCat, Athena, TeachTap, TeachTales), content infrastructure (Incept), and analytics (TimeBack), implementing spaced repetition, mastery-based progression, and knowledge graph-driven curricula.",
-    "Extended Crossover hiring platform processing hundreds of thousands of monthly visitors and tens of thousands of applications, implementing AI-powered screening and assessment grading.",
-    "Led strategic AI adoption across organization during 2024, achieving productivity gains while industry-wide metrics declined.",
-    "Reduced cloud infrastructure costs by 50% and outages by 5x for $20M ARR SaaS product (Playbooks)."
+    "Grew engineering output 10x at the same headcount by rebuilding the team and the machinery around AI.",
+    "Started Nex, the AI software factory WS.Eng runs on, and built about 90% of it. It writes nearly all of our pull requests: around 1,000 a week, one production release a day.",
+    "Architected StudyFilm's vision pipeline for Alpha School, which analyzes millions of study sessions a quarter. Presented the lessons at Compass AI 2026.",
+    "Designed and built TrashCat's learning engine as product manager and backend developer.",
+    "Halved cloud costs and cut outages 5x on InsideSales Playbooks ($20M ARR)."
   ],
   "skillGroups": [
     {
-      "category": "Technical Leadership",
-      "skills": "Architecture, Code Review, Technical Decision-Making, Team Mentoring, Process Design"
+      "category": "Leadership",
+      "skills": "Hiring, budgets, architecture review, C-level strategy, product management"
     },
     {
-      "category": "Management",
-      "skills": "Hiring, Performance Reviews, Budget Management, Strategic Planning, Stakeholder Management"
+      "category": "AI engineering",
+      "skills": "Agent harnesses, LLM evaluation, vision models, Bedrock AgentCore"
     },
     {
-      "category": "Technologies",
-      "skills": "TypeScript, Java, NodeJS, React, Spring Boot, Unity, AWS (Lambda, AppSync, DynamoDB, RDS), GraphQL, Salesforce"
-    },
-    {
-      "category": "Specializations",
-      "skills": "Cloud-Native Architectures, AI/ML Integration, Serverless, DevOps, Cost Optimization"
+      "category": "Stack",
+      "skills": "TypeScript, NodeJS, React, Java, Spring Boot, AWS serverless, CDK, PostgreSQL"
     }
   ]
 }
-

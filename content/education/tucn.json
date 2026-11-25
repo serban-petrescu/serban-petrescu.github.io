@@ -6,5 +6,6 @@
     "title": "Technical University of Cluj-Napoca",
     "body": "Bachelor's degree in Computer Science at the faculty of Computer Science and Information Technology.",
     "logo": "../media/utcn.png",
-    "featured": true
+    "featured": true,
+    "degree": "BSc Computer Science"
 }

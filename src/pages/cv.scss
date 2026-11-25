@@ -267,7 +267,7 @@
 
 .cv-two-column {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.3fr 1fr 1.1fr;
     gap: 2rem;
     page-break-inside: avoid;
 
@@ -319,39 +319,81 @@
     }
 }
 
-// Print styles
+.cv-line {
+    margin: 0 0 0.35rem 0;
+    text-align: left !important;
+    color: #444;
+
+    strong {
+        color: #222;
+        font-weight: 600;
+    }
+
+    .cv-year {
+        color: #777;
+        font-style: italic;
+        white-space: nowrap;
+    }
+}
+
+.cv-item-body p {
+    margin: 0 0 0.5rem 0;
+}
+
+// Print styles: one dense A4 page. Screen layout above stays unchanged.
+@page {
+    size: A4;
+    margin: 10mm 11mm;
+}
+
 @media print {
-    .cv-print-button {
+    // Semantic UI sets body overflow-x hidden, and glyph overhang at the right edge gets clipped.
+    html, body {
+        overflow: visible !important;
+    }
+
+    .cv-section p,
+    .cv-achievements li {
+        text-align: left;
+    }
+
+    .cv-print-button,
+    .cv-footer {
         display: none !important;
     }
 
     .cv-container {
         max-width: 100%;
-        padding: 0;
         margin: 0;
-        font-size: 10pt;
+        padding: 0 4px 0 0;
+        font-size: 9.5pt;
+        line-height: 1.45;
     }
 
     .cv-header {
-        margin-bottom: 1.5rem;
-        padding-bottom: 0.75rem;
+        gap: 1rem;
+        margin-bottom: 1.4rem;
+        padding-bottom: 0.9rem;
+        border-bottom-width: 1.5px;
 
         .cv-avatar img {
-            width: 100px;
-            height: 100px;
+            width: 72px;
+            height: 72px;
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 1.7rem;
+            margin-bottom: 0.1rem;
         }
 
         .cv-title {
-            font-size: 1.1rem;
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
         }
 
         .cv-contact {
-            font-size: 0.9rem;
-            gap: 1rem;
+            font-size: 8.5pt;
+            gap: 0.9rem;
         }
     }
 
@@ -359,63 +401,86 @@
         margin-bottom: 1.5rem;
 
         h2 {
-            font-size: 1.2rem;
-            margin-bottom: 0.75rem;
+            font-size: 10.5pt;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin-bottom: 0.6rem;
+            padding-bottom: 0.2rem;
+        }
+
+        p {
+            margin-bottom: 0.3rem;
+        }
+    }
+
+    .cv-achievements {
+        padding-left: 1.1rem;
+
+        li {
+            font-size: 9.5pt;
+            line-height: 1.45;
+            margin-bottom: 0.4rem;
         }
     }
 
     .cv-item {
         margin-bottom: 1rem;
 
-        .cv-item-header h3 {
-            font-size: 1rem;
+        .cv-item-header {
+            margin-bottom: 0.3rem;
+
+            h3 {
+                font-size: 10pt;
+            }
+
+            .cv-period {
+                font-size: 8.5pt;
+            }
         }
 
         .cv-item-body {
             font-size: 9.5pt;
+            line-height: 1.45;
+
+            p {
+                margin: 0 0 0.4rem 0;
+            }
         }
     }
 
-    .cv-achievements {
-        li {
-            margin-bottom: 0.5rem;
-            font-size: 9.5pt;
+    .cv-other-roles {
+        margin-top: 0.8rem;
+        padding-top: 0.7rem;
+
+        h3 {
+            font-size: 9pt;
+            margin-bottom: 0.45rem;
+        }
+
+        .cv-role-compact {
+            font-size: 9pt;
+            margin-bottom: 0.25rem;
+
+            .cv-role-period {
+                font-size: 8pt;
+            }
         }
     }
 
     .cv-two-column {
-        gap: 1.5rem;
-    }
+        grid-template-columns: 1.3fr 1fr 1.1fr;
+        gap: 1rem;
 
-    .cv-skills .cv-skill-group {
-        margin-bottom: 0.75rem;
-
-        h4 {
-            font-size: 0.95rem;
-        }
-
-        p {
-            font-size: 9pt;
+        .cv-column h2 {
+            font-size: 10.5pt;
+            margin-bottom: 0.6rem;
         }
     }
 
-    .cv-item-compact {
-        margin-bottom: 0.75rem;
-
-        .cv-item-header h4 {
-            font-size: 0.95rem;
-        }
-
-        .cv-cert-body,
-        .cv-edu-body {
-            font-size: 9pt;
-        }
-    }
-
-    .cv-footer {
-        margin-top: 1.5rem;
-        padding-top: 0.75rem;
-        font-size: 8.5pt;
+    .cv-line {
+        font-size: 9pt;
+        line-height: 1.4;
+        margin-bottom: 0.45rem;
     }
 
     a {
@@ -423,16 +488,11 @@
         text-decoration: none !important;
     }
 
-    // Ensure proper page breaks
     h2, h3 {
         page-break-after: avoid;
     }
 
-    .cv-item,
-    .cv-item-compact,
-    .cv-skill-group {
+    .cv-item {
         page-break-inside: avoid;
     }
 }
-
-

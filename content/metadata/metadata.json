@@ -1,5 +1,5 @@
 {
-  "summary": "<p>Hi! I'm Serban, an IT professional with a passion for code. I work full time as an SVP of Engineering at Trilogy, taught Software Design at TU-CN and founded a local tech start-up.</p><p>I lead an engineering organization of 40 people building full-stack products across diverse domains: Unity games, mobile apps, cloud platforms, and Salesforce extensions. I manage the complete engineering lifecycle—hiring (writing JDs, designing assessments, interviewing), architectural reviews and specifications, quarterly budget management ($6M/year), performance management, code reviews, and strategic planning with C-level executives on pricing, cost optimization, and portfolio evolution. I still write code regularly.</p><p>I have frequently switched between technologies, becoming proficient in TypeScript, Java, NodeJS, Spring, React, Unity and the SAP ecosystem. My current target area of expertise is around <em>Amazon Web Services</em>, <em>AI/ML integration</em> and <em>cloud-native architectures</em>.</p>",
+  "summary": "<p>I’m Serban. I run Product Engineering for WS.Eng, Trilogy’s new-products department: around 40 people, about ten products in parallel and a $15M yearly budget.</p><p>I took over in 2023 with six backend engineers, the survivors of a team that had shipped almost nothing in a quarter. I merged in the frontend team, rebuilt engineering to around 30 people and later took on product as well. Engineering is about the same size it was in my first year, and it ships 10x as much.</p><p>Most of that jump came from the machinery we built around AI. In 2026 I started Nex, our in-house AI software factory, and built about 90% of it, mostly by having Nex build itself. It now writes nearly all of our pull requests, while people own the plans, the decisions and the evidence.</p><p>My bias: AI makes average work cheap, so strong engineering judgment matters more than ever. A few strong engineers steering agents outship a large team of average ones. I write about how we run engineering this way at <a href=\"https://wseng.ai/writing\">wseng.ai</a>.</p><p>Before Trilogy, I spent six years at msg systems going from junior to lead engineer (SAP Developer Hero). I also wrote cloud architecture specs at DevFactory, co-founded a startup, and taught Software Design at TU Cluj-Napoca.</p>",
   "accounts": {
     "linkedin": "https://ro.linkedin.com/in/serban-petrescu",
     "github": "https://github.com/serban-petrescu/",
@@ -13,7 +13,7 @@
   "phone": "+40 744 865 132",
   "cv": "/downloads/CV_Serban_Petrescu.pdf",
   "location": "Cluj-Napoca, Romania",
-  "role": "SVP of Software Engineering | Cloud Architect",
+  "role": "SVP of Product Engineering @ Trilogy",
   "cover": "../media/cover.jpg",
   "title": "Șerban's Portfolio",
   "avatar": "../media/profile_relaxed_square.jpg",
@@ -33,16 +33,8 @@
   ],
   "website": "https://www.spetrescu.ro/",
   "email": "Serban.Petrescu@outlook.com",
-  "description": "Portfolio of IT projects built by Șerban Petrescu",
+  "description": "Șerban Petrescu, SVP of Product Engineering at Trilogy. Builder and engineering leader working on AI-native engineering.",
   "birthday": "1993-09-07",
-  "highlights": {
-    "education": {
-      "title": "Software Engineering MSc.",
-      "description": "Master's degree at the faculty of Mathematics and Informatics, Babeș-Bolyai University (dissertation pending)."
-    },
-    "work": {
-      "title": "SVP of Software Engineering",
-      "description": "Leading a 40 person organization building full-stack products across Unity games, mobile apps, cloud platforms, and Salesforce extensions."
-    }
-  }
+  "tagline": "I build software, and the teams and machinery that build it.",
+  "writing": "https://wseng.ai/writing"
 }

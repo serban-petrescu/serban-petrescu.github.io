@@ -4,7 +4,8 @@
     "to": "2019-06-30"
   },
   "title": "Babes-Bolyai University",
-  "body": "Master's degree in Software Engineering at the faculty of Mathematics and Informatics (dissertation pending).",
+  "body": "Software Engineering MSc program at the faculty of Mathematics and Informatics, coursework only.",
   "logo": "../media/ubb.png",
-  "featured": true
+  "featured": true,
+  "degree": "MSc Software Engineering (coursework only)"
 }

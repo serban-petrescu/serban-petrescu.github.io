@@ -3,8 +3,8 @@
     "from": "2023-02-20",
     "to": ""
   },
-  "title": "SVP of Software Engineering @ Trilogy (New Products)",
-  "body": "Built independent department from 6 to 40 people while scaling from 3 to 11 concurrent products, achieving 3x productivity improvement. Managing $6M/year budget with full autonomy over team structure and processes.\n\nEducation technology focus: Shipped 7+ learning products from concept to production spanning three pillars: learning apps (TrashCat, Athena, TeachTap, TeachTales, Magic Academy, ReadingCritters), content infrastructure (Incept platform for curriculum modeling, AI-powered content generation, QTI standardization), and analytics (TimeBack for student engagement tracking and outcome measurement).\n\nImplemented learning science principles directly: spaced repetition, mastery-based progression, automaticity building, knowledge graphs for prerequisite relationships. This work enables thousands of Alpha School students to achieve 99th percentile outcomes. Also extended Crossover hiring platform and Trilogy Sales Platform.",
+  "title": "SVP of Product Engineering @ Trilogy (WS.Eng)",
+  "body": "Run Trilogy's new-products department: around 40 people across engineering, product, support and data annotation, about ten products in parallel, and a $15M yearly budget. Full autonomy over structure, hiring and process.\n\nStarted with six backend engineers. Merged in frontend, rebuilt engineering to around 30, then took on product. I set strategy with the C-level, hire, review architecture and still ship code, mostly on Nex.\n\nCurrent portfolio: StudyFilm, TimeBack Platform and Store, TrashCat, 100 for 100, GameCraft, the student information system, EduCRM, Crossover, Quark AI and CPM. Earlier: Athena, TeachTap, TeachTales, Magic Academy, Reading Critters and Incept.",
   "logo": "../media/trilogy.png",
   "featured": true
 }
