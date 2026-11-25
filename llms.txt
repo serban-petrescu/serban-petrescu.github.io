@@ -25,7 +25,7 @@ My focus is AI-native engineering: the machinery that lets a few strong engineer
 ## Work Experience
 
 ### SVP of Product Engineering @ Trilogy (WS.Eng)
-*Feb 2023 - Present*
+*Feb 2023 to present*
 
 Run Trilogy's new-products department: around 40 people across engineering, product, support and data annotation, about ten products in parallel, and a $15M yearly budget. Full autonomy over structure, hiring and process.
 
@@ -34,19 +34,17 @@ Started with six backend engineers. Merged in frontend, rebuilt engineering to a
 Current portfolio: StudyFilm, TimeBack Platform and Store, TrashCat, 100 for 100, GameCraft, the student information system, EduCRM, Crossover, Quark AI and CPM. Earlier: Athena, TeachTap, TeachTales, Magic Academy, Reading Critters and Incept.
 
 ### VP of Software Engineering @ Trilogy (Central Engineering)
-*Aug 2021 - Feb 2023*
+*Aug 2021 to Feb 2023*
 
 Led 4 to 14 engineers operating and extending two acquired SaaS products: InsideSales Playbooks ($20M ARR sales engagement) and ResponseTek. Ran the modernization: moved telephony from self-hosted to Twilio, cleared the defect backlog and kept shipping features.
 
-
 ### Additional Roles
 
-**Software Engineering Consultant @ msg-systems (Part-time, 1-2 hours/week)** - Jun 2020 - Present
-**Cloud Solutions Architect @ DevFactory** - Jun 2020 - Jul 2021
-**Teaching Assistant @ T.U. Cluj-Napoca** - Feb 2019 - Jun 2019
-**Co-Founder @ KickIT** - Sep 2018 - Jun 2020
-**Lead Software Engineer @ msg-systems** - Apr 2014 - Jun 2020
-
+- **Software Engineering Consultant @ msg-systems (Part-time, 1-2 hours/week)**, Jun 2020 to present
+- **Cloud Solutions Architect @ DevFactory**, Jun 2020 to Jul 2021
+- **Teaching Assistant @ T.U. Cluj-Napoca**, Feb 2019 to Jun 2019
+- **Co-Founder @ KickIT**, Sep 2018 to Jun 2020
+- **Lead Software Engineer @ msg-systems**, Apr 2014 to Jun 2020
 
 ## Skills
 
@@ -58,19 +56,11 @@ Led 4 to 14 engineers operating and extending two acquired SaaS products: Inside
 
 ## Certifications
 
-- **AWS Certified Solutions Architect - Professional** (Jan 2021): Amazon Web Services
-- **AWS Certified Solutions Architect - Associate** (Jan 2020): Amazon Web Services
-- **Cambridge Certificate in Advanced English (C1)** (May 2011): University of Cambridge
+- **AWS Certified Solutions Architect - Professional** (Jan 2021)
+- **AWS Certified Solutions Architect - Associate** (Jan 2020)
+- **Cambridge Certificate in Advanced English (C1)** (May 2011)
 
 ## Education
 
-### Babes-Bolyai University
-*Oct 2017 - Jun 2019*
-
-Software Engineering MSc program at the faculty of Mathematics and Informatics, coursework only.
-
-### Technical University of Cluj-Napoca
-*Sep 2012 - Jun 2016*
-
-Bachelor's degree in Computer Science at the faculty of Computer Science and Information Technology.
-
+- **MSc Software Engineering (coursework only)**, Babes-Bolyai University (Oct 2017 to Jun 2019)
+- **BSc Computer Science**, Technical University of Cluj-Napoca (Sep 2012 to Jun 2016)
