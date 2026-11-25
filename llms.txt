@@ -1,5 +1,5 @@
 # Șerban Petrescu
-SVP of Software Engineering | Cloud Architect
+SVP of Product Engineering @ Trilogy
 
 Email: Serban.Petrescu@outlook.com
 Phone: +40 744 865 132
@@ -10,36 +10,33 @@ Website: https://www.spetrescu.ro/
 
 ## Professional Summary
 
-Builder and technical leader serving as SVP of Software Engineering at Trilogy, leading 0→1 product development across a portfolio of educational technology products. Edtech work spans three pillars: learning applications (7+ apps including AI tutoring, spaced repetition games, adaptive platforms), content generation infrastructure (curriculum modeling, AI-powered authoring, publishing workflows), and learning analytics (engagement tracking, mastery measurement, outcome correlation).
+Builder and engineering leader. I run Product Engineering for WS.Eng, Trilogy's new-products department, and still ship code every week. Player-coach: strategy, hiring and architecture on one side, product management and hands-on code on the other.
 
-Implemented learning science principles directly: spaced repetition, mastery-based progression, automaticity building, knowledge graph-driven curricula. This enables thousands of Alpha School students to achieve 99th percentile outcomes.
-
-Player-coach approach: combine strategic leadership ($6M budget, team of 40) with hands-on execution as product manager, architect, and full-stack engineer. Prior: 6+ years Lead Software Engineer at msg systems, SAP Developer Hero.
+My focus is AI-native engineering: the machinery that lets a few strong engineers steering agents outship a large team. I've applied it to edtech, hiring and SaaS products. Before Trilogy: lead engineer at msg systems (SAP Developer Hero) and cloud architect at DevFactory.
 
 ## Key Achievements
 
-- Shipped 7+ learning products from concept to production spanning learning apps (TrashCat, Athena, TeachTap, TeachTales), content infrastructure (Incept), and analytics (TimeBack), implementing spaced repetition, mastery-based progression, and knowledge graph-driven curricula.
-- Extended Crossover hiring platform processing hundreds of thousands of monthly visitors and tens of thousands of applications, implementing AI-powered screening and assessment grading.
-- Led strategic AI adoption across organization during 2024, achieving productivity gains while industry-wide metrics declined.
-- Reduced cloud infrastructure costs by 50% and outages by 5x for $20M ARR SaaS product (Playbooks).
+- Grew engineering output 10x at the same headcount by rebuilding the team and the machinery around AI.
+- Started Nex, the AI software factory WS.Eng runs on, and built about 90% of it. It writes nearly all of our pull requests: around 1,000 a week, one production release a day.
+- Architected StudyFilm's vision pipeline for Alpha School, which analyzes millions of study sessions a quarter. Presented the lessons at Compass AI 2026.
+- Designed and built TrashCat's learning engine as product manager and backend developer.
+- Halved cloud costs and cut outages 5x on InsideSales Playbooks ($20M ARR).
 
 ## Work Experience
 
-### SVP of Software Engineering @ Trilogy (New Products)
+### SVP of Product Engineering @ Trilogy (WS.Eng)
 *Feb 2023 - Present*
 
-Built independent department from 6 to 40 people while scaling from 3 to 11 concurrent products, achieving 3x productivity improvement. Managing $6M/year budget with full autonomy over team structure and processes.
+Run Trilogy's new-products department: around 40 people across engineering, product, support and data annotation, about ten products in parallel, and a $15M yearly budget. Full autonomy over structure, hiring and process.
 
-Education technology focus: Shipped 7+ learning products from concept to production spanning three pillars: learning apps (TrashCat, Athena, TeachTap, TeachTales, Magic Academy, ReadingCritters), content infrastructure (Incept platform for curriculum modeling, AI-powered content generation, QTI standardization), and analytics (TimeBack for student engagement tracking and outcome measurement).
+Started with six backend engineers. Merged in frontend, rebuilt engineering to around 30, then took on product. I set strategy with the C-level, hire, review architecture and still ship code, mostly on Nex.
 
-Implemented learning science principles directly: spaced repetition, mastery-based progression, automaticity building, knowledge graphs for prerequisite relationships. This work enables thousands of Alpha School students to achieve 99th percentile outcomes. Also extended Crossover hiring platform and Trilogy Sales Platform.
+Current portfolio: StudyFilm, TimeBack Platform and Store, TrashCat, 100 for 100, GameCraft, the student information system, EduCRM, Crossover, Quark AI and CPM. Earlier: Athena, TeachTap, TeachTales, Magic Academy, Reading Critters and Incept.
 
 ### VP of Software Engineering @ Trilogy (Central Engineering)
 *Aug 2021 - Feb 2023*
 
-Led team of 4 to 14 engineers (grown through internal transfers) operating and extending two acquired SaaS products: InsideSales Playbooks ($20M/year ARR sales engagement platform) and ResponseTek. Focus on operational excellence and large-scale modernization of existing products.
-
-Reduced outages by 5x and cut cloud infrastructure costs in half. Led major modernization: telephony system migration from self-hosted to serverless (Twilio), cleared defect backlog, implemented new features while maintaining production stability.
+Led 4 to 14 engineers operating and extending two acquired SaaS products: InsideSales Playbooks ($20M ARR sales engagement) and ResponseTek. Ran the modernization: moved telephony from self-hosted to Twilio, cleared the defect backlog and kept shipping features.
 
 
 ### Additional Roles
@@ -53,13 +50,11 @@ Reduced outages by 5x and cut cloud infrastructure costs in half. Led major mode
 
 ## Skills
 
-**Technical Leadership**: Architecture, Code Review, Technical Decision-Making, Team Mentoring, Process Design
+**Leadership**: Hiring, budgets, architecture review, C-level strategy, product management
 
-**Management**: Hiring, Performance Reviews, Budget Management, Strategic Planning, Stakeholder Management
+**AI engineering**: Agent harnesses, LLM evaluation, vision models, Bedrock AgentCore
 
-**Technologies**: TypeScript, Java, NodeJS, React, Spring Boot, Unity, AWS (Lambda, AppSync, DynamoDB, RDS), GraphQL, Salesforce
-
-**Specializations**: Cloud-Native Architectures, AI/ML Integration, Serverless, DevOps, Cost Optimization
+**Stack**: TypeScript, NodeJS, React, Java, Spring Boot, AWS serverless, CDK, PostgreSQL
 
 ## Certifications
 
@@ -72,7 +67,7 @@ Reduced outages by 5x and cut cloud infrastructure costs in half. Led major mode
 ### Babes-Bolyai University
 *Oct 2017 - Jun 2019*
 
-Master's degree in Software Engineering at the faculty of Mathematics and Informatics (dissertation pending).
+Software Engineering MSc program at the faculty of Mathematics and Informatics, coursework only.
 
 ### Technical University of Cluj-Napoca
 *Sep 2012 - Jun 2016*
