@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nex - An automated engineering platform</title>
+
+    <link rel="stylesheet" href="vendor/reveal/reveal.css" />
+    <link rel="stylesheet" href="vendor/reveal/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="vendor/reveal/plugin/highlight/monokai.css" />
+    <link rel="stylesheet" href="vendor/fonts/fonts.css" />
+
+    <style>
+      :root {
+        /* Matches Nex's dark theme: zinc-950 base, zinc-900 surfaces, zinc-800 borders,
+           near-white text, purple-400 as the single accent (Nex's channel/brand hue). */
+        --bg: #09090b;
+        --bg-2: #18181b;
+        --ink: #fafafa;
+        --muted: #a1a1aa;
+        --faint: #71717a;
+        --violet: #60a5fa;
+        --cyan: #d4d4d8;
+        --line: rgba(255, 255, 255, 0.09);
+      }
+
+      .reveal {
+        font-family: "Inter", system-ui, sans-serif;
+        font-size: 30px;
+        color: var(--ink);
+        font-weight: 400;
+      }
+
+      .reveal .slides {
+        text-align: left;
+      }
+
+      .reveal .slides section {
+        height: 100%;
+      }
+
+      /* Background */
+      .reveal-viewport {
+        background:
+          radial-gradient(1100px 700px at 12% -10%, rgba(96, 165, 250, 0.1), transparent 60%),
+          radial-gradient(900px 600px at 110% 120%, rgba(96, 165, 250, 0.06), transparent 55%),
+          var(--bg);
+      }
+
+      .reveal h1,
+      .reveal h2,
+      .reveal h3 {
+        font-family: "Inter", sans-serif;
+        color: var(--ink);
+        text-transform: none;
+        letter-spacing: -0.02em;
+        line-height: 1.05;
+        margin: 0 0 0.35em 0;
+        text-shadow: none;
+      }
+
+      .reveal h1 { font-size: 2.5em; font-weight: 800; }
+      .reveal h2 { font-size: 1.55em; font-weight: 700; }
+      .reveal h3 { font-size: 1.05em; font-weight: 600; }
+
+      .reveal strong { color: #fff; font-weight: 700; }
+      .reveal em { color: var(--violet); font-style: normal; }
+
+      .accent { color: var(--violet); }
+      .cyan { color: var(--cyan); }
+
+      /* Kicker label */
+      .kicker {
+        display: inline-block;
+        font-size: 0.5em;
+        font-weight: 600;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--violet);
+        margin-bottom: 0.9em;
+        padding: 0.35em 0.85em;
+        border: 1px solid rgba(139, 92, 255, 0.35);
+        border-radius: 999px;
+        background: rgba(139, 92, 255, 0.08);
+      }
+
+      .reveal ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .reveal ul li {
+        position: relative;
+        padding: 0.18em 0 0.18em 1.4em;
+        margin: 0.55em 0;
+        line-height: 1.35;
+        font-size: 0.92em;
+        color: var(--ink);
+      }
+
+      .reveal ul li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.62em;
+        width: 0.5em;
+        height: 0.5em;
+        border-radius: 2px;
+        background: linear-gradient(135deg, var(--violet), var(--cyan));
+      }
+
+      .reveal ul li .sub {
+        display: block;
+        font-size: 0.78em;
+        color: var(--muted);
+        margin-top: 0.15em;
+        font-weight: 400;
+      }
+
+      /* Tech note footer pinned to bottom */
+      .technote {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -14px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.42em;
+        line-height: 1.5;
+        color: var(--faint);
+        border-top: 1px solid var(--line);
+        padding-top: 0.9em;
+      }
+
+      .technote b {
+        color: var(--cyan);
+        font-weight: 500;
+      }
+
+      /* Stat chips */
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5em;
+        margin-top: 0.6em;
+      }
+
+      .chip {
+        font-size: 0.62em;
+        font-weight: 500;
+        color: var(--ink);
+        background: var(--bg-2);
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 0.5em 0.8em;
+      }
+
+      .chip b {
+        color: var(--cyan);
+        font-weight: 700;
+      }
+
+      /* Quote callout */
+      .quote {
+        border-left: 3px solid var(--violet);
+        background: rgba(139, 92, 255, 0.07);
+        border-radius: 0 10px 10px 0;
+        padding: 0.7em 1em;
+        margin-top: 0.7em;
+        font-size: 0.78em;
+        color: var(--ink);
+        font-style: italic;
+      }
+      .quote span { color: var(--faint); font-style: normal; display: block; margin-top: 0.4em; font-size: 0.82em; }
+
+      /* Big stat grid */
+      .statgrid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.7em;
+        margin-top: 0.4em;
+      }
+
+      .stat {
+        background: var(--bg-2);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 0.8em 0.9em;
+      }
+
+      .stat .num {
+        font-size: 1.6em;
+        font-weight: 800;
+        background: linear-gradient(135deg, var(--violet), var(--cyan));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        line-height: 1;
+      }
+
+      .stat .lab {
+        font-size: 0.55em;
+        color: var(--muted);
+        margin-top: 0.5em;
+        display: block;
+        line-height: 1.3;
+      }
+
+      /* Two-column */
+      .cols {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.4em;
+        align-items: start;
+      }
+
+      /* Media (text + screenshot) slides */
+      .cols.media {
+        grid-template-columns: 1fr 1.12fr;
+        gap: 1.5em;
+        align-items: center;
+      }
+
+      .cols.media ul li {
+        font-size: 0.8em;
+        margin: 0.5em 0;
+      }
+
+      .shot-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5em;
+      }
+
+      .shot {
+        width: 100%;
+        height: auto;
+        max-height: 420px;
+        object-fit: contain;
+        display: block;
+        border-radius: 10px;
+        border: 1px solid var(--line);
+        box-shadow: 0 14px 50px rgba(0, 0, 0, 0.55);
+      }
+
+      .caption {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.42em;
+        color: var(--faint);
+      }
+
+      .caption a {
+        color: var(--violet);
+        text-decoration: none;
+      }
+
+      /* Roadmap: mock ticket/milestone table */
+      .ticket-table {
+        width: 100%;
+        background: var(--bg-2);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        overflow: hidden;
+        font-size: 0.58em;
+        box-shadow: 0 14px 50px rgba(0, 0, 0, 0.55);
+      }
+
+      .trow {
+        display: grid;
+        grid-template-columns: 1fr auto auto;
+        gap: 0.9em;
+        align-items: center;
+        padding: 0.75em 0.95em;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .trow:last-child {
+        border-bottom: none;
+      }
+
+      .trow.thead {
+        color: var(--faint);
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.82em;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        background: rgba(255, 255, 255, 0.02);
+      }
+
+      .trow .tk {
+        color: var(--ink);
+        font-weight: 500;
+      }
+
+      .ph {
+        font-size: 0.85em;
+        font-weight: 600;
+        padding: 0.2em 0.65em;
+        border-radius: 999px;
+        white-space: nowrap;
+        text-align: center;
+      }
+
+      .ph-plan { color: #a1a1aa; background: rgba(161, 161, 170, 0.16); }
+      .ph-impl { color: #60a5fa; background: rgba(96, 165, 250, 0.16); }
+      .ph-review { color: #c084fc; background: rgba(192, 132, 252, 0.16); }
+      .ph-done { color: #4ade80; background: rgba(74, 222, 128, 0.16); }
+
+      .tbtn {
+        font-size: 0.85em;
+        font-weight: 600;
+        padding: 0.32em 0.8em;
+        border-radius: 8px;
+        border: none;
+        background: var(--ink);
+        color: #18181b;
+        white-space: nowrap;
+      }
+
+      .tbtn.ghost {
+        background: transparent;
+        color: var(--muted);
+        border: 1px solid var(--line);
+      }
+
+      /* Title slide */
+      .title-wrap { text-align: left; }
+      .nex-avatar {
+        width: 112px;
+        height: 112px;
+        border-radius: 26px;
+        object-fit: contain;
+        background: #fff;
+        padding: 6px;
+        margin-bottom: 0.5rem;
+        display: block;
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55);
+      }
+      .title-wrap .logo {
+        font-size: 5.5em;
+        font-weight: 800;
+        letter-spacing: -0.04em;
+        line-height: 0.9;
+        background: linear-gradient(120deg, #fff 10%, var(--violet) 55%, var(--cyan) 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .title-wrap .tag {
+        font-size: 1.2em;
+        color: var(--ink);
+        font-weight: 500;
+        margin-top: 0.1em;
+      }
+      .title-wrap .sub {
+        font-size: 0.7em;
+        color: var(--muted);
+        margin-top: 1.4em;
+        font-weight: 400;
+      }
+      .title-wrap .meta {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.5em;
+        color: var(--faint);
+        margin-top: 2.2em;
+        letter-spacing: 0.05em;
+      }
+
+      .lead {
+        font-size: 0.95em;
+        color: var(--muted);
+        margin-bottom: 0.6em;
+        max-width: 26em;
+      }
+
+      .reveal .progress { color: var(--violet); height: 4px; }
+      .reveal .controls { color: var(--violet); }
+
+      .reveal section img { border: none; box-shadow: none; }
+
+      .footnote-num { color: var(--violet); font-weight: 700; }
+    </style>
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <!-- 1. TITLE -->
+        <section data-auto-animate>
+          <div class="title-wrap">
+            <img class="nex-avatar" src="img/nex-avatar.png" alt="Nex" />
+            <div class="logo">Nex</div>
+            <div class="tag">An automated engineering platform</div>
+            <div class="sub">From writing code, to running the system that writes it.</div>
+            <div class="meta">WS.Eng &nbsp;·&nbsp; Serban Petrescu &nbsp;·&nbsp; June 2026</div>
+          </div>
+          <aside class="notes">
+            This is the story of how we moved the initiative away from the engineer and onto an
+            always-on system. I will walk through where we were, where the industry is going, and
+            then the features of Nex one at a time.
+          </aside>
+        </section>
+
+        <!-- 2. WHO WE ARE -->
+        <section>
+          <span class="kicker">Who we are</span>
+          <h2>WS.Eng, a software engineering department at Trilogy</h2>
+          <p class="lead">I run WS.Eng. We build educational software products, pairing deep engineering expertise with AI to ship fast.</p>
+          <ul>
+            <li><strong>We are builders.</strong> Engineers own products end to end: design, build, deploy, and operate, with routine implementation delegated to agents.</li>
+            <li><strong>Small teams, vertical ownership.</strong> At most three engineers per product, each owning their area and responding first to its bugs and operational issues.</li>
+            <li><strong>We build the system that builds the software.</strong> Skills, tests, and constraints are the primary work; agents execute with speed, engineers bring judgment on the decisions that matter.</li>
+            <li><strong>One capable engineer with AI outproduces ten without it.</strong> We hire and structure for that profile, aiming at 10x.</li>
+          </ul>
+          <div class="technote">
+            <b>Model:</b> engineers design and maintain the mechanism that ships software; agents do the routine implementation.<br />
+            <b>Output:</b> greenfield products plus AI-based extensions, delivered daily by teams of three or fewer. Nex is the department's own tooling.
+          </div>
+          <aside class="notes">
+            Quick context on who is presenting. I run the WS.Eng department at Trilogy. We are a small
+            group that builds educational products and pairs deep engineering with AI. Our model is to
+            build and maintain the system that produces software rather than writing it by hand. Nex is
+            the tool we built for ourselves to run that model.
+          </aside>
+        </section>
+
+        <!-- 3. WHERE WERE WE -->
+        <section>
+          <span class="kicker">Where we were</span>
+          <h2>The engineer held the initiative</h2>
+          <ul>
+            <li><strong>Agentic coding lived inside the IDE.</strong> Every change started with an engineer opening the editor and prompting an agent step by step.</li>
+            <li><strong>Cursor's agent window unlocked some parallel work.</strong> An engineer could run several agents and editor windows at once, but each one still started by a person.</li>
+            <li><strong>The initiative stayed with the engineer.</strong> Nothing progressed unless someone opened a session, so no work happened overnight, on weekends, or while the team was in meetings.</li>
+            <li><strong>Spec-driven practices were strong.</strong> Written specs, recorded decisions, and an explicit plan came before any code.</li>
+            <li><strong>Testing was ad hoc.</strong> Automated coverage was patchy and exploratory testing was left to each engineer's judgement, so quality depended on who picked up the ticket. The one firm rule was a demo video on every change.</li>
+          </ul>
+          <div class="technote">
+            <b>Practice:</b> spec-driven development, documented ITDs, plans as artifacts.<br />
+            <b>Gap:</b> no system-level automation; a human triggered every task, and test depth varied per engineer.
+          </div>
+          <aside class="notes">
+            We were good at the craft side: specs, plans, decision records. The weakness was that
+            humans were the trigger for everything, and testing rigor depended on who was doing it.
+          </aside>
+        </section>
+
+        <!-- 3. WHERE IS THE INDUSTRY HEADING -->
+        <section>
+          <span class="kicker">Where the industry is heading</span>
+          <h2>The engineer steps <em>onto</em> the loop</h2>
+          <ul>
+            <li><strong>Long-running agents are becoming the norm.</strong> A task now runs for hours or days, so an agent builds a whole feature rather than a snippet.</li>
+            <li><strong>Building software is being democratized.</strong> The same frontier models are open to everyone, so a small team can build what once needed a platform org.</li>
+            <li><strong>The hard part is the primitive.</strong> The models and the low-level harness are where the labs spend billions; that layer is a commodity you rent.</li>
+            <li><strong>The value is in the loop you build on top, so build your own.</strong> The edge comes from fitting a long-running loop to your own repositories, CI, and alerts: a tuned loop can assume TypeScript only and one cloud, which a generic product cannot.</li>
+          </ul>
+          <div class="quote">
+            "You no longer babysit the agent that writes the code. You build the system that writes the code."
+            <span>Cursor roadmap meeting, June 2026</span>
+          </div>
+          <div class="technote">
+            <b>Convergence (2026 industry reports):</b> background agents on cloud infra, self-driving codebases,
+            planner / worker / judge loops, durable sessions, event and schedule triggers. The engineer moves from in-the-loop to on-the-loop.
+          </div>
+          <aside class="notes">
+            Our bet, echoed by Cursor and the 2026 trend reports: the model is a commodity primitive.
+            The durable advantage is the loop you build around it, tuned to your stack. That is exactly
+            why we built our own harness instead of waiting for a vendor.
+          </aside>
+        </section>
+
+        <!-- 4. INTRODUCING NEX -->
+        <section>
+          <span class="kicker">Introducing</span>
+          <h2><span class="accent">Nex</span>: an engineer that never sleeps</h2>
+          <p class="lead">Give it an objective. It plans, builds, tests, ships, and handles what comes next.</p>
+          <div class="cols media">
+            <ul>
+              <li><strong>It owns a task end to end.</strong> From a plan, to the implementation, to a pull request with evidence, to the follow-up after review.</li>
+              <li><strong>It starts work on its own.</strong> A meeting, an alert, a failed build, or a schedule begins a task with no person in the loop.</li>
+              <li><strong>It already runs at real volume.</strong> Built by one person at about an hour a day, it opens hundreds of pull requests a month.</li>
+            </ul>
+            <div class="shot-wrap">
+              <img class="shot" src="img/intro.png" alt="Nex web app: the threads workspace" />
+            </div>
+          </div>
+          <div class="technote">
+            <b>Harness:</b> Cursor SDK (programmatic Agent.create / Agent.resume).<br />
+            <b>Compute:</b> AWS Bedrock AgentCore microVMs, warm per conversation (~2s warm, ~7s cold).<br />
+            <b>Orchestration:</b> AWS Step Functions with task-token wait and resume.
+          </div>
+          <aside class="notes">
+            Nex is not a chatbot. It is a teammate that owns work end to end. The two technically
+            interesting choices: we drive it with Cursor's SDK rather than the CLI, and we host it on
+            Bedrock AgentCore micro-VMs, which gives us seconds-to-start and pay-per-active-time.
+          </aside>
+        </section>
+
+        <!-- 5. PRINCIPLE: INTELLIGENCE IN THE MIDDLE -->
+        <section>
+          <span class="kicker">The principle</span>
+          <h2>Put the intelligence in the <em>middle</em></h2>
+          <p class="lead">The design bet behind Nex: do not script the work. Put the model at the center, hand it tools and skills, and let it figure out the rest.</p>
+          <ul>
+            <li><strong>Tools, not hard-coded flows.</strong> The model is given a set of commands and decides which to run and in what order, so a new situation does not need new wiring.</li>
+            <li><strong>Mostly command-line tools, some MCP.</strong> CLIs are the main interface because they are easy to add, self-describing, and run anywhere; MCP is used only for tools that have no CLI, such as Mixpanel.</li>
+            <li><strong>Skills carry the know-how.</strong> Written guides capture the team's way of doing each job, so the model follows proven steps instead of guessing from scratch.</li>
+            <li><strong>One custom CLI is the bridge to the platform.</strong> A single tool gives the agent everything: data, tickets, pull requests, memory, and evidence. Adding a capability means adding a command.</li>
+          </ul>
+          <div class="technote">
+            <b>Tool surface:</b> the wsai CLI (17 command groups) is the agent's primary interface; MCP is kept for IDE integration.<br />
+            <b>Skills:</b> 36 written SKILL.md guides the agent loads per task.<br />
+            <b>Principle:</b> LLM-centered architecture, CLI chosen over MCP for scale and portability.
+          </div>
+          <aside class="notes">
+            The core architectural choice: the intelligence sits in the middle, and everything else is a
+            tool or a skill around it. We do not encode the workflow. We give the model a custom CLI to
+            reach the platform, a library of skills for how we do things, and let it plan the rest.
+            Adding a feature is usually just adding a command, which is why a request like Sentry
+            integration shipped in about an hour.
+          </aside>
+        </section>
+
+        <!-- 6. FOUNDATION: RIGOR -->
+        <section>
+          <span class="kicker">The foundation</span>
+          <h2>Autonomy is earned with <em>rigor</em></h2>
+          <p class="lead">You can only let an agent run on its own if you trust its output without reading every line.</p>
+          <ul>
+            <li><strong>Patterns were fixed from day one.</strong> The architecture and conventions were set before the agent scaled up, so every change lands in the same shape instead of drifting.</li>
+            <li><strong>Nex writes its own tests, at every layer.</strong> Each change ships with unit, integration, database, API, and end-to-end tests, all written by the agent.</li>
+            <li><strong>Quality gates are turned up to the maximum.</strong> Strict linting, dependency and package.json rules, and custom in-repo rules all run automatically, catching mistakes without a human reviewer.</li>
+            <li><strong>So the author rarely reads the code.</strong> The gates catch what a line-by-line review would, which is why the platform's own author trusts its merges without reading most of the diff.</li>
+          </ul>
+          <div class="technote">
+            <b>Test layers (all agent-written):</b> Vitest unit, database integration, an HTTP API suite, and Playwright end-to-end specs.<br />
+            <b>Lint:</b> maxed-out ESLint with import / dependency / package.json rules, plus a custom in-repo lint plugin.<br />
+            <b>Gate:</b> everything runs in CI before a merge is allowed.
+          </div>
+          <aside class="notes">
+            The honest part: I have not deeply read Nex's own code, and I do not need to. We invested
+            up front in patterns, in a complete test pyramid the agent maintains itself, and in
+            aggressive linting including custom rules. Those gates are what make it safe to let it
+            merge its own work. Rigor is the price of autonomy.
+          </aside>
+        </section>
+
+        <!-- 6. FEATURE: PLAN -> IMPLEMENT -> CI/CD -->
+        <section>
+          <span class="kicker">Feature: Delivery</span>
+          <h2>It owns the work, from plan to green build</h2>
+          <ul>
+            <li><strong>Request in, plan out.</strong> Nex turns a request into a written plan, then implements it on its own branch and opens a draft pull request.</li>
+            <li><strong>It fixes its own broken builds.</strong> When CI fails, Nex reads the failing logs and pushes a fix to the same PR, so a red build does not sit waiting for someone to reassign the ticket.</li>
+            <li><strong>It closes the review loop.</strong> When a reviewer or Cursor's Bugbot leaves comments, Nex makes the change, replies, and resolves the threads.</li>
+            <li><strong>It stays on one task as long as the work takes.</strong> A task runs across hours and multiple events, resuming exactly where it stopped instead of starting over.</li>
+          </ul>
+          <div class="quote">
+            "Last night I said: pick 10 tickets and do them in parallel. All tested. I merged half; the rest resolved their own conflicts automatically."
+            <span>WS.Eng Engineer</span>
+          </div>
+          <div class="technote">
+            <b>Trigger:</b> GitHub webhooks (CI checks, review comments) matched by user automation rules.<br />
+            <b>Resume:</b> Step Functions wakes the waiting agent via task token; the prior agent session is resumed, not restarted.
+          </div>
+          <aside class="notes">
+            This is the flywheel. The agent that opened the PR is the same agent that fixes the build
+            and answers Bugbot. No human hand-off between steps.
+          </aside>
+        </section>
+
+        <!-- 6. FEATURE: TEST & EVIDENCE -->
+        <section>
+          <span class="kicker">Feature: Testing</span>
+          <h2>It tests its own work and shows the proof</h2>
+          <div class="cols media">
+            <ul>
+              <li><strong>It verifies behavior by hand.</strong> On top of the automated suites, it runs the change and checks it the way a person would before asking for a merge.</li>
+              <li><strong>It covers every surface a user touches.</strong> APIs end to end, the web UI, and the desktop (Electron) app.</li>
+              <li><strong>It records the evidence.</strong> Screenshots and short videos from the run are attached to the work, so a reviewer sees proof, not a claim. The mandatory demo video is now produced by the agent.</li>
+            </ul>
+            <div class="shot-wrap">
+              <img class="shot" src="img/evidence.png" alt="A Nex verification write-up with captured UI evidence" />
+              <div class="caption">Evidence posted by Nex on the ticket it worked</div>
+            </div>
+          </div>
+          <div class="technote">
+            <b>API:</b> Bruno CLI transcripts.<br />
+            <b>Web + desktop UI:</b> Playwright (Chromium baked into the worker image), Electron driven over CDP.<br />
+            <b>Evidence:</b> uploaded to hosted media and linked back into the thread and PR.
+          </div>
+          <aside class="notes">
+            This directly replaces the patchy, per-engineer testing from before. The agent does the
+            exploratory testing and produces the evidence trail automatically.
+          </aside>
+        </section>
+
+        <!-- 7. FEATURE: INVESTIGATION -->
+        <section>
+          <span class="kicker">Feature: Investigation</span>
+          <h2>It investigates production like an on-call engineer</h2>
+          <div class="cols media">
+            <ul>
+              <li><strong>It picks up issues reported in chat.</strong> When someone flags a problem in Google Chat, Nex reads the thread, replies in place, and starts digging.</li>
+              <li><strong>It looks where an engineer would.</strong> Sentry error reports, read-only SQL and Mixpanel usage (for example, how many users completed a flow), and AWS logs.</li>
+              <li><strong>Then it acts.</strong> It writes up the root cause and, when the fix is clear, opens the pull request for it.</li>
+            </ul>
+            <div class="shot-wrap">
+              <img class="shot" src="img/investigation.png" alt="A Nex production error root-cause analysis" />
+            </div>
+          </div>
+          <div class="technote">
+            <b>Access:</b> AWS via cross-account read-only IAM roles (sts:AssumeRole), set up with a single role grant, no credentials shared.<br />
+            <b>Tools:</b> Google Chat read/reply, Sentry webhooks, read-only SQL, Mixpanel product analytics (via MCP), CloudWatch log anomaly detection.
+          </div>
+          <aside class="notes">
+            The AWS access story is worth dwelling on: it was a single cross-account role grant,
+            read-only, no secrets floating around. That safety made it easy to let the agent loose on
+            production telemetry.
+          </aside>
+        </section>
+
+        <!-- 8. FEATURE: MEMORY -->
+        <section>
+          <span class="kicker">Feature: Memory</span>
+          <h2>It remembers, and gets sharper over time</h2>
+          <div class="cols media">
+            <ul>
+              <li><strong>It keeps durable notes about your world.</strong> What it learns about each person, project, and repository persists from one task to the next.</li>
+              <li><strong>Context loads itself</strong> at the start of each task, so it does not rediscover the same facts on every run.</li>
+              <li><strong>It consolidates every night.</strong> A nightly "dream" pass merges what it learned and prunes stale notes, so memory stays useful instead of noisy.</li>
+            </ul>
+            <div class="shot-wrap">
+              <img class="shot" src="img/memory.png" alt="The git-backed memory repository: org, project, repo, task-type, user scopes" />
+            </div>
+          </div>
+          <div class="technote">
+            <b>Persistence:</b> a dedicated git repository, one branch per environment, so memory is versioned and reviewable.<br />
+            <b>Scopes:</b> org / project / repo / user / task-type.<br />
+            <b>Dream:</b> nightly consolidation at 03:00 UTC with per-scope size budgets.
+          </div>
+          <aside class="notes">
+            We chose git for memory on purpose: it is versioned, diffable, and reviewable, and the
+            agent never has to learn a bespoke store. The nightly dream keeps it from turning into a
+            junk drawer.
+          </aside>
+        </section>
+
+        <!-- 9. FEATURE: AUTO-REACTION / TRIGGERS -->
+        <section>
+          <span class="kicker">Feature: Triggers</span>
+          <h2>It starts its own work</h2>
+          <p class="lead">Most of Nex's work starts without anyone asking. It reacts to what happens around the team.</p>
+          <div class="cols media">
+            <div>
+              <ul>
+                <li><strong>Meetings.</strong> A call transcript becomes tickets, and Nex starts on the ones clear enough to implement.</li>
+                <li><strong>Alerts.</strong> A Sentry alert or a CloudWatch log anomaly opens an investigation on its own.</li>
+                <li><strong>Failures.</strong> A failed build wakes the same agent that produced the change.</li>
+                <li><strong>Schedules.</strong> Recurring jobs poll support tickets and scan the team's work for friction, then improve the agent's own skills.</li>
+              </ul>
+            </div>
+            <div class="shot-wrap">
+              <img class="shot" src="img/automations.png" alt="Nex automation rules: CI failures, PR routing, scheduled jobs" />
+            </div>
+          </div>
+          <div class="technote">
+            <b>Event sources:</b> GitHub, Read.AI (meetings), Google Chat, Sentry, EventBridge, clock.<br />
+            <b>Crons:</b> a schedule ticker every 30 min drives support-ticket sync, skill scanning, the nightly dream, idle reflection, and anomaly / PR-mergeability polling.
+          </div>
+          <aside class="notes">
+            This is the heart of it. Most of Nex's work is not started by a person. A real example:
+            an exec call transcript went straight into Nex, which created tickets, implemented three,
+            opened PRs, tested on AWS, and solved problems on its own. The ingress breakdown shows
+            schedules and the agent itself are already among the biggest sources of work, alongside
+            GitHub and Sentry.
+          </aside>
+        </section>
+
+        <!-- 10. STATS / CLOSING -->
+        <section>
+          <span class="kicker">By the numbers</span>
+          <h2>What one engineer built, in evenings</h2>
+          <div class="cols media">
+            <div>
+              <div class="statgrid" style="grid-template-columns: 1fr 1fr;">
+                <div class="stat"><div class="num">9+5</div><span class="lab">apps and shared libraries</span></div>
+                <div class="stat"><div class="num">36</div><span class="lab">skills the agent can use</span></div>
+                <div class="stat"><div class="num">10</div><span class="lab">task types, plan to dream</span></div>
+                <div class="stat"><div class="num">1</div><span class="lab">engineer, about an hour a day</span></div>
+              </div>
+              <p class="lead" style="margin-top: 0.7em;">The initiative has moved. The engineer sets direction; <span class="accent">Nex does the work and reports back.</span></p>
+            </div>
+            <div class="shot-wrap">
+              <img class="shot" src="img/showcase.png" alt="The live Nex dashboard: tasks, threads by source, top contributors" />
+              <div class="caption">Live platform dashboard</div>
+            </div>
+          </div>
+          <div class="technote">
+            <b>Backbone:</b> a relational database tracks repositories, AWS accounts, contributors, and Google Chat spaces.<br />
+            <b>Harness:</b> Cursor SDK. &nbsp; <b>Compute:</b> Bedrock AgentCore. &nbsp; <b>Memory:</b> git.
+          </div>
+          <aside class="notes">
+            The punchline: this was an evenings-and-weekends project for one person, and it already
+            runs hundreds of PRs a month. The point is not the headcount, it is that the loop, tuned
+            to our stack, is where the leverage lives.
+          </aside>
+        </section>
+
+        <!-- 14. ROADMAP -->
+        <section>
+          <span class="kicker">Roadmap, Q3 2026</span>
+          <h2>From conversations to a <em>tracked backlog</em></h2>
+          <div class="cols media">
+            <ul>
+              <li><strong>More independent testing.</strong> The agent validates its own work more deeply, so reviewers check decisions, not diffs.</li>
+              <li><strong>More auto-merging.</strong> Low-risk changes that pass every gate merge themselves; a human stays in the loop only where it matters.</li>
+              <li><strong>Better judgement on when to ask.</strong> It raises the decisions that need a person and proceeds on the rest. This is the area that still needs the most work.</li>
+              <li><strong>From threads to tickets and milestones.</strong> Drive a ticket through its phases from one place, instead of jumping between GitHub, AWS, and chat.</li>
+            </ul>
+            <div class="shot-wrap">
+              <div class="ticket-table">
+                <div class="trow thead"><span>Ticket</span><span>Phase</span><span>Action</span></div>
+                <div class="trow"><span class="tk">#1542 Roster API</span><span class="ph ph-plan">Planned</span><button class="tbtn">Start</button></div>
+                <div class="trow"><span class="tk">#1517 Session persistence</span><span class="ph ph-impl">Implementing</span><button class="tbtn ghost">View</button></div>
+                <div class="trow"><span class="tk">#1530 Mobile theme</span><span class="ph ph-review">In review</span><button class="tbtn">Accept</button></div>
+                <div class="trow"><span class="tk">#1526 Chrome-bar fix</span><span class="ph ph-done">Merged</span><button class="tbtn ghost">Done</button></div>
+              </div>
+              <div class="caption">Direction: one board for every work unit, with the next phase one click away.</div>
+            </div>
+          </div>
+          <div class="technote">
+            <b>Q3 outcomes:</b> deeper self-validation to cut review burden; a milestone and work-unit view replacing chat threads; skill iteration loops measured in hours; one source of truth across GitHub, AWS, and chat.
+          </div>
+          <aside class="notes">
+            Where we are taking it. Today the primitive is a chat thread; we are moving to tickets and
+            milestones you can track at a glance, with buttons to kick off the next phase or accept the
+            work. Alongside that: more independent testing, more auto-merging of low-risk changes, and
+            better judgement about when to pull a human in, which is still the weakest part. The goal is
+            to stop jumping between GitHub, AWS, and chat and drive everything from one place.
+          </aside>
+        </section>
+      </div>
+    </div>
+
+    <script src="vendor/reveal/reveal.js"></script>
+    <script src="vendor/reveal/plugin/notes/notes.js"></script>
+    <script src="vendor/reveal/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        slideNumber: "c/t",
+        transition: "slide",
+        transitionSpeed: "default",
+        width: 1280,
+        height: 760,
+        margin: 0.06,
+        controls: true,
+        progress: true,
+        plugins: [RevealNotes, RevealHighlight],
+      });
+    </script>
+  </body>
+</html>

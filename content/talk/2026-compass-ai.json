@@ -1,0 +1,9 @@
+{
+  "title": "Your Vision Model Is Biased",
+  "event": "Compass AI 2026",
+  "date": "2026-10-01",
+  "abstract": "How to build near-real-time detection on vision LLMs, and why evaluation is the hard part. The video format you send moves accuracy more than the model you pick. Telling the model to \"be careful\" buys almost nothing.",
+  "slides": "/presentations/2026-compass-ai-your-vision-model-is-biased/",
+  "pdf": "/presentations/2026-compass-ai-your-vision-model-is-biased/your-vision-model-is-biased.pdf",
+  "image": "../media/compass-2026-title.png"
+}

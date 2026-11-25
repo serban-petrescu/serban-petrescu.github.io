@@ -1,0 +1,8 @@
+{
+  "title": "Integrating GPT Actions with an AWS AppSync Cognito-Protected API",
+  "summary": "Exposing an existing AppSync GraphQL API to a custom GPT, with Cognito auth.",
+  "url": "https://aws.plainenglish.io/integrating-gpt-actions-with-an-aws-appsync-cognito-protected-api-5d8b27f9425f",
+  "source": "Medium",
+  "date": "2024-01-14",
+  "order": 12
+}

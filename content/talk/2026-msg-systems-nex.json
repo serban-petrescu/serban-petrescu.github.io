@@ -1,0 +1,9 @@
+{
+  "title": "Nex: an automated engineering platform",
+  "event": "msg systems",
+  "date": "2026-06-22",
+  "abstract": "How we moved the initiative from the engineer to an always-on system. Put the model in the middle, hand it tools and skills, and earn autonomy with rigor: fixed patterns, a test pyramid the agent maintains itself, and evidence on every change.",
+  "slides": "/presentations/2026-msg-systems-nex/",
+  "pdf": "/presentations/2026-msg-systems-nex/nex-automated-engineering-platform.pdf",
+  "image": "../media/msg-2026-nex-title.png"
+}
