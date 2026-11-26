@@ -7,6 +7,8 @@ Static site for [spetrescu.ro](https://spetrescu.ro), built with Astro. Content 
 | `content/` | Projects, work history, education, certifications, talks, writing, CV copy and site metadata |
 | `src/pages/` | `/` (portfolio), `/cv/` (printable one-page CV) and `/llms.txt` |
 | `public/` | Static files served as is: CV PDF, talk decks, icons, CNAME |
+| `docs/` | Writing style, principles, career context and the LinkedIn mirror |
+| `.agents/skills/` | Agent skills for content updates, LinkedIn, recruiters, principles and debates (see `AGENTS.md`) |
 
 ```sh
 pnpm install

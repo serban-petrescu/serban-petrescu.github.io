@@ -2,15 +2,15 @@
 
 ## About
 
-Builder and technical leader serving as SVP of Software Engineering at Trilogy, where I lead 0→1 product development across a portfolio of educational technology products.
+Builder and engineering leader. I run Product Engineering for WS.Eng, Trilogy's new-products department: around 40 people across engineering, product, support and data annotation, about ten products in parallel and a $15M yearly budget.
 
-My edtech work spans three pillars: learning applications (7+ apps including AI tutoring, spaced repetition games, and adaptive learning platforms), content generation infrastructure (curriculum modeling, AI-powered content authoring, publishing workflows), and learning analytics (student engagement tracking, mastery measurement, outcome correlation).
+I took over in 2023 with six backend engineers, the survivors of a team that had shipped almost nothing in a quarter. I merged in the frontend team, rebuilt engineering and later took on product as well. Engineering is about the same size it was in my first year, and it ships 10x as much.
 
-I've implemented learning science principles directly into products I've built: spaced repetition algorithms, mastery-based progression, automaticity building, active learning over passive consumption, and knowledge graph-driven curricula. This work enables thousands of students at Alpha School to achieve 99th percentile test results.
+Most of that jump came from the machinery we built around AI. In 2026 I started Nex, our in-house AI software factory, and built about 90% of it, mostly by having Nex build itself. It now writes nearly all of our pull requests, around 1,000 a week with one production release a day, while people own the plans, the decisions and the evidence. I write about how we run engineering this way at wseng.ai.
 
-I believe that education should be extremely personalized and ruthlessly efficient. The traditional model wastes time - students sit passively, then learn separately. The opportunity is teaching the right things in the right order, with maximum engagement and zero wasted time.
+Before Nex, most of my hands-on work was edtech for Alpha School. I architected StudyFilm's vision pipeline, which turns millions of recorded study sessions a quarter into coaching and test-integrity signals, and designed TrashCat's learning engine as product manager and backend developer.
 
-Player-coach approach: I combine strategic leadership (executive alignment, $6M budget, team of 40) with hands-on execution as product manager, architect, and full-stack engineer.
+Player-coach: strategy, hiring and architecture on one side, product management and hands-on code on the other.
 
 Prior to Trilogy: 6+ years as Lead Software Engineer at msg systems, recognized as SAP Developer Hero.
 
@@ -27,19 +27,18 @@ Prior to Trilogy: 6+ years as Lead Software Engineer at msg systems, recognized 
 
 ### Trilogy
 
-#### Senior Vice President of Software Engineering
+#### Senior Vice President of Product Engineering
 **Feb 2023 - Present**
 
-Built independent department from 6 to 40 people while scaling from 3 to 11 concurrent products, achieving 3x productivity improvement. Managing $6M/year budget with full autonomy over team structure and processes.
+Run Trilogy's new-products department (WS.Eng): around 40 people across engineering, product, support and data annotation, about ten products in parallel, and a $15M yearly budget, with full autonomy over structure, hiring and process.
 
-Education technology focus: Shipped 7+ learning products from concept to production, spanning three pillars:
-- Learning apps: TrashCat (spaced repetition math game with custom learning algorithm), Athena (AI-powered AP/SAT prep), TeachTap ("TikTok for education," featured on Dr. Phil), TeachTales (AI-generated reading), Magic Academy (3D educational game), ReadingCritters (early reading)
-- Content infrastructure: Incept platform for curriculum modeling, AI-powered content generation, QTI standardization, and publishing workflows serving the academic team
-- Analytics platform: TimeBack (student engagement tracking, learning analytics, outcome measurement via Caliper standard)
+Started with six backend engineers. Merged in frontend, rebuilt engineering, then took on product. Engineering is about the same size it was in my first year, and it ships 10x as much.
 
-Implemented learning science principles directly: spaced repetition, mastery-based progression, automaticity building, knowledge graphs for prerequisite relationships, active learning enforcement. This work enables thousands of Alpha School students to achieve 99th percentile outcomes.
+- Nex: started it in 2026 and built about 90% of it. The AI software factory the department runs on writes nearly all of our pull requests, around 1,000 a week, with one production release a day.
+- StudyFilm (formerly the TimeBack app): architected the desktop recorder, vision-LLM pipeline and parent and guide web app. It turns millions of Alpha School study sessions a quarter into coaching and test-integrity signals. Presented the lessons at Compass AI 2026.
+- TrashCat: designed and built the learning engine (spaced repetition, automaticity, per-fact mastery) as product manager and backend developer.
 
-Also extended Crossover hiring platform (hundreds of thousands monthly visitors) and Trilogy Sales Platform (thousands of automated renewals across 200+ products).
+Current portfolio: StudyFilm, TimeBack Platform and Store, TrashCat, 100 for 100, GameCraft, the student information system, EduCRM, Crossover, Quark AI and CPM. Earlier: Athena, TeachTap, TeachTales, Magic Academy, Reading Critters and Incept.
 
 #### Vice President of Software Engineering
 **Aug 2021 - Feb 2023** · Full-time · Remote

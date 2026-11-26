@@ -5,3 +5,5 @@ content
 .context
 pnpm-lock.yaml
 *.md
+.agents
+docs

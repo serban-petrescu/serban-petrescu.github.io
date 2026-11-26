@@ -130,7 +130,7 @@ Is it a specific opportunity?
 
 **Transylvanian approach** - Don't show off, but state facts clearly:
 - ❌ "I've had tremendous success scaling organizations"
-- ✅ "I scaled the org from 6 to 40 people while going from 3 to 11 products"
+- ✅ "I rebuilt engineering from six people, and it now ships 10x what it did, at the same headcount"
 
 **Builder identity** - Technical work is not something to grow out of:
 - ❌ "I'm looking to transition into more strategic roles"

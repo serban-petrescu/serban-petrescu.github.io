@@ -5,32 +5,36 @@
 ## Repository Context
 This portfolio site contains detailed information about Serban's career:
 - **Work history:** `content/work/*.json` (e.g., `content/work/svpoe-samy.json`)
-- **Projects:** `content/project/*.json` (e.g., `content/project/trashcat.json`, `content/project/athena.json`)
+- **Projects:** `content/project/*.json` (e.g., `content/project/nex.json`, `content/project/timeback.json` for StudyFilm, `content/project/trashcat.json`)
+- **Talks and writing:** `content/talk/*.json`, `content/writing/*.json`
 - **Education:** `content/education/*.json`
 - **Certifications:** `content/certification/*.json`
 - **CV content:** `content/cv/cv.json` (used to generate printable CV at `/cv`)
 - **Site metadata:** `content/metadata/metadata.json`
 
-## Current Role (as of October 2025)
-- **Position:** SVP of Software Engineering @ Trilogy (New Products)
+## Current Role (numbers as of the start of Q4 2026)
+- **Position:** SVP of Product Engineering @ Trilogy (WS.Eng, the new-products department)
 - **Tenure:** Feb 2023 - Present (started as VP, promoted to SVP Sep 2024)
-- **Scope:** Leading independent department of 40 people (engineering, design, product, operations)
-- **Budget:** $6M/year with full autonomy over team structure and processes
+- **Scope:** Around 40 people: 20-something engineers, plus product leaders, support and data annotators. About ten products in parallel.
+- **Budget:** about $15M/year with full autonomy over team structure and processes
 - **Working hours:** ~60 hours/week at Trilogy + 1-2 hours/week part-time consulting at msg systems
 
 ## Key Accomplishments at Trilogy
 > See detailed work history in: `content/work/svpoe-samy.json`, `content/work/vpoe-central.json`
 > See CV summary in: `content/cv/cv.json`
 
-- Built organization from 6 to 40 people while scaling from 3 to 11 concurrent products
-- Achieved 3x productivity improvement per capita through AI adoption, automation infrastructure, and high-quality hiring
+- Took over six backend engineers, the survivors of a team that had shipped almost nothing in a quarter. Merged in frontend, rebuilt engineering to 20 to 30 engineers, then took on product as well.
+- Engineering is about the same size it was in his first year and ships 10x as much (around 900 tickets a quarter at the end of 2023, around 7,000-8,000 a quarter in 2026, with bigger tickets).
+- Started Nex (March 2026), the AI software factory the department runs on, and built about 90% of it, mostly by having Nex build itself. Nex writes nearly all pull requests: around 1,000 merged a week, one production release a day, about 80 people using it.
+  - See project details: `content/project/nex.json` and https://wseng.ai/nex
 - **Education technology focus:** Shipped 7+ learning products spanning three pillars:
   - **Learning apps:** TrashCat, Athena, TeachTap, TeachTales, Magic Academy, ReadingCritters
     - Implemented learning science principles: spaced repetition, mastery-based progression, automaticity building, knowledge graphs
   - **Content infrastructure:** Incept platform for curriculum modeling, AI-powered content generation, QTI standardization
     - See project details: `content/project/incept.json`
-  - **Analytics platform:** TimeBack for student engagement tracking, learning analytics, outcome measurement
+  - **StudyFilm (formerly the TimeBack app):** desktop recorder, vision-LLM pipeline and parent/guide web app. Records millions of study sessions a quarter for Alpha School and turns them into coaching and test-integrity flags. Presented at Compass AI 2026.
     - See project details: `content/project/timeback.json`
+  - **TimeBack Platform:** rostering, LTI launch, consent and learning analytics backend for learning apps
   - This work enables thousands of Alpha School students to achieve 99th percentile outcomes
 - Extended Crossover hiring platform processing hundreds of thousands of monthly visitors
   - See project details: `content/project/crossover.json`
@@ -54,13 +58,13 @@ This portfolio site contains detailed information about Serban's career:
 
 ### What "Player-Coach" Looks Like in Practice
 My typical week includes:
-- Meetings with all 40 reports (semi-frequently, ~1 day/week)
+- Meetings with reports across the department (semi-frequently, ~1 day/week)
 - Hiring: writing JDs, designing assessments, conducting interviews (now delegating some to lead engineers)
 - Product management work (~4-5 hours/week)
 - Architectural reviews and specifications
 - Quarterly budget management
 - Performance reviews, promotions, firings
-- Writing code (contributing to TrashCat and other products)
+- Writing code, mostly on Nex (earlier: TrashCat, StudyFilm, TimeBack)
 - C-level liaison on pricing, cost reduction, portfolio strategy
 - Making independent decisions on roles, headcount allocation, team structure
 - Code reviews and periodic feedback to engineers
@@ -79,8 +83,9 @@ My typical week includes:
 - Staff Engineer+, Principal, VP/CTO at startups or smaller companies (not large enterprises)
 - Player-coach positions: hands-on technical work while leading ~10-50 people
 - Building ambitious products: education tech, dev tools, infrastructure, AI. Things that matter.
-- 0→1 product building or scaling 1→100 where my experience growing teams 6x would be valuable
+- 0→1 product building or scaling 1→100, where rebuilding a team and its AI machinery for 10x output would be valuable
 - Remote-first or hybrid (Cluj-based, open to relocation for exceptional opportunities)
+- **A normal company.** The main goal of the move is to leave Crossover/Trilogy-style operations behind: no time tracking or screenshot monitoring, sane hours, no fear-driven firing culture. Automated screening (AI interviews, CCAT) is fine since he uses it himself. What matters is how the company operates once you're inside, which he checks in the human conversations
 
 ### Acceptable Scope
 - Comfortable with full-stack: Unity games, mobile apps, cloud platforms, Salesforce extensions
@@ -118,8 +123,8 @@ My typical week includes:
 ### Current Expertise
 - **Languages:** TypeScript, Java, NodeJS, React, Spring Boot, Unity, C#
 - **Cloud:** AWS (Lambda, AppSync, DynamoDB, RDS, Step Functions, etc.)
-- **Other:** GraphQL, Salesforce, PostgreSQL, MySQL
-- **Specializations:** Cloud-native architectures, AI/ML integration, serverless, DevOps, cost optimization
+- **Other:** GraphQL, Salesforce, PostgreSQL, MySQL, LangGraph
+- **Specializations:** AI agent harnesses, LLM evaluation, cloud-native architectures, serverless, DevOps, cost optimization
 
 ### Previous Experience
 > See detailed work history: `content/work/lead-msg.json`, `content/work/founder-kickit.json`, `content/work/ta-tucn.json`, `content/work/tc-msg.json`
@@ -142,7 +147,7 @@ My typical week includes:
 ### Education
 > See: `content/education/*.json`
 
-- Master's degree in Software Engineering, Babeș-Bolyai University (2017-2019, dissertation pending) - `content/education/ubb.json`
+- Software Engineering MSc program, Babeș-Bolyai University (2017-2019, coursework only, no dissertation) - `content/education/ubb.json`
 - Bachelor's degree in Computer Science, Technical University of Cluj-Napoca (2012-2016) - `content/education/tucn.json`
 
 ## Communication Preferences for Recruiters
@@ -162,14 +167,21 @@ My typical week includes:
 ## Products Built at Trilogy
 > See all project files in: `content/project/`
 > 
-> **Featured projects** (shown prominently on portfolio site, marked with `"highlighted": true`):
+> **Selected work** (case studies on the portfolio site, marked with `"highlighted": true` and ordered by `order`):
+> - Nex (`content/project/nex.json`)
+> - StudyFilm (`content/project/timeback.json`)
 > - TrashCat (`content/project/trashcat.json`)
-> - Crossover Hiring Platform (`content/project/crossover.json`)
 > - InsideSales Playbooks (`content/project/eswvpis.json`)
 
+### Engineering Platform
+- **Nex** (`content/project/nex.json`) - AI software factory WS.Eng runs on. Serban started it in March 2026 and built about 90% of it.
+
+### Q4 2026 Portfolio (department lead unless noted)
+- StudyFilm (architect, hands-on), TimeBack Platform (architect), TimeBack Store (bootstrapped it), TrashCat, 100 for 100, GameCraft, Student Information System, EduCRM, Crossover, Quark AI, CPM
+
 ### Education Domain
-- **TimeBack** (`content/project/timeback.json`) - AI tutoring platform for Alpha School
-  - Enables 99th percentile learning outcomes
+- **StudyFilm** (`content/project/timeback.json`, formerly the TimeBack app) - session recording and vision-LLM coaching for Alpha School
+  - Alpha School students reach 99th percentile learning outcomes
   - Part of Joe Liemandt's vision to reach 1 billion children
 - **TeachTap** (`content/project/teachtap.json`) - "TikTok for education" mobile app (featured on Dr. Phil, discontinued)
 - **TeachTales** (`content/project/teachtales.json`) - Educational storytelling app
@@ -177,16 +189,21 @@ My typical week includes:
 - **Magic Academy** (`content/project/magicacademy.json`) - 3D Minecraft-like educational Unity game (discontinued before launch)
 - **Athena** (`content/project/athena.json`) - AI-powered AP course and SAT prep platform for homeschoolers
 - **CoachBot** (`content/project/coachbot.json`) - Backbone of Alpha School for most of tenure
-- **TrashCat** (`content/project/trashcat.json`) - Educational Unity game with spaced repetition (highlighted project)
+- **TrashCat** (`content/project/trashcat.json`) - Math-fluency game with spaced repetition. Serban designed and wrote the learning engine. Started in Unity, ported to the web with Nex.
 
 ### Recruiting Domain
-- **Crossover Hiring Platform** (`content/project/crossover.json`) - Processing hundreds of thousands monthly visitors, tens of thousands of applications (highlighted project)
+- **Crossover Hiring Platform** (`content/project/crossover.json`) - Processing hundreds of thousands monthly visitors, tens of thousands of applications
 
 ### Sales Domain
 - **Trilogy Sales Platform** - Managing thousands of semi-automated contract renewals across 200+ Trilogy products (hundreds of millions in ARR)
 
 ### Earlier Products (VP Central Engineering)
-- **InsideSales Playbooks** (`content/project/eswvpis.json`) - $20M/year ARR sales engagement platform (acquired, highlighted project)
+- **InsideSales Playbooks** (`content/project/eswvpis.json`) - $20M/year ARR sales engagement platform (acquired)
+  - Origin: XANT (formerly InsideSales.com) built it as an Azure/Microsoft partner shop: AKS plus Cosmos DB. They moved to AWS before the acquisition. The first pod (US East) moved as a Kubernetes cluster, and the other 5-6 replicated pods ran on ECS
+  - Was mid-migration from Kubernetes to ECS at acquisition (one replicated global pod still on K8s). Serban's team finished the move to ECS, then unified the infrastructure. This is his production Kubernetes experience
+  - How outages dropped 5x: inherited thousands of noisy alarms (alerting tool wired to CloudWatch) and two outages in the team's first week. Triaged and de-noised alarms, clustered incidents by service, found three telephony services causing most of it, scaled them properly and fixed resource leaks. Moved a badly used Cosmos DB to Amazon MemoryDB for Redis (Serban designed this migration himself). Finished the K8s → ECS move and fixed scaling policies. Right-sized the databases. Many small fixes, not one big one. "Outage" = confirmed customer-facing incident, from support tickets confirmed as customer-impacting or from alarms labelled as customer-impacting
+  - Lesson: should have triaged alarms together with the acquired company's SMEs while they were still around, instead of trusting their handover. They left, and the team was stuck with thousands of alarms nobody could explain
+  - How cloud cost halved: about 1,000 EC2 instances, only about 500 serving production, so the rest were deleted along with unused services. Right-sized EC2, Lambda, ECS and databases using cost-optimization tooling. Funny detail: single-threaded NodeJS services ran on 2-4 vCPU Fargate tasks
 - **ResponseTek** - Customer feedback platform (acquired)
 
 ### Notable Earlier Projects at msg systems
@@ -200,12 +217,13 @@ My typical week includes:
 
 ## Personal Details
 - **Location:** Cluj-Napoca, Romania
-- **Age:** 32 (born September 1993)
+- **Born:** September 1993
 - **Languages:** English (C1), Romanian (native)
 - **Contact:** Serban.Petrescu@outlook.com, +40 744 865 132
 - **LinkedIn:** https://ro.linkedin.com/in/serban-petrescu
 - **GitHub:** https://github.com/serban-petrescu/
-- **Portfolio:** https://www.spetrescu.ro/
+- **Portfolio:** https://spetrescu.ro/
+- **Writing:** https://wseng.ai/writing and https://serban-petrescu.medium.com/
 
 ## Important Context Notes
 
@@ -215,14 +233,11 @@ My typical week includes:
 - Trilogy is the operating company for new products
 - Two distinct departments during my tenure:
   - Central Engineering: maintenance/operations of acquired products
-  - New Products: building greenfield products (my current department)
+  - New Products (WS.Eng): building greenfield products (my current department, now Product Engineering)
 
-### About My Master's Dissertation
-- Completed coursework 2017-2019
-- Dissertation pending since 2019
-- Why: Started teaching at same time, wanted to postpone by a year, then COVID hit
-- At SVP level, this doesn't matter—any reasonable person understands
-- Not removing from CV because it reflects reality
+### About My Master's Program
+- Completed the coursework 2017-2019 and never wrote the dissertation (started teaching at the same time, postponed, then COVID hit and there was never time)
+- The site and CV say "coursework only". At SVP level, this doesn't matter
 
 ### About Part-Time Work at msg systems
 - Started Jul 2020 (just before leaving full-time)
@@ -237,6 +252,7 @@ My typical week includes:
 - Not interested in "playing the game" - looking for companies that value substance
 - The right companies will appreciate the full picture
 - Wrong companies filtering me out is actually helpful
+- Same for AI interviews and proctoring: he behaves naturally and won't contort himself to avoid integrity flags. Interview prep advice should focus on content (stories, numbers, framing), not on gaming the screener
 
 ## What Makes Me Memorable
 
